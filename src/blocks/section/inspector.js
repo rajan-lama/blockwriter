@@ -13,7 +13,7 @@ import {
 	TextareaControl,
 	ToggleControl,
 	SelectControl,
-  BaseControl
+	BaseControl,
 } from '@wordpress/components';
 
 /**
@@ -30,8 +30,11 @@ const Inspector = ({ attributes, setAttributes }) => {
 		bodyBgColor,
 		bodyTextColor,
 		borderStyle,
-    borderColor,
-    borderWidth,borderRadius,container, background
+		borderColor,
+		borderWidth,
+		borderRadius,
+		container,
+		background,
 	} = attributes;
 
 	return (
@@ -165,19 +168,18 @@ const Inspector = ({ attributes, setAttributes }) => {
 					onChange={(value) => setAttributes({ borderRadius: value })}
 				/>
 			</PanelBody>
-      <PanelBody title="Section Settings">
-          
-          <SelectControl
-              label="Container"
-              value={container}
-              options={[
-                  { label: 'Container', value: 'container' },
-                  { label: 'Fluid', value: 'container-fluid' },
-              ]}
-              onChange={(value) => setAttributes({ container: value })}
-          />
+			<PanelBody title="Section Settings">
+				<SelectControl
+					label="Container"
+					value={container}
+					options={[
+						{ label: 'Container', value: 'container' },
+						{ label: 'Fluid', value: 'container-fluid' },
+					]}
+					onChange={(value) => setAttributes({ container: value })}
+				/>
 
-          {/* <SelectControl
+				{/* <SelectControl
               label="Padding"
               value={paddingY}
               options={[
@@ -188,19 +190,17 @@ const Inspector = ({ attributes, setAttributes }) => {
               onChange={(value) => setAttributes({ paddingY: value })}
           /> */}
 
-          <SelectControl
-              label="Background"
-              value={background}
-              options={[
-                  { label: 'None', value: '' },
-                  { label: 'Light', value: 'bg-light' },
-                  { label: 'Dark', value: 'bg-dark text-white' },
-              ]}
-              onChange={(value) => setAttributes({ background: value })}
-          />
-
-      </PanelBody>
-      
+				<SelectControl
+					label="Background"
+					value={background}
+					options={[
+						{ label: 'None', value: '' },
+						{ label: 'Light', value: 'bg-light' },
+						{ label: 'Dark', value: 'bg-dark text-white' },
+					]}
+					onChange={(value) => setAttributes({ background: value })}
+				/>
+			</PanelBody>
 		</InspectorControls>
 	);
 };

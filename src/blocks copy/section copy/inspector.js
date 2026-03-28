@@ -13,7 +13,7 @@ import {
 	TextareaControl,
 	ToggleControl,
 	SelectControl,
-  BaseControl
+	BaseControl,
 } from '@wordpress/components';
 
 /**
@@ -30,8 +30,9 @@ const Inspector = ({ attributes, setAttributes }) => {
 		bodyBgColor,
 		bodyTextColor,
 		borderStyle,
-    borderColor,
-    borderWidth,borderRadius
+		borderColor,
+		borderWidth,
+		borderRadius,
 	} = attributes;
 
 	return (

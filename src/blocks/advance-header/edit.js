@@ -18,7 +18,6 @@ import {
 	BlockControls,
 	BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
-import classnames from 'classnames';
 import {
 	Toolbar,
 	ToolbarDropdownMenu,
@@ -59,6 +58,8 @@ export default function Edit({ attributes, setAttributes }) {
 		{ label: 'H6', value: 'h6' },
 	];
 
+  const highContrastClass = ( attributes.highContrast == true ) ? 'highContrast' : ''; 
+
 	return (
 		<div {...useBlockProps()}>
 			<BlockControls key="custom-controls">
@@ -83,12 +84,10 @@ export default function Edit({ attributes, setAttributes }) {
 			<RichText
 				{...useBlockProps()}
 				tagName={attributes.header}
-				placeholder={__('Add your custom content', 'jsforwpblocks')}
+				placeholder={__('Add your custom content', 'blockwriter')}
 				onChange={onChangeContent}
 				value={attributes.content}
-				className={classnames('content-body', {
-					'high-contrast': attributes.highContrast,
-				})}
+				className={`content-body ${highContrastClass}` }
 				style={{ textAlign: attributes.alignment }}
 			/>
 		</div>
