@@ -1,0 +1,15 @@
+/* Target the block editor container */
+.editor-styles-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* For a smaller viewport */
+@media (max-width: 768px) {
+    .editor-styles-wrapper {
+        max-width: 100%;
+        padding: 10px;
+    }
+}

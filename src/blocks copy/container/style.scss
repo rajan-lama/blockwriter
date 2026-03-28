@@ -1,0 +1,58 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-block-development-examples-block-static-rendering-b16608 {
+	background-color: #21759b;
+	color: #fff;
+	padding: 2px;
+}
+
+.accordion-title {
+	display: flex;
+	justify-content: space-between;
+	background: #cdcd;
+	padding: 5px;
+	border: 1px solid #cdcdcd;
+	box-shadow: 0 0 5px #cdcdcd;
+}
+
+.accordion-content {
+	border: 1px solid #cdcdcd;
+	padding: 15px;
+}
+
+.gs-container {
+	z-index: var(--gs-zindex);
+
+	&.full-width {
+		width: 100%;
+		max-width: unset;
+	}
+
+	&.boxed {
+		width: 1170px;
+		margin: auto;
+	}
+}
+
+.gs-sticky {
+	position: sticky;
+
+	&.top {
+		top: var(--gs-sticky-offset);
+	}
+
+	&.bottom {
+		bottom: var(--gs-sticky-offset);
+	}
+}
+
+.gs-hide-desktop,
+.gs-hide-tablet,
+.gs-hide-mobile {
+	display: none;
+}

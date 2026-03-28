@@ -1,0 +1,141 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-block-development-examples-block-static-rendering-b16608 {
+	border: 1px dotted #f00;
+}
+
+.wp-block-gutenstar-container {
+	border: 1px solid #1695ef;
+	outline: 1px solid #333;
+	outline-offset: -10px;
+	padding: 15px;
+}
+
+.gs-tab-panel .components-button.is-primary {
+	background: #fff;
+	color: #313131;
+	border: 1px solid #313131;
+}
+
+.components-button-group {
+	width: 100%;
+	display: flex;
+	// justify-content: center;
+}
+
+.gs-container {
+	.full-width {
+		width: 100%;
+		max-width: unset;
+	}
+
+	.boxed {
+		width: 1170px;
+		margin: auto;
+	}
+}
+
+/** custom csss */
+
+.gs-title-button-units-holder {
+	margin: 20px 0;
+	display: flex;
+
+	.gs-title-button-units-section {
+		display: flex;
+		justify-content: space-between;
+
+		.components-button-group {
+			justify-content: end;
+		}
+	}
+
+	.components-button-group {
+		flex: 1;
+		justify-content: end;
+	}
+
+	.components-button.has-icon {
+		padding: 0px;
+		min-width: 10px;
+		height: 24px;
+		text-decoration: none;
+	}
+}
+
+.gs-title-button-units {
+	margin-top: 2px;
+}
+
+.components-base-control.components-toggle-control .components-base-control__field .components-flex {
+	flex-direction: row-reverse;
+}
+
+.gs-title-button-units-tab-panel {
+
+	.gs-title-button-units-section {
+		display: flex;
+
+		.components-button-group {
+			justify-content: end;
+		}
+	}
+
+}
+
+.gs-title-button-units-tab-panel {
+	margin-bottom: 20px;
+}
+
+.components-select-control .components-input-control__container select.components-select-control__input {
+	border: 2px solid #000000;
+}
+
+.gs-title-button-units-section {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	.components-button-group {
+		justify-content: right;
+	}
+}
+
+.image-select-button {
+	width: 100%;
+	height: 120px;
+
+	span.dashicon.dashicons {
+		display: block;
+		/* text-align: center; */
+		margin: auto;
+		padding: 45px 0;
+		width: 100%;
+	}
+}
+
+
+.gs-dimension-control-value {
+	display: flex;
+	text-align: center;
+}
+
+.gs-dimension-control {
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.block-editor-block-card {
+	background: #c8ffe1;
+}
+
+.gs-tab-panel {
+	background: #75ffb4;
+
+	button.components-button.active-tab:after {
+		border-bottom: 7px solid #01a54c;
+	}
+}

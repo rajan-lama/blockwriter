@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/section",
+	"version": "0.1.0",
+	"title": "Section",
+	"category": "blockwriter",
+	"icon": "align-wide",
+	"example": {},
+	"description": "Section block for blockwriter.",
+	"keywords": ["section", "container"],
+	"supports": {
+		"html": true
+	},
+	"attributes": {
+		"device": {
+			"type": "string",
+			"default": "desktop"
+		},
+		"textAlignment": {
+			"type": "string"
+		},
+		"blockAlignment": {
+			"type": "string",
+			"default": "wide"
+		},
+		"hasFixedBackground": {
+			"type": "boolean"
+		},
+		"blendMode": {
+			"type": "string",
+			"default": "normal"
+		},
+		"backgroundType": {
+			"type": "string",
+			"default": "color"
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
