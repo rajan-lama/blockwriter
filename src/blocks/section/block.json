@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "blockwriter/section",
 	"version": "0.1.0",
-	"title": "Section",
+	"title": "BW Section",
 	"category": "blockwriter",
 	"icon": "layout",
 	"description": "Bootstrap-like section block",
@@ -83,22 +83,58 @@
 			"type": "object",
 			"default": {
 				"desktop": {
-					"top": { "value": 0, "unit": "px" },
-					"right": { "value": 15, "unit": "px" },
-					"bottom": { "value": 0, "unit": "px" },
-					"left": { "value": 15, "unit": "px" }
+					"top": {
+						"value": 0,
+						"unit": "px"
+					},
+					"right": {
+						"value": 15,
+						"unit": "px"
+					},
+					"bottom": {
+						"value": 0,
+						"unit": "px"
+					},
+					"left": {
+						"value": 15,
+						"unit": "px"
+					}
 				},
 				"tablet": {
-					"top": { "value": 0, "unit": "px" },
-					"right": { "value": 15, "unit": "px" },
-					"bottom": { "value": 0, "unit": "px" },
-					"left": { "value": 15, "unit": "px" }
+					"top": {
+						"value": 0,
+						"unit": "px"
+					},
+					"right": {
+						"value": 15,
+						"unit": "px"
+					},
+					"bottom": {
+						"value": 0,
+						"unit": "px"
+					},
+					"left": {
+						"value": 15,
+						"unit": "px"
+					}
 				},
 				"mobile": {
-					"top": { "value": 0, "unit": "px" },
-					"right": { "value": 15, "unit": "px" },
-					"bottom": { "value": 0, "unit": "px" },
-					"left": { "value": 15, "unit": "px" }
+					"top": {
+						"value": 0,
+						"unit": "px"
+					},
+					"right": {
+						"value": 15,
+						"unit": "px"
+					},
+					"bottom": {
+						"value": 0,
+						"unit": "px"
+					},
+					"left": {
+						"value": 15,
+						"unit": "px"
+					}
 				}
 			}
 		}

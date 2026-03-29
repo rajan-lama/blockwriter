@@ -1,27 +1,43 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
+import {
+	useBlockProps,
+	InspectorControls,
+	InnerBlocks,
+} from '@wordpress/block-editor';
 
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
+import './editor.scss';
+
 export default function Edit({ attributes, setAttributes }) {
-	console.log(attributes);
-	return <p {...useBlockProps()}>hello world</p>;
+	const { colMd } = attributes;
+
+	const blockProps = useBlockProps({
+		className: `${colMd}`,
+	});
+
+	return (
+		<>
+			<InspectorControls>
+				<PanelBody title="Column Settings">
+					<SelectControl
+						label="Width (Desktop)"
+						value={colMd}
+						options={[
+							{ label: '100%', value: 'col-md-12' },
+							{ label: '75%', value: 'col-md-9' },
+							{ label: '66%', value: 'col-md-8' },
+							{ label: '50%', value: 'col-md-6' },
+							{ label: '33%', value: 'col-md-4' },
+							{ label: '25%', value: 'col-md-3' },
+						]}
+						onChange={(value) => setAttributes({ colMd: value })}
+					/>
+				</PanelBody>
+			</InspectorControls>
+
+			<div {...blockProps}>
+				<InnerBlocks />
+			</div>
+		</>
+	);
 }

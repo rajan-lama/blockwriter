@@ -25,7 +25,7 @@ const Inspector = ({ attributes, setAttributes }) => {
 		// paddingY,
 		borderStyle,
 		// border,
-		margin,
+		customMargin,
 	} = attributes;
 
 	const colors = [{ name: 'Blue 20', color: '#72aee6' }];

@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "blockwriter/columns",
 	"version": "0.1.0",
-	"title": "Columns",
+	"title": "BW Columns",
 	"category": "blockwriter",
 	"icon": "columns",
 	"description": "Bootstrap-like column block",
@@ -98,26 +98,62 @@
 		"border": {
 			"type": "array"
 		},
-		"margin": {
+		"customMargin": {
 			"type": "object",
 			"default": {
 				"desktop": {
-					"top": { "value": 0, "unit": "px" },
-					"right": { "value": 15, "unit": "px" },
-					"bottom": { "value": 0, "unit": "px" },
-					"left": { "value": 15, "unit": "px" }
+					"top": {
+						"value": 0,
+						"unit": "px"
+					},
+					"right": {
+						"value": 15,
+						"unit": "px"
+					},
+					"bottom": {
+						"value": 0,
+						"unit": "px"
+					},
+					"left": {
+						"value": 15,
+						"unit": "px"
+					}
 				},
 				"tablet": {
-					"top": { "value": 0, "unit": "px" },
-					"right": { "value": 15, "unit": "px" },
-					"bottom": { "value": 0, "unit": "px" },
-					"left": { "value": 15, "unit": "px" }
+					"top": {
+						"value": 0,
+						"unit": "px"
+					},
+					"right": {
+						"value": 15,
+						"unit": "px"
+					},
+					"bottom": {
+						"value": 0,
+						"unit": "px"
+					},
+					"left": {
+						"value": 15,
+						"unit": "px"
+					}
 				},
 				"mobile": {
-					"top": { "value": 0, "unit": "px" },
-					"right": { "value": 15, "unit": "px" },
-					"bottom": { "value": 0, "unit": "px" },
-					"left": { "value": 15, "unit": "px" }
+					"top": {
+						"value": 0,
+						"unit": "px"
+					},
+					"right": {
+						"value": 15,
+						"unit": "px"
+					},
+					"bottom": {
+						"value": 0,
+						"unit": "px"
+					},
+					"left": {
+						"value": 15,
+						"unit": "px"
+					}
 				}
 			}
 		}

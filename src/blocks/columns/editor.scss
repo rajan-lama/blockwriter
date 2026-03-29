@@ -24,3 +24,22 @@
 //     height: 18px;
 //     padding: 2px 4px;
 //   }
+
+// Fix for Bootstrap row > col layout in Gutenberg Editor
+.wp-block-blockwriter-columns {
+    .row {
+        width: 100%;
+
+        .block-editor-inner-blocks {
+            width: 100%;
+
+            >.block-editor-block-list__layout {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: -15px;
+                margin-right: -15px;
+                width: calc(100% + 30px);
+            }
+        }
+    }
+}

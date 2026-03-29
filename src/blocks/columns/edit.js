@@ -1,77 +1,26 @@
 import { useEffect } from '@wordpress/element';
-import { useDispatch } from '@wordpress/data';
-
+import { useSelect, useDispatch } from '@wordpress/data';
+import { createBlock } from '@wordpress/blocks';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
 import Inspector from './inspector';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes, setAttributes, clientId }) {
 	const { layout, paddingY, background } = attributes;
 
 	const blockProps = useBlockProps({
 		className: `${paddingY} ${background}`,
 	});
 
-	// const columns = ( layout ) => {
-	//   switch( layout ){
-	//     case "layout-one":
-	//       return ["12"];
-	//       break;
-	//     case "layout-two":
-	//       return ["6", "6"];
-	//       break;
-	//     case "layout-three":
-	//       return ["4", "4", "4"];
-	//       break;
-	//     case "layout-four":
-	//       return ["3","3","3","3"];
-	//       break;
-	//     case "layout-five":
-	//       return ["2","2","2","2"];
-	//       break;
-	//     case "layout-six":
-	//       return ["2","2","2","2","2","2"];
-	//       break;
-	//     case "layout-eight-four":
-	//       return ["8","4"];
-	//       break;
-	//     case "layout-four-eight":
-	//       return ["4","8"];
-	//       break;
-	//     case "layout-nine-three":
-	//       return ["9","3"];
-	//       break;
-	//     case "layout-three-nine":
-	//       return ["3","9"];
-	//       break;
-	//     case "layout-five-seven":
-	//       return ["5","7"];
-	//       break;
-	//     case "layout-seven-five":
-	//       return ["7","5"];
-	//       break;
-	//   }
-	// }
+	// Get current inner blocks
+	const innerBlocks = useSelect(
+		(select) => select('core/block-editor').getBlocks(clientId),
+		[clientId]
+	);
 
-	// const { replaceInnerBlocks } = useDispatch('core/block-editor');
-
-	// useEffect(() => {
-	// 	const newBlocks = getColumns(layout).map((colClass) =>
-	// 		wp.blocks.createBlock('rithemes/column', { colMd: colClass })
-	// 	);
-
-	// 	replaceInnerBlocks(clientId, newBlocks);
-	// }, [layout]);
+	const { replaceInnerBlocks, updateBlockAttributes } =
+		useDispatch('core/block-editor');
 
 	const getColumns = (layout) => {
 		switch (layout) {
@@ -136,21 +85,61 @@ export default function Edit({ attributes, setAttributes }) {
 		}
 	};
 
+	useEffect(() => {
+		if (!innerBlocks || innerBlocks.length === 0) return;
+
+		const newLayoutClasses = getColumns(layout);
+		let updatedBlocks = [...innerBlocks];
+		let needsUpdate = false;
+
+		// If we need MORE columns than we currently have, add empty ones
+		if (newLayoutClasses.length > updatedBlocks.length) {
+			const blocksToAdd = newLayoutClasses
+				.slice(updatedBlocks.length)
+				.map((colClass) =>
+					createBlock('blockwriter/column', { colMd: colClass })
+				);
+			updatedBlocks = [...updatedBlocks, ...blocksToAdd];
+			needsUpdate = true;
+		}
+		// If we need FEWER columns, remove the extra ones from the end
+		else if (newLayoutClasses.length < updatedBlocks.length) {
+			updatedBlocks = updatedBlocks.slice(0, newLayoutClasses.length);
+			needsUpdate = true;
+		}
+
+		// Only replace if the column count actually changed
+		if (needsUpdate) {
+			replaceInnerBlocks(clientId, updatedBlocks);
+		}
+
+		// Update the colMd attribute safely via dispatcher
+		updatedBlocks.forEach((block, index) => {
+			if (block.attributes.colMd !== newLayoutClasses[index]) {
+				updateBlockAttributes(block.clientId, {
+					colMd: newLayoutClasses[index],
+				});
+			}
+		});
+	}, [layout, clientId]); // Run this effect whenever `layout` changes
+
+	// The initial template (only used on first insertion)
 	const TEMPLATE = getColumns(layout).map((colClass) => [
 		'blockwriter/column',
 		{ colMd: colClass },
 	]);
 
-	console.log('TEMPLATE', TEMPLATE);
-
 	return (
 		<>
 			<Inspector attributes={attributes} setAttributes={setAttributes} />
-
 			<div {...blockProps}>
-				<Row>
-					<InnerBlocks template={TEMPLATE} templateLock="all" />
-				</Row>
+				{/* Use a simple div instead of react-bootstrap's Row for safety */}
+				<div className="row">
+					<InnerBlocks
+						template={TEMPLATE}
+						// templateLock="all"
+					/>
+				</div>
 			</div>
 		</>
 	);

@@ -62,7 +62,7 @@ export default function Edit({ attributes, setAttributes }) {
 		attributes.highContrast == true ? 'highContrast' : '';
 
 	return (
-		<div {...useBlockProps()}>
+		<>
 			<BlockControls key="custom-controls">
 				<AlignmentToolbar
 					value={attributes.alignment}
@@ -83,14 +83,15 @@ export default function Edit({ attributes, setAttributes }) {
 				</Toolbar>
 			</BlockControls>
 			<RichText
-				{...useBlockProps()}
+				{...useBlockProps({
+					className: `content-body ${highContrastClass}`,
+					style: { textAlign: attributes.alignment },
+				})}
 				tagName={attributes.header}
 				placeholder={__('Add your custom content', 'blockwriter')}
 				onChange={onChangeContent}
 				value={attributes.content}
-				className={`content-body ${highContrastClass}`}
-				style={{ textAlign: attributes.alignment }}
 			/>
-		</div>
+		</>
 	);
 }

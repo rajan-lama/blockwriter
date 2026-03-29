@@ -3,7 +3,7 @@
 	"apiVersion": 3,
 	"name": "blockwriter/advance-header",
 	"version": "0.1.0",
-	"title": "⭐️ Advance Header",
+	"title": "BW Advance Header",
 	"category": "blockwriter",
 	"icon": "heading",
 	"description": "Stylish header with advaance options.",
