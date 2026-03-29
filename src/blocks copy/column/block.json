@@ -16,7 +16,7 @@
 	"attributes": {
 		"colMd": {
 			"type": "string",
-			"default": "col-12"
+			"default": "col-6"
 		}
 	},
 	"textdomain": "blockwriter",

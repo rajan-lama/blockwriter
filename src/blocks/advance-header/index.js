@@ -18,9 +18,7 @@ import './style.scss';
  * Internal dependencies
  */
 import Edit from './edit';
-// import save from './save';
 import metadata from './block.json';
-import save from './save';
 
 // const calendarIcon = (
 // 	<svg
@@ -45,7 +43,7 @@ registerBlockType(metadata.name, {
 	 */
 	edit: Edit,
 
-	save: save,
+	// save: save,
 
 	getEditWrapperProps(attributes) {
 		const { blockAlignment } = attributes;

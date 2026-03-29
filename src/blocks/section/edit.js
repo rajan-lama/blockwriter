@@ -16,20 +16,22 @@ import Inspector from './inspector';
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { container, paddingY, background } = attributes;
+	const { tagType, container, paddingY, background } = attributes;
 
 	const blockProps = useBlockProps({
 		className: `${paddingY} ${background}`,
 	});
 
+	const Tag = tagType;
+
 	return (
 		<>
 			<Inspector attributes={attributes} setAttributes={setAttributes} />
-			<section {...blockProps}>
+			<Tag {...blockProps}>
 				<div className={container}>
 					<InnerBlocks />
 				</div>
-			</section>
+			</Tag>
 		</>
 	);
 }

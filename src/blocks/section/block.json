@@ -37,7 +37,7 @@
 	"attributes": {
 		"tagType": {
 			"type": "string",
-			"default": ""
+			"default": "section"
 		},
 		"container": {
 			"type": "string",

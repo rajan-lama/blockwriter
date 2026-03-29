@@ -19,7 +19,7 @@ export default function Edit({ attributes, setAttributes }) {
 		<>
 			<InspectorControls>
 				<PanelBody title="Column Settings">
-					{/* <SelectControl
+					<SelectControl
 						label="Width (Desktop)"
 						value={colMd}
 						options={[
@@ -31,7 +31,7 @@ export default function Edit({ attributes, setAttributes }) {
 							{ label: '25%', value: 'col-3' },
 						]}
 						onChange={(value) => setAttributes({ colMd: value })}
-					/> */}
+					/>
 				</PanelBody>
 			</InspectorControls>
 
