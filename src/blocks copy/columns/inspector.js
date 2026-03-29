@@ -16,6 +16,7 @@ import {
 
 const Inspector = ({ attributes, setAttributes }) => {
 	const {
+		layout,
 		container,
 		background,
 		backgroundColor,
@@ -48,20 +49,25 @@ const Inspector = ({ attributes, setAttributes }) => {
 	const [border, setBorder] = useState();
 	return (
 		<InspectorControls>
-			<PanelBody title="Section Settings">
+			<PanelBody title="Column Layout Settings">
 				<SelectControl
 					label="Selector"
-					value={tagType}
+					value={layout}
 					options={[
-						{ label: 'Section', value: 'section' },
-						{ label: 'Div', value: 'div' },
-						{ label: 'Aside', value: 'aside' },
-						{ label: 'Main', value: 'main' },
-						{ label: 'Article', value: 'article' },
-						{ label: 'Header', value: 'header' },
-						{ label: 'Footer', value: 'footer' },
+						{ label: 'One Column', value: 'layout-one' },
+						{ label: 'Two Column', value: 'layout-two' },
+						{ label: 'Three Colum', value: 'layout-three' },
+						{ label: 'Four Column', value: 'layout-four' },
+						{ label: 'Five Column', value: 'layout-five' },
+						{ label: 'Six Column', value: 'layout-six' },
+						{ label: '1/8 + 1/4', value: 'layout-eight-four' },
+						{ label: '1/4 + 1/8', value: 'layout-four-eight' },
+						{ label: '1/9 + 1/3', value: 'layout-nine-three' },
+						{ label: '1/3 + 1/9', value: 'layout-three-nine' },
+						{ label: '1/7 + 1/5', value: 'layout-five-seven' },
+						{ label: '1/5 + 1/7', value: 'layout-five-seven' },
 					]}
-					onChange={(value) => setAttributes({ tagType: value })}
+					onChange={(value) => setAttributes({ layout: value })}
 				/>
 
 				<SelectControl

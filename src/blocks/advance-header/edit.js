@@ -58,7 +58,8 @@ export default function Edit({ attributes, setAttributes }) {
 		{ label: 'H6', value: 'h6' },
 	];
 
-  const highContrastClass = ( attributes.highContrast == true ) ? 'highContrast' : ''; 
+	const highContrastClass =
+		attributes.highContrast == true ? 'highContrast' : '';
 
 	return (
 		<div {...useBlockProps()}>
@@ -87,7 +88,7 @@ export default function Edit({ attributes, setAttributes }) {
 				placeholder={__('Add your custom content', 'blockwriter')}
 				onChange={onChangeContent}
 				value={attributes.content}
-				className={`content-body ${highContrastClass}` }
+				className={`content-body ${highContrastClass}`}
 				style={{ textAlign: attributes.alignment }}
 			/>
 		</div>

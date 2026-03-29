@@ -1,0 +1,245 @@
+/**
+ * Internal block libraries
+ */
+import { useState } from 'react';
+import { __ } from '@wordpress/i18n';
+import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
+import {
+	CheckboxControl,
+	PanelBody,
+	PanelRow,
+	RadioControl,
+	RangeControl,
+	TextControl,
+	TextareaControl,
+	ToggleControl,
+	SelectControl,
+	BaseControl,
+	BorderBoxControl,
+	BorderControl,
+} from '@wordpress/components';
+
+/**
+ * Create an Inspector Controls wrapper Component
+ */
+
+const Inspector = ({ attributes, setAttributes }) => {
+	const {
+		marginBottom,
+		headerIcon,
+		headerBgColor,
+		headerTextColor,
+		headerIconColor,
+		bodyBgColor,
+		bodyTextColor,
+		borderStyle,
+		borderColor,
+		borderWidth,
+		borderRadius,
+		container,
+		background,
+	} = attributes;
+
+	const colors = [
+		{ name: 'Blue 20', color: '#72aee6' },
+		// ...
+	];
+
+	const defaultBorder = {
+		color: '#72aee6',
+		style: 'dashed',
+		width: '1px',
+	};
+	const [borders, setBorders] = useState({
+		top: defaultBorder,
+		right: defaultBorder,
+		bottom: defaultBorder,
+		left: defaultBorder,
+	});
+	const onChange = (newBorders) => setBorders(newBorders);
+
+	const [border, setBorder] = useState();
+	return (
+		<InspectorControls>
+			<PanelBody title={__('Accordion Settings')}>
+				<BorderControl
+					__next40pxDefaultSize
+					colors={colors}
+					label={__('Border')}
+					onChange={setBorder}
+					value={border}
+				/>
+
+				<BorderBoxControl
+					__next40pxDefaultSize
+					colors={colors}
+					label={__('Borders')}
+					onChange={onChange}
+					value={borders}
+				/>
+				<RangeControl
+					label={__('Bottom spacing')}
+					value={marginBottom}
+					help={__(
+						'Define space to next block. This will override Block spacing option (Frontend view only)'
+					)}
+					min={0}
+					max={50}
+					onChange={(value) => setAttributes({ marginBottom: value })}
+				/>
+			</PanelBody>
+
+			<PanelBody title={__('Header Settings')}>
+				{/* <BaseControl label={__('Header Icon Style')}>
+					<div className="ppb-icon-items-wrapper">
+						{Object.keys(HEADER_ICONS).map((key, index) => (
+							<div className="ppb-icon-item" key={index}>
+								<span
+									className={
+										key === headerIcon ? 'active' : ''
+									}
+									onClick={() =>
+										setAttributes({ headerIcon: key })
+									}
+								>
+									<svg
+										xmlns="http://www.w3.org/2000/svg"
+										width="24"
+										height="24"
+										viewBox="0 0 24 24"
+									>
+										{HEADER_ICONS[key]}
+									</svg>
+								</span>
+							</div>
+						))}
+					</div>
+				</BaseControl> */}
+
+				<PanelColorSettings
+					title={__('Color Settings')}
+					initialOpen={false}
+					colorSettings={[
+						{
+							label: __('Background Color'),
+							value: headerBgColor,
+							onChange: (value) =>
+								setAttributes({
+									headerBgColor:
+										value === undefined ? '#000' : value,
+								}),
+						},
+						{
+							label: __('Text Color'),
+							value: headerTextColor,
+							onChange: (value) =>
+								setAttributes({
+									headerTextColor:
+										value === undefined ? '#eee' : value,
+								}),
+						},
+						{
+							label: __('Icon Color'),
+							value: headerIconColor,
+							onChange: (value) =>
+								setAttributes({
+									headerIconColor:
+										value === undefined ? '#fff' : value,
+								}),
+						},
+					]}
+				/>
+			</PanelBody>
+			<PanelColorSettings
+				title={__('Body Color Settings')}
+				initialOpen={false}
+				colorSettings={[
+					{
+						label: __('Background Color'),
+						value: bodyBgColor,
+						onChange: (value) =>
+							setAttributes({ bodyBgColor: value }),
+					},
+					{
+						label: __('Text Color'),
+						value: bodyTextColor,
+						onChange: (value) =>
+							setAttributes({ bodyTextColor: value }),
+					},
+				]}
+			/>
+			<PanelBody title={__('Border Settings')} initialOpen={false}>
+				<SelectControl
+					label={__('Border Style')}
+					value={borderStyle}
+					options={[
+						{ label: __('Solid'), value: 'solid' },
+						{ label: __('Dashed'), value: 'dashed' },
+						{ label: __('Dotted'), value: 'dotted' },
+					]}
+					onChange={(value) => setAttributes({ borderStyle: value })}
+				/>
+				<PanelColorSettings
+					title={__('Color Settings')}
+					initialOpen={false}
+					colorSettings={[
+						{
+							label: __('Border Color'),
+							value: borderColor,
+							onChange: (value) =>
+								setAttributes({ borderColor: value }),
+						},
+					]}
+				/>
+				{/* <RangeControl
+					label={__('Border width')}
+					value={borderWidth}
+					min={0}
+					max={10}
+					onChange={(value) => setAttributes({ borderWidth: value })}
+				/>
+				<RangeControl
+					label={__('Border radius')}
+					value={borderRadius}
+					min={0}
+					max={100}
+					onChange={(value) => setAttributes({ borderRadius: value })}
+				/> */}
+			</PanelBody>
+			<PanelBody title="Section Settings">
+				<SelectControl
+					label="Container"
+					value={container}
+					options={[
+						{ label: 'Container', value: 'container' },
+						{ label: 'Fluid', value: 'container-fluid' },
+					]}
+					onChange={(value) => setAttributes({ container: value })}
+				/>
+
+				{/* <SelectControl
+              label="Padding"
+              value={paddingY}
+              options={[
+                  { label: 'Small', value: 'py-2' },
+                  { label: 'Medium', value: 'py-4' },
+                  { label: 'Large', value: 'py-5' },
+              ]}
+              onChange={(value) => setAttributes({ paddingY: value })}
+          /> */}
+
+				<SelectControl
+					label="Background"
+					value={background}
+					options={[
+						{ label: 'None', value: '' },
+						{ label: 'Light', value: 'bg-light' },
+						{ label: 'Dark', value: 'bg-dark text-white' },
+					]}
+					onChange={(value) => setAttributes({ background: value })}
+				/>
+			</PanelBody>
+		</InspectorControls>
+	);
+};
+export default Inspector;

@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/blocks/sample2/edit.js"
-/*!************************************!*\
-  !*** ./src/blocks/sample2/edit.js ***!
-  \************************************/
+/***/ "./src/blocks/column/edit.js"
+/*!***********************************!*\
+  !*** ./src/blocks/column/edit.js ***!
+  \***********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -55,10 +55,10 @@ function Edit({
 
 /***/ },
 
-/***/ "./src/blocks/sample2/save.js"
-/*!************************************!*\
-  !*** ./src/blocks/sample2/save.js ***!
-  \************************************/
+/***/ "./src/blocks/column/save.js"
+/*!***********************************!*\
+  !*** ./src/blocks/column/save.js ***!
+  \***********************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -136,13 +136,13 @@ module.exports = window["wp"]["i18n"];
 
 /***/ },
 
-/***/ "./src/blocks/sample2/block.json"
-/*!***************************************!*\
-  !*** ./src/blocks/sample2/block.json ***!
-  \***************************************/
+/***/ "./src/blocks/column/block.json"
+/*!**************************************!*\
+  !*** ./src/blocks/column/block.json ***!
+  \**************************************/
 (module) {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blockwriter/sample2","version":"0.1.0","title":"Sample Block 2","category":"blockwriter","icon":"smiley","description":"Sample block for blockwriter.","example":{},"keywords":["sample"],"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"attributes":{"toggle":{"type":"boolean","default":false},"header":{"type":"string","default":""},"headerBgColor":{"type":"string","default":"#000"},"headerTextColor":{"type":"string","default":"#eee"},"headerIcon":{"type":"string","default":"unfold"},"headerIconColor":{"type":"string","default":"#fff"},"bodyBgColor":{"type":"string"},"bodyTextColor":{"type":"string"},"borderStyle":{"type":"string","default":"solid"},"borderWidth":{"type":"number","default":0},"borderColor":{"type":"string"},"borderRadius":{"type":"number","default":2},"marginBottom":{"type":"number","default":15},"collapsedAll":{"type":"boolean","default":false},"changed":{"type":"boolean","default":false}},"textdomain":"blockwriter","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"blockwriter/column","version":"0.1.0","title":"Column Block","category":"blockwriter","icon":"smiley","description":"Sample block for blockwriter.","example":{},"keywords":["sample"],"supports":{"color":{"background":false,"text":true},"html":false,"typography":{"fontSize":true}},"attributes":{"colMd":{"type":"string","default":"col-md-6"}},"textdomain":"blockwriter","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","render":"file:./render.php"}');
 
 /***/ }
 
@@ -223,15 +223,15 @@ module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/tru
 var __webpack_exports__ = {};
 // This entry needs to be wrapped in an IIFE because it needs to be isolated against other modules in the chunk.
 (() => {
-/*!*************************************!*\
-  !*** ./src/blocks/sample2/index.js ***!
-  \*************************************/
+/*!************************************!*\
+  !*** ./src/blocks/column/index.js ***!
+  \************************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/blocks/sample2/edit.js");
-/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/blocks/sample2/save.js");
-/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/sample2/block.json");
+/* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit */ "./src/blocks/column/edit.js");
+/* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./save */ "./src/blocks/column/save.js");
+/* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./block.json */ "./src/blocks/column/block.json");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 /**
