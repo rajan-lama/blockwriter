@@ -97,8 +97,8 @@ class Blockwriter_Public {
 		 */
 
     // wp_register_script( 'my-blocks-editor', BLOCKWRITER_URL . 'build/index.js', [ 'wp-blocks', 'wp-element', 'wp-editor' ], BLOCKWRITER_VERSION );
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/blockwriter-public.js', array( 'jquery' ), $this->version, false );
-
+    wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ) . 'js/bootstrap/bootstrap..bundle.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name . '-public', plugin_dir_url( __FILE__ ) . 'js/blockwriter-public.js', array( 'jquery', 'bootstrap' ), $this->version, false );
 	}
 
 }

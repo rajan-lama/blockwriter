@@ -29,3 +29,20 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 })(jQuery);
+
+jQuery(function ($) {
+	if (
+		$('.carousel').length &&
+		typeof $('.carousel').carousel === 'function'
+	) {
+		$('.carousel').carousel({
+			interval: 2000,
+		});
+	} else {
+		console.warn(
+			'Carousel plugin not loaded or .carousel element missing.'
+		);
+	}
+
+	console.warn('Carousel plugin not loaded or .carousel element missing.');
+});

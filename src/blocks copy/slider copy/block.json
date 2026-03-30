@@ -1,0 +1,86 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/slider",
+	"version": "0.1.0",
+	"title": "BW Slider",
+	"category": "blockwriter",
+	"icon": "smiley",
+	"description": "Sample block for blockwriter.",
+	"example": {},
+	"keywords": ["sample"],
+	"supports": {
+		"color": {
+			"background": false,
+			"text": true
+		},
+		"html": false,
+		"typography": {
+			"fontSize": true
+		}
+	},
+	"attributes": {
+		"toggle": {
+			"type": "boolean",
+			"default": false
+		},
+		"header": {
+			"type": "string",
+			"default": ""
+		},
+		"headerBgColor": {
+			"type": "string",
+			"default": "#000"
+		},
+		"headerTextColor": {
+			"type": "string",
+			"default": "#eee"
+		},
+		"headerIcon": {
+			"type": "string",
+			"default": "unfold"
+		},
+		"headerIconColor": {
+			"type": "string",
+			"default": "#fff"
+		},
+		"bodyBgColor": {
+			"type": "string"
+		},
+		"bodyTextColor": {
+			"type": "string"
+		},
+		"borderStyle": {
+			"type": "string",
+			"default": "solid"
+		},
+		"borderWidth": {
+			"type": "number",
+			"default": 0
+		},
+		"borderColor": {
+			"type": "string"
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 2
+		},
+		"marginBottom": {
+			"type": "number",
+			"default": 15
+		},
+		"collapsedAll": {
+			"type": "boolean",
+			"default": false
+		},
+		"changed": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
