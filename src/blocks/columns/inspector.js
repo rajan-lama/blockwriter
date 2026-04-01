@@ -64,7 +64,7 @@ const Inspector = ({ attributes, setAttributes }) => {
             { label: '1/4 + 1/8', value: 'layout-four-eight' },
             { label: '1/9 + 1/3', value: 'layout-nine-three' },
             { label: '1/3 + 1/9', value: 'layout-three-nine' },
-            { label: '1/7 + 1/5', value: 'layout-five-seven' },
+            { label: '1/7 + 1/5', value: 'layout-seven-five' },
             { label: '1/5 + 1/7', value: 'layout-five-seven' },
           ]}
           onChange={(value) => setAttributes({ layout: value })}
