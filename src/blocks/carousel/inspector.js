@@ -190,12 +190,6 @@ const Inspector = ({ attributes, setAttributes }) => {
 					onChange={(val) => setAttributes({ showControls: val })}
 				/>
 
-				{/* <ToggleControl
-					label="Fade Effect"
-					checked={attributes.fade}
-					onChange={(val) => setAttributes({ fade: val })}
-				/> */}
-
 				<SelectControl
 					label="Transition Effect"
 					value={attributes.slideEffect}

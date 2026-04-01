@@ -1,5 +1,8 @@
 <?php
-var_dump($attributes);
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
 $slides = $attributes['slides'] ?? [];
 $showTitle = $attributes['showTitle'] ?? true;
 $showDescription = $attributes['showDescription'] ?? true;
@@ -9,12 +12,11 @@ $showSecondaryButtons = $attributes['showSecondaryButtons'] ?? false;
 $interval = $attributes['interval'] ?? 3000;
 $showIndicators = $attributes['showIndicators'] ?? true;
 $showControls = $attributes['showControls'] ?? true;
-$fade = $attributes['fade'] ?? false;
 $slideEffect = $attributes['slideEffect'] ?? 'slide';
 
 // Add fade class if enabled
 $carousel_class = 'carousel slide';
-if ($fade) {
+if ($slideEffect === 'fade') {
 	$carousel_class .= ' carousel-fade';
 }
 
@@ -30,19 +32,6 @@ $slider_id = 'slider-' . uniqid();
 	class="<?php echo esc_attr($carousel_class); ?>"
 	data-bs-ride="carousel"
 	data-bs-interval="<?php echo esc_attr($interval); ?>">
-
-	<?php if ($showIndicators && $slide_count > 0): ?>
-		<div class="carousel-indicators">
-			<?php for ($i = 0; $i < $slide_count; $i++): ?>
-				<button
-					type="button"
-					data-bs-target="#<?php echo esc_attr($slider_id); ?>"
-					data-bs-slide-to="<?php echo esc_attr($i); ?>"
-					class="<?php echo $i === 0 ? 'active' : ''; ?>">
-				</button>
-			<?php endfor; ?>
-		</div>
-	<?php endif; ?>
 
 	<div class="carousel-inner">
 		<?php foreach ($slides as $index => $slide){ ?>
@@ -85,4 +74,17 @@ $slider_id = 'slider-' . uniqid();
 		</button>
 	<?php endif; ?>
 
+
+	<?php if ($showIndicators && $slide_count > 0): ?>
+		<div class="carousel-indicators">
+			<?php for ($i = 0; $i < $slide_count; $i++): ?>
+				<button
+					type="button"
+					data-bs-target="#<?php echo esc_attr($slider_id); ?>"
+					data-bs-slide-to="<?php echo esc_attr($i); ?>"
+					class="<?php echo $i === 0 ? 'active' : ''; ?>">
+				</button>
+			<?php endfor; ?>
+		</div>
+	<?php endif; ?>
 </div>

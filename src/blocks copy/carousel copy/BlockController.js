@@ -38,7 +38,7 @@ import {
  */
 
 const BlockController = ({ attributes, setAttributes }) => {
-	const { header, alignment, headingOptions, previewMode } = attributes;
+	const { header, alignment, headingOptions, preview } = attributes;
 
 	const colors = [{ name: 'Blue 20', color: '#72aee6' }];
 
@@ -54,7 +54,7 @@ const BlockController = ({ attributes, setAttributes }) => {
 		left: defaultBorder,
 	});
 
-	console.log('BlockController Rendered', previewMode);
+	console.log('BlockController Rendered', preview);
 
 	return (
 		<BlockControls key="custom-controls">
@@ -85,9 +85,9 @@ const BlockController = ({ attributes, setAttributes }) => {
 
 			<Toolbar label="Options">
 				<ToolbarButton
-					icon={previewMode ? seen : unseen}
-					onClick={() => setAttributes({ previewMode: !previewMode })}
-					label={previewMode ? 'Table Mode' : 'Slider Mode'}
+					icon={preview ? seen : unseen}
+					onClick={() => setAttributes({ preview: !preview })}
+					label={preview ? 'Table Mode' : 'Slider Mode'}
 				/>
 			</Toolbar>
 		</BlockControls>

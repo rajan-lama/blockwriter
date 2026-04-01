@@ -1,4 +1,5 @@
 import { trash, table } from '@wordpress/icons';
+import ServerSideRender from '@wordpress/server-side-render';
 import {
 	InspectorControls,
 	MediaUpload,
@@ -36,29 +37,24 @@ export default function Edit({ attributes, setAttributes }) {
 
 	const blockProps = useBlockProps();
 
+	console.log('Edit Rendered', preview);
+
 	// 🔥 Preview Mode
 	if (preview) {
 		return (
 			<div {...blockProps}>
-				<Button icon={table} onClick={togglePreview}>
-					Table Mode
-				</Button>
-				<div className="carousel slide">
-					<div className="carousel-inner">
-						{slides.map((slide, index) => (
-							<div
-								key={index}
-								className={`carousel-item ${
-									index === 0 ? 'active' : ''
-								}`}
-							>
-								<h2>{slide.title}</h2>
-								<h4>{slide.subtitle}</h4>
-								<p>{slide.description}</p>
-							</div>
-						))}
-					</div>
-				</div>
+				<Inspector
+					attributes={attributes}
+					setAttributes={setAttributes}
+				/>
+				<BlockController
+					attributes={attributes}
+					setAttributes={setAttributes}
+				/>
+				<ServerSideRender
+					block="blockwriter/carousel"
+					attributes={attributes}
+				/>
 			</div>
 		);
 	}
@@ -76,7 +72,7 @@ export default function Edit({ attributes, setAttributes }) {
 					<tr>
 						<td width="40"></td>
 						<td width="80px">Slide Id</td>
-						<td> Slide Title</td>
+						<td>Slide Title</td>
 						<td width="40px"></td>
 					</tr>
 				</thead>

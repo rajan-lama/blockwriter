@@ -51,10 +51,6 @@
 			"type": "number",
 			"default": 0
 		},
-		"previewMode": {
-			"type": "boolean",
-			"default": false
-		},
 		"styles": {
 			"type": "object",
 			"default": {
@@ -102,10 +98,6 @@
 		"slideEffect": {
 			"type": "string",
 			"default": "slide"
-		},
-		"fade": {
-			"type": "boolean",
-			"default": false
 		}
 	},
 	"textdomain": "blockwriter",
