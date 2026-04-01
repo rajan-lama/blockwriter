@@ -1,6 +1,9 @@
 # BlockWriter
-A WordPress plugin a ultimate gutenberg block plugin.
-
+A WordPress plugin a ultimate gutenberg blocks.
 
 # Available Blocks
-* Container Block
+* BW Section Block
+* BW Columns Block
+* BW Carousel Block
+
+* BW Advance Header Block

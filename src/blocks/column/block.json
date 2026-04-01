@@ -11,7 +11,9 @@
   "parent": ["blockwriter/columns"],
   "keywords": ["column"],
   "supports": {
-    "html": false
+    "html": false,
+    "inserter": false,
+    "reusable": false
   },
   "attributes": {
     "colMd": {
@@ -22,6 +24,5 @@
   "textdomain": "blockwriter",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "render": "file:./render.php"
+  "style": "file:./style-index.css"
 }

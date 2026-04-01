@@ -43,8 +43,6 @@ registerBlockType(metadata.name, {
    */
   edit: Edit,
 
-  // save: save,
-
   getEditWrapperProps(attributes) {
     const { blockAlignment } = attributes;
     if (

@@ -1,14 +1,14 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "blockwriter/columns",
+  "name": "blockwriter/section",
   "version": "0.1.0",
-  "title": "BW Columns",
+  "title": "BW Section",
   "category": "blockwriter",
-  "icon": "columns",
-  "description": "Bootstrap-like column block",
+  "icon": "layout",
+  "description": "Bootstrap-like section block",
   "example": {},
-  "keywords": ["columns"],
+  "keywords": ["section"],
   "supports": {
     "background": {
       "backgroundImage": true,
@@ -35,28 +35,9 @@
     }
   },
   "attributes": {
-    "layout": {
-      "type": "string",
-      "default": "layout-one"
-    },
-    "width": {
-      "type": "string"
-    },
-    "contentAlign": {
-      "type": "string"
-    },
-    "textColor": {
-      "type": "string"
-    },
-    "customTextColor": {
-      "type": "string"
-    },
-    "verticalAlignment": {
-      "type": "string"
-    },
     "tagType": {
       "type": "string",
-      "default": ""
+      "default": "section"
     },
     "container": {
       "type": "string",
@@ -98,7 +79,7 @@
     "border": {
       "type": "array"
     },
-    "customMargin": {
+    "margin": {
       "type": "object",
       "default": {
         "desktop": {
@@ -161,6 +142,5 @@
   "textdomain": "blockwriter",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
-  "style": "file:./style-index.css",
-  "parent": ["blockwriter/section"]
+  "style": "file:./style-index.css"
 }

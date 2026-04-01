@@ -1,25 +1,25 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "blockwriter/advance-header",
+  "name": "blockwriter/accordian",
   "version": "0.1.0",
-  "title": "BW Advance Header",
+  "title": "⭐️ Accordian Block",
   "category": "blockwriter",
-  "icon": "heading",
-  "description": "Stylish header with advaance options.",
+  "icon": "smiley",
+  "description": "Accodian block for blockwriter.",
   "example": {},
-  "keywords": ["header"],
+  "keywords": ["accordian"],
   "supports": {
     "html": true
   },
   "attributes": {
+    "toggle": {
+      "type": "boolean",
+      "default": false
+    },
     "header": {
       "type": "string",
-      "default": "h1"
-    },
-    "message": {
-      "type": "string",
-      "default": "Heading"
+      "default": ""
     },
     "headerBgColor": {
       "type": "string",
@@ -62,22 +62,18 @@
       "type": "number",
       "default": 15
     },
+    "collapsedAll": {
+      "type": "boolean",
+      "default": false
+    },
     "changed": {
       "type": "boolean",
       "default": false
-    },
-    "blockAlignment": {
-      "type": "string",
-      "default": false
-    },
-    "highContrast": {
-      "type": "boolean",
-      "default": "false"
     }
   },
   "textdomain": "blockwriter",
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "render": "file:./render.php"
+  "viewScript": "file:./view.js"
 }

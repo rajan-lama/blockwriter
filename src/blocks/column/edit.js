@@ -1,46 +1,27 @@
-import {
-  useBlockProps,
-  InspectorControls,
-  InnerBlocks,
-} from '@wordpress/block-editor';
-
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 import './editor.scss';
 
-export default function Edit({ attributes, setAttributes }) {
+export default function Edit({ attributes }) {
   const { colMd } = attributes;
 
   const blockProps = useBlockProps({
-    className: `${colMd}`,
+    className: colMd || '',
   });
 
   return (
-    <>
-      <InspectorControls>
-        <PanelBody title="Column Settings">
-          {/* <SelectControl
-						label="Width (Desktop)"
-						value={colMd}
-						options={[
-							{ label: '100%', value: 'col-12' },
-							{ label: '75%', value: 'col-9' },
-							{ label: '66%', value: 'col-8' },
-							{ label: '50%', value: 'col-6' },
-							{ label: '33%', value: 'col-4' },
-							{ label: '25%', value: 'col-3' },
-						]}
-						onChange={(value) => setAttributes({ colMd: value })}
-					/> */}
-        </PanelBody>
-      </InspectorControls>
-
-      <div {...blockProps}>
-        <InnerBlocks
-          template={['core/paragraph']}
-          // templateLock="all"
-        />
-      </div>
-    </>
+    <div {...blockProps}>
+      <InnerBlocks
+        template={[['core/paragraph', { placeholder: 'Add content...' }]]}
+        templateLock={false}
+        // allowedBlocks={[
+        //   'core/paragraph',
+        //   'core/heading',
+        //   'core/image',
+        //   'core/buttons',
+        //   'core/list',
+        // ]}
+      />
+    </div>
   );
 }

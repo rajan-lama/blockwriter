@@ -76,16 +76,14 @@ $columns = get_columns($layout);
 ?>
 
 <div class="<?php echo esc_attr($paddingY . ' ' . $background); ?>">
-    <div class="row">
-        <?php foreach ($columns as $col) : ?>
-            <div class="col-<?php echo esc_attr($col); ?>">
-                <?php
-                // Render inner blocks if exist
-                if (!empty($content)) {
-                    echo $content;
-                }
-                ?>
-            </div>
-        <?php endforeach; ?>
-    </div>
+  <?php foreach ($columns as $col) : ?>
+      <div class="col-<?php echo esc_attr($col); ?>">
+          <?php
+          // Render inner blocks if exist
+          if (!empty($content)) {
+              echo $content;
+          }
+          ?>
+      </div>
+  <?php endforeach; ?>
 </div>
