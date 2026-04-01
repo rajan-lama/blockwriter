@@ -30,13 +30,15 @@
   padding: 0;
   position: relative; 
   
-  .container, container-fluid
+  .container, .container-fluid
   { 
     margin: 0;
     padding: 0;
   }
+
   .row, .row>*{
     padding: 0;
+    margin: 0;
   }
 }
 
