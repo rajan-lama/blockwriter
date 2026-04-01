@@ -16,64 +16,62 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
  */
 const save = ({ attributes }) => {
-	const containerStickyClass = attributes.sticky
-		? ' gs-sticky ' + attributes.stickyPosition
-		: '';
+  const containerStickyClass = attributes.sticky
+    ? ' gs-sticky ' + attributes.stickyPosition
+    : '';
 
-	const containerHideOnDesktop = attributes.hideOnDesktop
-		? ' gs-hide-desktop'
-		: '';
+  const containerHideOnDesktop = attributes.hideOnDesktop
+    ? ' gs-hide-desktop'
+    : '';
 
-	const containerHideOnTablet = attributes.hideOnTablet
-		? ' gs-hide-tablet'
-		: '';
+  const containerHideOnTablet = attributes.hideOnTablet
+    ? ' gs-hide-tablet'
+    : '';
 
-	const containerHideOnMobile = attributes.hideOnMobile
-		? ' gs-hide-mobile'
-		: '';
+  const containerHideOnMobile = attributes.hideOnMobile
+    ? ' gs-hide-mobile'
+    : '';
 
-	const containerAnimationClass =
-		attributes.animation !== 'none'
-			? ' gs-container-animation animate__animated animate__' +
-				attributes.animation +
-				' animate__' +
-				attributes.animationDuration
-			: '';
+  const containerAnimationClass =
+    attributes.animation !== 'none'
+      ? ' gs-container-animation animate__animated animate__' +
+        attributes.animation +
+        ' animate__' +
+        attributes.animationDuration
+      : '';
 
-	const containerClass = !attributes.hasParent
-		? attributes.containerType
-		: '';
+  const containerClass = !attributes.hasParent ? attributes.containerType : '';
 
-	const containerClassList =
-		containerClass +
-		containerAnimationClass +
-		containerStickyClass +
-		containerHideOnDesktop +
-		containerHideOnTablet +
-		containerHideOnMobile;
+  const containerClassList =
+    containerClass +
+    containerAnimationClass +
+    containerStickyClass +
+    containerHideOnDesktop +
+    containerHideOnTablet +
+    containerHideOnMobile;
 
-	const contentClass = !attributes.hasParent
-		? 'gs-container ' + attributes.contentType
-		: '';
+  const contentClass = !attributes.hasParent
+    ? 'gs-container ' + attributes.contentType
+    : '';
 
-	const blockProps = useBlockProps.save({
-		className: containerClassList,
-	});
+  const blockProps = useBlockProps.save({
+    className: containerClassList,
+  });
 
-	const TagName = attributes.htmlTag;
+  const TagName = attributes.htmlTag;
 
-	return (
-		<TagName
-			{...blockProps}
-			style={{
-				'--gs-sticky-offset': attributes.stickyOffsetValue,
-				'--gs-zindex': attributes.zindex,
-			}}
-		>
-			<div className={contentClass}>
-				<InnerBlocks.Content />
-			</div>
-		</TagName>
-	);
+  return (
+    <TagName
+      {...blockProps}
+      style={{
+        '--gs-sticky-offset': attributes.stickyOffsetValue,
+        '--gs-zindex': attributes.zindex,
+      }}
+    >
+      <div className={contentClass}>
+        <InnerBlocks.Content />
+      </div>
+    </TagName>
+  );
 };
 export default save;

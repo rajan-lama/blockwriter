@@ -38,20 +38,20 @@ import metadata from './block.json';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType(metadata.name, {
-	// icon: calendarIcon,
-	/**
-	 * @see ./edit.js
-	 */
-	edit: Edit,
+  // icon: calendarIcon,
+  /**
+   * @see ./edit.js
+   */
+  edit: Edit,
 
-	getEditWrapperProps(attributes) {
-		const { blockAlignment } = attributes;
-		if (
-			'left' === blockAlignment ||
-			'right' === blockAlignment ||
-			'full' === blockAlignment
-		) {
-			return { 'data-align': blockAlignment };
-		}
-	},
+  getEditWrapperProps(attributes) {
+    const { blockAlignment } = attributes;
+    if (
+      'left' === blockAlignment ||
+      'right' === blockAlignment ||
+      'full' === blockAlignment
+    ) {
+      return { 'data-align': blockAlignment };
+    }
+  },
 });

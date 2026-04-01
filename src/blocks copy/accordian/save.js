@@ -16,9 +16,9 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save() {
-	return (
-		<p {...useBlockProps.save()}>
-			{'02 Block with Static Rendering – hello from the saved content!'}
-		</p>
-	);
+  return (
+    <p {...useBlockProps.save()}>
+      {'02 Block with Static Rendering – hello from the saved content!'}
+    </p>
+  );
 }

@@ -22,18 +22,18 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes, clientId }) {
-	console.log(attributes, clientId);
-	const index = useSelect(
-		(select) => {
-			const { getBlockIndex } = select('core/block-editor');
-			return getBlockIndex(clientId);
-		},
-		[clientId]
-	);
+  console.log(attributes, clientId);
+  const index = useSelect(
+    (select) => {
+      const { getBlockIndex } = select('core/block-editor');
+      return getBlockIndex(clientId);
+    },
+    [clientId],
+  );
 
-	const blockProps = useBlockProps({
-		className: index === 0 ? 'carousel-item active' : 'carousel-item',
-	});
+  const blockProps = useBlockProps({
+    className: index === 0 ? 'carousel-item active' : 'carousel-item',
+  });
 
-	return <div {...blockProps}>Slide {index + 1}</div>;
+  return <div {...blockProps}>Slide {index + 1}</div>;
 }

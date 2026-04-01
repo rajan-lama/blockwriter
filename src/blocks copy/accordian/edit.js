@@ -31,10 +31,10 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	console.log(attributes);
-	return (
-		<p {...useBlockProps()}>
-			<Accordian attributes={attributes} setAttributes={setAttributes} />
-		</p>
-	);
+  console.log(attributes);
+  return (
+    <p {...useBlockProps()}>
+      <Accordian attributes={attributes} setAttributes={setAttributes} />
+    </p>
+  );
 }

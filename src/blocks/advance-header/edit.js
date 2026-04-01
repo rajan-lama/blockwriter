@@ -12,18 +12,18 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {
-	RichText,
-	useBlockProps,
-	AlignmentToolbar,
-	BlockControls,
-	BlockAlignmentToolbar,
+  RichText,
+  useBlockProps,
+  AlignmentToolbar,
+  BlockControls,
+  BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
 import {
-	Toolbar,
-	ToolbarDropdownMenu,
-	Button,
-	Tooltip,
-	CustomSelectControl,
+  Toolbar,
+  ToolbarDropdownMenu,
+  Button,
+  Tooltip,
+  CustomSelectControl,
 } from '@wordpress/components';
 
 /**
@@ -43,55 +43,54 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const onChangeContent = (content) => {
-		setAttributes({ content });
-	};
+  const onChangeContent = (content) => {
+    setAttributes({ content });
+  };
 
-	const { header } = attributes;
+  const { header } = attributes;
 
-	const headingOptions = [
-		{ label: 'H1', value: 'h1' },
-		{ label: 'H2', value: 'h2' },
-		{ label: 'H3', value: 'h3' },
-		{ label: 'H4', value: 'h4' },
-		{ label: 'H5', value: 'h5' },
-		{ label: 'H6', value: 'h6' },
-	];
+  const headingOptions = [
+    { label: 'H1', value: 'h1' },
+    { label: 'H2', value: 'h2' },
+    { label: 'H3', value: 'h3' },
+    { label: 'H4', value: 'h4' },
+    { label: 'H5', value: 'h5' },
+    { label: 'H6', value: 'h6' },
+  ];
 
-	const highContrastClass =
-		attributes.highContrast == true ? 'highContrast' : '';
+  const highContrastClass =
+    attributes.highContrast == true ? 'highContrast' : '';
 
-	return (
-		<>
-			<BlockControls key="custom-controls">
-				<AlignmentToolbar
-					value={attributes.alignment}
-					onChange={(alignment) => props.setAttributes({ alignment })}
-				/>
-				<Toolbar>
-					<ToolbarDropdownMenu
-						icon={null}
-						label="Select Heading"
-						text={header?.toUpperCase()}
-						controls={headingOptions.map((item) => ({
-							title: item.label,
-							isActive: header === item.value,
-							onClick: () =>
-								setAttributes({ header: item.value }),
-						}))}
-					/>
-				</Toolbar>
-			</BlockControls>
-			<RichText
-				{...useBlockProps({
-					className: `content-body ${highContrastClass}`,
-					style: { textAlign: attributes.alignment },
-				})}
-				tagName={attributes.header}
-				placeholder={__('Add your custom content', 'blockwriter')}
-				onChange={onChangeContent}
-				value={attributes.content}
-			/>
-		</>
-	);
+  return (
+    <>
+      <BlockControls key="custom-controls">
+        <AlignmentToolbar
+          value={attributes.alignment}
+          onChange={(alignment) => props.setAttributes({ alignment })}
+        />
+        <Toolbar>
+          <ToolbarDropdownMenu
+            icon={null}
+            label="Select Heading"
+            text={header?.toUpperCase()}
+            controls={headingOptions.map((item) => ({
+              title: item.label,
+              isActive: header === item.value,
+              onClick: () => setAttributes({ header: item.value }),
+            }))}
+          />
+        </Toolbar>
+      </BlockControls>
+      <RichText
+        {...useBlockProps({
+          className: `content-body ${highContrastClass}`,
+          style: { textAlign: attributes.alignment },
+        })}
+        tagName={attributes.header}
+        placeholder={__('Add your custom content', 'blockwriter')}
+        onChange={onChangeContent}
+        value={attributes.content}
+      />
+    </>
+  );
 }

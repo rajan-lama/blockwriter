@@ -17,38 +17,38 @@ import Slider from 'react-slick';
  * @return {WPElement} Element to render.
  */
 export default function save() {
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-	};
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
 
-	return (
-		<div {...useBlockProps.save()}>
-			<div className="slider-container">
-				<div>
-					<div>
-						<h3>1</h3>
-					</div>
-					<div>
-						<h3>2</h3>
-					</div>
-					<div>
-						<h3>3</h3>
-					</div>
-					<div>
-						<h3>4</h3>
-					</div>
-					<div>
-						<h3>5</h3>
-					</div>
-					<div>
-						<h3>6</h3>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <div {...useBlockProps.save()}>
+      <div className="slider-container">
+        <div>
+          <div>
+            <h3>1</h3>
+          </div>
+          <div>
+            <h3>2</h3>
+          </div>
+          <div>
+            <h3>3</h3>
+          </div>
+          <div>
+            <h3>4</h3>
+          </div>
+          <div>
+            <h3>5</h3>
+          </div>
+          <div>
+            <h3>6</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

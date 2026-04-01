@@ -1,7 +1,7 @@
 import {
-	useBlockProps,
-	InspectorControls,
-	InnerBlocks,
+  useBlockProps,
+  InspectorControls,
+  InnerBlocks,
 } from '@wordpress/block-editor';
 
 import { PanelBody, SelectControl } from '@wordpress/components';
@@ -16,22 +16,22 @@ import Inspector from './inspector';
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { tagType, container, paddingY, background } = attributes;
+  const { tagType, container, paddingY, background } = attributes;
 
-	const blockProps = useBlockProps({
-		className: `${paddingY} ${background}`,
-	});
+  const blockProps = useBlockProps({
+    className: `${paddingY} ${background}`,
+  });
 
-	const Tag = tagType;
+  const Tag = tagType;
 
-	return (
-		<>
-			<Inspector attributes={attributes} setAttributes={setAttributes} />
-			<Tag {...blockProps}>
-				<div className={container}>
-					<InnerBlocks />
-				</div>
-			</Tag>
-		</>
-	);
+  return (
+    <>
+      <Inspector attributes={attributes} setAttributes={setAttributes} />
+      <Tag {...blockProps}>
+        <div className={container}>
+          <InnerBlocks wrapperClassName="row" />
+        </div>
+      </Tag>
+    </>
+  );
 }

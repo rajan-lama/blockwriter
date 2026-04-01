@@ -12,19 +12,19 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import {
-	RichText,
-	useBlockProps,
-	AlignmentToolbar,
-	BlockControls,
-	BlockAlignmentToolbar,
+  RichText,
+  useBlockProps,
+  AlignmentToolbar,
+  BlockControls,
+  BlockAlignmentToolbar,
 } from '@wordpress/block-editor';
 import classnames from 'classnames';
 import {
-	Toolbar,
-	ToolbarDropdownMenu,
-	Button,
-	Tooltip,
-	CustomSelectControl,
+  Toolbar,
+  ToolbarDropdownMenu,
+  Button,
+  Tooltip,
+  CustomSelectControl,
 } from '@wordpress/components';
 
 /**
@@ -44,57 +44,56 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const onChangeMessage = (message) => {
-		setAttributes({ message });
-	};
+  const onChangeMessage = (message) => {
+    setAttributes({ message });
+  };
 
-	const { header } = attributes;
+  const { header } = attributes;
 
-	const headingOptions = [
-		{ label: 'H1', value: 'h1' },
-		{ label: 'H2', value: 'h2' },
-		{ label: 'H3', value: 'h3' },
-		{ label: 'H4', value: 'h4' },
-		{ label: 'H5', value: 'h5' },
-		{ label: 'H6', value: 'h6' },
-	];
+  const headingOptions = [
+    { label: 'H1', value: 'h1' },
+    { label: 'H2', value: 'h2' },
+    { label: 'H3', value: 'h3' },
+    { label: 'H4', value: 'h4' },
+    { label: 'H5', value: 'h5' },
+    { label: 'H6', value: 'h6' },
+  ];
 
-	return (
-		<div {...useBlockProps()}>
-			<BlockControls key="custom-controls">
-				{/* <BlockAlignmentToolbar
+  return (
+    <div {...useBlockProps()}>
+      <BlockControls key="custom-controls">
+        {/* <BlockAlignmentToolbar
                 value={ attributes.blockAlignment }
                 onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
             /> */}
-				<AlignmentToolbar
-					value={attributes.alignment}
-					onChange={(alignment) => props.setAttributes({ alignment })}
-				/>
-				<Toolbar>
-					<ToolbarDropdownMenu
-						icon={null}
-						label="Select Heading"
-						text={header?.toUpperCase()}
-						controls={headingOptions.map((item) => ({
-							title: item.label,
-							isActive: header === item.value,
-							onClick: () =>
-								setAttributes({ header: item.value }),
-						}))}
-					/>
-				</Toolbar>
-			</BlockControls>
-			<RichText
-				{...useBlockProps()}
-				tagName={attributes.header}
-				placeholder={__('Add your custom message', 'jsforwpblocks')}
-				onChange={onChangeMessage}
-				value={attributes.message}
-				className={classnames('message-body', {
-					'high-contrast': attributes.highContrast,
-				})}
-				style={{ textAlign: attributes.alignment }}
-			/>
-		</div>
-	);
+        <AlignmentToolbar
+          value={attributes.alignment}
+          onChange={(alignment) => props.setAttributes({ alignment })}
+        />
+        <Toolbar>
+          <ToolbarDropdownMenu
+            icon={null}
+            label="Select Heading"
+            text={header?.toUpperCase()}
+            controls={headingOptions.map((item) => ({
+              title: item.label,
+              isActive: header === item.value,
+              onClick: () => setAttributes({ header: item.value }),
+            }))}
+          />
+        </Toolbar>
+      </BlockControls>
+      <RichText
+        {...useBlockProps()}
+        tagName={attributes.header}
+        placeholder={__('Add your custom message', 'jsforwpblocks')}
+        onChange={onChangeMessage}
+        value={attributes.message}
+        className={classnames('message-body', {
+          'high-contrast': attributes.highContrast,
+        })}
+        style={{ textAlign: attributes.alignment }}
+      />
+    </div>
+  );
 }

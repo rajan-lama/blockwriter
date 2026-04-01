@@ -22,6 +22,6 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	console.log(attributes);
-	return <p {...useBlockProps()}>hello world</p>;
+  console.log(attributes);
+  return <p {...useBlockProps()}>hello world</p>;
 }

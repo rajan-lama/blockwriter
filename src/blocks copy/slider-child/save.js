@@ -17,17 +17,17 @@ import Slider from 'react-slick';
  * @return {WPElement} Element to render.
  */
 export default function save() {
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 4,
-		slidesToScroll: 1,
-	};
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+  };
 
-	return (
-		<div {...useBlockProps.save()}>
-			<p>{__('Child Block Content', 'text-domain')}</p>
-		</div>
-	);
+  return (
+    <div {...useBlockProps.save()}>
+      <p>{__('Child Block Content', 'text-domain')}</p>
+    </div>
+  );
 }

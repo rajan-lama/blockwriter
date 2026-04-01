@@ -4,33 +4,33 @@
 import { useState } from 'react';
 import { __ } from '@wordpress/i18n';
 import {
-	PanelBody,
-	SelectControl,
-	BorderBoxControl,
-	ToggleControl,
-	RangeControl,
-	TextControl,
-	Button,
-	Toolbar,
-	ToolbarDropdownMenu,
-	ToolbarButton,
+  PanelBody,
+  SelectControl,
+  BorderBoxControl,
+  ToggleControl,
+  RangeControl,
+  TextControl,
+  Button,
+  Toolbar,
+  ToolbarDropdownMenu,
+  ToolbarButton,
 } from '@wordpress/components';
 import {
-	InspectorControls,
-	MediaUpload,
-	MediaUploadCheck,
-	useBlockProps,
-	BlockControls,
-	AlignmentToolbar,
+  InspectorControls,
+  MediaUpload,
+  MediaUploadCheck,
+  useBlockProps,
+  BlockControls,
+  AlignmentToolbar,
 } from '@wordpress/block-editor';
 
 import {
-	formatBold,
-	formatItalic,
-	link,
-	pencil,
-	seen,
-	unseen,
+  formatBold,
+  formatItalic,
+  link,
+  pencil,
+  seen,
+  unseen,
 } from '@wordpress/icons';
 
 /**
@@ -38,36 +38,36 @@ import {
  */
 
 const BlockController = ({ attributes, setAttributes }) => {
-	const { header, alignment, headingOptions, preview } = attributes;
+  const { header, alignment, headingOptions, preview } = attributes;
 
-	const colors = [{ name: 'Blue 20', color: '#72aee6' }];
+  const colors = [{ name: 'Blue 20', color: '#72aee6' }];
 
-	const defaultBorder = {
-		color: '#72aee6',
-		style: 'dashed',
-		width: '1px',
-	};
-	const [borders, setBorders] = useState({
-		top: defaultBorder,
-		right: defaultBorder,
-		bottom: defaultBorder,
-		left: defaultBorder,
-	});
+  const defaultBorder = {
+    color: '#72aee6',
+    style: 'dashed',
+    width: '1px',
+  };
+  const [borders, setBorders] = useState({
+    top: defaultBorder,
+    right: defaultBorder,
+    bottom: defaultBorder,
+    left: defaultBorder,
+  });
 
-	console.log('BlockController Rendered', preview);
+  console.log('BlockController Rendered', preview);
 
-	return (
-		<BlockControls key="custom-controls">
-			{/* <BlockAlignmentToolbar
+  return (
+    <BlockControls key="custom-controls">
+      {/* <BlockAlignmentToolbar
                 value={ attributes.blockAlignment }
                 onChange={ blockAlignment => setAttributes( { blockAlignment } ) }
             /> */}
-			{/* <AlignmentToolbar
+      {/* <AlignmentToolbar
 					value={alignment}
 					onChange={(alignment) => props.setAttributes({ alignment })}
 				/> */}
-			{/* <Toolbar> */}
-			{/* <ToolbarDropdownMenu
+      {/* <Toolbar> */}
+      {/* <ToolbarDropdownMenu
 						icon={null}
 						label="Select Heading"
 						text={header?.toUpperCase()}
@@ -78,19 +78,19 @@ const BlockController = ({ attributes, setAttributes }) => {
 								setAttributes({ header: item.value }),
 						}))}
 					/> */}
-			{/* </Toolbar> */}
-			{/* <Button icon={seen} onClick={togglePreview}>
+      {/* </Toolbar> */}
+      {/* <Button icon={seen} onClick={togglePreview}>
               Slider Mode
           </Button> */}
 
-			<Toolbar label="Options">
-				<ToolbarButton
-					icon={preview ? seen : unseen}
-					onClick={() => setAttributes({ preview: !preview })}
-					label={preview ? 'Table Mode' : 'Slider Mode'}
-				/>
-			</Toolbar>
-		</BlockControls>
-	);
+      <Toolbar label="Options">
+        <ToolbarButton
+          icon={preview ? seen : unseen}
+          onClick={() => setAttributes({ preview: !preview })}
+          label={preview ? 'Table Mode' : 'Slider Mode'}
+        />
+      </Toolbar>
+    </BlockControls>
+  );
 };
 export default BlockController;

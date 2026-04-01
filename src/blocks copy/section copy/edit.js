@@ -1,23 +1,23 @@
 import {
-	useBlockProps,
-	InspectorControls,
-	InnerBlocks,
+  useBlockProps,
+  InspectorControls,
+  InnerBlocks,
 } from '@wordpress/block-editor';
 
 import { PanelBody, SelectControl } from '@wordpress/components';
 import Inspector from './inspector';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { container, paddingY, background } = attributes;
+  const { container, paddingY, background } = attributes;
 
-	const blockProps = useBlockProps({
-		className: `${paddingY} ${background}`,
-	});
+  const blockProps = useBlockProps({
+    className: `${paddingY} ${background}`,
+  });
 
-	return (
-		<>
-			<Inspector attributes={attributes} setAttributes={setAttributes} />
-			{/* <InspectorControls>
+  return (
+    <>
+      <Inspector attributes={attributes} setAttributes={setAttributes} />
+      {/* <InspectorControls>
                 <PanelBody title="Section Settings">
                     
                     <SelectControl
@@ -55,11 +55,11 @@ export default function Edit({ attributes, setAttributes }) {
                 </PanelBody>
             </InspectorControls> */}
 
-			<section {...blockProps}>
-				<div className={container}>
-					<InnerBlocks />
-				</div>
-			</section>
-		</>
-	);
+      <section {...blockProps}>
+        <div className={container}>
+          <InnerBlocks />
+        </div>
+      </section>
+    </>
+  );
 }

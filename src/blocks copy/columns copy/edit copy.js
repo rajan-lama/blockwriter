@@ -16,91 +16,85 @@ import Inspector from './inspector';
 import './editor.scss';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { layout, paddingY, background } = attributes;
+  const { layout, paddingY, background } = attributes;
 
-	const blockProps = useBlockProps({
-		className: `${paddingY} ${background}`,
-	});
+  const blockProps = useBlockProps({
+    className: `${paddingY} ${background}`,
+  });
 
-	const getColumns = (layout) => {
-		switch (layout) {
-			case 'layout-one':
-				return ['col-md-12'];
+  const getColumns = (layout) => {
+    switch (layout) {
+      case 'layout-one':
+        return ['col-md-12'];
 
-			case 'layout-two':
-				return ['col-md-6', 'col-md-6'];
+      case 'layout-two':
+        return ['col-md-6', 'col-md-6'];
 
-			case 'layout-three':
-				return ['col-md-4', 'col-md-4', 'col-md-4'];
+      case 'layout-three':
+        return ['col-md-4', 'col-md-4', 'col-md-4'];
 
-			case 'layout-four':
-				return ['col-md-3', 'col-md-3', 'col-md-3', 'col-md-3'];
+      case 'layout-four':
+        return ['col-md-3', 'col-md-3', 'col-md-3', 'col-md-3'];
 
-			case 'layout-five':
-				return [
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-				];
+      case 'layout-five':
+        return ['col-md-2', 'col-md-2', 'col-md-2', 'col-md-2', 'col-md-2'];
 
-			case 'layout-six':
-				return [
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-					'col-md-2',
-				];
+      case 'layout-six':
+        return [
+          'col-md-2',
+          'col-md-2',
+          'col-md-2',
+          'col-md-2',
+          'col-md-2',
+          'col-md-2',
+        ];
 
-			// Custom layouts
-			case 'layout-eight-four':
-				return ['col-md-8', 'col-md-4'];
+      // Custom layouts
+      case 'layout-eight-four':
+        return ['col-md-8', 'col-md-4'];
 
-			case 'layout-four-eight':
-				return ['col-md-4', 'col-md-8'];
+      case 'layout-four-eight':
+        return ['col-md-4', 'col-md-8'];
 
-			case 'layout-nine-three':
-				return ['col-md-9', 'col-md-3'];
+      case 'layout-nine-three':
+        return ['col-md-9', 'col-md-3'];
 
-			case 'layout-three-nine':
-				return ['col-md-3', 'col-md-9'];
+      case 'layout-three-nine':
+        return ['col-md-3', 'col-md-9'];
 
-			case 'layout-five-seven':
-				return ['col-md-5', 'col-md-7'];
+      case 'layout-five-seven':
+        return ['col-md-5', 'col-md-7'];
 
-			case 'layout-seven-five':
-				return ['col-md-7', 'col-md-5'];
+      case 'layout-seven-five':
+        return ['col-md-7', 'col-md-5'];
 
-			case 'layout-eighty-twenty':
-				return ['col-md-10', 'col-md-2'];
+      case 'layout-eighty-twenty':
+        return ['col-md-10', 'col-md-2'];
 
-			case 'layout-twenty-eighty':
-				return ['col-md-2', 'col-md-10'];
+      case 'layout-twenty-eighty':
+        return ['col-md-2', 'col-md-10'];
 
-			default:
-				return ['col-md-12'];
-		}
-	};
+      default:
+        return ['col-md-12'];
+    }
+  };
 
-	const TEMPLATE = getColumns(layout).map((colClass) => [
-		'blockwriter/column',
-		{ colMd: colClass },
-	]);
+  const TEMPLATE = getColumns(layout).map((colClass) => [
+    'blockwriter/column',
+    { colMd: colClass },
+  ]);
 
-	console.log('TEMPLATE', TEMPLATE);
+  console.log('TEMPLATE', TEMPLATE);
 
-	return (
-		<>
-			<Inspector attributes={attributes} setAttributes={setAttributes} />
+  return (
+    <>
+      <Inspector attributes={attributes} setAttributes={setAttributes} />
 
-			<div {...blockProps}>
-				<Row>
-					<InnerBlocks template={TEMPLATE} templateLock="all" />
-				</Row>
-			</div>
-		</>
-	);
+      <div {...blockProps}>
+        <Row>
+          <InnerBlocks template={TEMPLATE} templateLock="all" />
+        </Row>
+      </div>
+    </>
+  );
 }

@@ -1,27 +1,27 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "blockwriter/column",
-	"version": "0.1.0",
-	"title": "BW Column",
-	"category": "blockwriter",
-	"icon": "column",
-	"description": "Sample block for blockwriter.",
-	"example": {},
-	"parent": ["blockwriter/columns"],
-	"keywords": ["column"],
-	"supports": {
-		"html": false
-	},
-	"attributes": {
-		"colMd": {
-			"type": "string",
-			"default": "col-6"
-		}
-	},
-	"textdomain": "blockwriter",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"render": "file:./render.php"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/column",
+  "version": "0.1.0",
+  "title": "BW Column",
+  "category": "blockwriter",
+  "icon": "column",
+  "description": "Sample block for blockwriter.",
+  "example": {},
+  "parent": ["blockwriter/columns"],
+  "keywords": ["column"],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "colMd": {
+      "type": "string",
+      "default": "col-6"
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
 }

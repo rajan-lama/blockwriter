@@ -17,15 +17,15 @@ import { useBlockProps } from '@wordpress/block-editor';
  */
 
 export default function save({ attributes }) {
-	const { header, textAlign, content } = attributes;
+  const { header, textAlign, content } = attributes;
 
-	const Tag = header;
+  const Tag = header;
 
-	const blockProps = useBlockProps.save({
-		style: {
-			textAlign: textAlign,
-		},
-	});
+  const blockProps = useBlockProps.save({
+    style: {
+      textAlign: textAlign,
+    },
+  });
 
-	return <Tag {...blockProps}>{content}</Tag>;
+  return <Tag {...blockProps}>{content}</Tag>;
 }

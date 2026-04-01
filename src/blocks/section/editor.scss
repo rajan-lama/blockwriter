@@ -24,3 +24,20 @@
 //     height: 18px;
 //     padding: 2px 4px;
 //   }
+
+.wp-block-blockwriter-section {
+  border: 1px dashed lightblue;
+  padding: 0;
+  position: relative; 
+  
+  .container, container-fluid
+  { 
+    margin: 0;
+    padding: 0;
+  }
+  .row, .row>*{
+    padding: 0;
+  }
+}
+
+

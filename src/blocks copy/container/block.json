@@ -1,183 +1,183 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 3,
-	"name": "blockwriter/container",
-	"version": "1.0.1",
-	"title": "Container",
-	"category": "blockwriter",
-	"icon": "star-half",
-	"description": "Create a flexible container with advaance options.",
-	"example": {},
-	"keywords": ["container", "section"],
-	"supports": {
-		"html": true
-	},
-	"attributes": {
-		"generatedCss": {
-			"type": "array"
-		},
-		"hasparent": {
-			"type": "boolean",
-			"default": false
-		},
-		"containerType": {
-			"type": "string",
-			"default": "default"
-		},
-		"contentType": {
-			"type": "string",
-			"default": "full-width"
-		},
-		"width": {
-			"type": "string",
-			"default": ""
-		},
-		"widthUnit": {
-			"type": "string",
-			"default": ""
-		},
-		"contentWidth": {
-			"type": "object",
-			"default": {
-				"desktopValue": 1200,
-				"desktopUnit": "px",
-				"desktopHeightValue": 1000,
-				"desktopHeightUnit": "px",
-				"tabletValue": 1024,
-				"tabletUnit": "px",
-				"tabletHeightValue": 1200,
-				"tabletHeightUnit": "px",
-				"mobileValue": 767,
-				"mobileUnit": "px",
-				"mobileHeightValue": 1000,
-				"mobileHeightUnit": "px",
-				"currentDevice": "desktop"
-			}
-		},
-		"contentBoxWidthDesktop": {
-			"type": "string",
-			"default": "1200px"
-		},
-		"contentBoxWidthTablet": {
-			"type": "string",
-			"default": "1024px"
-		},
-		"contentBoxWidthMobile": {
-			"type": "string",
-			"default": "767px"
-		},
-		"contentBoxHeightDesktop": {
-			"type": "string",
-			"default": "1000px"
-		},
-		"contentBoxHeightTablet": {
-			"type": "string",
-			"default": "1200px"
-		},
-		"contentBoxHeightMobile": {
-			"type": "string",
-			"default": "1000px"
-		},
-		"autoHeight": {
-			"type": "boolean",
-			"default": false
-		},
-		"htmlTag": {
-			"type": "string",
-			"default": "div"
-		},
-		"overflow": {
-			"type": "string",
-			"default": "hidden"
-		},
-		"sticky": {
-			"type": "boolean",
-			"default": false
-		},
-		"stickyPosition": {
-			"type": "string",
-			"default": "top"
-		},
-		"stickyOffsetValue": {
-			"type": "number",
-			"default": 0
-		},
-		"animation": {
-			"type": "string",
-			"default": "none"
-		},
-		"animationDuration": {
-			"type": "string",
-			"default": "slow"
-		},
-		"hideOnDesktop": {
-			"type": "boolean",
-			"default": false
-		},
-		"hideOnTablet": {
-			"type": "boolean",
-			"default": false
-		},
-		"hideOnMobile": {
-			"type": "boolean",
-			"default": false
-		},
-		"zindex": {
-			"type": "number",
-			"default": 0
-		},
-		"bodyBgColor": {
-			"type": "string"
-		},
-		"bodyTextColor": {
-			"type": "string"
-		},
-		"borderStyle": {
-			"type": "string",
-			"default": "solid"
-		},
-		"borderWidth": {
-			"type": "number",
-			"default": 0
-		},
-		"borderColor": {
-			"type": "string"
-		},
-		"borderRadius": {
-			"type": "number",
-			"default": 2
-		},
-		"marginBottom": {
-			"type": "number",
-			"default": 15
-		},
-		"changed": {
-			"type": "boolean",
-			"default": false
-		},
-		"margin": {
-			"type": "object",
-			"default": {
-				"top": "90px",
-				"right": "0px",
-				"left": "0px",
-				"bottom": "90px",
-				"locked": true
-			}
-		},
-		"padding": {
-			"type": "object",
-			"default": {
-				"top": "auto",
-				"right": "auto",
-				"left": "auto",
-				"bottom": "auto",
-				"locked": true
-			}
-		}
-	},
-	"textdomain": "blockwriter",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/container",
+  "version": "1.0.1",
+  "title": "Container",
+  "category": "blockwriter",
+  "icon": "star-half",
+  "description": "Create a flexible container with advaance options.",
+  "example": {},
+  "keywords": ["container", "section"],
+  "supports": {
+    "html": true
+  },
+  "attributes": {
+    "generatedCss": {
+      "type": "array"
+    },
+    "hasparent": {
+      "type": "boolean",
+      "default": false
+    },
+    "containerType": {
+      "type": "string",
+      "default": "default"
+    },
+    "contentType": {
+      "type": "string",
+      "default": "full-width"
+    },
+    "width": {
+      "type": "string",
+      "default": ""
+    },
+    "widthUnit": {
+      "type": "string",
+      "default": ""
+    },
+    "contentWidth": {
+      "type": "object",
+      "default": {
+        "desktopValue": 1200,
+        "desktopUnit": "px",
+        "desktopHeightValue": 1000,
+        "desktopHeightUnit": "px",
+        "tabletValue": 1024,
+        "tabletUnit": "px",
+        "tabletHeightValue": 1200,
+        "tabletHeightUnit": "px",
+        "mobileValue": 767,
+        "mobileUnit": "px",
+        "mobileHeightValue": 1000,
+        "mobileHeightUnit": "px",
+        "currentDevice": "desktop"
+      }
+    },
+    "contentBoxWidthDesktop": {
+      "type": "string",
+      "default": "1200px"
+    },
+    "contentBoxWidthTablet": {
+      "type": "string",
+      "default": "1024px"
+    },
+    "contentBoxWidthMobile": {
+      "type": "string",
+      "default": "767px"
+    },
+    "contentBoxHeightDesktop": {
+      "type": "string",
+      "default": "1000px"
+    },
+    "contentBoxHeightTablet": {
+      "type": "string",
+      "default": "1200px"
+    },
+    "contentBoxHeightMobile": {
+      "type": "string",
+      "default": "1000px"
+    },
+    "autoHeight": {
+      "type": "boolean",
+      "default": false
+    },
+    "htmlTag": {
+      "type": "string",
+      "default": "div"
+    },
+    "overflow": {
+      "type": "string",
+      "default": "hidden"
+    },
+    "sticky": {
+      "type": "boolean",
+      "default": false
+    },
+    "stickyPosition": {
+      "type": "string",
+      "default": "top"
+    },
+    "stickyOffsetValue": {
+      "type": "number",
+      "default": 0
+    },
+    "animation": {
+      "type": "string",
+      "default": "none"
+    },
+    "animationDuration": {
+      "type": "string",
+      "default": "slow"
+    },
+    "hideOnDesktop": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideOnTablet": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideOnMobile": {
+      "type": "boolean",
+      "default": false
+    },
+    "zindex": {
+      "type": "number",
+      "default": 0
+    },
+    "bodyBgColor": {
+      "type": "string"
+    },
+    "bodyTextColor": {
+      "type": "string"
+    },
+    "borderStyle": {
+      "type": "string",
+      "default": "solid"
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderColor": {
+      "type": "string"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 2
+    },
+    "marginBottom": {
+      "type": "number",
+      "default": 15
+    },
+    "changed": {
+      "type": "boolean",
+      "default": false
+    },
+    "margin": {
+      "type": "object",
+      "default": {
+        "top": "90px",
+        "right": "0px",
+        "left": "0px",
+        "bottom": "90px",
+        "locked": true
+      }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "top": "auto",
+        "right": "auto",
+        "left": "auto",
+        "bottom": "auto",
+        "locked": true
+      }
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
 }
