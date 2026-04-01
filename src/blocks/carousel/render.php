@@ -50,19 +50,19 @@ $slider_id = 'slider-' . uniqid();
         <img src="<?php echo esc_attr($slide['image']); ?>" alt="...">
         <div class="carousel-caption d-none d-md-block">
           <?php if ($showTitle && esc_attr($slide['title'])) { ?> 
-          <h2><?php echo esc_html($slide['title']); ?></h2>
+          <h2 class="bw-slider-title"><?php echo esc_html($slide['title']); ?></h2>
           <?php } ?>
           <?php if ($showSubtitle && esc_attr($slide['subtitle'])) { ?>
-          <h5><?php echo esc_html($slide['subtitle']); ?></h5>
+          <h5 class="bw-slider-subtitle"><?php echo esc_html($slide['subtitle']); ?></h5>
           <?php } ?>
           <?php if ($showDescription && esc_attr($slide['description'])) { ?>
-            <p><?php echo esc_html($slide['description']); ?></p>
+            <p class="bw-slider-description"><?php echo esc_html($slide['description']); ?></p>
           <?php } ?>
           <?php if ($showPrimaryButtons && esc_attr($slide['btn1Url']) && esc_attr($slide['btn1Text'])) { ?>
-            <a href="<?php echo esc_attr($slide['btn1Url']); ?>" class="btn btn-primary"><?php echo esc_html($slide['btn1Text']); ?></a>
+            <a class="btn btn-primary" href="<?php echo esc_attr($slide['btn1Url']); ?>"><?php echo esc_html($slide['btn1Text']); ?></a>
           <?php } ?>
           <?php if ($showSecondaryButtons && esc_attr($slide['btn2Url']) && esc_attr($slide['btn2Text'])) { ?>
-            <a href="<?php echo esc_attr($slide['btn2Url']); ?>" class="btn btn-secondary"><?php echo esc_html($slide['btn2Text']); ?></a>
+            <a class="btn btn-secondary" href="<?php echo esc_attr($slide['btn2Url']); ?>"><?php echo esc_html($slide['btn2Text']); ?></a>
           <?php } ?>
         </div>
       </div>
