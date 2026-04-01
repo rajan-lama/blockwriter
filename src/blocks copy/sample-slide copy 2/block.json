@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/sample-slide",
+	"version": "0.1.0",
+	"title": "Sample slide Block",
+	"category": "blockwriter",
+	"icon": "smiley",
+	"description": "Sample block for blockwriter.",
+	"example": {},
+	"keywords": ["sample"],
+	"parent": ["blockwriter/carousel"],
+	"supports": {
+		"className": true,
+		"reusable": false
+	},
+	"attributes": {
+		"isActive": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

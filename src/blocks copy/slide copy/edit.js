@@ -23,9 +23,7 @@ export default function Edit({ attributes, setAttributes }) {
 				)}
 			/>
 
-			<div className="carousel-caption">
-				<InnerBlocks />
-			</div>
+			<div className="carousel-caption">{/* <InnerBlocks /> */}</div>
 		</div>
 	);
 }

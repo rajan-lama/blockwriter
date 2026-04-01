@@ -17,19 +17,13 @@ export default function Edit({ attributes, setAttributes }) {
 	return (
 		<div {...blockProps}>
 			<MediaUpload
-				onSelect={(media) =>
-					setAttributes({ bgImage: media.url })
-				}
+				onSelect={(media) => setAttributes({ bgImage: media.url })}
 				render={({ open }) => (
-					<Button onClick={open}>
-						Select Background Image
-					</Button>
+					<Button onClick={open}>Select Background Image</Button>
 				)}
 			/>
 
-			<div className="carousel-caption">
-				{/* <InnerBlocks /> */}
-			</div>
+			<div className="carousel-caption">{/* <InnerBlocks /> */}</div>
 		</div>
 	);
 }
