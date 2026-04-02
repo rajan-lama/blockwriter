@@ -16,6 +16,14 @@
 }
 
 .wp-block-blockwriter-icon {
+  --bw-icon-size: 32px;
+  --bw-icon-color: #222;
+  --bw-icon-bg: transparent;
+  --bw-icon-padding: 0;
+  --bw-icon-radius: 0;
+}
+
+.wp-block-blockwriter-icon svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;

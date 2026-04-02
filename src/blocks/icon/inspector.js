@@ -13,7 +13,7 @@ export default function Inspector({ attributes, setAttributes }) {
           value={size}
           onChange={(val) => setAttributes({ size: val })}
           min={10}
-          max={200}
+          max={500}
         />
 
         <p>Icon Color</p>

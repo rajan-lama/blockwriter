@@ -5,52 +5,36 @@ import { Button } from '@wordpress/components';
 import IconPickerModal from './IconPickerModal';
 import ICONS from './../../../assets/icons/icons-all.json';
 import './editor.scss';
+import { category } from '@wordpress/icons';
+import Inspector from './inspector';
+import BlockController from './BlockController';
+import { use } from 'react';
 
 export default function Edit({ attributes, setAttributes }) {
   const { icon } = attributes;
   const [open, setOpen] = useState(false);
-  console.log('Selected icon:', icon);
 
-  // const selectedIcon = ICONS.find((i) => i.name === icon);
-  // const selectedIcon = icons.solid.find((i) => i.name === icon);
-  const selectedIcon = '';
+  const selectedIcon = ICONS.find((i) => i.name === icon);
 
-  console.log('Selected icon object:', ICONS);
+  const style = {
+    '--bw-icon-size': `${attributes.size}px`,
+    '--bw-icon-color': attributes.color,
+    '--bw-icon-bg': attributes.bgColor,
+    '--bw-icon-padding': `${attributes.padding}px`,
+    '--bw-icon-radius': `${attributes.borderRadius}px`,
+  };
+
+  const blockProps = useBlockProps();
 
   return (
-    <div {...useBlockProps()}>
-      <Button onClick={() => setOpen(true)}>
-        {selectedIcon ? 'Change Icon' : 'Select Icon'}
-      </Button>
-
-      {/* <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
-          gap: '10px',
-        }}
-      >
-        {ICONS.solid.map((icon, index) => (
-          <div
-            key={index}
-            style={{
-              padding: '10px',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-            }}
-          >
-            {icon.replace(/-/g, ' ')}
-          </div>
-        ))} 
-      </div> */}
-
-      {selectedIcon && (
-        <div
-          dangerouslySetInnerHTML={{ __html: selectedIcon.svg }}
-          style={{ marginTop: '15px' }}
-        />
-      )}
-
+    <div {...useBlockProps({ style })}>
+      <Inspector attributes={attributes} setAttributes={setAttributes} />
+      <BlockController
+        attributes={attributes}
+        setAttributes={setAttributes}
+        selectedIcon={selectedIcon}
+        setOpen={setOpen}
+      />
       <IconPickerModal
         isOpen={open}
         onClose={() => setOpen(false)}
@@ -59,9 +43,17 @@ export default function Edit({ attributes, setAttributes }) {
           setAttributes({
             icon: icon.name,
             svg: icon.svg,
+            category: icon.category,
           })
         }
       />
+
+      {selectedIcon && (
+        <div
+          dangerouslySetInnerHTML={{ __html: selectedIcon.svg }}
+          style={{ marginTop: '15px' }}
+        />
+      )}
     </div>
   );
 }
