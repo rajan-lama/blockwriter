@@ -4,16 +4,6 @@ import { Modal, Button, TextControl } from '@wordpress/components';
 export default function IconPickerModal({ isOpen, onClose, icons, onSelect }) {
   const [search, setSearch] = useState('');
 
-  // const filtered = Object.entries(icons).filter(([name, svg]) => {
-  //   return name.toLowerCase().includes(search.toLowerCase());
-  // });
-
-  // const filtered = icons.solid.filter((icon) => {
-  //   console.log('Checking icon:', icon.name, 'against search:', search);
-  //   return icon;
-  //   // return icon.name.toLowerCase().includes(search.toLowerCase());
-  // });
-
   const filtered = icons.filter((icon) => {
     return icon.name.toLowerCase().includes(search.toLowerCase());
   });

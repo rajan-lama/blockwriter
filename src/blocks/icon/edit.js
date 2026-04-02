@@ -1,14 +1,11 @@
 import { useState } from '@wordpress/element';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import { useBlockProps } from '@wordpress/block-editor';
 
 import IconPickerModal from './IconPickerModal';
 import ICONS from './../../../assets/icons/icons-all.json';
 import './editor.scss';
-import { category } from '@wordpress/icons';
 import Inspector from './inspector';
 import BlockController from './BlockController';
-import { use } from 'react';
 
 export default function Edit({ attributes, setAttributes }) {
   const { icon } = attributes;
@@ -23,8 +20,6 @@ export default function Edit({ attributes, setAttributes }) {
     '--bw-icon-padding': `${attributes.padding}px`,
     '--bw-icon-radius': `${attributes.borderRadius}px`,
   };
-
-  const blockProps = useBlockProps();
 
   return (
     <div {...useBlockProps({ style })}>

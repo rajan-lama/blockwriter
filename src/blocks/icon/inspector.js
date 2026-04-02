@@ -1,5 +1,5 @@
 import { InspectorControls } from '@wordpress/block-editor';
-
+import { __ } from '@wordpress/i18n';
 import { PanelBody, RangeControl, ColorPalette } from '@wordpress/components';
 
 export default function Inspector({ attributes, setAttributes }) {
@@ -7,29 +7,29 @@ export default function Inspector({ attributes, setAttributes }) {
 
   return (
     <InspectorControls>
-      <PanelBody title="Icon Settings">
+      <PanelBody title={__('Icon Settings')}>
         <RangeControl
-          label="Size"
+          label={__('Size')}
           value={size}
           onChange={(val) => setAttributes({ size: val })}
           min={10}
           max={500}
         />
 
-        <p>Icon Color</p>
+        <p>{__('Icon Color')}</p>
         <ColorPalette
           value={color}
           onChange={(val) => setAttributes({ color: val })}
         />
 
-        <p>Background Color</p>
+        <p>{__('Background Color')}</p>
         <ColorPalette
           value={bgColor}
           onChange={(val) => setAttributes({ bgColor: val })}
         />
 
         <RangeControl
-          label="Padding"
+          label={__('Padding')}
           value={padding}
           onChange={(val) => setAttributes({ padding: val })}
           min={0}
@@ -37,7 +37,7 @@ export default function Inspector({ attributes, setAttributes }) {
         />
 
         <RangeControl
-          label="Border Radius"
+          label={__('Border Radius')}
           value={borderRadius}
           onChange={(val) => setAttributes({ borderRadius: val })}
           min={0}
