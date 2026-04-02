@@ -39,7 +39,7 @@ export default function Edit({ attributes, setAttributes }) {
 
   console.log('Edit Rendered', preview);
 
-  // 🔥 Preview Mode
+  // Preview Mode
   if (preview) {
     return (
       <div {...blockProps}>

@@ -28,25 +28,25 @@
 // Fix for Bootstrap row > col layout in Gutenberg Editor
 .wp-block-blockwriter-columns {
   width: 100%;
-    .row {
-        width: 100%;
+  .row {
+    width: 100%;
 
-        .block-editor-inner-blocks {
+    .block-editor-inner-blocks {
+      width: 100%;
+
+      > .block-editor-block-list__layout {
+        display: flex;
+        flex-wrap: wrap;
+        // margin-left: -15px;
+        // margin-right: -15px;
+        // width: calc(100% + 30px);
+
+        .wp-block-blockwriter-column {
+          p {
             width: 100%;
-
-            >.block-editor-block-list__layout {
-                display: flex;
-                flex-wrap: wrap;
-                // margin-left: -15px;
-                // margin-right: -15px;
-                // width: calc(100% + 30px);
-                
-                .wp-block-blockwriter-column{
-                  p {
-                    width: 100%;
-                  }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }

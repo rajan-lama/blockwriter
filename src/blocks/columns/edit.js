@@ -125,10 +125,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     <>
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <div {...blockProps}>
-        <div className='row'>
-          <InnerBlocks
-            template={TEMPLATE}
-          />
+        <div className="row">
+          <InnerBlocks template={TEMPLATE} />
         </div>
       </div>
     </>

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/icon",
+  "version": "0.1.0",
+  "title": "BW Icon",
+  "category": "blockwriter",
+  "icon": "star-filled",
+  "description": "Font Awesome Icon Block",
+  "keywords": ["icon", "fontawesome", "fa"],
+  "attributes": {
+    "icon": { "type": "string", "default": "" },
+    "size": { "type": "number", "default": 24 },
+    "color": { "type": "string", "default": "#000000" },
+    "bgColor": { "type": "string", "default": "" },
+    "padding": { "type": "number", "default": 0 },
+    "borderRadius": { "type": "number", "default": 0 }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "render": "file:./render.php"
+}
