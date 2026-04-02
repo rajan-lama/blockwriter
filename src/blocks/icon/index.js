@@ -9,7 +9,7 @@ import { registerBlockType } from '@wordpress/blocks';
  * Internal dependencies
  */
 import Edit from './edit';
-// import save from './save';
+import save from './save';
 import metadata from './block.json';
 
 const calendarIcon = (
@@ -39,5 +39,5 @@ registerBlockType(metadata.name, {
   /**
    * @see ./save.js
    */
-  // save,
+  save,
 });

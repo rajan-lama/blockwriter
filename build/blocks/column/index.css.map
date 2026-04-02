@@ -1,0 +1,1 @@
+{"version":3,"file":"column/index.css","mappings":";;;AAAA;EACE;EACA;AACF,C","sources":["webpack://blockwriter/./src/blocks/column/editor.scss"],"sourcesContent":[".wp-block-blockwriter-column {\n  border: 1px dashed;\n  padding: 15px 0;\n}\n"],"names":[],"sourceRoot":""}
