@@ -18,7 +18,7 @@ Whether you're creating landing pages, blogs, or full websites, Blockwriter give
 
 ### Key Features
 
-* Custom Gutenberg blocks (Columns, Sections, Icons, Sliders, etc.)
+* Custom Gutenberg blocks (Columns, Sections, Icons, Carousel / Sliders, etc.)
 * Responsive layout controls
 * Drag-and-drop friendly structure
 * Lightweight and performance-focused
@@ -57,6 +57,10 @@ Yes, Blockwriter is designed to be lightweight and only loads necessary assets.
 4. Example page built using Blockwriter
 
 == Changelog ==
+
+= 1.0.1 =
+* Added Carousel Block
+* Added Icon Block
 
 = 1.0.0 =
 * Initial release
