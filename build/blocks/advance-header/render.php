@@ -68,7 +68,7 @@ $wrapper_attributes = get_block_wrapper_attributes(
 ob_start();
 ?>
 
-<<?php echo esc_html( $tag ); ?> <?php echo $wrapper_attributes; ?>>
+<<?php echo esc_html( $tag ); ?> <?php echo wp_kses_data( $wrapper_attributes ); ?>>
 	<?php echo wp_kses_post( $heading_content ); ?>
 </<?php echo esc_html( $tag ); ?>>
 
@@ -80,8 +80,8 @@ $html = ob_get_clean();
  * 7. Final Output Filter
  * ----------------------------------------
  */
-echo apply_filters(
+echo wp_kses_post( apply_filters(
 	'bw_header_block_output',
 	$html,
 	$attributes
-);
+) );

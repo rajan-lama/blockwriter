@@ -146,12 +146,12 @@ ob_start();
 						esc_html($slide['btn1Text'])
 					);
 
-					echo apply_filters(
+					echo wp_kses_post( apply_filters(
 						'bw_slider_primary_button',
 						$primary_btn,
 						$slide,
 						$attributes
-					);
+					) );
 				}
 
 				/**
@@ -167,12 +167,12 @@ ob_start();
 						esc_html($slide['btn2Text'])
 					);
 
-					echo apply_filters(
+					echo wp_kses_post( apply_filters(
 						'bw_slider_secondary_button',
 						$secondary_btn,
 						$slide,
 						$attributes
-					);
+					)) ;
 				}
 				?>
 
@@ -190,13 +190,13 @@ ob_start();
 			 */
 			$slide_html = ob_get_clean();
 
-			echo apply_filters(
+			echo wp_kses_post( apply_filters(
 				'bw_slider_slide_html',
 				$slide_html,
 				$slide,
 				$index,
 				$attributes
-			);
+			));
 
 		endforeach; ?>
 
@@ -243,9 +243,9 @@ ob_start();
  */
 $html = ob_get_clean();
 
-echo apply_filters(
+echo wp_kses_post( apply_filters(
 	'bw_slider_output',
 	$html,
 	$attributes,
 	$slides
-);
+));

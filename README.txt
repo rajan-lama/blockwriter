@@ -1,4 +1,4 @@
-=== Plugin Name ===
+=== Blockwriter ===
 Contributors: rithemes, rithemesoffcial, lamarajan
 Donate link: https://rithemes.com/
 Tags: gutenberg, blocks, editor, page builder, blockwriter
