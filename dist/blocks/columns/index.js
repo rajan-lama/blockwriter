@@ -284,25 +284,6 @@ const Inspector = ({
         onChange: value => setAttributes({
           paddingY: value
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-        label: "Spacing",
-        value: paddingY,
-        options: [{
-          label: 'None',
-          value: 'py-0'
-        }, {
-          label: 'Small',
-          value: 'py-2'
-        }, {
-          label: 'Medium',
-          value: 'py-4'
-        }, {
-          label: 'Large',
-          value: 'py-5'
-        }],
-        onChange: value => setAttributes({
-          paddingY: value
-        })
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Border Settings'),
