@@ -61,6 +61,7 @@ Yes, Blockwriter is designed to be lightweight and only loads necessary assets.
 = 1.0.1 =
 * Added Carousel Block
 * Added Icon Block
+* Added Accordian Block
 
 = 1.0.0 =
 * Initial release
