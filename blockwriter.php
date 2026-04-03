@@ -9,7 +9,7 @@
  * Plugin Name:       Blockwriter
  * Plugin URI:        https://rithemes.com/wordpress-plugins/blockwriter
  * Description:       A powerful block plugins for WordPressers.
- * Version:           1.0.1
+ * Version:           1.0.2
  * Author:            Ri Themes
  * Author URI:        https://rithemes.com/
  * License:           GPL-2.0+
@@ -39,7 +39,7 @@ require_once untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/includes/helpe
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'BLOCKWRITER_VERSION', '1.0.1' );
+define( 'BLOCKWRITER_VERSION', '1.0.2' );
 define( 'BLOCKWRITER_PATH', plugin_dir_path( __FILE__ ) );
 define( 'BLOCKWRITER_URL', plugin_dir_url( __FILE__ ) );
 

@@ -4,7 +4,7 @@ Donate link: https://rithemes.com/
 Tags: gutenberg, blocks, editor, page builder, blockwriter
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -58,10 +58,14 @@ Yes, Blockwriter is designed to be lightweight and only loads necessary assets.
 
 == Changelog ==
 
+= 1.0.2 =
+* [FIX] Improved UI/UX for Carousel Block
+* [FEAT] Added Icon Block
+* [FEAT] Added Accordian Block
+
 = 1.0.1 =
 * Added Carousel Block
-* Added Icon Block
-* Added Accordian Block
+* Added Section Block
 
 = 1.0.0 =
 * Initial release
