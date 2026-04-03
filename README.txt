@@ -1,5 +1,5 @@
 === Blockwriter ===
-Contributors: rithemes, rithemesoffcial, lamarajan
+Contributors: rithemesoffcial, rithemes, lamarajan, riteelama, blockwriter, 
 Donate link: https://rithemes.com/
 Tags: gutenberg, blocks, editor, page builder, blockwriter
 Requires at least: 6.0
