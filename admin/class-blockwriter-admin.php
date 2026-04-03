@@ -9,6 +9,7 @@
  * @package    Blockwriter
  * @subpackage Blockwriter/admin
  */
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 /**
  * The admin-specific functionality of the plugin.
