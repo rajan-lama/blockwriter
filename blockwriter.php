@@ -81,7 +81,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter.php';
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function blockwriter_block_init() {
-	foreach ( glob( __DIR__ . '/dist/blocks/*' ) as $block_path ) {
+	foreach ( glob( __DIR__ . '/blocks/*' ) as $block_path ) {
 		if ( file_exists( $block_path . '/block.json' ) ) {
 			register_block_type( $block_path );
 		}

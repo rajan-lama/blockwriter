@@ -89,7 +89,6 @@ const Inspector = ({ attributes, setAttributes }) => {
           ]}
           onChange={(value) => setAttributes({ paddingY: value })}
         />
-
       </PanelBody>
       <PanelBody title={__('Border Settings')}>
         <BorderBoxControl

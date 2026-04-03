@@ -70,7 +70,7 @@ const Inspector = ({ attributes, setAttributes }) => {
           options={[
             { label: 'Container', value: 'container' },
             { label: 'Fluid', value: 'container-fluid' },
-            { label: 'None', value: 'None' }
+            { label: 'None', value: 'None' },
           ]}
           onChange={(value) => setAttributes({ container: value })}
         />

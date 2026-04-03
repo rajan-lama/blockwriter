@@ -28,15 +28,13 @@ export default function Edit({ attributes, setAttributes }) {
     <>
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <Tag {...blockProps}>
-        { container !== "none" && (
+        {container !== 'none' && (
           <div className={container}>
             <InnerBlocks />
           </div>
         )}
 
-        { container === "none" && (
-          <InnerBlocks />
-        )}
+        {container === 'none' && <InnerBlocks />}
       </Tag>
     </>
   );
