@@ -37,7 +37,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         return ['col-3', 'col-3', 'col-3', 'col-3'];
 
       case 'layout-five':
-        return ['col-2', 'col-2', 'col-2', 'col-2', 'col-2'];
+        return ['col-2-4', 'col-2-4', 'col-2-4', 'col-2-4', 'col-2-4'];
 
       case 'layout-six':
         return ['col-2', 'col-2', 'col-2', 'col-2', 'col-2', 'col-2'];
@@ -115,7 +115,6 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     });
   }, [layout, clientId, innerBlocks]);
 
-  // The initial template (only used on first insertion)
   const TEMPLATE = getColumns(layout).map((colClass) => [
     'blockwriter/column',
     {},

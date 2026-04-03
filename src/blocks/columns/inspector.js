@@ -22,9 +22,9 @@ const Inspector = ({ attributes, setAttributes }) => {
     backgroundColor,
     backgroundImage,
     tagType,
-    // paddingY,
+    paddingY,
     borderStyle,
-    // border,
+    border,
     customMargin,
   } = attributes;
 
@@ -44,9 +44,7 @@ const Inspector = ({ attributes, setAttributes }) => {
   const onChange = (newBorders) => setBorders(newBorders);
 
   const [paddingSize, setPaddingSize] = useState('');
-  const [paddingY, setPaddingY] = useState('');
 
-  const [border, setBorder] = useState();
   return (
     <InspectorControls>
       <PanelBody title="Column Layout Settings">
@@ -60,12 +58,12 @@ const Inspector = ({ attributes, setAttributes }) => {
             { label: 'Four Column', value: 'layout-four' },
             { label: 'Five Column', value: 'layout-five' },
             { label: 'Six Column', value: 'layout-six' },
-            { label: '1/8 + 1/4', value: 'layout-eight-four' },
-            { label: '1/4 + 1/8', value: 'layout-four-eight' },
-            { label: '1/9 + 1/3', value: 'layout-nine-three' },
-            { label: '1/3 + 1/9', value: 'layout-three-nine' },
-            { label: '1/7 + 1/5', value: 'layout-seven-five' },
-            { label: '1/5 + 1/7', value: 'layout-five-seven' },
+            { label: '8/12 + 4/12', value: 'layout-eight-four' },
+            { label: '4/12 + 8/12', value: 'layout-four-eight' },
+            { label: '9/12 + 3/12', value: 'layout-nine-three' },
+            { label: '3/12 + 9/12', value: 'layout-three-nine' },
+            { label: '7/12 + 5/12', value: 'layout-seven-five' },
+            { label: '5/12 + 7/12', value: 'layout-five-seven' },
           ]}
           onChange={(value) => setAttributes({ layout: value })}
         />
@@ -76,7 +74,6 @@ const Inspector = ({ attributes, setAttributes }) => {
           options={[
             { label: 'Container', value: 'container' },
             { label: 'Fluid', value: 'container-fluid' },
-            // { label: 'boxed', value: 'boxed' }
           ]}
           onChange={(value) => setAttributes({ container: value })}
         />
@@ -85,12 +82,26 @@ const Inspector = ({ attributes, setAttributes }) => {
           label="Vertical Spacing"
           value={paddingY}
           options={[
+            { label: 'None', value: 'py-0' },
             { label: 'Small', value: 'py-2' },
             { label: 'Medium', value: 'py-4' },
             { label: 'Large', value: 'py-5' },
           ]}
           onChange={(value) => setAttributes({ paddingY: value })}
         />
+
+        <SelectControl
+          label="Spacing"
+          value={paddingY}
+          options={[
+            { label: 'None', value: 'py-0' },
+            { label: 'Small', value: 'py-2' },
+            { label: 'Medium', value: 'py-4' },
+            { label: 'Large', value: 'py-5' },
+          ]}
+          onChange={(value) => setAttributes({ paddingY: value })}
+        />
+
       </PanelBody>
       <PanelBody title={__('Border Settings')}>
         <BorderBoxControl

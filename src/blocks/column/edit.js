@@ -14,13 +14,6 @@ export default function Edit({ attributes }) {
       <InnerBlocks
         template={[['core/paragraph', { placeholder: 'Add content...' }]]}
         templateLock={false}
-        // allowedBlocks={[
-        //   'core/paragraph',
-        //   'core/heading',
-        //   'core/image',
-        //   'core/buttons',
-        //   'core/list',
-        // ]}
       />
     </div>
   );

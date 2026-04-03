@@ -9,7 +9,9 @@ export default function save({ attributes }) {
 
   return (
     <div {...blockProps}>
-      <InnerBlocks.Content />
+      <div className="row">
+        <InnerBlocks.Content />
+      </div>
     </div>
   );
 }

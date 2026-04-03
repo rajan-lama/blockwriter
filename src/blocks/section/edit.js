@@ -29,9 +29,7 @@ export default function Edit({ attributes, setAttributes }) {
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <Tag {...blockProps}>
         <div className={container}>
-          <div className={'row'}>
-            <InnerBlocks wrapperClass="col" />
-          </div>
+          <InnerBlocks />
         </div>
       </Tag>
     </>
