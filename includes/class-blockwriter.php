@@ -27,6 +27,9 @@
  * @subpackage Blockwriter/includes
  * @author     Ri Themes <wpblockwriter@gmail.com>
  */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Blockwriter {
 
 	/**

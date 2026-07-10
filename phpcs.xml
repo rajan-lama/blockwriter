@@ -139,10 +139,15 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 	<exclude-pattern>*/build/*</exclude-pattern>
+  <exclude-pattern>*/dist/*</exclude-pattern>
 	<exclude-pattern type="relative">*/build/*</exclude-pattern>
+  <exclude-pattern type="relative">*/dist/*</exclude-pattern>
 	<exclude-pattern type="relative">^logs/*</exclude-pattern>
 	<exclude-pattern>/build/admin/*.asset.php</exclude-pattern>
 	<exclude-pattern>/build/blocks/**/*.asset.php</exclude-pattern>
 	<exclude-pattern>/build/public/*.asset.php</exclude-pattern>
+  <exclude-pattern>/dist/admin/*.asset.php</exclude-pattern>
+	<exclude-pattern>/dist/blocks/**/*.asset.php</exclude-pattern>
+	<exclude-pattern>/dist/public/*.asset.php</exclude-pattern>
 
 </ruleset>

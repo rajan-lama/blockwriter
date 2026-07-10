@@ -43,11 +43,11 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-  const onChangeContent = (content) => {
-    setAttributes({ content });
+  const onChangeMessage = (message) => {
+    setAttributes({ message });
   };
 
-  const { header } = attributes;
+  const { header, highContrast, alignment, message } = attributes;
 
   const headingOptions = [
     { label: 'H1', value: 'h1' },
@@ -58,15 +58,14 @@ export default function Edit({ attributes, setAttributes }) {
     { label: 'H6', value: 'h6' },
   ];
 
-  const highContrastClass =
-    attributes.highContrast == true ? 'highContrast' : '';
+  const highContrastClass = highContrast == true ? 'highContrast' : '';
 
   return (
     <>
       <BlockControls key="custom-controls">
         <AlignmentToolbar
-          value={attributes.alignment}
-          onChange={(alignment) => props.setAttributes({ alignment })}
+          value={alignment}
+          onChange={(alignment) => setAttributes({ alignment })}
         />
         <Toolbar>
           <ToolbarDropdownMenu
@@ -84,12 +83,12 @@ export default function Edit({ attributes, setAttributes }) {
       <RichText
         {...useBlockProps({
           className: `content-body ${highContrastClass}`,
-          style: { textAlign: attributes.alignment },
+          style: { textAlign: alignment },
         })}
-        tagName={attributes.header}
+        tagName={header}
         placeholder={__('Add your custom content', 'blockwriter')}
-        onChange={onChangeContent}
-        value={attributes.content}
+        onChange={onChangeMessage}
+        value={message}
       />
     </>
   );
