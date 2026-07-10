@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://rithemes.com
+ * @link       https://wpblockwriter.com
  * @since      1.0.0
  *
  * @package    Blockwriter
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * @package    Blockwriter
  * @subpackage Blockwriter/admin
- * @author     Ri Themes <rithemes@gmail.com>
+ * @author     Ri Themes <wpblockwriter@gmail.com>
  */
 class Blockwriter_Admin
 {

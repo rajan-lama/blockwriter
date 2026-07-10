@@ -6,7 +6,7 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://rithemes.com
+ * @link       https://wpblockwriter.com
  * @since      1.0.0
  *
  * @package    Blockwriter
@@ -25,7 +25,7 @@
  * @since      1.0.0
  * @package    Blockwriter
  * @subpackage Blockwriter/includes
- * @author     Ri Themes <rithemes@gmail.com>
+ * @author     Ri Themes <wpblockwriter@gmail.com>
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

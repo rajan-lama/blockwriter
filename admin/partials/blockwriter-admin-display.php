@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://rithemes.com
+ * @link       https://wpblockwriter.com
  * @since      1.0.0
  *
  * @package    Blockwriter

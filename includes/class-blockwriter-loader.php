@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://rithemes.com
+ * @link       https://wpblockwriter.com
  * @since      1.0.0
  *
  * @package    Blockwriter
@@ -19,7 +19,7 @@
  *
  * @package    Blockwriter
  * @subpackage Blockwriter/includes
- * @author     Ri Themes <rithemes@gmail.com>
+ * @author     Ri Themes <wpblockwriter@gmail.com>
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

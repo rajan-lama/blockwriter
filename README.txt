@@ -1,6 +1,6 @@
 === Blockwriter ===
-Contributors: rithemesoffcial, rithemes, lamarajan, riteelama, blockwriter, 
-Donate link: https://rithemes.com/
+Contributors: wpblockwriter 
+Donate link: https://wpblockwriter.com/
 Tags: gutenberg, blocks, editor, page builder, blockwriter
 Requires at least: 6.0
 Tested up to: 6.9
@@ -115,4 +115,4 @@ Example hook usage:
 * Developer-friendly
 
 For more information, visit:
-https://rithemes.com/
+https://wpblockwriter.com/

@@ -3,7 +3,7 @@
 /**
  * Fired during plugin activation
  *
- * @link       https://rithemes.com
+ * @link       https://wpblockwriter.com
  * @since      1.0.0
  *
  * @package    Blockwriter
@@ -18,7 +18,7 @@
  * @since      1.0.0
  * @package    Blockwriter
  * @subpackage Blockwriter/includes
- * @author     Ri Themes <rithemes@gmail.com>
+ * @author     Ri Themes <wpblockwriter@gmail.com>
  */
 class Blockwriter_Activator {
 
