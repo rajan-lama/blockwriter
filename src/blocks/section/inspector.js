@@ -70,7 +70,7 @@ const Inspector = ({ attributes, setAttributes }) => {
           options={[
             { label: 'Container', value: 'container' },
             { label: 'Fluid', value: 'container-fluid' },
-            // { label: 'boxed', value: 'boxed' }
+            { label: 'None', value: 'None' },
           ]}
           onChange={(value) => setAttributes({ container: value })}
         />
@@ -79,6 +79,7 @@ const Inspector = ({ attributes, setAttributes }) => {
           label="Vertical Spacing"
           value={paddingY}
           options={[
+            { label: 'None', value: 'py-0' },
             { label: 'Small', value: 'py-2' },
             { label: 'Medium', value: 'py-4' },
             { label: 'Large', value: 'py-5' },

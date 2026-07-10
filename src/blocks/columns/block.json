@@ -64,7 +64,7 @@
     },
     "paddingY": {
       "type": "string",
-      "default": "py-5"
+      "default": "py-0"
     },
     "background": {
       "type": "string",
@@ -162,6 +162,5 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "render": "file:./render.php",
   "parent": ["blockwriter/section"]
 }

@@ -37,9 +37,7 @@ export default function Edit({ attributes, setAttributes }) {
 
   const blockProps = useBlockProps();
 
-  console.log('Edit Rendered', preview);
-
-  // 🔥 Preview Mode
+  // Preview Mode
   if (preview) {
     return (
       <div {...blockProps}>

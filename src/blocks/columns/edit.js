@@ -10,7 +10,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
   const { layout, paddingY, background } = attributes;
 
   const blockProps = useBlockProps({
-    className: `${paddingY} ${background}`,
+    className: `row ${paddingY} ${background}`,
   });
 
   // Get current inner blocks
@@ -37,7 +37,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         return ['col-3', 'col-3', 'col-3', 'col-3'];
 
       case 'layout-five':
-        return ['col-2', 'col-2', 'col-2', 'col-2', 'col-2'];
+        return ['col-2-4', 'col-2-4', 'col-2-4', 'col-2-4', 'col-2-4'];
 
       case 'layout-six':
         return ['col-2', 'col-2', 'col-2', 'col-2', 'col-2', 'col-2'];
@@ -73,34 +73,39 @@ export default function Edit({ attributes, setAttributes, clientId }) {
   };
 
   useEffect(() => {
-    if (!innerBlocks || innerBlocks.length === 0) return;
+    if (!innerBlocks) return;
 
     const newLayoutClasses = getColumns(layout);
     let updatedBlocks = [...innerBlocks];
     let needsUpdate = false;
 
-    // If we need MORE columns than we currently have, add empty ones
+    // Handle empty case
+    if (updatedBlocks.length === 0) {
+      const newBlocks = newLayoutClasses.map((colClass) =>
+        createBlock('blockwriter/column', { colMd: colClass }),
+      );
+      replaceInnerBlocks(clientId, newBlocks);
+      return;
+    }
+
     if (newLayoutClasses.length > updatedBlocks.length) {
       const blocksToAdd = newLayoutClasses
         .slice(updatedBlocks.length)
         .map((colClass) =>
           createBlock('blockwriter/column', { colMd: colClass }),
         );
+
       updatedBlocks = [...updatedBlocks, ...blocksToAdd];
       needsUpdate = true;
-    }
-    // If we need FEWER columns, remove the extra ones from the end
-    else if (newLayoutClasses.length < updatedBlocks.length) {
+    } else if (newLayoutClasses.length < updatedBlocks.length) {
       updatedBlocks = updatedBlocks.slice(0, newLayoutClasses.length);
       needsUpdate = true;
     }
 
-    // Only replace if the column count actually changed
     if (needsUpdate) {
       replaceInnerBlocks(clientId, updatedBlocks);
     }
 
-    // Update the colMd attribute safely via dispatcher
     updatedBlocks.forEach((block, index) => {
       if (block.attributes.colMd !== newLayoutClasses[index]) {
         updateBlockAttributes(block.clientId, {
@@ -108,9 +113,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         });
       }
     });
-  }, [layout, clientId]); // Run this effect whenever `layout` changes
+  }, [layout, clientId, innerBlocks]);
 
-  // The initial template (only used on first insertion)
   const TEMPLATE = getColumns(layout).map((colClass) => [
     'blockwriter/column',
     {},
@@ -121,10 +125,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <div {...blockProps}>
         <div className="row">
-          <InnerBlocks
-            template={TEMPLATE}
-            // templateLock="all"
-          />
+          <InnerBlocks template={TEMPLATE} />
         </div>
       </div>
     </>

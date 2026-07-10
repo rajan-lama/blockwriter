@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/buttons",
+  "version": "0.1.0",
+  "title": "BW Button Group",
+  "category": "blockwriter",
+  "icon": "index-card",
+  "description": "Button group container",
+  "keywords": ["icon", "fontawesome", "fa"],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "buttons": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

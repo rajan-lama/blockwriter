@@ -17,7 +17,7 @@
       "type": "string",
       "default": "h1"
     },
-    "content": {
+    "message": {
       "type": "string",
       "default": "Heading"
     },
