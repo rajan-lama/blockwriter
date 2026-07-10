@@ -67,7 +67,7 @@ export default function Edit({ attributes, setAttributes }) {
 
   // useEffect(() => {
   // 	const newBlocks = getColumns(layout).map((colClass) =>
-  // 		wp.blocks.createBlock('rithemes/column', { colMd: colClass })
+  // 		wp.blocks.createBlock('s/column', { colMd: colClass })
   // 	);
 
   // 	replaceInnerBlocks(clientId, newBlocks);

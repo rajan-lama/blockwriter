@@ -1,17 +1,17 @@
 <?php
 
 /**
- * @link              https://rithemes.com
- * @since             1.0.0
+ * @link              https://wpblockwriter.com
+ * @since             1.0.1
  * @package           Blockwriter
  *
  * @wordpress-plugin
  * Plugin Name:       Blockwriter
- * Plugin URI:        https://rithemes.com/wordpress-plugins/blockwriter
+ * Plugin URI:        https://wpblockwriter.com/wordpress-plugins/blockwriter
  * Description:       A powerful block plugins for WordPressers.
- * Version:           1.0.0
- * Author:            Ri Themes
- * Author URI:        https://rithemes.com/
+ * Version:           1.0.1
+ * Author:            wpblockwriter
+ * Author URI:        https://wpblockwriter.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       blockwriter

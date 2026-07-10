@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://rithemes.com
+ * @link       https://wpblockwriter.com
  * @since      1.0.0
  *
  * @package    Blockwriter
@@ -18,7 +18,7 @@
  *
  * @package    Blockwriter
  * @subpackage Blockwriter/public
- * @author     Ri Themes <rithemes@gmail.com>
+ * @author     Ri Themes <wpblockwriter@gmail.com>
  */
 class Blockwriter_Public {
 

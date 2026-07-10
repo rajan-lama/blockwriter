@@ -1,8 +1,8 @@
 {
   "name": "blockwriter",
-  "version": "0.1.0",
-  "description": "Blockwriter is Advanced gutenberg block.",
-  "author": "rithemesofficial",
+  "version": "1.0.1",
+  "description": "Blockwriter is Advanced gutenberg block for WordPresser.",
+  "author": "wpblockwriter",
   "license": "GPL-2.0-or-later",
   "main": "build/index.js",
   "scripts": {
