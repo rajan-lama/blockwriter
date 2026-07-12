@@ -13,7 +13,6 @@ import ShapeDividerPanel from '../inspectors/advanced/ShapeDividerPanel';
 import SpacingPanel from '../inspectors/advanced/SpacingPanel';
 import ZIndexPanel from '../inspectors/advanced/ZIndexPanel';
 
-
 export const GeneralOptions = ({ attributes, setAttributes }) => {
   return (
     <>
