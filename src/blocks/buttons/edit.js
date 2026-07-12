@@ -1,5 +1,6 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { Button, TextControl } from '@wordpress/components';
+import Inspector from './inspector';
 
 export default function Edit({ attributes, setAttributes }) {
   const { buttons = [] } = attributes;
@@ -22,6 +23,8 @@ export default function Edit({ attributes, setAttributes }) {
 
   return (
     <div {...useBlockProps()}>
+      <Inspector attributes={attributes} setAttributes={setAttributes} />
+
       {buttons.map((btn, index) => (
         <div key={index} style={{ marginBottom: '10px' }}>
           <TextControl

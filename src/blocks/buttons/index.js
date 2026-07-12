@@ -4,6 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 import { registerBlockType } from '@wordpress/blocks';
+import advancedOptionsAttributes from '../../constants/AdvanceAttributes';
 
 /**
  * Internal dependencies
@@ -18,6 +19,12 @@ import metadata from './block.json';
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 registerBlockType(metadata.name, {
+  // merge attributes from block.json and advancedOptionsAttributes
+  attributes: {
+    ...metadata.attributes,
+    ...advancedOptionsAttributes,
+  },
+
   /**
    * @see ./edit.js
    */

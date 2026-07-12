@@ -78,7 +78,7 @@ class Blockwriter_Admin
 		 */
 
 		wp_enqueue_style('bootstrap', plugin_dir_url(__FILE__) . 'css/bootstrap.min.css', array(), '5.3.3', 'all');
-    wp_enqueue_style($this->plugin_name . '-editor', plugin_dir_url(__FILE__) . 'css/blockwriter-editor.css', array(), $this->version, 'all');
+    	wp_enqueue_style($this->plugin_name . '-editor', plugin_dir_url(__FILE__) . 'css/blockwriter-editor.css', array(), $this->version, 'all');
 		wp_enqueue_style($this->plugin_name . '-admin', plugin_dir_url(__FILE__) . 'css/blockwriter-admin.css', array(), $this->version, 'all');
 
 	}
@@ -102,7 +102,7 @@ class Blockwriter_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-    wp_enqueue_script('bootstrap-bundle', BLOCKWRITER_URL. 'public/js/bootstrap/bootstrap.bundle.min.js', array(), '5.3.3', 'all');
+    	wp_enqueue_script('bootstrap-bundle', BLOCKWRITER_URL. 'public/js/bootstrap/bootstrap.bundle.min.js', array(), '5.3.3', 'all');
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/blockwriter-admin.js', array('jquery'), $this->version, false);
 
 	}

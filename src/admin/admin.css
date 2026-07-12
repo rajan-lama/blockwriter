@@ -12,7 +12,15 @@
   padding: 10px;
 }
 
+.components-tab-panel__tabs-item {
+  display: flex;
+  flex-direction: column;
 
+  .active-tab {
+    background-color: #f0f0f0;
+    border-bottom: 5px solid #0073aa;
+  }
+}
 
 /* For a smaller viewport */
 @media (max-width: 768px) {
