@@ -9,7 +9,7 @@
   :where(:not(.is-layout-flex, .is-layout-grid))
   > .wp-block {
   border: 1px dashed lightblue;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .components-tab-panel__tabs-item {

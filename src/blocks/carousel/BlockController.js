@@ -3,7 +3,6 @@ import { BlockControls } from '@wordpress/block-editor';
 import ViewBlockController from '../../controls/ViewBlockController';
 
 const BlockController = ({ attributes, setAttributes }) => {
-
   return (
     <BlockControls key="custom-controls">
       <ViewBlockController

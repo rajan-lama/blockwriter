@@ -63,9 +63,9 @@ export default function Edit({ attributes, setAttributes }) {
         <thead>
           <tr>
             <td width="40"></td>
-            <td width="80px">Slide Id</td>
+            <td width="80">Slide Id</td>
             <td>Slide Title</td>
-            <td width="40px"></td>
+            <td width="40"></td>
           </tr>
         </thead>
         <tbody>

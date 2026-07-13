@@ -24,13 +24,18 @@ export default function Edit({ attributes, setAttributes }) {
 
   const Tag = tagType;
 
+  const TEMPLATE = getColumns(layout).map((colClass) => [
+    'blockwriter/columns',
+    { layout: "layout-one" },
+  ]);
+  
   return (
     <>
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <Tag {...blockProps}>
         {container !== 'none' && (
           <div className={container}>
-            <InnerBlocks />
+            <InnerBlocks template={TEMPLATE} />
           </div>
         )}
 
