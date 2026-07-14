@@ -19,7 +19,7 @@ import {
   FocalPointPicker,
   ColorPalette,
 } from '@wordpress/components';
-import DimensionComponent from '../components/DimensionComponent';
+import DimensionComponent from '../../components/DimensionComponent';
 
 const AnimationPanel = ({ attributes, setAttributes }) => {
   const [color, setColor] = useState();
