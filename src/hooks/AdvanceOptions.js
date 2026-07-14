@@ -16,7 +16,6 @@ import {
 } from '../inspectors/advanced';
 
 export const AdvanceOptions = ({ attributes, setAttributes, blockName }) => {
-
   console.log('AdvanceOptions blockName:', blockName);
   return (
     <>

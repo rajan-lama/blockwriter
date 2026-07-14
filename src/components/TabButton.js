@@ -11,9 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import {
-  TabPanel,
-} from '@wordpress/components';
+import { TabPanel } from '@wordpress/components';
 import LayoutOptions from '../hooks/LayoutOptions';
 import AdvanceOptions from '../hooks/AdvanceOptions';
 import GeneralOptions from '../hooks/GeneralOptions';
@@ -65,8 +63,8 @@ const TabButton = ({ attributes, setAttributes, name }) => {
         tab.name === 'general' ? (
           <GeneralOptions
             attributes={attributes}
-            setAttributes={setAttributes} 
-            blockName={name} 
+            setAttributes={setAttributes}
+            blockName={name}
           />
         ) : tab.name === 'layout' ? (
           <LayoutOptions
@@ -77,7 +75,7 @@ const TabButton = ({ attributes, setAttributes, name }) => {
           <AdvanceOptions
             attributes={attributes}
             setAttributes={setAttributes}
-            blockName={name} 
+            blockName={name}
           />
         ) : null
       }

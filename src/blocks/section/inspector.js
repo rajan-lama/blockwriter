@@ -25,7 +25,11 @@ export default function Inspector(props) {
   return (
     <InspectorControls>
       <>
-        <TabButton attributes={attributes} setAttributes={setAttributes} name={getBWBlockName(metadata.name)} />
+        <TabButton
+          attributes={attributes}
+          setAttributes={setAttributes}
+          name={getBWBlockName(metadata.name)}
+        />
       </>
     </InspectorControls>
   );

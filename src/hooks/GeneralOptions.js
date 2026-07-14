@@ -5,18 +5,29 @@
  */
 import { __ } from '@wordpress/i18n';
 
-import BackgroundPanel from '../inspectors/advanced/BackgroundPanel';
-import TextColorPanel from '../inspectors/advanced/TextColorPanel';
-import BorderControlPanel from '../inspectors/advanced/BorderControlPanel';
-import BoxShadowPanel from '../inspectors/advanced/BoxShadowPanel';
-import ShapeDividerPanel from '../inspectors/advanced/ShapeDividerPanel';
-import SpacingPanel from '../inspectors/advanced/SpacingPanel';
+import BackgroundPanel from '../inspectors/layout/BackgroundPanel';
+import TextColorPanel from '../inspectors/layout/TextColorPanel';
+import BorderControlPanel from '../inspectors/layout/BorderControlPanel';
+import BoxShadowPanel from '../inspectors/layout/BoxShadowPanel';
+import ShapeDividerPanel from '../inspectors/layout/ShapeDividerPanel';
+import SpacingPanel from '../inspectors/layout/SpacingPanel';
 import ZIndexPanel from '../inspectors/advanced/ZIndexPanel';
 import SectionSettingsPanel from '../inspectors/general/SectionSettingsPanel';
 import blockOptions from '../constants/blockOptions';
 
 export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
-  const options = blockOptions[blockName].general || {};
+  const options = blockOptions[blockName].general || [];
+
+  const panels = {
+    SectionSettingsPanel,
+    BackgroundPanel,
+    TextColorPanel,
+    BorderControlPanel,
+    BoxShadowPanel,
+    ShapeDividerPanel,
+    SpacingPanel,
+    ZIndexPanel,
+  };
 
   console.log('GeneralOptions blockName:', blockName); // Log the blockName to verify it's being passed correctly
   console.log('GeneralOptions options:', options);
@@ -24,17 +35,16 @@ export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
   return (
     <>
       <div className="blockwriter-styling-section">
-        {options.includes('SectionSettingsPanel') && (
-          <SectionSettingsPanel attributes={attributes} setAttributes={setAttributes} />
-        )}
-        {options.includes('BackgroundPanel') && (
-        <BackgroundPanel
-          attributes={attributes}
-          setAttributes={setAttributes}
-        /> )}
-        {options.includes('TextColorPanel') && (
-        <TextColorPanel attributes={attributes} setAttributes={setAttributes} />
-         )}
+        {options.map((name) => {
+          const Panel = panels[name];
+          return Panel ? (
+            <Panel
+              key={name}
+              attributes={attributes}
+              setAttributes={setAttributes}
+            />
+          ) : null;
+        })}
       </div>
     </>
   );

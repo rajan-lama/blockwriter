@@ -54,27 +54,26 @@ const SpacingPanel = ({ attributes, setAttributes }) => {
   return (
     <>
       <PanelBody title={__('Spacing', 'blockwriter')} initialOpen={false}>
-        {/* <DimensionComponent
-                        label={__('Row Gap','blockwriter')}
-                        dimension={row}
-                        updatedDimension={updateAttribute}
-                    /> */}
-        {/* <DimensionComponent
-                        label={__('Column Gap','blockwriter')}
-                        dimension={column}
-                        updatedDimension={updateAttribute}
-                    /> */}
-        {/* <DimensionComponent
-            label={__('Padding Gap', 'blockwriter')}
-            dimension={padding}
-            updatedDimension={updateAttribute}
-          />
-          <DimensionComponent
-            label={__('Margin Gap', 'blockwriter')}
-            dimension={margin}
-            updatedDimension={updateAttribute}
-          /> */}
-        <p>Margin and padding here</p>
+        <DimensionComponent
+          label={__('Row Gap','blockwriter')}
+          dimension={row}
+          updatedDimension={updateAttribute}
+        />
+        <DimensionComponent
+          label={__('Column Gap','blockwriter')}
+          dimension={column}
+          updatedDimension={updateAttribute}
+        />
+        <DimensionComponent
+          label={__('Padding', 'blockwriter')}
+          dimension={padding}
+          updatedDimension={updateAttribute}
+        />
+        <DimensionComponent
+          label={__('Margin', 'blockwriter')}
+          dimension={margin}
+          updatedDimension={updateAttribute}
+        />
       </PanelBody>
     </>
   );

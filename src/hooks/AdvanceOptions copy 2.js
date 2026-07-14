@@ -5,12 +5,12 @@
  */
 import { __ } from '@wordpress/i18n';
 
-import BackgroundPanel from '../inspectors/advanced/BackgroundPanel';
-import TextColorPanel from '../inspectors/advanced/TextColorPanel';
-import BorderControlPanel from '../inspectors/advanced/BorderControlPanel';
-import BoxShadowPanel from '../inspectors/advanced/BoxShadowPanel';
-import ShapeDividerPanel from '../inspectors/advanced/ShapeDividerPanel';
-import SpacingPanel from '../inspectors/advanced/SpacingPanel';
+import BackgroundPanel from '../inspectors/layout/BackgroundPanel';
+import TextColorPanel from '../inspectors/layout/TextColorPanel';
+import BorderControlPanel from '../inspectors/layout/BorderControlPanel';
+import BoxShadowPanel from '../inspectors/layout/BoxShadowPanel';
+import ShapeDividerPanel from '../inspectors/layout/ShapeDividerPanel';
+import SpacingPanel from '../inspectors/layout/SpacingPanel';
 import ZIndexPanel from '../inspectors/advanced/ZIndexPanel';
 
 export const AdvanceOptions = ({ attributes, setAttributes }) => {

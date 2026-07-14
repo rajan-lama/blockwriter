@@ -909,17 +909,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+
 const BlockOptions = {
-  section: {
-    advanced: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
+  'advanced-header': {
+    advanced: ['', 'TextColorPanel', 'BackgroundColorPanel'],
     layout: {},
     general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
     blockControlOptions: {}
   },
   buttons: {
-    advanced: {},
+    advanced: ['', 'TextColorPanel', 'BackgroundColorPanel'],
     layout: {},
-    general: ['SectionSettingsPanel', 'BorderPanel'],
+    general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
+    blockControlOptions: {}
+  },
+  carousel: {
+    advanced: ['', 'TextColorPanel', 'BackgroundColorPanel'],
+    layout: {},
+    general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
+    blockControlOptions: {}
+  },
+  columns: {
+    advanced: ['', 'TextColorPanel', 'BackgroundColorPanel'],
+    layout: {},
+    general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
+    blockControlOptions: {}
+  },
+  icon: {
+    advanced: ['', 'TextColorPanel', 'BackgroundColorPanel'],
+    layout: {},
+    general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
+    blockControlOptions: {}
+  },
+  section: {
+    advanced: ['', 'TextColorPanel', 'BackgroundColorPanel'],
+    layout: {},
+    general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
     blockControlOptions: {}
   }
 };
@@ -1046,12 +1071,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _inspectors_advanced_BackgroundPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../inspectors/advanced/BackgroundPanel */ "./src/inspectors/advanced/BackgroundPanel.jsx");
-/* harmony import */ var _inspectors_advanced_TextColorPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../inspectors/advanced/TextColorPanel */ "./src/inspectors/advanced/TextColorPanel.jsx");
-/* harmony import */ var _inspectors_advanced_BorderControlPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inspectors/advanced/BorderControlPanel */ "./src/inspectors/advanced/BorderControlPanel.jsx");
-/* harmony import */ var _inspectors_advanced_BoxShadowPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../inspectors/advanced/BoxShadowPanel */ "./src/inspectors/advanced/BoxShadowPanel.jsx");
-/* harmony import */ var _inspectors_advanced_ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../inspectors/advanced/ShapeDividerPanel */ "./src/inspectors/advanced/ShapeDividerPanel.jsx");
-/* harmony import */ var _inspectors_advanced_SpacingPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../inspectors/advanced/SpacingPanel */ "./src/inspectors/advanced/SpacingPanel.jsx");
+/* harmony import */ var _inspectors_layout_BackgroundPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../inspectors/layout/BackgroundPanel */ "./src/inspectors/layout/BackgroundPanel.jsx");
+/* harmony import */ var _inspectors_layout_TextColorPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../inspectors/layout/TextColorPanel */ "./src/inspectors/layout/TextColorPanel.jsx");
+/* harmony import */ var _inspectors_layout_BorderControlPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../inspectors/layout/BorderControlPanel */ "./src/inspectors/layout/BorderControlPanel.jsx");
+/* harmony import */ var _inspectors_layout_BoxShadowPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../inspectors/layout/BoxShadowPanel */ "./src/inspectors/layout/BoxShadowPanel.jsx");
+/* harmony import */ var _inspectors_layout_ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../inspectors/layout/ShapeDividerPanel */ "./src/inspectors/layout/ShapeDividerPanel.jsx");
+/* harmony import */ var _inspectors_layout_SpacingPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../inspectors/layout/SpacingPanel */ "./src/inspectors/layout/SpacingPanel.jsx");
 /* harmony import */ var _inspectors_advanced_ZIndexPanel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../inspectors/advanced/ZIndexPanel */ "./src/inspectors/advanced/ZIndexPanel.jsx");
 /* harmony import */ var _inspectors_general_SectionSettingsPanel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../inspectors/general/SectionSettingsPanel */ "./src/inspectors/general/SectionSettingsPanel.jsx");
 /* harmony import */ var _constants_blockOptions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../constants/blockOptions */ "./src/constants/blockOptions.js");
@@ -1078,22 +1103,29 @@ const GeneralOptions = ({
   setAttributes,
   blockName
 }) => {
-  const options = _constants_blockOptions__WEBPACK_IMPORTED_MODULE_9__["default"][blockName].general || {};
+  const options = _constants_blockOptions__WEBPACK_IMPORTED_MODULE_9__["default"][blockName].general || [];
+  const panels = {
+    SectionSettingsPanel: _inspectors_general_SectionSettingsPanel__WEBPACK_IMPORTED_MODULE_8__["default"],
+    BackgroundPanel: _inspectors_layout_BackgroundPanel__WEBPACK_IMPORTED_MODULE_1__["default"],
+    TextColorPanel: _inspectors_layout_TextColorPanel__WEBPACK_IMPORTED_MODULE_2__["default"],
+    BorderControlPanel: _inspectors_layout_BorderControlPanel__WEBPACK_IMPORTED_MODULE_3__["default"],
+    BoxShadowPanel: _inspectors_layout_BoxShadowPanel__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ShapeDividerPanel: _inspectors_layout_ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_5__["default"],
+    SpacingPanel: _inspectors_layout_SpacingPanel__WEBPACK_IMPORTED_MODULE_6__["default"],
+    ZIndexPanel: _inspectors_advanced_ZIndexPanel__WEBPACK_IMPORTED_MODULE_7__["default"]
+  };
   console.log('GeneralOptions blockName:', blockName); // Log the blockName to verify it's being passed correctly
   console.log('GeneralOptions options:', options);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)("div", {
       className: "blockwriter-styling-section",
-      children: [options.includes('SectionSettingsPanel') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_inspectors_general_SectionSettingsPanel__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        attributes: attributes,
-        setAttributes: setAttributes
-      }), options.includes('BackgroundPanel') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_inspectors_advanced_BackgroundPanel__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        attributes: attributes,
-        setAttributes: setAttributes
-      }), options.includes('TextColorPanel') && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_inspectors_advanced_TextColorPanel__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        attributes: attributes,
-        setAttributes: setAttributes
-      })]
+      children: options.map(name => {
+        const Panel = panels[name];
+        return Panel ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(Panel, {
+          attributes: attributes,
+          setAttributes: setAttributes
+        }, name) : null;
+      })
     })
   });
 };
@@ -1211,10 +1243,277 @@ const getBWBlockName = blockName => {
 
 /***/ },
 
-/***/ "./src/inspectors/advanced/BackgroundPanel.jsx"
-/*!*****************************************************!*\
-  !*** ./src/inspectors/advanced/BackgroundPanel.jsx ***!
-  \*****************************************************/
+/***/ "./src/inspectors/advanced/ZIndexPanel.jsx"
+/*!*************************************************!*\
+  !*** ./src/inspectors/advanced/ZIndexPanel.jsx ***!
+  \*************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+const ZIndexPanel = ({
+  attributes,
+  setAttributes
+}) => {
+  const updateAttribute = newValue => {
+    setAttributes({
+      zindex: newValue
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Z-index ', 'blockwriter'),
+      initialOpen: false,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.TextControl, {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Z Index', 'blockwriter'),
+        value: attributes.zindex,
+        onChange: updateAttribute
+      })
+    })
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ZIndexPanel);
+
+/***/ },
+
+/***/ "./src/inspectors/advanced/index.js"
+/*!******************************************!*\
+  !*** ./src/inspectors/advanced/index.js ***!
+  \******************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* empty/unused harmony star reexport */
+/* empty/unused harmony star reexport */
+/* empty/unused harmony star reexport */
+/* empty/unused harmony star reexport */
+/* empty/unused harmony star reexport */
+/* empty/unused harmony star reexport */
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ZIndexPanel: () => (/* reexport safe */ _ZIndexPanel__WEBPACK_IMPORTED_MODULE_1__["default"])
+/* harmony export */ });
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './BackgroundPanel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './TextColorPanel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './BorderControlPanel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './BoxShadowPanel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './ShapeDividerPanel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './SpacingPanel'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _ZIndexPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ZIndexPanel */ "./src/inspectors/advanced/ZIndexPanel.jsx");
+
+
+
+
+
+
+
+
+/***/ },
+
+/***/ "./src/inspectors/general/SectionSettingsPanel.jsx"
+/*!*********************************************************!*\
+  !*** ./src/inspectors/general/SectionSettingsPanel.jsx ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+
+const SectionSettingsPanel = ({
+  attributes,
+  setAttributes
+}) => {
+  const {
+    layout,
+    container,
+    background,
+    backgroundColor,
+    backgroundImage,
+    tagType,
+    paddingY,
+    borderStyle,
+    margin
+  } = attributes;
+  const defaultBorder = {
+    color: '#72aee6',
+    style: 'dashed',
+    width: '1px'
+  };
+  const [borders, setBorders] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    top: defaultBorder,
+    right: defaultBorder,
+    bottom: defaultBorder,
+    left: defaultBorder
+  });
+  const onChange = newBorders => setBorders(newBorders);
+  const [paddingSize, setPaddingSize] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const [border, setBorder] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    title: "Section Settings",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      label: "Selector",
+      value: tagType,
+      options: [{
+        label: 'Section',
+        value: 'section'
+      }, {
+        label: 'Div',
+        value: 'div'
+      }, {
+        label: 'Aside',
+        value: 'aside'
+      }, {
+        label: 'Main',
+        value: 'main'
+      }, {
+        label: 'Article',
+        value: 'article'
+      }, {
+        label: 'Header',
+        value: 'header'
+      }, {
+        label: 'Footer',
+        value: 'footer'
+      }],
+      onChange: value => setAttributes({
+        tagType: value
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      label: "Layout",
+      value: layout,
+      options: [{
+        label: 'One Column',
+        value: 'layout-one'
+      }, {
+        label: 'Two Column',
+        value: 'layout-two'
+      }, {
+        label: 'Three Column',
+        value: 'layout-three'
+      }, {
+        label: 'Four Column',
+        value: 'layout-four'
+      }, {
+        label: 'Five Column',
+        value: 'layout-five'
+      }, {
+        label: 'Six Column',
+        value: 'layout-six'
+      }, {
+        label: '8/12 + 4/12',
+        value: 'layout-eight-four'
+      }, {
+        label: '4/12 + 8/12',
+        value: 'layout-four-eight'
+      }, {
+        label: '9/12 + 3/12',
+        value: 'layout-nine-three'
+      }, {
+        label: '3/12 + 9/12',
+        value: 'layout-three-nine'
+      }, {
+        label: '7/12 + 5/12',
+        value: 'layout-seven-five'
+      }, {
+        label: '5/12 + 7/12',
+        value: 'layout-five-seven'
+      }, {
+        label: '80/20',
+        value: 'layout-eighty-twenty'
+      }, {
+        label: '20/80',
+        value: 'layout-twenty-eighty'
+      }, {
+        label: '3/12 + 3/12 + 6/12',
+        value: 'layout-three-three-six'
+      }, {
+        label: '6/12 + 3/12 + 3/12',
+        value: 'layout-six-three-three'
+      }, {
+        label: '4/12 + 4/12 + 4/12',
+        value: 'layout-four-four-four'
+      }, {
+        label: '2/12 + 4/12 + 4/12 + 2/12',
+        value: 'layout-two-four-four-two'
+      }, {
+        label: 'None',
+        value: 'layout-none'
+      }],
+      onChange: value => setAttributes({
+        layout: value
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      label: "Container",
+      value: container,
+      options: [{
+        label: 'Container',
+        value: 'container'
+      }, {
+        label: 'Fluid',
+        value: 'container-fluid'
+      }, {
+        label: 'None',
+        value: 'none'
+      }],
+      onChange: value => setAttributes({
+        container: value
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
+      label: "Vertical Spacing",
+      value: paddingY,
+      options: [{
+        label: 'None',
+        value: 'py-0'
+      }, {
+        label: 'Small',
+        value: 'py-2'
+      }, {
+        label: 'Medium',
+        value: 'py-4'
+      }, {
+        label: 'Large',
+        value: 'py-5'
+      }],
+      onChange: value => setAttributes({
+        paddingY: value
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSettingsPanel);
+
+/***/ },
+
+/***/ "./src/inspectors/layout/BackgroundPanel.jsx"
+/*!***************************************************!*\
+  !*** ./src/inspectors/layout/BackgroundPanel.jsx ***!
+  \***************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1499,10 +1798,10 @@ const BackgroundPanel = ({
 
 /***/ },
 
-/***/ "./src/inspectors/advanced/BorderControlPanel.jsx"
-/*!********************************************************!*\
-  !*** ./src/inspectors/advanced/BorderControlPanel.jsx ***!
-  \********************************************************/
+/***/ "./src/inspectors/layout/BorderControlPanel.jsx"
+/*!******************************************************!*\
+  !*** ./src/inspectors/layout/BorderControlPanel.jsx ***!
+  \******************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1640,10 +1939,10 @@ const BorderControlPanel = ({
 
 /***/ },
 
-/***/ "./src/inspectors/advanced/BoxShadowPanel.jsx"
-/*!****************************************************!*\
-  !*** ./src/inspectors/advanced/BoxShadowPanel.jsx ***!
-  \****************************************************/
+/***/ "./src/inspectors/layout/BoxShadowPanel.jsx"
+/*!**************************************************!*\
+  !*** ./src/inspectors/layout/BoxShadowPanel.jsx ***!
+  \**************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1769,10 +2068,10 @@ const BoxShadowPanel = ({
 
 /***/ },
 
-/***/ "./src/inspectors/advanced/ShapeDividerPanel.jsx"
-/*!*******************************************************!*\
-  !*** ./src/inspectors/advanced/ShapeDividerPanel.jsx ***!
-  \*******************************************************/
+/***/ "./src/inspectors/layout/ShapeDividerPanel.jsx"
+/*!*****************************************************!*\
+  !*** ./src/inspectors/layout/ShapeDividerPanel.jsx ***!
+  \*****************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1857,10 +2156,10 @@ const ShapeDividerPanel = ({
 
 /***/ },
 
-/***/ "./src/inspectors/advanced/SpacingPanel.jsx"
-/*!**************************************************!*\
-  !*** ./src/inspectors/advanced/SpacingPanel.jsx ***!
-  \**************************************************/
+/***/ "./src/inspectors/layout/SpacingPanel.jsx"
+/*!************************************************!*\
+  !*** ./src/inspectors/layout/SpacingPanel.jsx ***!
+  \************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -1924,12 +2223,26 @@ const SpacingPanel = ({
     padding
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Spacing', 'blockwriter'),
       initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-        children: "Margin and padding here"
-      })
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_DimensionComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Row Gap', 'blockwriter'),
+        dimension: row,
+        updatedDimension: updateAttribute
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_DimensionComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Column Gap', 'blockwriter'),
+        dimension: column,
+        updatedDimension: updateAttribute
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_DimensionComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Padding', 'blockwriter'),
+        dimension: padding,
+        updatedDimension: updateAttribute
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_DimensionComponent__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Margin', 'blockwriter'),
+        dimension: margin,
+        updatedDimension: updateAttribute
+      })]
     })
   });
 };
@@ -1937,10 +2250,10 @@ const SpacingPanel = ({
 
 /***/ },
 
-/***/ "./src/inspectors/advanced/TextColorPanel.jsx"
-/*!****************************************************!*\
-  !*** ./src/inspectors/advanced/TextColorPanel.jsx ***!
-  \****************************************************/
+/***/ "./src/inspectors/layout/TextColorPanel.jsx"
+/*!**************************************************!*\
+  !*** ./src/inspectors/layout/TextColorPanel.jsx ***!
+  \**************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -2056,308 +2369,6 @@ const TextColorPanel = ({
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (TextColorPanel);
-
-/***/ },
-
-/***/ "./src/inspectors/advanced/ZIndexPanel.jsx"
-/*!*************************************************!*\
-  !*** ./src/inspectors/advanced/ZIndexPanel.jsx ***!
-  \*************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _components_DimensionComponent__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/DimensionComponent */ "./src/components/DimensionComponent.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__);
-
-
-//import { Button, ButtonGroup, ColorPicker, GradientPicker, ToggleControl, SelectControl, RangeControl } from '@wordpress/components';
-
-
-
-
-
-
-const ZIndexPanel = ({
-  attributes,
-  setAttributes
-}) => {
-  const [color, setColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  const [gradient, setGradient] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const [currentBgOption, setCurrentBgOption] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  const [imageOverlay, setImageOverlay] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [columns, setColumns] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(2);
-  const [linkColor, setLinkColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('normal');
-  const [focalPoint, setFocalPoint] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    x: 0.5,
-    y: 0.5
-  });
-  const url = 'http://pluginfactory.loc/wp-content/uploads/2022/11/Course-Sales-Page-and-Instructional-Design-Template-1536x864.jpg';
-
-  /* Example function to render the CSS styles based on Focal Point Picker value */
-  const style = {
-    backgroundImage: `url(${url})`,
-    backgroundPosition: `${focalPoint.x * 100}% ${focalPoint.y * 100}%`
-  };
-
-  // const [ color, setColor ] = useState ( '#f00' )
-  const colors = [{
-    name: 'red',
-    color: '#f00'
-  }];
-  const updateAttribute = newValue => {
-    setAttributes({
-      margin: newValue
-    });
-  };
-  const {
-    margin,
-    padding
-  } = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Spacing', 'blockwriter'),
-      initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("p", {
-        children: "Z index the section"
-      })
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ZIndexPanel);
-
-/***/ },
-
-/***/ "./src/inspectors/advanced/index.js"
-/*!******************************************!*\
-  !*** ./src/inspectors/advanced/index.js ***!
-  \******************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BackgroundPanel: () => (/* reexport safe */ _BackgroundPanel__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   BorderControlPanel: () => (/* reexport safe */ _BorderControlPanel__WEBPACK_IMPORTED_MODULE_2__["default"]),
-/* harmony export */   BoxShadowPanel: () => (/* reexport safe */ _BoxShadowPanel__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   ShapeDividerPanel: () => (/* reexport safe */ _ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_4__["default"]),
-/* harmony export */   SpacingPanel: () => (/* reexport safe */ _SpacingPanel__WEBPACK_IMPORTED_MODULE_5__["default"]),
-/* harmony export */   TextColorPanel: () => (/* reexport safe */ _TextColorPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   ZIndexPanel: () => (/* reexport safe */ _ZIndexPanel__WEBPACK_IMPORTED_MODULE_6__["default"])
-/* harmony export */ });
-/* harmony import */ var _BackgroundPanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BackgroundPanel */ "./src/inspectors/advanced/BackgroundPanel.jsx");
-/* harmony import */ var _TextColorPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TextColorPanel */ "./src/inspectors/advanced/TextColorPanel.jsx");
-/* harmony import */ var _BorderControlPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BorderControlPanel */ "./src/inspectors/advanced/BorderControlPanel.jsx");
-/* harmony import */ var _BoxShadowPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxShadowPanel */ "./src/inspectors/advanced/BoxShadowPanel.jsx");
-/* harmony import */ var _ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ShapeDividerPanel */ "./src/inspectors/advanced/ShapeDividerPanel.jsx");
-/* harmony import */ var _SpacingPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SpacingPanel */ "./src/inspectors/advanced/SpacingPanel.jsx");
-/* harmony import */ var _ZIndexPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ZIndexPanel */ "./src/inspectors/advanced/ZIndexPanel.jsx");
-
-
-
-
-
-
-
-
-/***/ },
-
-/***/ "./src/inspectors/general/SectionSettingsPanel.jsx"
-/*!*********************************************************!*\
-  !*** ./src/inspectors/general/SectionSettingsPanel.jsx ***!
-  \*********************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-
-
-const SectionSettingsPanel = ({
-  attributes,
-  setAttributes
-}) => {
-  const {
-    layout,
-    container,
-    background,
-    backgroundColor,
-    backgroundImage,
-    tagType,
-    paddingY,
-    borderStyle,
-    margin
-  } = attributes;
-  const defaultBorder = {
-    color: '#72aee6',
-    style: 'dashed',
-    width: '1px'
-  };
-  const [borders, setBorders] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)({
-    top: defaultBorder,
-    right: defaultBorder,
-    bottom: defaultBorder,
-    left: defaultBorder
-  });
-  const onChange = newBorders => setBorders(newBorders);
-  const [paddingSize, setPaddingSize] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('');
-  const [border, setBorder] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
-    title: "Section Settings",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-      label: "Selector",
-      value: tagType,
-      options: [{
-        label: 'Section',
-        value: 'section'
-      }, {
-        label: 'Div',
-        value: 'div'
-      }, {
-        label: 'Aside',
-        value: 'aside'
-      }, {
-        label: 'Main',
-        value: 'main'
-      }, {
-        label: 'Article',
-        value: 'article'
-      }, {
-        label: 'Header',
-        value: 'header'
-      }, {
-        label: 'Footer',
-        value: 'footer'
-      }],
-      onChange: value => setAttributes({
-        tagType: value
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-      label: "Layout",
-      value: layout,
-      options: [{
-        label: 'One Column',
-        value: 'layout-one'
-      }, {
-        label: 'Two Column',
-        value: 'layout-two'
-      }, {
-        label: 'Three Column',
-        value: 'layout-three'
-      }, {
-        label: 'Four Column',
-        value: 'layout-four'
-      }, {
-        label: 'Five Column',
-        value: 'layout-five'
-      }, {
-        label: 'Six Column',
-        value: 'layout-six'
-      }, {
-        label: '8/12 + 4/12',
-        value: 'layout-eight-four'
-      }, {
-        label: '4/12 + 8/12',
-        value: 'layout-four-eight'
-      }, {
-        label: '9/12 + 3/12',
-        value: 'layout-nine-three'
-      }, {
-        label: '3/12 + 9/12',
-        value: 'layout-three-nine'
-      }, {
-        label: '7/12 + 5/12',
-        value: 'layout-seven-five'
-      }, {
-        label: '5/12 + 7/12',
-        value: 'layout-five-seven'
-      }, {
-        label: '80/20',
-        value: 'layout-eighty-twenty'
-      }, {
-        label: '20/80',
-        value: 'layout-twenty-eighty'
-      }, {
-        label: '3/12 + 3/12 + 6/12',
-        value: 'layout-three-three-six'
-      }, {
-        label: '6/12 + 3/12 + 3/12',
-        value: 'layout-six-three-three'
-      }, {
-        label: '4/12 + 4/12 + 4/12',
-        value: 'layout-four-four-four'
-      }, {
-        label: '2/12 + 4/12 + 4/12 + 2/12',
-        value: 'layout-two-four-four-two'
-      }, {
-        label: 'None',
-        value: 'layout-none'
-      }],
-      onChange: value => setAttributes({
-        layout: value
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-      label: "Container",
-      value: container,
-      options: [{
-        label: 'Container',
-        value: 'container'
-      }, {
-        label: 'Fluid',
-        value: 'container-fluid'
-      }, {
-        label: 'None',
-        value: 'none'
-      }],
-      onChange: value => setAttributes({
-        container: value
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.SelectControl, {
-      label: "Vertical Spacing",
-      value: paddingY,
-      options: [{
-        label: 'None',
-        value: 'py-0'
-      }, {
-        label: 'Small',
-        value: 'py-2'
-      }, {
-        label: 'Medium',
-        value: 'py-4'
-      }, {
-        label: 'Large',
-        value: 'py-5'
-      }],
-      onChange: value => setAttributes({
-        paddingY: value
-      })
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SectionSettingsPanel);
 
 /***/ },
 
