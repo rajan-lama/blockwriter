@@ -1,1 +1,1 @@
-console.log('Public Rendered');
+console.log("Public Rendered");

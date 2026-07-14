@@ -1,1 +1,224 @@
-(()=>{"use strict";const l=window.wp.blocks,e=window.wp.element,o=window.wp.data,t=window.wp.blockEditor,a=(window.React,window.wp.i18n),u=window.wp.components,n=window.ReactJSXRuntime,c=({attributes:l,setAttributes:o})=>{const t={color:"#72aee6",style:"dashed",width:"1px"},[c,i]=(0,e.useState)({top:t,right:t,bottom:t,left:t});return(0,n.jsx)(u.PanelBody,{title:(0,a.__)("Border Settings"),children:(0,n.jsx)(u.BorderBoxControl,{__next40pxDefaultSize:!0,colors:[{name:"Blue 20",color:"#72aee6"}],label:(0,a.__)("Borders"),onChange:l=>i(l),value:c})})},i=({attributes:l,setAttributes:e})=>{const{layout:o,paddingY:t,background:a,container:c}=l;return(0,n.jsxs)(u.PanelBody,{title:"Column Layout Settings",children:[(0,n.jsx)(u.SelectControl,{label:"Selector",value:o,options:[{label:"One Column",value:"layout-one"},{label:"Two Column",value:"layout-two"},{label:"Three Colum",value:"layout-three"},{label:"Four Column",value:"layout-four"},{label:"Five Column",value:"layout-five"},{label:"Six Column",value:"layout-six"},{label:"8/12 + 4/12",value:"layout-eight-four"},{label:"4/12 + 8/12",value:"layout-four-eight"},{label:"9/12 + 3/12",value:"layout-nine-three"},{label:"3/12 + 9/12",value:"layout-three-nine"},{label:"7/12 + 5/12",value:"layout-seven-five"},{label:"5/12 + 7/12",value:"layout-five-seven"},{label:"80/20",value:"layout-eighty-twenty"},{label:"20/80",value:"layout-twenty-eighty"},{label:"3/12 + 3/12 + 6/12",value:"layout-three-three-six"},{label:"6/12 + 3/12 + 3/12",value:"layout-six-three-three"},{label:"4/12 + 4/12 + 4/12",value:"layout-four-four-four"},{label:"2/12 + 4/12 + 4/12 + 2/12",value:"layout-two-four-four-two"},{label:"None",value:"layout-none"}],onChange:l=>e({layout:l})}),(0,n.jsx)(u.SelectControl,{label:"Container",value:c,options:[{label:"Container",value:"container"},{label:"Fluid",value:"container-fluid"}],onChange:l=>e({container:l})}),(0,n.jsx)(u.SelectControl,{label:"Vertical Spacing",value:t,options:[{label:"None",value:"py-0"},{label:"Small",value:"py-2"},{label:"Medium",value:"py-4"},{label:"Large",value:"py-5"}],onChange:l=>e({paddingY:l})})]})},r=({attributes:l,setAttributes:e})=>(0,n.jsxs)(t.InspectorControls,{children:[(0,n.jsx)(i,{attributes:l,setAttributes:e}),(0,n.jsx)(c,{attributes:l,setAttributes:e})]}),s=JSON.parse('{"UU":"blockwriter/columns"}'),h=(0,n.jsx)("svg",{viewBox:"0 0 24 24",xmlns:"http://www.w3.org/2000/svg","aria-hidden":"true",focusable:"false",children:(0,n.jsx)("path",{d:"M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm.5 16c0 .3-.2.5-.5.5H5c-.3 0-.5-.2-.5-.5V7h15v12zM9 10H7v2h2v-2zm0 4H7v2h2v-2zm4-4h-2v2h2v-2zm4 0h-2v2h2v-2zm-4 4h-2v2h2v-2zm4 0h-2v2h2v-2z"})});(0,l.registerBlockType)(s.UU,{icon:h,edit:function({attributes:a,setAttributes:u,clientId:c}){const{layout:i,paddingY:s,background:h}=a,y=(0,t.useBlockProps)({className:`row ${s} ${h}`}),d=(0,o.useSelect)(l=>l("core/block-editor").getBlocks(c),[c]),{replaceInnerBlocks:v,updateBlockAttributes:b}=(0,o.useDispatch)("core/block-editor"),w={"layout-one":["col-12"],"layout-two":["col-6","col-6"],"layout-three":["col-4","col-4","col-4"],"layout-four":["col-3","col-3","col-3","col-3"],"layout-five":["col-2-4","col-2-4","col-2-4","col-2-4","col-2-4"],"layout-six":["col-2","col-2","col-2","col-2","col-2","col-2"],"layout-eight-four":["col-8","col-4"],"layout-four-eight":["col-4","col-8"],"layout-nine-three":["col-9","col-3"],"layout-three-nine":["col-3","col-9"],"layout-five-seven":["col-5","col-7"],"layout-seven-five":["col-7","col-5"],"layout-eighty-twenty":["col-10","col-2"],"layout-twenty-eighty":["col-2","col-10"],"layout-three-three-six":["col-3","col-3","col-6"],"layout-six-three-three":["col-6","col-3","col-3"],"layout-four-four-four":["col-4","col-4","col-4"],"layout-two-four-four-two":["col-2","col-4","col-4","col-2"],"layout-none":[]},m=l=>w[l]??["col-12"];(0,e.useEffect)(()=>{if(!d)return;const e=m(i);let o=[...d],t=!1;if(0===o.length){const o=e.map(e=>(0,l.createBlock)("blockwriter/column",{colMd:e}));return void v(c,o)}if(e.length>o.length){const a=e.slice(o.length).map(e=>(0,l.createBlock)("blockwriter/column",{colMd:e}));o=[...o,...a],t=!0}else e.length<o.length&&(o=o.slice(0,e.length),t=!0);t&&v(c,o),o.forEach((l,o)=>{l.attributes.colMd!==e[o]&&b(l.clientId,{colMd:e[o]})})},[i,c,d]);const x=m(i).map(l=>["blockwriter/column",{}]);return console.log("Attributes: ",i),(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(r,{attributes:a,setAttributes:u}),(0,n.jsx)("div",{...y,children:(0,n.jsxs)("div",{className:"row",children:["layout-none"==i&&(0,n.jsx)("div",{className:"col-12",children:(0,n.jsxs)("ul",{children:[(0,n.jsx)("li",{onClick:()=>u({layout:"layout-one"}),children:"Column 1"}),(0,n.jsx)("li",{onClick:()=>u({layout:"layout-two"}),children:"Column 2"}),(0,n.jsx)("li",{onClick:()=>u({layout:"layout-three"}),children:"Column 3"}),(0,n.jsx)("li",{onClick:()=>u({layout:"layout-four"}),children:"Column 4"}),(0,n.jsx)("li",{onClick:()=>u({layout:"layout-five"}),children:"Column 5"}),(0,n.jsx)("li",{onClick:()=>u({layout:"layout-six"}),children:"Column 6"}),(0,n.jsx)("li",{onClick:()=>u({layout:"layout-eight-four"}),children:"Column 7"})]})}),"layout-none"!==i&&(0,n.jsx)(t.InnerBlocks,{template:x})]})})]})},save:function({attributes:l}){const{colMd:e}=l,o=t.useBlockProps.save({className:e});return(0,n.jsx)("div",{...o,children:(0,n.jsx)("div",{className:"row",children:(0,n.jsx)(t.InnerBlocks.Content,{})})})}})})();
+(() => {
+  'use strict';
+  const l = window.wp.blocks,
+    e = window.wp.element,
+    o = window.wp.data,
+    t = window.wp.blockEditor,
+    a = (window.React, window.wp.i18n),
+    u = window.wp.components,
+    n = window.ReactJSXRuntime,
+    c = ({ attributes: l, setAttributes: o }) => {
+      const t = { color: '#72aee6', style: 'dashed', width: '1px' },
+        [c, i] = (0, e.useState)({ top: t, right: t, bottom: t, left: t });
+      return (0, n.jsx)(u.PanelBody, {
+        title: (0, a.__)('Border Settings'),
+        children: (0, n.jsx)(u.BorderBoxControl, {
+          __next40pxDefaultSize: !0,
+          colors: [{ name: 'Blue 20', color: '#72aee6' }],
+          label: (0, a.__)('Borders'),
+          onChange: (l) => i(l),
+          value: c,
+        }),
+      });
+    },
+    i = ({ attributes: l, setAttributes: e }) => {
+      const { layout: o, paddingY: t, background: a, container: c } = l;
+      return (0, n.jsxs)(u.PanelBody, {
+        title: 'Column Layout Settings',
+        children: [
+          (0, n.jsx)(u.SelectControl, {
+            label: 'Selector',
+            value: o,
+            options: [
+              { label: 'One Column', value: 'layout-one' },
+              { label: 'Two Column', value: 'layout-two' },
+              { label: 'Three Colum', value: 'layout-three' },
+              { label: 'Four Column', value: 'layout-four' },
+              { label: 'Five Column', value: 'layout-five' },
+              { label: 'Six Column', value: 'layout-six' },
+              { label: '8/12 + 4/12', value: 'layout-eight-four' },
+              { label: '4/12 + 8/12', value: 'layout-four-eight' },
+              { label: '9/12 + 3/12', value: 'layout-nine-three' },
+              { label: '3/12 + 9/12', value: 'layout-three-nine' },
+              { label: '7/12 + 5/12', value: 'layout-seven-five' },
+              { label: '5/12 + 7/12', value: 'layout-five-seven' },
+              { label: '80/20', value: 'layout-eighty-twenty' },
+              { label: '20/80', value: 'layout-twenty-eighty' },
+              { label: '3/12 + 3/12 + 6/12', value: 'layout-three-three-six' },
+              { label: '6/12 + 3/12 + 3/12', value: 'layout-six-three-three' },
+              { label: '4/12 + 4/12 + 4/12', value: 'layout-four-four-four' },
+              {
+                label: '2/12 + 4/12 + 4/12 + 2/12',
+                value: 'layout-two-four-four-two',
+              },
+              { label: 'None', value: 'layout-none' },
+            ],
+            onChange: (l) => e({ layout: l }),
+          }),
+          (0, n.jsx)(u.SelectControl, {
+            label: 'Container',
+            value: c,
+            options: [
+              { label: 'Container', value: 'container' },
+              { label: 'Fluid', value: 'container-fluid' },
+            ],
+            onChange: (l) => e({ container: l }),
+          }),
+          (0, n.jsx)(u.SelectControl, {
+            label: 'Vertical Spacing',
+            value: t,
+            options: [
+              { label: 'None', value: 'py-0' },
+              { label: 'Small', value: 'py-2' },
+              { label: 'Medium', value: 'py-4' },
+              { label: 'Large', value: 'py-5' },
+            ],
+            onChange: (l) => e({ paddingY: l }),
+          }),
+        ],
+      });
+    },
+    r = ({ attributes: l, setAttributes: e }) =>
+      (0, n.jsxs)(t.InspectorControls, {
+        children: [
+          (0, n.jsx)(i, { attributes: l, setAttributes: e }),
+          (0, n.jsx)(c, { attributes: l, setAttributes: e }),
+        ],
+      }),
+    s = JSON.parse('{"UU":"blockwriter/columns"}'),
+    h = (0, n.jsx)('svg', {
+      viewBox: '0 0 24 24',
+      xmlns: 'http://www.w3.org/2000/svg',
+      'aria-hidden': 'true',
+      focusable: 'false',
+      children: (0, n.jsx)('path', {
+        d: 'M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm.5 16c0 .3-.2.5-.5.5H5c-.3 0-.5-.2-.5-.5V7h15v12zM9 10H7v2h2v-2zm0 4H7v2h2v-2zm4-4h-2v2h2v-2zm4 0h-2v2h2v-2zm-4 4h-2v2h2v-2zm4 0h-2v2h2v-2z',
+      }),
+    });
+  (0, l.registerBlockType)(s.UU, {
+    icon: h,
+    edit: function ({ attributes: a, setAttributes: u, clientId: c }) {
+      const { layout: i, paddingY: s, background: h } = a,
+        y = (0, t.useBlockProps)({ className: `row ${s} ${h}` }),
+        d = (0, o.useSelect)((l) => l('core/block-editor').getBlocks(c), [c]),
+        { replaceInnerBlocks: v, updateBlockAttributes: b } = (0,
+        o.useDispatch)('core/block-editor'),
+        w = {
+          'layout-one': ['col-12'],
+          'layout-two': ['col-6', 'col-6'],
+          'layout-three': ['col-4', 'col-4', 'col-4'],
+          'layout-four': ['col-3', 'col-3', 'col-3', 'col-3'],
+          'layout-five': [
+            'col-2-4',
+            'col-2-4',
+            'col-2-4',
+            'col-2-4',
+            'col-2-4',
+          ],
+          'layout-six': ['col-2', 'col-2', 'col-2', 'col-2', 'col-2', 'col-2'],
+          'layout-eight-four': ['col-8', 'col-4'],
+          'layout-four-eight': ['col-4', 'col-8'],
+          'layout-nine-three': ['col-9', 'col-3'],
+          'layout-three-nine': ['col-3', 'col-9'],
+          'layout-five-seven': ['col-5', 'col-7'],
+          'layout-seven-five': ['col-7', 'col-5'],
+          'layout-eighty-twenty': ['col-10', 'col-2'],
+          'layout-twenty-eighty': ['col-2', 'col-10'],
+          'layout-three-three-six': ['col-3', 'col-3', 'col-6'],
+          'layout-six-three-three': ['col-6', 'col-3', 'col-3'],
+          'layout-four-four-four': ['col-4', 'col-4', 'col-4'],
+          'layout-two-four-four-two': ['col-2', 'col-4', 'col-4', 'col-2'],
+          'layout-none': [],
+        },
+        m = (l) => w[l] ?? ['col-12'];
+      (0, e.useEffect)(() => {
+        if (!d) return;
+        const e = m(i);
+        let o = [...d],
+          t = !1;
+        if (0 === o.length) {
+          const o = e.map((e) =>
+            (0, l.createBlock)('blockwriter/column', { colMd: e }),
+          );
+          return void v(c, o);
+        }
+        if (e.length > o.length) {
+          const a = e
+            .slice(o.length)
+            .map((e) => (0, l.createBlock)('blockwriter/column', { colMd: e }));
+          ((o = [...o, ...a]), (t = !0));
+        } else e.length < o.length && ((o = o.slice(0, e.length)), (t = !0));
+        (t && v(c, o),
+          o.forEach((l, o) => {
+            l.attributes.colMd !== e[o] && b(l.clientId, { colMd: e[o] });
+          }));
+      }, [i, c, d]);
+      const x = m(i).map((l) => ['blockwriter/column', {}]);
+      return (
+        console.log('Attributes: ', i),
+        (0, n.jsxs)(n.Fragment, {
+          children: [
+            (0, n.jsx)(r, { attributes: a, setAttributes: u }),
+            (0, n.jsx)('div', {
+              ...y,
+              children: (0, n.jsxs)('div', {
+                className: 'row',
+                children: [
+                  'layout-none' == i &&
+                    (0, n.jsx)('div', {
+                      className: 'col-12',
+                      children: (0, n.jsxs)('ul', {
+                        children: [
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-one' }),
+                            children: 'Column 1',
+                          }),
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-two' }),
+                            children: 'Column 2',
+                          }),
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-three' }),
+                            children: 'Column 3',
+                          }),
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-four' }),
+                            children: 'Column 4',
+                          }),
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-five' }),
+                            children: 'Column 5',
+                          }),
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-six' }),
+                            children: 'Column 6',
+                          }),
+                          (0, n.jsx)('li', {
+                            onClick: () => u({ layout: 'layout-eight-four' }),
+                            children: 'Column 7',
+                          }),
+                        ],
+                      }),
+                    }),
+                  'layout-none' !== i &&
+                    (0, n.jsx)(t.InnerBlocks, { template: x }),
+                ],
+              }),
+            }),
+          ],
+        })
+      );
+    },
+    save: function ({ attributes: l }) {
+      const { colMd: e } = l,
+        o = t.useBlockProps.save({ className: e });
+      return (0, n.jsx)('div', {
+        ...o,
+        children: (0, n.jsx)('div', {
+          className: 'row',
+          children: (0, n.jsx)(t.InnerBlocks.Content, {}),
+        }),
+      });
+    },
+  });
+})();

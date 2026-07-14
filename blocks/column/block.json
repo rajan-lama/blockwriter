@@ -8,12 +8,8 @@
   "icon": "column",
   "description": "Sample block for blockwriter.",
   "example": {},
-  "parent": [
-    "blockwriter/columns"
-  ],
-  "keywords": [
-    "column"
-  ],
+  "parent": ["blockwriter/columns"],
+  "keywords": ["column"],
   "supports": {
     "html": false,
     "inserter": false,

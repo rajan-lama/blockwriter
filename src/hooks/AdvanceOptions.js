@@ -5,34 +5,40 @@
  */
 import { __ } from '@wordpress/i18n';
 
-import BackgroundPanel from '../inspectors/advanced/BackgroundPanel';
-import TextColorPanel from '../inspectors/advanced/TextColorPanel';
-import BorderControlPanel from '../inspectors/advanced/BorderControlPanel';
-import BoxShadowPanel from '../inspectors/advanced/BoxShadowPanel';
-import ShapeDividerPanel from '../inspectors/advanced/ShapeDividerPanel';
-import SpacingPanel from '../inspectors/advanced/SpacingPanel';
-import ZIndexPanel from '../inspectors/advanced/ZIndexPanel';
+import {
+  AnimationPanel,
+  DateRangeVisibilityPanel,
+  DeviceVisibilityPanel,
+  OnHoverAnimationPanel,
+  TypographyPanel,
+  UserVisibilityPanel,
+} from '../inspectors/advanced';
 
-export const AdvanceOptions = ({ attributes, setAttributes }) => {
+export const AdvanceOptions = ({ attributes, setAttributes, blockName }) => {
+  const options = blockOptions[blockName].advanced || [];
+
+  const panels = {
+    AnimationPanel,
+    DateRangeVisibilityPanel,
+    DeviceVisibilityPanel,
+    OnHoverAnimationPanel,
+    TypographyPanel,
+    UserVisibilityPanel,
+  };
+
   return (
     <>
       <div className="blockwriter-styling-section">
-        <BackgroundPanel
-          attributes={attributes}
-          setAttributes={setAttributes}
-        />
-        <TextColorPanel attributes={attributes} setAttributes={setAttributes} />
-        <BorderControlPanel
-          attributes={attributes}
-          setAttributes={setAttributes}
-        />
-        <BoxShadowPanel attributes={attributes} setAttributes={setAttributes} />
-        <ShapeDividerPanel
-          attributes={attributes}
-          setAttributes={setAttributes}
-        />
-        <SpacingPanel attributes={attributes} setAttributes={setAttributes} />
-        <ZIndexPanel attributes={attributes} setAttributes={setAttributes} />
+        {options.map((name) => {
+          const Panel = panels[name];
+          return Panel ? (
+            <Panel
+              key={name}
+              attributes={attributes}
+              setAttributes={setAttributes}
+            />
+          ) : null;
+        })}
       </div>
     </>
   );

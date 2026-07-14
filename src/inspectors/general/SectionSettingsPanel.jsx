@@ -6,14 +6,14 @@ import { SelectControl } from '@wordpress/components';
 
 const SectionSettingsPanel = ({ attributes, setAttributes }) => {
   const {
+    layout,
     container,
     background,
     backgroundColor,
     backgroundImage,
     tagType,
-    // paddingY,
+    paddingY,
     borderStyle,
-    // border,
     margin,
   } = attributes;
 
@@ -31,7 +31,6 @@ const SectionSettingsPanel = ({ attributes, setAttributes }) => {
   const onChange = (newBorders) => setBorders(newBorders);
 
   const [paddingSize, setPaddingSize] = useState('');
-  const [paddingY, setPaddingY] = useState('');
 
   const [border, setBorder] = useState();
   return (
@@ -52,12 +51,42 @@ const SectionSettingsPanel = ({ attributes, setAttributes }) => {
       />
 
       <SelectControl
+        label="Layout"
+        value={layout}
+        options={[
+          { label: 'One Column', value: 'layout-one' },
+          { label: 'Two Column', value: 'layout-two' },
+          { label: 'Three Column', value: 'layout-three' },
+          { label: 'Four Column', value: 'layout-four' },
+          { label: 'Five Column', value: 'layout-five' },
+          { label: 'Six Column', value: 'layout-six' },
+          { label: '8/12 + 4/12', value: 'layout-eight-four' },
+          { label: '4/12 + 8/12', value: 'layout-four-eight' },
+          { label: '9/12 + 3/12', value: 'layout-nine-three' },
+          { label: '3/12 + 9/12', value: 'layout-three-nine' },
+          { label: '7/12 + 5/12', value: 'layout-seven-five' },
+          { label: '5/12 + 7/12', value: 'layout-five-seven' },
+          { label: '80/20', value: 'layout-eighty-twenty' },
+          { label: '20/80', value: 'layout-twenty-eighty' },
+          { label: '3/12 + 3/12 + 6/12', value: 'layout-three-three-six' },
+          { label: '6/12 + 3/12 + 3/12', value: 'layout-six-three-three' },
+          { label: '4/12 + 4/12 + 4/12', value: 'layout-four-four-four' },
+          {
+            label: '2/12 + 4/12 + 4/12 + 2/12',
+            value: 'layout-two-four-four-two',
+          },
+          { label: 'None', value: 'layout-none' },
+        ]}
+        onChange={(value) => setAttributes({ layout: value })}
+      />
+
+      <SelectControl
         label="Container"
         value={container}
         options={[
           { label: 'Container', value: 'container' },
           { label: 'Fluid', value: 'container-fluid' },
-          { label: 'None', value: 'None' },
+          { label: 'None', value: 'none' },
         ]}
         onChange={(value) => setAttributes({ container: value })}
       />

@@ -1,9 +1,3 @@
-import { useEffect, useState } from '@wordpress/element';
-import { getBlockParents } from '@wordpress/block-editor';
-import { select } from '@wordpress/data';
-// import { Icon } from "@wordpress/icons";
-// eslint-disable-next-line import/no-unresolved
-import DeviceTabButton from '@components/DeviceTabButton';
 /**
  * Retrieves the translation of text.
  *
@@ -17,39 +11,12 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import {
-  useBlockProps,
-  InnerBlocks,
-  InspectorControls,
-  MediaUpload,
-  MediaUploadCheck,
-} from '@wordpress/block-editor';
-
-import {
-  Panel,
-  PanelBody,
-  PanelHeader,
-  PanelRow,
-  TabPanel,
-  TextControl,
-  AlignmentMatrixControl,
-  CheckboxControl,
-  Icon,
-  SelectControl,
-  RangeControl,
-  Button,
-  ButtonGroup,
-  ToggleControl,
-  ColorPicker,
-  GradientPicker,
-  FocalPointPicker,
-  ColorPalette,
-  ColorIndicator,
-} from '@wordpress/components';
+import { TabPanel } from '@wordpress/components';
 import LayoutOptions from '../hooks/LayoutOptions';
 import AdvanceOptions from '../hooks/AdvanceOptions';
+import GeneralOptions from '../hooks/GeneralOptions';
 
-const TabButton = ({ attributes, setAttributes }) => {
+const TabButton = ({ attributes, setAttributes, name }) => {
   const onSelect = (tabName) => {
     console.log('Selecting tab', tabName);
   };
@@ -94,12 +61,13 @@ const TabButton = ({ attributes, setAttributes }) => {
     >
       {(tab) =>
         tab.name === 'general' ? (
-          <LayoutOptions
+          <GeneralOptions
             attributes={attributes}
             setAttributes={setAttributes}
+            blockName={name}
           />
         ) : tab.name === 'layout' ? (
-          <AdvanceOptions
+          <LayoutOptions
             attributes={attributes}
             setAttributes={setAttributes}
           />
@@ -107,6 +75,7 @@ const TabButton = ({ attributes, setAttributes }) => {
           <AdvanceOptions
             attributes={attributes}
             setAttributes={setAttributes}
+            blockName={name}
           />
         ) : null
       }

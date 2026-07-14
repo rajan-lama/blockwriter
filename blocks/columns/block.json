@@ -8,9 +8,7 @@
   "icon": "columns",
   "description": "Bootstrap-like column block",
   "example": {},
-  "keywords": [
-    "columns"
-  ],
+  "keywords": ["columns"],
   "supports": {
     "background": {
       "backgroundImage": true,
@@ -164,7 +162,5 @@
   "editorScript": "file:./index.js",
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
-  "parent": [
-    "blockwriter/section"
-  ]
+  "parent": ["blockwriter/section"]
 }
