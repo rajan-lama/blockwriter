@@ -7,7 +7,11 @@
   "category": "blockwriter",
   "icon": "star-filled",
   "description": "Font Awesome Icon Block",
-  "keywords": ["icon", "fontawesome", "fa"],
+  "keywords": [
+    "icon",
+    "fontawesome",
+    "fa"
+  ],
   "attributes": {
     "icon": {
       "type": "string",

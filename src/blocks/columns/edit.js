@@ -42,8 +42,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     'layout-three-three-six': ['col-3', 'col-3', 'col-6'],
     'layout-six-three-three': ['col-6', 'col-3', 'col-3'],
     'layout-four-four-four': ['col-4', 'col-4', 'col-4'],
-    'layout-two-four-four-two': ['col-2', 'col-4', 'col-4','col-2',],
-    'layout-none': ['col-12'], 
+    'layout-two-four-four-two': ['col-2', 'col-4', 'col-4', 'col-2'],
+    'layout-none': [],
   };
 
   const getColumns = (layout) => LAYOUTS[layout] ?? ['col-12'];
@@ -87,7 +87,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
         updateBlockAttributes(block.clientId, {
           colMd: newLayoutClasses[index],
         });
-      }
+      }9
     });
   }, [layout, clientId, innerBlocks]);
 
@@ -96,12 +96,29 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     {},
   ]);
 
+  console.log("Attributes: ",layout);
+
   return (
     <>
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <div {...blockProps}>
         <div className="row">
+          { (layout == 'layout-none') && (
+          <div className="col-12">
+            <ul>
+              <li onClick={() => setAttributes({ layout: 'layout-one' })}>Column 1</li>
+              <li onClick={() => setAttributes({ layout: 'layout-two' })}>Column 2</li>
+              <li onClick={() => setAttributes({ layout: 'layout-three' })}>Column 3</li>
+              <li onClick={() => setAttributes({ layout: 'layout-four' })}>Column 4</li>
+              <li onClick={() => setAttributes({ layout: 'layout-five' })}>Column 5</li>
+              <li onClick={() => setAttributes({ layout: 'layout-six' })}>Column 6</li>
+              <li onClick={() => setAttributes({ layout: 'layout-eight-four' })}>Column 7</li>
+            </ul>
+          </div>
+        )}
+         { (layout !== 'layout-none') && (
           <InnerBlocks template={TEMPLATE} />
+         )}
         </div>
       </div>
     </>
