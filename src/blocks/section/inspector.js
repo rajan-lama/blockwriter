@@ -1,24 +1,32 @@
-/**
- * Internal block libraries
- */
-import { __ } from '@wordpress/i18n';
 import { InspectorControls } from '@wordpress/block-editor';
-import BorderPanel from '../../inspectors/layout/BorderPanel';
-import SectionSettingsPanel from '../../inspectors/general/SectionSettingsPanel';
+import Settings from '../../hooks/ClassSettings';
+import TabButton from '../../components/TabButton';
+import getBWBlockName from '../../hooks/getBWBlockName';
+import metadata from './block.json';
 
-/**
- * Create an Inspector Controls wrapper Component
- */
+export default function Inspector(props) {
+  const settings = new Settings(
+    'buttonLabel',
+    'text',
+    'attribute',
+    'input',
+    'value',
+    {
+      placeholder: 'Enter button label',
+      defaultValue: '',
+      required: false,
+    },
+  );
 
-const Inspector = ({ attributes, setAttributes }) => {
+  const option = settings.generateTextBoxOptions();
+
+  const { attributes, setAttributes } = props;
+
   return (
     <InspectorControls>
-      <SectionSettingsPanel
-        attributes={attributes}
-        setAttributes={setAttributes}
-      />
-      <BorderPanel attributes={attributes} setAttributes={setAttributes} />
+      <>
+        <TabButton attributes={attributes} setAttributes={setAttributes} name={getBWBlockName(metadata.name)} />
+      </>
     </InspectorControls>
   );
-};
-export default Inspector;
+}

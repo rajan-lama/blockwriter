@@ -5,15 +5,19 @@
  */
 import { __ } from '@wordpress/i18n';
 
-import BackgroundPanel from '../inspectors/advanced/BackgroundPanel';
-import TextColorPanel from '../inspectors/advanced/TextColorPanel';
-import BorderControlPanel from '../inspectors/advanced/BorderControlPanel';
-import BoxShadowPanel from '../inspectors/advanced/BoxShadowPanel';
-import ShapeDividerPanel from '../inspectors/advanced/ShapeDividerPanel';
-import SpacingPanel from '../inspectors/advanced/SpacingPanel';
-import ZIndexPanel from '../inspectors/advanced/ZIndexPanel';
+import {
+  BackgroundPanel,
+  TextColorPanel,
+  BorderControlPanel,
+  BoxShadowPanel,
+  ShapeDividerPanel,
+  SpacingPanel,
+  ZIndexPanel,
+} from '../inspectors/advanced';
 
-export const AdvanceOptions = ({ attributes, setAttributes }) => {
+export const AdvanceOptions = ({ attributes, setAttributes, blockName }) => {
+
+  console.log('AdvanceOptions blockName:', blockName);
   return (
     <>
       <div className="blockwriter-styling-section">

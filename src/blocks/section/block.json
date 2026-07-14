@@ -117,6 +117,129 @@
           }
         }
       }
+    },
+    "padding": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 0,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "tablet": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 0,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "mobile": {
+          "top": {
+            "value": 0,
+            "unit": "px"
+          },
+          "right": {
+            "value": 0,
+            "unit": "px"
+          },
+          "bottom": {
+            "value": 0,
+            "unit": "px"
+          },
+          "left": {
+            "value": 0,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "zIndex": {
+      "type": "string",
+      "default": "0"
+    },
+    "showDesktop": {
+      "type": "boolean",
+      "default": true
+    },
+    "showTablet": {
+      "type": "boolean",
+      "default": true
+    },
+    "showMobile": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    },
+    "userVisibility": {
+      "type": "string",
+      "default": "all"
+    },
+    "dateRangeFrom": {
+      "type": "string",
+      "default": ""
+    },
+    "dateRangeTo": {
+      "type": "string",
+      "default": ""
+    },
+    "topDividerUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "bottomDividerUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "animation": {
+      "type": "string",
+      "default": "none"
+    },
+    "hoverAnimation": {
+      "type": "string",
+      "default": "none"
+    },
+    "borderWidth": {
+      "type": "number",
+      "default": 0
+    },
+    "borderColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
     }
   },
   "textdomain": "blockwriter",

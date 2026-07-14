@@ -12,29 +12,27 @@ import BoxShadowPanel from '../inspectors/advanced/BoxShadowPanel';
 import ShapeDividerPanel from '../inspectors/advanced/ShapeDividerPanel';
 import SpacingPanel from '../inspectors/advanced/SpacingPanel';
 import ZIndexPanel from '../inspectors/advanced/ZIndexPanel';
-import SectionSettingsPanel from '../inspectors/general/SectionSettingsPanel';
-import blockOptions from '../constants/blockOptions';
 
-export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
-  const options = blockOptions[blockName].general || {};
-
-  console.log('GeneralOptions blockName:', blockName); // Log the blockName to verify it's being passed correctly
-  console.log('GeneralOptions options:', options);
-
+export const GeneralOptions = ({ attributes, setAttributes }) => {
   return (
     <>
       <div className="blockwriter-styling-section">
-        {options.includes('SectionSettingsPanel') && (
-          <SectionSettingsPanel attributes={attributes} setAttributes={setAttributes} />
-        )}
-        {options.includes('BackgroundPanel') && (
         <BackgroundPanel
           attributes={attributes}
           setAttributes={setAttributes}
-        /> )}
-        {options.includes('TextColorPanel') && (
+        />
         <TextColorPanel attributes={attributes} setAttributes={setAttributes} />
-         )}
+        <BorderControlPanel
+          attributes={attributes}
+          setAttributes={setAttributes}
+        />
+        <BoxShadowPanel attributes={attributes} setAttributes={setAttributes} />
+        <ShapeDividerPanel
+          attributes={attributes}
+          setAttributes={setAttributes}
+        />
+        <SpacingPanel attributes={attributes} setAttributes={setAttributes} />
+        <ZIndexPanel attributes={attributes} setAttributes={setAttributes} />
       </div>
     </>
   );
