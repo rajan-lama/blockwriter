@@ -36,7 +36,7 @@ const ColumnsSettingsPanel = ({ attributes, setAttributes }) => {
             label: '2/12 + 4/12 + 4/12 + 2/12',
             value: 'layout-two-four-four-two',
           },
-          { label: 'None', value: 'layout-none' },    
+          { label: 'None', value: 'layout-none' },
         ]}
         onChange={(value) => setAttributes({ layout: value })}
       />

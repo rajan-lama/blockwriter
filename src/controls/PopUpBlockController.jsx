@@ -9,13 +9,11 @@ const PopUpBlockController = ({
   selectedIcon,
   setOpen,
 }) => {
-
   const { preview } = attributes;
 
   const togglePreview = () => {
     setAttributes({ preview: !preview });
   };
-
 
   return (
     <>

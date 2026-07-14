@@ -11,7 +11,6 @@ const BlockController = ({
   selectedIcon,
   setOpen,
 }) => {
- 
   return (
     <BlockControls key="custom-controls">
       <PopUpBlockController
@@ -22,5 +21,5 @@ const BlockController = ({
       />
     </BlockControls>
   );
-}
+};
 export default BlockController;
