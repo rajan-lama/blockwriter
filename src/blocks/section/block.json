@@ -9,31 +9,7 @@
   "description": "Bootstrap-like section block",
   "example": {},
   "keywords": ["section"],
-  "supports": {
-    "background": {
-      "backgroundImage": true,
-      "backgroundSize": true
-    },
-    "dimensions": {
-      "aspectRatio": true,
-      "height": true,
-      "minHeight": true,
-      "width": true
-    },
-    "spacing": {
-      "margin": true,
-      "padding": true,
-      "blockGap": true
-    },
-    "shadow": true,
-    "html": false,
-    "color": {
-      "background": true,
-      "gradient": true,
-      "text": false,
-      "enableContrastChecker": false
-    }
-  },
+  "supports": {},
   "attributes": {
     "tagType": {
       "type": "string",
@@ -41,7 +17,7 @@
     },
     "container": {
       "type": "string",
-      "default": "container"
+      "default": "-"
     },
     "paddingY": {
       "type": "string",

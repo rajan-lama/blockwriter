@@ -46,31 +46,70 @@ import {
   ColorPalette,
   ColorIndicator,
 } from '@wordpress/components';
+import LayoutOptions from '../hooks/LayoutOptions';
+import AdvanceOptions from '../hooks/AdvanceOptions';
 
-const TabButton = ({ props }) => {
+const TabButton = ({ attributes, setAttributes }) => {
   const onSelect = (tabName) => {
     console.log('Selecting tab', tabName);
   };
 
   return (
     <TabPanel
-      className="gs-tab-panel"
+      className="blockwriter-tab-panel"
       activeClass="active-tab"
       onSelect={onSelect}
       tabs={[
         {
-          name: 'tab1',
-          title: 'Tab 1',
+          name: 'general',
+          title: (
+            <>
+              <span className="dashicons dashicons-admin-generic"></span>
+              <span>General</span>
+            </>
+          ),
           className: 'tab-one',
         },
         {
-          name: 'tab2',
-          title: 'Tab 2',
+          name: 'layout',
+          title: (
+            <>
+              <span className="dashicons dashicons-layout"></span>
+              <span>Layout</span>
+            </>
+          ),
+          className: 'tab-one',
+        },
+        {
+          name: 'advanced',
+          title: (
+            <>
+              <span className="dashicons dashicons-admin-settings"></span>
+              <span>Advanced</span>
+            </>
+          ),
           className: 'tab-two',
         },
       ]}
     >
-      {(tab) => <p>{tab.title}</p>}
+      {(tab) =>
+        tab.name === 'general' ? (
+          <LayoutOptions
+            attributes={attributes}
+            setAttributes={setAttributes}
+          />
+        ) : tab.name === 'layout' ? (
+          <AdvanceOptions
+            attributes={attributes}
+            setAttributes={setAttributes}
+          />
+        ) : tab.name === 'advanced' ? (
+          <AdvanceOptions
+            attributes={attributes}
+            setAttributes={setAttributes}
+          />
+        ) : null
+      }
     </TabPanel>
   );
 };

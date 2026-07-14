@@ -63,9 +63,9 @@ const StylingComponent = ({ props }) => {
   return (
     <div className="gs-styling-section">
       <Panel>
-        <PanelBody title={__('Background', 'gutenstar')} initialOpen={true}>
+        <PanelBody title={__('Background', 'blockwriter')} initialOpen={true}>
           <div className="gs-title-button-units-section">
-            <PanelRow>{__('Type:', 'gutenstar')}</PanelRow>
+            <PanelRow>{__('Type:', 'blockwriter')}</PanelRow>
             <ButtonGroup>
               <Button
                 icon="admin-customizer"
@@ -142,7 +142,7 @@ const StylingComponent = ({ props }) => {
                 />
               </>
               <ToggleControl
-                label={__('Enable Image Overlay', 'gutenstar')}
+                label={__('Enable Image Overlay', 'blockwriter')}
                 help={'Add overlay to image.'}
                 checked={imageOverlay}
                 onChange={(newValue) => {
@@ -195,7 +195,7 @@ const StylingComponent = ({ props }) => {
                   <div style={style} />
 
                   <SelectControl
-                    label={__('Attachment', 'gutenstar')}
+                    label={__('Attachment', 'blockwriter')}
                     labelPosition="side"
                     // value={attributes.htmlTag}
                     options={[
@@ -211,7 +211,7 @@ const StylingComponent = ({ props }) => {
                   />
 
                   <SelectControl
-                    label={__('Blend Mode', 'gutenstar')}
+                    label={__('Blend Mode', 'blockwriter')}
                     labelPosition="side"
                     // value={attributes.htmlTag}
                     options={[
@@ -252,7 +252,7 @@ const StylingComponent = ({ props }) => {
                   />
 
                   <SelectControl
-                    label={__('Repeat', 'gutenstar')}
+                    label={__('Repeat', 'blockwriter')}
                     labelPosition="side"
                     // value={attributes.htmlTag}
                     options={[
@@ -279,7 +279,7 @@ const StylingComponent = ({ props }) => {
                   />
 
                   <SelectControl
-                    label={__('Repeat', 'gutenstar')}
+                    label={__('Repeat', 'blockwriter')}
                     labelPosition="side"
                     // value={attributes.htmlTag}
                     options={[
@@ -304,7 +304,7 @@ const StylingComponent = ({ props }) => {
 
                   <RangeControl
                     __nextHasNoMarginBottom
-                    label={__('Opacity', 'gutenstar')}
+                    label={__('Opacity', 'blockwriter')}
                     value={columns}
                     onChange={(value) => setColumns(value)}
                     min={0}
@@ -318,7 +318,7 @@ const StylingComponent = ({ props }) => {
             </>
           )}
         </PanelBody>
-        <PanelBody title={__('Text Color', 'gutenstar')} initialOpen={false}>
+        <PanelBody title={__('Text Color', 'blockwriter')} initialOpen={false}>
           <ButtonGroup>
             <Button
               variant="secondary"
@@ -390,9 +390,9 @@ const StylingComponent = ({ props }) => {
             />
           )}
         </PanelBody>
-        <PanelBody title={__('Border', 'gutenstar')} initialOpen={false}>
+        <PanelBody title={__('Border', 'blockwriter')} initialOpen={false}>
           <SelectControl
-            label={__('Repeat', 'gutenstar')}
+            label={__('Repeat', 'blockwriter')}
             labelPosition="side"
             // value={attributes.htmlTag}
             options={[
@@ -474,7 +474,7 @@ const StylingComponent = ({ props }) => {
             />
           )}
         </PanelBody>
-        <PanelBody title={__('Box Shadow', 'gutenstar')} initialOpen={false}>
+        <PanelBody title={__('Box Shadow', 'blockwriter')} initialOpen={false}>
           <PanelRow>Color</PanelRow>
           <ColorPicker
             color={color}
@@ -484,7 +484,7 @@ const StylingComponent = ({ props }) => {
           />
           <RangeControl
             __nextHasNoMarginBottom
-            label={__('Horizontal', 'gutenstar')}
+            label={__('Horizontal', 'blockwriter')}
             value={columns}
             onChange={(value) => setColumns(value)}
             min={0}
@@ -494,7 +494,7 @@ const StylingComponent = ({ props }) => {
           />
           <RangeControl
             __nextHasNoMarginBottom
-            label={__('Vertical', 'gutenstar')}
+            label={__('Vertical', 'blockwriter')}
             value={columns}
             onChange={(value) => setColumns(value)}
             min={0}
@@ -504,7 +504,7 @@ const StylingComponent = ({ props }) => {
           />
           <RangeControl
             __nextHasNoMarginBottom
-            label={__('Blur', 'gutenstar')}
+            label={__('Blur', 'blockwriter')}
             value={columns}
             onChange={(value) => setColumns(value)}
             min={0}
@@ -514,7 +514,7 @@ const StylingComponent = ({ props }) => {
           />
           <RangeControl
             __nextHasNoMarginBottom
-            label={__('Spread', 'gutenstar')}
+            label={__('Spread', 'blockwriter')}
             value={columns}
             onChange={(value) => setColumns(value)}
             min={0}
@@ -541,7 +541,7 @@ const StylingComponent = ({ props }) => {
             </Button>
           </ButtonGroup>
         </PanelBody>
-        {/* <PanelBody title={__('Shape Divider','gutenstar')} initialOpen={false}>
+        {/* <PanelBody title={__('Shape Divider','blockwriter')} initialOpen={false}>
 					<PanelRow>Top / Bottom</PanelRow>
 					<PanelRow>Type</PanelRow>
 					<7PanelRow>Color</Pane   
@@ -552,29 +552,29 @@ const StylingComponent = ({ props }) => {
 					<PanelRow>Invert</PanelRow>
 					<PanelRow>Bring To Front</PanelRow>
 				</PanelBody> */}
-        <PanelBody title={__('Spacing', 'gutenstar')} initialOpen={false}>
+        <PanelBody title={__('Spacing', 'blockwriter')} initialOpen={false}>
           {/* <DimensionComponent
-						label={__('Row Gap','gutenstar')}
+						label={__('Row Gap','blockwriter')}
 						dimension={row}
 						updatedDimension={updateAttribute}
 					/> */}
           {/* <DimensionComponent
-						label={__('Column Gap','gutenstar')}
+						label={__('Column Gap','blockwriter')}
 						dimension={column}
 						updatedDimension={updateAttribute}
 					/> */}
           <DimensionComponent
-            label={__('Padding Gap', 'gutenstar')}
+            label={__('Padding Gap', 'blockwriter')}
             dimension={padding}
             updatedDimension={updateAttribute}
           />
           <DimensionComponent
-            label={__('Margin Gap', 'gutenstar')}
+            label={__('Margin Gap', 'blockwriter')}
             dimension={margin}
             updatedDimension={updateAttribute}
           />
         </PanelBody>
-        {/* <PanelBody title={__('Container Type','gutenstar')} initialOpen={true}>
+        {/* <PanelBody title={__('Container Type','blockwriter')} initialOpen={true}>
                     <PanelRow>Container Width</PanelRow>
                     <ButtonGroup>
                         <Button
@@ -622,7 +622,7 @@ const StylingComponent = ({ props }) => {
                     </ButtonGroup>
                     <DeviceTabButton props={props} />
                     <ToggleControl
-                        label={__('Auto Height','gutenstar')}
+                        label={__('Auto Height','blockwriter')}
                         help={
                             'Enabling this will change the Align Items value to Stretch.'
                         }
@@ -633,7 +633,7 @@ const StylingComponent = ({ props }) => {
                         className="gs-auto-height"
                     />
                     <SelectControl
-                        label={__('HTML Tag','gutenstar')}
+                        label={__('HTML Tag','blockwriter')}
                         labelPosition="side"
                         value={attributes.htmlTag}
                         options={[

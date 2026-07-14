@@ -31,13 +31,16 @@
     width: 100%;
     border: 1px solid #ddd;
     border-collapse: collapse;
+    font-size: 16px;
 
     thead {
-      background: #a1cdff;
-      padding: 10px;
+      background: #474747; // #a1cdff;
+      color: #fff;
+      padding: 8px 10px;
+      font-weight: bold;
 
       tr td {
-        padding: 10px;
+        padding: 8px 10px;
       }
     }
     tr {

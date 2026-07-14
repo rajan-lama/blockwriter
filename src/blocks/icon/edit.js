@@ -1,7 +1,7 @@
 import { useState } from '@wordpress/element';
 import { useBlockProps } from '@wordpress/block-editor';
 
-import IconPickerModal from './IconPickerModal';
+import IconPickerModal from '../../components/IconPickerModal';
 import ICONS from './../../../assets/icons/icons-all.json';
 import './editor.scss';
 import Inspector from './inspector';

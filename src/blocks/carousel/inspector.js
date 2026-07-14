@@ -143,7 +143,6 @@ const Inspector = ({ attributes, setAttributes }) => {
           />
         )}
       </PanelBody>
-
       <PanelBody title={`Slide Display Options`}>
         <ToggleControl
           label="Display Title"

@@ -37,7 +37,7 @@
   "attributes": {
     "layout": {
       "type": "string",
-      "default": "layout-one"
+      "default": "layout-none"
     },
     "width": {
       "type": "string"
