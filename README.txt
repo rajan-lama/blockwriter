@@ -1,118 +1,72 @@
 === Blockwriter ===
-Contributors: wpblockwriter 
+Contributors: wpblockwriter
 Donate link: https://wpblockwriter.com/
-Tags: gutenberg, blocks, editor, page builder, blockwriter
+Tags: gutenberg, blocks, editor, page builder, layout, blockwriter
 Requires at least: 6.0
 Tested up to: 6.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Blockwriter is a modern Gutenberg block collection to build flexible, responsive layouts with advanced customization options.
+Blockwriter is a Gutenberg-focused WordPress plugin that adds reusable blocks for creating modern, responsive layouts directly in the editor.
 
 == Description ==
 
-Blockwriter is a powerful Gutenberg block plugin designed to enhance the WordPress block editor experience. It provides a collection of custom blocks and layout tools that help developers and content creators build beautiful, responsive websites without writing complex code.
+Blockwriter gives WordPress users a set of custom blocks for building polished content sections without writing custom code. It includes layout-focused blocks such as Section, Columns, Column, Buttons, Carousel, Advance Header, and Icon.
 
-Whether you're creating landing pages, blogs, or full websites, Blockwriter gives you the flexibility and performance you need.
+The plugin is designed to be lightweight, modular, and easy to extend while staying compatible with the modern WordPress block editor experience.
 
-### Key Features
+== Features ==
 
-* Custom Gutenberg blocks (Columns, Sections, Icons, Carousel / Sliders, etc.)
-* Responsive layout controls
-* Drag-and-drop friendly structure
-* Lightweight and performance-focused
-* Developer-friendly architecture
-* Easily extendable with custom blocks
-* Compatible with modern WordPress themes
-
-Blockwriter is ideal for developers who want control and users who want simplicity.
+* Custom Gutenberg blocks for page layout and content presentation
+* Responsive styling and layout controls
+* Clean, editor-friendly interface
+* Lightweight architecture for better performance
+* Built with WordPress block editor APIs and React
 
 == Installation ==
 
-1. Upload `blockwriter` folder to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Open the Gutenberg editor
-4. Search for "Blockwriter" blocks and start building your layout
+1. Upload the `blockwriter` folder to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Open the block editor and search for Blockwriter blocks.
 
 == Frequently Asked Questions ==
 
-= Does Blockwriter work with all themes? =
+= Does Blockwriter work with my theme? =
 
-Yes, Blockwriter works with most modern WordPress themes that support the Gutenberg editor.
+Yes. Blockwriter is designed to work with most modern WordPress themes that support the block editor.
 
-= Can I extend Blockwriter with custom blocks? =
+= Can I use the blocks in the editor without coding? =
 
-Yes, developers can easily extend Blockwriter using its modular structure.
+Yes. The blocks are ready to use from the Gutenberg editor once the plugin is activated.
 
-= Is it optimized for performance? =
+= Is the plugin developer-friendly? =
 
-Yes, Blockwriter is designed to be lightweight and only loads necessary assets.
-
-== Screenshots ==
-
-1. Blockwriter blocks in Gutenberg editor
-2. Responsive layout controls
-3. Icon picker and customization panel
-4. Example page built using Blockwriter
+Yes. The plugin uses a modular structure and is built with WordPress block development conventions.
 
 == Changelog ==
 
+= 1.0.4 =
+* Updated plugin documentation and metadata
+* Improved compatibility with current block development workflow
+
 = 1.0.3 =
-* [FIX] Improved UI/UX for Carousel Block
+* UI/UX improvements for the Carousel block
 
 = 1.0.2 =
-* [FIX] Improved UI/UX for Carousel Block
-* [FEAT] Added Icon Block
-* [FEAT] Added Accordian Block
+* Added Icon block
+* Added Accordian block
+* UI/UX improvements for the Carousel block
 
 = 1.0.1 =
-* Added Carousel Block
-* Added Section Block
+* Added Carousel block
+* Added Section block
 
 = 1.0.0 =
 * Initial release
-* Added core blocks (Section, Columns, Column, Icon)
-* Basic responsive controls
-* Inspector settings UI
+* Added core blocks for sections, columns, and icons
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-Initial release of Blockwriter. Install and start building modern layouts with Gutenberg.
-
-== Arbitrary section ==
-
-### Developer Notes
-
-Blockwriter is built using modern JavaScript (ESNext), React, and WordPress block APIs.
-
-You can:
-
-* Register custom blocks
-* Extend existing blocks
-* Hook into Blockwriter filters and actions
-* Integrate with external APIs
-
-Example hook usage:
-
-`<?php do_action('blockwriter_before_render'); ?>`
-
-== A brief Markdown Example ==
-
-### Features Overview
-
-1. Section Blocks
-2. Columns Blocks
-3. Column Blocks
-4. Advance header Block
-5. Carousel / Slider Blocks
-6. Icon Blocks
-### Benefits
-
-* Easy to use
-* Flexible
-* Developer-friendly
-
-For more information, visit:
-https://wpblockwriter.com/
+= 1.0.4 =
+Upgrade to Blockwriter 1.0.4 for the latest documentation and compatibility improvements.
