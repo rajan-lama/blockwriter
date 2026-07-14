@@ -31,10 +31,10 @@ const AdvanceComponent = ({ props }) => {
   return (
     <>
       <Panel>
-        <PanelBody title={__('Sticky', 'gutenstar')} initialOpen={true}>
+        <PanelBody title={__('Sticky', 'blockwriter')} initialOpen={true}>
           <ToggleControl
-            label={__('Sticky Container', 'gutenstar')}
-            help={__('Changes affect the frontend only.', 'gutenstar')}
+            label={__('Sticky Container', 'blockwriter')}
+            help={__('Changes affect the frontend only.', 'blockwriter')}
             checked={attributes.sticky}
             onChange={(value) => {
               setAttributes({ sticky: value });
@@ -44,7 +44,7 @@ const AdvanceComponent = ({ props }) => {
           />
           {sticky && (
             <>
-              <PanelRow>{__('Stick At', 'gutenstar')}</PanelRow>
+              <PanelRow>{__('Stick At', 'blockwriter')}</PanelRow>
               <ButtonGroup>
                 <Button
                   isPressed={attributes.stickyPosition === 'top' ? true : false}
@@ -54,7 +54,7 @@ const AdvanceComponent = ({ props }) => {
                     });
                   }}
                 >
-                  {__('Top', 'gutenstar')}
+                  {__('Top', 'blockwriter')}
                 </Button>
                 <Button
                   isPressed={
@@ -66,10 +66,10 @@ const AdvanceComponent = ({ props }) => {
                     });
                   }}
                 >
-                  {__('Bottom', 'gutenstar')}
+                  {__('Bottom', 'blockwriter')}
                 </Button>
               </ButtonGroup>
-              <PanelRow>{__('Offset (in px)', 'gutenstar')}</PanelRow>
+              <PanelRow>{__('Offset (in px)', 'blockwriter')}</PanelRow>
               <RangeControl
                 value={attributes.stickyOffsetValue}
                 onChange={(value) => {
@@ -83,7 +83,7 @@ const AdvanceComponent = ({ props }) => {
           )}
         </PanelBody>
 
-        <PanelBody title={__('Animations', 'gutenstar')} initialOpen={false}>
+        <PanelBody title={__('Animations', 'blockwriter')} initialOpen={false}>
           <SelectControl
             value={attributes.animation}
             options={animations}
@@ -112,7 +112,7 @@ const AdvanceComponent = ({ props }) => {
 					<PanelRow>Display Conditions</PanelRow>
 				</PanelBody> */}
         <PanelBody
-          title={__('Responsive Conditions', 'gutenstar')}
+          title={__('Responsive Conditions', 'blockwriter')}
           initialOpen={false}
         >
           <ToggleControl

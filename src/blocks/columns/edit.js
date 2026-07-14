@@ -22,55 +22,31 @@ export default function Edit({ attributes, setAttributes, clientId }) {
   const { replaceInnerBlocks, updateBlockAttributes } =
     useDispatch('core/block-editor');
 
-  const getColumns = (layout) => {
-    switch (layout) {
-      case 'layout-one':
-        return ['col-12'];
+  const LAYOUTS = {
+    'layout-one': ['col-12'],
+    'layout-two': ['col-6', 'col-6'],
+    'layout-three': ['col-4', 'col-4', 'col-4'],
+    'layout-four': ['col-3', 'col-3', 'col-3', 'col-3'],
+    'layout-five': ['col-2-4', 'col-2-4', 'col-2-4', 'col-2-4', 'col-2-4'],
+    'layout-six': ['col-2', 'col-2', 'col-2', 'col-2', 'col-2', 'col-2'],
 
-      case 'layout-two':
-        return ['col-6', 'col-6'];
-
-      case 'layout-three':
-        return ['col-4', 'col-4', 'col-4'];
-
-      case 'layout-four':
-        return ['col-3', 'col-3', 'col-3', 'col-3'];
-
-      case 'layout-five':
-        return ['col-2-4', 'col-2-4', 'col-2-4', 'col-2-4', 'col-2-4'];
-
-      case 'layout-six':
-        return ['col-2', 'col-2', 'col-2', 'col-2', 'col-2', 'col-2'];
-
-      // Custom layouts
-      case 'layout-eight-four':
-        return ['col-8', 'col-4'];
-
-      case 'layout-four-eight':
-        return ['col-4', 'col-8'];
-
-      case 'layout-nine-three':
-        return ['col-9', 'col-3'];
-
-      case 'layout-three-nine':
-        return ['col-3', 'col-9'];
-
-      case 'layout-five-seven':
-        return ['col-5', 'col-7'];
-
-      case 'layout-seven-five':
-        return ['col-7', 'col-5'];
-
-      case 'layout-eighty-twenty':
-        return ['col-10', 'col-2'];
-
-      case 'layout-twenty-eighty':
-        return ['col-2', 'col-10'];
-
-      default:
-        return ['col-12'];
-    }
+    // Custom layouts
+    'layout-eight-four': ['col-8', 'col-4'],
+    'layout-four-eight': ['col-4', 'col-8'],
+    'layout-nine-three': ['col-9', 'col-3'],
+    'layout-three-nine': ['col-3', 'col-9'],
+    'layout-five-seven': ['col-5', 'col-7'],
+    'layout-seven-five': ['col-7', 'col-5'],
+    'layout-eighty-twenty': ['col-10', 'col-2'],
+    'layout-twenty-eighty': ['col-2', 'col-10'],
+    'layout-three-three-six': ['col-3', 'col-3', 'col-6'],
+    'layout-six-three-three': ['col-6', 'col-3', 'col-3'],
+    'layout-four-four-four': ['col-4', 'col-4', 'col-4'],
+    'layout-two-four-four-two': ['col-2', 'col-4', 'col-4', 'col-2'],
+    'layout-none': [],
   };
+
+  const getColumns = (layout) => LAYOUTS[layout] ?? ['col-12'];
 
   useEffect(() => {
     if (!innerBlocks) return;
@@ -112,6 +88,7 @@ export default function Edit({ attributes, setAttributes, clientId }) {
           colMd: newLayoutClasses[index],
         });
       }
+      9;
     });
   }, [layout, clientId, innerBlocks]);
 
@@ -120,12 +97,43 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     {},
   ]);
 
+  console.log('Attributes: ', layout);
+
   return (
     <>
       <Inspector attributes={attributes} setAttributes={setAttributes} />
       <div {...blockProps}>
         <div className="row">
-          <InnerBlocks template={TEMPLATE} />
+          {layout == 'layout-none' && (
+            <div className="col-12">
+              <ul>
+                <li onClick={() => setAttributes({ layout: 'layout-one' })}>
+                  Column 1
+                </li>
+                <li onClick={() => setAttributes({ layout: 'layout-two' })}>
+                  Column 2
+                </li>
+                <li onClick={() => setAttributes({ layout: 'layout-three' })}>
+                  Column 3
+                </li>
+                <li onClick={() => setAttributes({ layout: 'layout-four' })}>
+                  Column 4
+                </li>
+                <li onClick={() => setAttributes({ layout: 'layout-five' })}>
+                  Column 5
+                </li>
+                <li onClick={() => setAttributes({ layout: 'layout-six' })}>
+                  Column 6
+                </li>
+                <li
+                  onClick={() => setAttributes({ layout: 'layout-eight-four' })}
+                >
+                  Column 7
+                </li>
+              </ul>
+            </div>
+          )}
+          {layout !== 'layout-none' && <InnerBlocks template={TEMPLATE} />}
         </div>
       </div>
     </>
