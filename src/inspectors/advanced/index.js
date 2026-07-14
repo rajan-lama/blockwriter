@@ -1,7 +1,6 @@
-export { default as BackgroundPanel } from './BackgroundPanel';
-export { default as TextColorPanel } from './TextColorPanel';
-export { default as BorderControlPanel } from './BorderControlPanel';
-export { default as BoxShadowPanel } from './BoxShadowPanel';
-export { default as ShapeDividerPanel } from './ShapeDividerPanel';
-export { default as SpacingPanel } from './SpacingPanel';
-export { default as ZIndexPanel } from './ZIndexPanel';
+export { default as AnimationPanel } from '../layout/AnimationPanel';
+export { default as DateRangeVisibilityPanel } from '../layout/DateRangeVisibilityPanel';
+export { default as DeviceVisibilityPanel } from '../layout/DeviceVisibilityPanel';
+export { default as OnHoverAnimationPanel } from '../layout/OnHoverAnimationPanel';
+export { default as TypographyPanel } from '../layout/TypographyPanel';
+export { default as UserVisibilityPanel } from '../layout/UserVisibilityPanel';

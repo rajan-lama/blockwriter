@@ -1,56 +1,54 @@
-import { PanelBody, TextControl } from '@wordpress/components';
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
 
-export const LayoutOptions = ({ attributes, setAttributes }) => {
+import {
+  BackgroundPanel,
+  BorderPanel,
+  BorderControlPanel,
+  BoxShadowPanel,
+  DisplayTypePanel,
+  PositionPanel,
+  ShapeDividerPanel,
+  SpacingPanel,
+  TextColorPanel,
+  ZIndexPanel,
+} from '../inspectors/layout';
+
+import blockOptions from '../constants/blockOptions';
+
+export const LayoutOptions = ({ attributes, setAttributes, blockName }) => {
+  const options = blockOptions[blockName]?.layout || [];
+  const panels = {
+    BackgroundPanel,
+    BorderPanel,
+    BorderControlPanel,
+    BoxShadowPanel,
+    DisplayTypePanel,
+    PositionPanel,
+    ShapeDividerPanel,
+    SpacingPanel,
+    TextColorPanel,
+    ZIndexPanel,
+  };
+
   return (
     <>
-      <PanelBody title="Button Label">
-        <TextControl
-          label="Layout Button Label"
-          value={attributes.buttonLabel}
-          onChange={(value) => setAttributes({ buttonLabel: value })}
-          //   placeholder={option.extra.placeholder}
-        />
-      </PanelBody>
-      <PanelBody title="Button Label">
-        <TextControl
-          label="Button Label"
-          value={attributes.buttonLabel}
-          onChange={(value) => setAttributes({ buttonLabel: value })}
-          //   placeholder={option.extra.placeholder}
-        />
-      </PanelBody>
-      <PanelBody title="Button Label">
-        <TextControl
-          label="Button Label"
-          value={attributes.buttonLabel}
-          onChange={(value) => setAttributes({ buttonLabel: value })}
-          //   placeholder={option.extra.placeholder}
-        />
-      </PanelBody>
-      <PanelBody title="Button Label">
-        <TextControl
-          label="Button Label"
-          value={attributes.buttonLabel}
-          onChange={(value) => setAttributes({ buttonLabel: value })}
-          //   placeholder={option.extra.placeholder}
-        />
-      </PanelBody>
-      <PanelBody title="Button Label">
-        <TextControl
-          label="Button Label"
-          value={attributes.buttonLabel}
-          onChange={(value) => setAttributes({ buttonLabel: value })}
-          //   placeholder={option.extra.placeholder}
-        />
-      </PanelBody>
-      <PanelBody title="Button Label">
-        <TextControl
-          label="Button Label"
-          value={attributes.buttonLabel}
-          onChange={(value) => setAttributes({ buttonLabel: value })}
-          //   placeholder={option.extra.placeholder}
-        />
-      </PanelBody>
+      <div className="blockwriter-styling-section">
+        {options.map((name) => {
+          const Panel = panels[name];
+          return Panel ? (
+            <Panel
+              key={name}
+              attributes={attributes}
+              setAttributes={setAttributes}
+            />
+          ) : null;
+        })}
+      </div>
     </>
   );
 };

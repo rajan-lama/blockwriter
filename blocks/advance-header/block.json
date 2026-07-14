@@ -8,9 +8,7 @@
   "icon": "heading",
   "description": "Stylish header with advaance options.",
   "example": {},
-  "keywords": [
-    "header"
-  ],
+  "keywords": ["header"],
   "supports": {
     "html": true
   },

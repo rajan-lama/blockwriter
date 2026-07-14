@@ -55,12 +55,12 @@ const SpacingPanel = ({ attributes, setAttributes }) => {
     <>
       <PanelBody title={__('Spacing', 'blockwriter')} initialOpen={false}>
         <DimensionComponent
-          label={__('Row Gap','blockwriter')}
+          label={__('Row Gap', 'blockwriter')}
           dimension={row}
           updatedDimension={updateAttribute}
         />
         <DimensionComponent
-          label={__('Column Gap','blockwriter')}
+          label={__('Column Gap', 'blockwriter')}
           dimension={column}
           updatedDimension={updateAttribute}
         />
