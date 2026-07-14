@@ -17,9 +17,13 @@
       "type": "string",
       "default": "section"
     },
+    "layout": {
+      "type": "string",
+      "default": "layout-one"
+    },
     "container": {
       "type": "string",
-      "default": "-"
+      "default": "container"
     },
     "paddingY": {
       "type": "string",

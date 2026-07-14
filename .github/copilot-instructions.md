@@ -182,3 +182,4 @@ Prefer shared controls and reusable UI patterns where possible so the plugin sta
 ## Notes
 - This plugin is editor-focused and should remain compatible with Gutenberg and modern WordPress environments.
 - Favor minimal, stable changes over large refactors unless explicitly requested.
+- Do not make any update in Blocks folder outside of the build process. All changes should be made in the `src/` folder and then built into `blocks/`.

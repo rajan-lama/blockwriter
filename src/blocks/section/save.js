@@ -11,9 +11,12 @@ export default function save({ attributes }) {
 
   return (
     <Tag {...blockProps}>
-      <div className={container}>
-        <InnerBlocks.Content />
-      </div>
+      {container !== 'none' && (
+        <div className={container}>
+          <InnerBlocks.Content />
+        </div>
+      )}
+      {container === 'none' && <InnerBlocks.Content />}
     </Tag>
   );
 }
