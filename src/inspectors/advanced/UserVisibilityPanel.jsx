@@ -9,7 +9,7 @@ const UserVisibilityPanel = ({ attributes, setAttributes }) => {
         initialOpen={false}
       >
         <SelectControl
-          label={__('User Visibility', 'blockwriter')}
+          label={__('User Status', 'blockwriter')}
           value={attributes.userVisibility}
           options={[
             { label: __('All Users', 'blockwriter'), value: 'all' },
@@ -27,7 +27,7 @@ const UserVisibilityPanel = ({ attributes, setAttributes }) => {
         />
         {attributes.userVisibility === 'specific-roles' && (
           <SelectControl
-            label={__('Select Roles', 'blockwriter')}
+            label={__('Roles', 'blockwriter')}
             value={attributes.selectedRoles || []}
             options={[
               {

@@ -8,7 +8,6 @@ import { __ } from '@wordpress/i18n';
 import {
   BackgroundPanel,
   BorderPanel,
-  BorderControlPanel,
   BoxShadowPanel,
   DisplayTypePanel,
   PositionPanel,
@@ -20,12 +19,14 @@ import {
 
 import blockOptions from '../constants/blockOptions';
 
+console.log(blockOptions);
+
 export const LayoutOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName]?.layout || [];
+  console.log(options);
   const panels = {
     BackgroundPanel,
     BorderPanel,
-    BorderControlPanel,
     BoxShadowPanel,
     DisplayTypePanel,
     PositionPanel,

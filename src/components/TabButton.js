@@ -16,7 +16,7 @@ import LayoutOptions from '../hooks/LayoutOptions';
 import AdvanceOptions from '../hooks/AdvanceOptions';
 import GeneralOptions from '../hooks/GeneralOptions';
 
-const TabButton = ({ attributes, setAttributes, name }) => {
+const TabButton = ({ attributes, setAttributes, blockName }) => {
   const onSelect = (tabName) => {
     console.log('Selecting tab', tabName);
   };
@@ -64,18 +64,19 @@ const TabButton = ({ attributes, setAttributes, name }) => {
           <GeneralOptions
             attributes={attributes}
             setAttributes={setAttributes}
-            blockName={name}
+            blockName={blockName}
           />
         ) : tab.name === 'layout' ? (
           <LayoutOptions
             attributes={attributes}
             setAttributes={setAttributes}
+            blockName={blockName}
           />
         ) : tab.name === 'advanced' ? (
           <AdvanceOptions
             attributes={attributes}
             setAttributes={setAttributes}
-            blockName={name}
+            blockName={blockName}
           />
         ) : null
       }

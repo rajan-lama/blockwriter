@@ -1,6 +1,8 @@
 import { useBlockProps } from '@wordpress/block-editor';
 import { Button, TextControl } from '@wordpress/components';
 import Inspector from './inspector';
+import getBWBlockName from '../../hooks/getBWBlockName';
+import metadata from './block.json';
 
 export default function Edit({ attributes, setAttributes }) {
   const { buttons = [] } = attributes;

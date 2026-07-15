@@ -1,56 +1,42 @@
 const advancedOptionsAttributes = {
-  header: {
+  animations: {
     type: 'string',
-    default: '',
+    default: 'none',
+    usedBy: 'AnimationPanel',
   },
-  headerBgColor: {
+  onHoverAnimations: {
     type: 'string',
-    default: '#000',
+    default: 'none',
+    usedBy: 'AnimationPanel',
   },
-  headerTextColor: {
+  displayDateRange: {
+    type: 'Object',
+    usedBy: 'DateRangeVisibilityPanel',
+  },
+  showDesktop: {
+    type: 'Boolean',
+    display: true,
+    usedBy: 'DeviceVisibilityPanel',
+  },
+  showTablet: {
+    type: 'Object',
+    display: true,
+    usedBy: 'DeviceVisibilityPanel',
+  },
+  showMobile: {
+    type: 'Object',
+    display: true,
+    usedBy: 'DeviceVisibilityPanel',
+  },
+  userVisibility: {
     type: 'string',
-    default: '#eee',
+    default: 'none',
+    usedBy: 'UserVisibilityPanel',
   },
-  headerIcon: {
-    type: 'string',
-    default: 'unfold',
-  },
-  headerIconColor: {
-    type: 'string',
-    default: '#fff',
-  },
-  bodyBgColor: {
-    type: 'string',
-  },
-  bodyTextColor: {
-    type: 'string',
-  },
-  borderStyle: {
-    type: 'string',
-    default: 'solid',
-  },
-  borderWidth: {
-    type: 'number',
-    default: 0,
-  },
-  borderColor: {
-    type: 'string',
-  },
-  borderRadius: {
-    type: 'number',
-    default: 2,
-  },
-  marginBottom: {
-    type: 'number',
-    default: 15,
-  },
-  collapsedAll: {
-    type: 'boolean',
-    default: false,
-  },
-  changed: {
-    type: 'boolean',
-    default: false,
+  selectedRoles: {
+    type: 'array',
+    default: '[]',
+    usedBy: 'UserVisibilityPanel',
   },
 };
 

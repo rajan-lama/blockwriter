@@ -1,5 +1,3 @@
-import { header } from '@wordpress/icons';
-
 const BlockOptions = {
   'advanced-header': {
     advanced: [
@@ -14,10 +12,10 @@ const BlockOptions = {
   },
   buttons: {
     advanced: [
-      'AnimationPanel',
-      'DateRangeVisibilityPanel',
-      'DeviceVisibilityPanel',
-      'UserVisibilityPanel',
+      // 'AnimationPanel',
+      // 'DateRangeVisibilityPanel',
+      // 'DeviceVisibilityPanel',
+      // 'UserVisibilityPanel',
     ],
     layout: [],
     general: [],

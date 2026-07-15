@@ -5,6 +5,7 @@
  */
 import { registerBlockType } from '@wordpress/blocks';
 import advancedOptionsAttributes from '../../constants/AdvanceAttributes';
+import LayoutOptionsAttributes from '../../constants/LayoutAttributes';
 
 /**
  * Internal dependencies
@@ -23,6 +24,7 @@ registerBlockType(metadata.name, {
   attributes: {
     ...metadata.attributes,
     ...advancedOptionsAttributes,
+    ...LayoutOptionsAttributes,
   },
 
   /**
