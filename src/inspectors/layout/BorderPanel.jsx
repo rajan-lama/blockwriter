@@ -22,7 +22,7 @@ const BorderPanel = ({ attributes, setAttributes }) => {
   // const [border, setBorder] = useState();
 
   return (
-    <PanelBody title={__('Border Settings')}>
+    <PanelBody title={__('Border Settings')} initialOpen={false}>
       <BorderBoxControl
         __next40pxDefaultSize
         colors={colors}

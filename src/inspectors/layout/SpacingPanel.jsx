@@ -22,12 +22,11 @@ import {
 import DimensionComponent from '../../components/DimensionComponent';
 
 const SpacingPanel = ({ attributes, setAttributes }) => {
-
   const updateAttribute = (newValue) => {
     setAttributes({ margin: newValue });
   };
 
-  const { rowGap,columnGap,margin, padding } = attributes;
+  const { rowGap, columnGap, margin, padding } = attributes;
 
   return (
     <>

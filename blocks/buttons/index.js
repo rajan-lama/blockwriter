@@ -1614,10 +1614,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const USER_ROLE_OPTIONS = [{
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Administrator', 'blockwriter'),
+  value: 'administrator'
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Editor', 'blockwriter'),
+  value: 'editor'
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Author', 'blockwriter'),
+  value: 'author'
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contributor', 'blockwriter'),
+  value: 'contributor'
+}, {
+  label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscriber', 'blockwriter'),
+  value: 'subscriber'
+}];
 const UserVisibilityPanel = ({
   attributes,
   setAttributes
 }) => {
+  const selectedRoles = attributes.selectedRoles || [];
+  const toggleRole = value => {
+    const nextRoles = selectedRoles.includes(value) ? selectedRoles.filter(role => role !== value) : [...selectedRoles, value];
+    setAttributes({
+      selectedRoles: nextRoles
+    });
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('User Visibility', 'blockwriter'),
@@ -1641,29 +1664,13 @@ const UserVisibilityPanel = ({
         onChange: value => setAttributes({
           userVisibility: value
         })
-      }), attributes.userVisibility === 'specific-roles' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Roles', 'blockwriter'),
-        value: attributes.selectedRoles || [],
-        options: [{
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Administrator', 'blockwriter'),
-          value: 'administrator'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Editor', 'blockwriter'),
-          value: 'editor'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Author ', 'blockwriter'),
-          value: 'author'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contributor', 'blockwriter'),
-          value: 'contributor'
-        }, {
-          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Subscriber', 'blockwriter'),
-          value: 'subscriber'
-        }],
-        onChange: value => setAttributes({
-          selectedRoles: value
-        }),
-        multiple: true
+      }), attributes.userVisibility === 'specific-roles' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "blockwriter-user-visibility-roles",
+        children: USER_ROLE_OPTIONS.map(role => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.CheckboxControl, {
+          label: role.label,
+          checked: selectedRoles.includes(role.value),
+          onChange: () => toggleRole(role.value)
+        }, role.value))
       })]
     })
   });
@@ -2527,6 +2534,7 @@ const BorderPanel = ({
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Settings'),
+    initialOpen: false,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
       __next40pxDefaultSize: true,
       colors: colors,
@@ -2836,7 +2844,7 @@ const PositionPanel = ({
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Position', 'blockwriter'),
       initialOpen: false,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Position Type', 'blockwriter'),
+        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Type', 'blockwriter'),
         labelPosition: "side",
         value: attributes.positionType,
         options: [{

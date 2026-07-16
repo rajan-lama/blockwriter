@@ -7,7 +7,7 @@ const PositionPanel = ({ attributes, setAttributes }) => {
     <>
       <PanelBody title={__('Position', 'blockwriter')} initialOpen={false}>
         <SelectControl
-          label={__('Position Type', 'blockwriter')}
+          label={__('Type', 'blockwriter')}
           labelPosition="side"
           value={attributes.positionType}
           options={[
