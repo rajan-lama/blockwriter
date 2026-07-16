@@ -51,7 +51,7 @@ const BoxShadowPanel = ({ attributes, setAttributes }) => {
   return (
     <>
       <PanelBody title={__('Box Shadow', 'blockwriter')} initialOpen={false}>
-        <PanelRow>Color</PanelRow>
+        <PanelRow>{__('Color', 'blockwriter')}</PanelRow>
         <ColorPicker
           color={color}
           onChange={setColor}

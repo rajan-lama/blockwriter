@@ -14,8 +14,6 @@ const DateRangeVisibilityPanel = ({ attributes, setAttributes }) => {
     });
   }, [selected, setAttributes]);
 
-  console.log(DateRangeCalendar);
-
   return (
     <PanelBody title={__('Display Date', 'blockwriter')} initialOpen={false}>
       <DateRangeCalendar selected={selected} onSelect={setSelected} />

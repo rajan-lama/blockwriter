@@ -23,7 +23,6 @@ console.log(blockOptions);
 
 export const LayoutOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName]?.layout || [];
-  console.log(options);
   const panels = {
     BackgroundPanel,
     BorderPanel,
@@ -35,7 +34,6 @@ export const LayoutOptions = ({ attributes, setAttributes, blockName }) => {
     TextColorPanel,
     ZIndexPanel,
   };
-
   return (
     <>
       <div className="blockwriter-styling-section">

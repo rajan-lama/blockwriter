@@ -794,10 +794,10 @@ const TabButton = ({
 
 /***/ },
 
-/***/ "./src/constants/AdvanceAttributes.js"
-/*!********************************************!*\
-  !*** ./src/constants/AdvanceAttributes.js ***!
-  \********************************************/
+/***/ "./src/constants/advancedOptionsAttributes.js"
+/*!****************************************************!*\
+  !*** ./src/constants/advancedOptionsAttributes.js ***!
+  \****************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -846,74 +846,6 @@ const advancedOptionsAttributes = {
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (advancedOptionsAttributes);
-
-/***/ },
-
-/***/ "./src/constants/LayoutAttributes.js"
-/*!*******************************************!*\
-  !*** ./src/constants/LayoutAttributes.js ***!
-  \*******************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const LayoutOptionsAttributes = {
-  header: {
-    type: 'string',
-    default: ''
-  },
-  headerBgColor: {
-    type: 'string',
-    default: '#000'
-  },
-  headerTextColor: {
-    type: 'string',
-    default: '#eee'
-  },
-  headerIcon: {
-    type: 'string',
-    default: 'unfold'
-  },
-  headerIconColor: {
-    type: 'string',
-    default: '#fff'
-  },
-  bodyBgColor: {
-    type: 'string'
-  },
-  bodyTextColor: {
-    type: 'string'
-  },
-  borderStyle: {
-    type: 'string',
-    default: 'solid'
-  },
-  borderWidth: {
-    type: 'number',
-    default: 0
-  },
-  borderColor: {
-    type: 'string'
-  },
-  borderRadius: {
-    type: 'number',
-    default: 2
-  },
-  marginBottom: {
-    type: 'number'
-  },
-  collapsedAll: {
-    type: 'boolean',
-    default: false
-  },
-  changed: {
-    type: 'boolean',
-    default: false
-  }
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (LayoutOptionsAttributes);
 
 /***/ },
 
@@ -1264,6 +1196,194 @@ const BlockOptions = {
 
 /***/ },
 
+/***/ "./src/constants/layoutOptionsAttributes.js"
+/*!**************************************************!*\
+  !*** ./src/constants/layoutOptionsAttributes.js ***!
+  \**************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+
+const layoutOptionsAttributes = {
+  backgroundOption: {
+    type: 'string',
+    default: 'color',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundColor: {
+    type: 'string',
+    default: '#fff',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundGradient: {
+    type: 'string',
+    default: '',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundImageOverlay: {
+    type: 'string',
+    default: '',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundFocalPoint: {
+    type: 'object',
+    default: {
+      x: 0.5,
+      y: 0.5
+    },
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundAttachmentScroll: {
+    type: 'string',
+    default: 'scroll',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundBlendMode: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundRepeat: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'BackgroundPanel'
+  },
+  backgroundOpacity: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'BackgroundPanel'
+  },
+  displayType: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'DisplayTypePanel'
+  },
+  rowDirection: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'DisplayTypePanel'
+  },
+  flexWrap: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'DisplayTypePanel'
+  },
+  justifyContent: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'DisplayTypePanel'
+  },
+  alignItem: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'DisplayTypePanel'
+  },
+  positionType: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'PositionPanel'
+  },
+  rowGap: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'SpacingPanel'
+  },
+  columnGap: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'SpacingPanel'
+  },
+  padding: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'SpacingPanel'
+  },
+  margin: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'SpacingPanel'
+  },
+  textColor: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'TextColorPanel'
+  },
+  linkColor: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'TextColorPanel'
+  },
+  hoverColor: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'TextColorPanel'
+  },
+  visitedColor: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'TextColorPanel'
+  },
+  zindex: {
+    type: 'string',
+    default: 'normal',
+    usedBy: 'ZIndexPanel'
+  },
+  headerBgColor: {
+    type: 'string',
+    default: '#000'
+  },
+  headerTextColor: {
+    type: 'string',
+    default: '#eee'
+  },
+  headerIcon: {
+    type: 'string',
+    default: 'unfold'
+  },
+  headerIconColor: {
+    type: 'string',
+    default: '#fff'
+  },
+  bodyBgColor: {
+    type: 'string'
+  },
+  bodyTextColor: {
+    type: 'string'
+  },
+  borderStyle: {
+    type: 'string',
+    default: 'solid'
+  },
+  borderWidth: {
+    type: 'number',
+    default: 0
+  },
+  borderColor: {
+    type: 'string'
+  },
+  borderRadius: {
+    type: 'number',
+    default: 2
+  },
+  marginBottom: {
+    type: 'number'
+  },
+  collapsedAll: {
+    type: 'boolean',
+    default: false
+  },
+  changed: {
+    type: 'boolean',
+    default: false
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (layoutOptionsAttributes);
+
+/***/ },
+
 /***/ "./src/hooks/AdvanceOptions.js"
 /*!*************************************!*\
   !*** ./src/hooks/AdvanceOptions.js ***!
@@ -1406,7 +1526,6 @@ const LayoutOptions = ({
   blockName
 }) => {
   const options = _constants_blockOptions__WEBPACK_IMPORTED_MODULE_2__["default"][blockName]?.layout || [];
-  console.log(options);
   const panels = {
     BackgroundPanel: _inspectors_layout__WEBPACK_IMPORTED_MODULE_1__.BackgroundPanel,
     BorderPanel: _inspectors_layout__WEBPACK_IMPORTED_MODULE_1__.BorderPanel,
@@ -2134,7 +2253,7 @@ const BackgroundPanel = ({
 }) => {
   const [color, setColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)();
   const [gradient, setGradient] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
-  const [currentBgOption, setCurrentBgOption] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)();
+  const [currentBgOption, setCurrentBgOption] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(attributes.backgroundOption);
   const [imageOverlay, setImageOverlay] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
   const [columns, setColumns] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(2);
   const [linkColor, setLinkColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('normal');
@@ -2142,6 +2261,11 @@ const BackgroundPanel = ({
     x: 0.5,
     y: 0.5
   });
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+    setAttributes({
+      backgroundOption: currentBgOption
+    });
+  }, [currentBgOption]);
   const url = 'http://pluginfactory.loc/wp-content/uploads/2022/11/Course-Sales-Page-and-Instructional-Design-Template-1536x864.jpg';
 
   /* Example function to render the CSS styles based on Focal Point Picker value */
@@ -2172,7 +2296,9 @@ const BackgroundPanel = ({
             variant: "secondary",
             isSmall: "true",
             iconSize: "15",
-            onClick: () => setCurrentBgOption('color'),
+            onClick: () => setAttributes({
+              currentBgOption: currentBgOption
+            }),
             isPressed: currentBgOption === 'color' ? true : false
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
             icon: "laptop",
@@ -2261,7 +2387,7 @@ const BackgroundPanel = ({
                   onClick: open,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Icon, {
                     icon: "format-image"
-                  }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Change Image', 'jsforwpblocks')]
+                  }), (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__.__)('Change Image', 'blockwriter')]
                 })
               })
             })
@@ -2389,147 +2515,6 @@ const BackgroundPanel = ({
 
 /***/ },
 
-/***/ "./src/inspectors/layout/BorderControlPanel.jsx"
-/*!******************************************************!*\
-  !*** ./src/inspectors/layout/BorderControlPanel.jsx ***!
-  \******************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
-
-
-//import { Button, ButtonGroup, ColorPicker, GradientPicker, ToggleControl, SelectControl, RangeControl } from '@wordpress/components';
-
-
-
-
-
-const BorderControlPanel = ({
-  attributes,
-  setAttributes
-}) => {
-  const [color, setColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  const [gradient, setGradient] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
-  const [currentBgOption, setCurrentBgOption] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
-  const [imageOverlay, setImageOverlay] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [columns, setColumns] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(2);
-  const [linkColor, setLinkColor] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('normal');
-  const [focalPoint, setFocalPoint] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    x: 0.5,
-    y: 0.5
-  });
-  const url = 'http://pluginfactory.loc/wp-content/uploads/2022/11/Course-Sales-Page-and-Instructional-Design-Template-1536x864.jpg';
-
-  /* Example function to render the CSS styles based on Focal Point Picker value */
-  const style = {
-    backgroundImage: `url(${url})`,
-    backgroundPosition: `${focalPoint.x * 100}% ${focalPoint.y * 100}%`
-  };
-
-  // const [ color, setColor ] = useState ( '#f00' )
-  const colors = [{
-    name: 'red',
-    color: '#f00'
-  }];
-  const updateAttribute = newValue => {
-    setAttributes({
-      margin: newValue
-    });
-  };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border', 'blockwriter'),
-      initialOpen: false,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
-        label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Repeat', 'blockwriter'),
-        labelPosition: "side"
-        // value={attributes.htmlTag}
-        ,
-        options: [{
-          label: 'Default',
-          value: 'no-repeat'
-        }, {
-          label: 'None',
-          value: 'repeat'
-        }, {
-          label: 'Solid',
-          value: 'repeat-x'
-        }, {
-          label: 'Dotted',
-          value: 'repeat-y'
-        }, {
-          label: 'Dashed',
-          value: 'no-repeat'
-        }, {
-          label: 'Doubled',
-          value: 'repeat'
-        }, {
-          label: 'Groove',
-          value: 'repeat-x'
-        }, {
-          label: 'Inset',
-          value: 'repeat-y'
-        }, {
-          label: 'Outset',
-          value: 'repeat-y'
-        }, {
-          label: 'Ridget',
-          value: 'repeat-y'
-        }]
-        // onChange={(value) => {
-        //   setAttributes({ htmlTag: value });
-        // }}
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
-        children: "Width"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
-        children: "Radius"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ButtonGroup, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-          variant: "secondary",
-          isSmall: "true",
-          onClick: () => setLinkColor('normal'),
-          isPressed: linkColor === 'normal' ? true : false,
-          children: "Normal"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
-          variant: "secondary",
-          isSmall: "true",
-          onClick: () => setLinkColor('hover'),
-          isPressed: linkColor === 'hover' ? true : false,
-          children: "Hover"
-        })]
-      }), linkColor === 'normal' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
-        asButtons: "true",
-        colors: colors,
-        value: color,
-        onChange: color => setColor(color),
-        headingLevel: "2"
-      }), linkColor === 'hover' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPalette, {
-        asButtons: "true",
-        colors: colors,
-        value: color,
-        onChange: color => setColor(color),
-        headingLevel: "2"
-      })]
-    })
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BorderControlPanel);
-
-/***/ },
-
 /***/ "./src/inspectors/layout/BorderPanel.jsx"
 /*!***********************************************!*\
   !*** ./src/inspectors/layout/BorderPanel.jsx ***!
@@ -2573,20 +2558,36 @@ const BorderPanel = ({
     bottom: defaultBorder,
     left: defaultBorder
   });
+  const onHoverColors = [{
+    name: 'Blue 20',
+    color: '#72aee6'
+  }];
+  const [onHoverBorders, setOnHoverBorders] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    top: defaultBorder,
+    right: defaultBorder,
+    bottom: defaultBorder,
+    left: defaultBorder
+  });
   const onChange = newBorders => setBorders(newBorders);
 
   // const [border, setBorder] = useState();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Settings'),
     initialOpen: false,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
       __next40pxDefaultSize: true,
       colors: colors,
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Borders'),
       onChange: onChange,
       value: borders
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
+      __next40pxDefaultSize: true,
+      colors: onHoverColors,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('OnHover Borders'),
+      onChange: onChange,
+      value: onHoverBorders
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BorderPanel);
@@ -2658,7 +2659,7 @@ const BoxShadowPanel = ({
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Box Shadow', 'blockwriter'),
       initialOpen: false,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelRow, {
-        children: "Color"
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Color', 'blockwriter')
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ColorPicker, {
         color: color,
         onChange: setColor,
@@ -2772,7 +2773,7 @@ const DisplayTypePanel = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Flex Direction', 'blockwriter'),
         labelPosition: "side",
-        value: attributes.positionType,
+        value: attributes.rowDirection,
         options: [{
           label: 'Default',
           value: 'default'
@@ -2792,7 +2793,7 @@ const DisplayTypePanel = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Flex Wrap', 'blockwriter'),
         labelPosition: "side",
-        value: attributes.positionType,
+        value: attributes.flexWrap,
         options: [{
           label: 'Default',
           value: 'default'
@@ -2806,7 +2807,7 @@ const DisplayTypePanel = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Justify Content', 'blockwriter'),
         labelPosition: "side",
-        value: attributes.positionType,
+        value: attributes.justifyContent,
         options: [{
           label: 'Default',
           value: 'default'
@@ -2832,7 +2833,7 @@ const DisplayTypePanel = ({
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Align Item', 'blockwriter'),
         labelPosition: "side",
-        value: attributes.positionType,
+        value: attributes.alignItem,
         options: [{
           label: 'Default',
           value: 'default'
@@ -3253,27 +3254,24 @@ const ZIndexPanel = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   BackgroundPanel: () => (/* reexport safe */ _BackgroundPanel__WEBPACK_IMPORTED_MODULE_0__["default"]),
-/* harmony export */   BorderControlPanel: () => (/* reexport safe */ _BorderControlPanel__WEBPACK_IMPORTED_MODULE_2__["default"]),
 /* harmony export */   BorderPanel: () => (/* reexport safe */ _BorderPanel__WEBPACK_IMPORTED_MODULE_1__["default"]),
-/* harmony export */   BoxShadowPanel: () => (/* reexport safe */ _BoxShadowPanel__WEBPACK_IMPORTED_MODULE_3__["default"]),
-/* harmony export */   DisplayTypePanel: () => (/* reexport safe */ _DisplayTypePanel__WEBPACK_IMPORTED_MODULE_4__["default"]),
-/* harmony export */   PositionPanel: () => (/* reexport safe */ _PositionPanel__WEBPACK_IMPORTED_MODULE_5__["default"]),
-/* harmony export */   ShapeDividerPanel: () => (/* reexport safe */ _ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_6__["default"]),
-/* harmony export */   SpacingPanel: () => (/* reexport safe */ _SpacingPanel__WEBPACK_IMPORTED_MODULE_7__["default"]),
-/* harmony export */   TextColorPanel: () => (/* reexport safe */ _TextColorPanel__WEBPACK_IMPORTED_MODULE_8__["default"]),
-/* harmony export */   ZIndexPanel: () => (/* reexport safe */ _ZIndexPanel__WEBPACK_IMPORTED_MODULE_9__["default"])
+/* harmony export */   BoxShadowPanel: () => (/* reexport safe */ _BoxShadowPanel__WEBPACK_IMPORTED_MODULE_2__["default"]),
+/* harmony export */   DisplayTypePanel: () => (/* reexport safe */ _DisplayTypePanel__WEBPACK_IMPORTED_MODULE_3__["default"]),
+/* harmony export */   PositionPanel: () => (/* reexport safe */ _PositionPanel__WEBPACK_IMPORTED_MODULE_4__["default"]),
+/* harmony export */   ShapeDividerPanel: () => (/* reexport safe */ _ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_5__["default"]),
+/* harmony export */   SpacingPanel: () => (/* reexport safe */ _SpacingPanel__WEBPACK_IMPORTED_MODULE_6__["default"]),
+/* harmony export */   TextColorPanel: () => (/* reexport safe */ _TextColorPanel__WEBPACK_IMPORTED_MODULE_7__["default"]),
+/* harmony export */   ZIndexPanel: () => (/* reexport safe */ _ZIndexPanel__WEBPACK_IMPORTED_MODULE_8__["default"])
 /* harmony export */ });
 /* harmony import */ var _BackgroundPanel__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BackgroundPanel */ "./src/inspectors/layout/BackgroundPanel.jsx");
 /* harmony import */ var _BorderPanel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BorderPanel */ "./src/inspectors/layout/BorderPanel.jsx");
-/* harmony import */ var _BorderControlPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BorderControlPanel */ "./src/inspectors/layout/BorderControlPanel.jsx");
-/* harmony import */ var _BoxShadowPanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BoxShadowPanel */ "./src/inspectors/layout/BoxShadowPanel.jsx");
-/* harmony import */ var _DisplayTypePanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DisplayTypePanel */ "./src/inspectors/layout/DisplayTypePanel.jsx");
-/* harmony import */ var _PositionPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./PositionPanel */ "./src/inspectors/layout/PositionPanel.jsx");
-/* harmony import */ var _ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ShapeDividerPanel */ "./src/inspectors/layout/ShapeDividerPanel.jsx");
-/* harmony import */ var _SpacingPanel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SpacingPanel */ "./src/inspectors/layout/SpacingPanel.jsx");
-/* harmony import */ var _TextColorPanel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./TextColorPanel */ "./src/inspectors/layout/TextColorPanel.jsx");
-/* harmony import */ var _ZIndexPanel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./ZIndexPanel */ "./src/inspectors/layout/ZIndexPanel.jsx");
-
+/* harmony import */ var _BoxShadowPanel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BoxShadowPanel */ "./src/inspectors/layout/BoxShadowPanel.jsx");
+/* harmony import */ var _DisplayTypePanel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DisplayTypePanel */ "./src/inspectors/layout/DisplayTypePanel.jsx");
+/* harmony import */ var _PositionPanel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./PositionPanel */ "./src/inspectors/layout/PositionPanel.jsx");
+/* harmony import */ var _ShapeDividerPanel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ShapeDividerPanel */ "./src/inspectors/layout/ShapeDividerPanel.jsx");
+/* harmony import */ var _SpacingPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SpacingPanel */ "./src/inspectors/layout/SpacingPanel.jsx");
+/* harmony import */ var _TextColorPanel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TextColorPanel */ "./src/inspectors/layout/TextColorPanel.jsx");
+/* harmony import */ var _ZIndexPanel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ZIndexPanel */ "./src/inspectors/layout/ZIndexPanel.jsx");
 
 
 
@@ -3461,8 +3459,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _constants_AdvanceAttributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants/AdvanceAttributes */ "./src/constants/AdvanceAttributes.js");
-/* harmony import */ var _constants_LayoutAttributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/LayoutAttributes */ "./src/constants/LayoutAttributes.js");
+/* harmony import */ var _constants_advancedOptionsAttributes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants/advancedOptionsAttributes */ "./src/constants/advancedOptionsAttributes.js");
+/* harmony import */ var _constants_layoutOptionsAttributes__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../constants/layoutOptionsAttributes */ "./src/constants/layoutOptionsAttributes.js");
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit */ "./src/blocks/section/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./save */ "./src/blocks/section/save.js");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./block.json */ "./src/blocks/section/block.json");
@@ -3504,8 +3502,8 @@ const calendarIcon = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_
   // merge attributes from block.json and advancedOptionsAttributes
   attributes: {
     ..._block_json__WEBPACK_IMPORTED_MODULE_5__.attributes,
-    ..._constants_AdvanceAttributes__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ..._constants_LayoutAttributes__WEBPACK_IMPORTED_MODULE_2__["default"]
+    ..._constants_advancedOptionsAttributes__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ..._constants_layoutOptionsAttributes__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   /**
    * @see ./edit.js

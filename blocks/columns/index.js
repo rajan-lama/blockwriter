@@ -448,20 +448,36 @@ const BorderPanel = ({
     bottom: defaultBorder,
     left: defaultBorder
   });
+  const onHoverColors = [{
+    name: 'Blue 20',
+    color: '#72aee6'
+  }];
+  const [onHoverBorders, setOnHoverBorders] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)({
+    top: defaultBorder,
+    right: defaultBorder,
+    bottom: defaultBorder,
+    left: defaultBorder
+  });
   const onChange = newBorders => setBorders(newBorders);
 
   // const [border, setBorder] = useState();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Border Settings'),
     initialOpen: false,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
       __next40pxDefaultSize: true,
       colors: colors,
       label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('Borders'),
       onChange: onChange,
       value: borders
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.BorderBoxControl, {
+      __next40pxDefaultSize: true,
+      colors: onHoverColors,
+      label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__.__)('OnHover Borders'),
+      onChange: onChange,
+      value: onHoverBorders
+    })]
   });
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BorderPanel);
