@@ -39,7 +39,7 @@ const DisplayTypePanel = ({ attributes, setAttributes }) => {
         <SelectControl
           label={__('Flex Direction', 'blockwriter')}
           labelPosition="side"
-          value={attributes.positionType}
+          value={attributes.rowDirection}
           options={[
             {
               label: 'Default',
@@ -67,7 +67,7 @@ const DisplayTypePanel = ({ attributes, setAttributes }) => {
         <SelectControl
           label={__('Flex Wrap', 'blockwriter')}
           labelPosition="side"
-          value={attributes.positionType}
+          value={attributes.flexWrap}
           options={[
             {
               label: 'Default',
@@ -86,7 +86,7 @@ const DisplayTypePanel = ({ attributes, setAttributes }) => {
         <SelectControl
           label={__('Justify Content', 'blockwriter')}
           labelPosition="side"
-          value={attributes.positionType}
+          value={attributes.justifyContent}
           options={[
             {
               label: 'Default',
@@ -121,7 +121,7 @@ const DisplayTypePanel = ({ attributes, setAttributes }) => {
         <SelectControl
           label={__('Align Item', 'blockwriter')}
           labelPosition="side"
-          value={attributes.positionType}
+          value={attributes.alignItem}
           options={[
             {
               label: 'Default',

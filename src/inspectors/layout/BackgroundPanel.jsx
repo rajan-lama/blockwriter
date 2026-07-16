@@ -1,6 +1,6 @@
 import { Panel, PanelBody, PanelRow } from '@wordpress/components';
 import { more } from '@wordpress/icons';
-import { useState } from '@wordpress/element';
+import { useState, useEffect } from '@wordpress/element';
 import {
   Button,
   ButtonGroup,
@@ -17,7 +17,9 @@ import { __ } from '@wordpress/i18n';
 const BackgroundPanel = ({ attributes, setAttributes }) => {
   const [color, setColor] = useState();
   const [gradient, setGradient] = useState(null);
-  const [currentBgOption, setCurrentBgOption] = useState();
+  const [currentBgOption, setCurrentBgOption] = useState(
+    attributes.backgroundOption,
+  );
   const [imageOverlay, setImageOverlay] = useState(false);
   const [columns, setColumns] = useState(2);
   const [linkColor, setLinkColor] = useState('normal');
@@ -25,6 +27,10 @@ const BackgroundPanel = ({ attributes, setAttributes }) => {
     x: 0.5,
     y: 0.5,
   });
+
+  useEffect(() => {
+    setAttributes({ backgroundOption: currentBgOption });
+  }, [currentBgOption]);
 
   const url =
     'http://pluginfactory.loc/wp-content/uploads/2022/11/Course-Sales-Page-and-Instructional-Design-Template-1536x864.jpg';
@@ -46,14 +52,15 @@ const BackgroundPanel = ({ attributes, setAttributes }) => {
     <>
       <PanelBody title={__('Background', 'blockwriter')} initialOpen={true}>
         <div className="gs-title-button-units-section">
-          {/* <PanelRow>{__('Type:', 'blockwriter')}</PanelRow> */}
           <ButtonGroup>
             <Button
               icon="admin-customizer"
               variant="secondary"
               isSmall="true"
               iconSize="15"
-              onClick={() => setCurrentBgOption('color')}
+              onClick={() =>
+                setAttributes({ currentBgOption: currentBgOption })
+              }
               isPressed={currentBgOption === 'color' ? true : false}
             ></Button>
             <Button
@@ -156,7 +163,7 @@ const BackgroundPanel = ({ attributes, setAttributes }) => {
                           onClick={open}
                         >
                           <Icon icon="format-image" />
-                          {__('Change Image', 'jsforwpblocks')}
+                          {__('Change Image', 'blockwriter')}
                         </Button>
                       )}
                     />

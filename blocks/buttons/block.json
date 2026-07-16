@@ -7,7 +7,11 @@
   "category": "blockwriter",
   "icon": "index-card",
   "description": "Button group container",
-  "keywords": ["icon", "fontawesome", "fa"],
+  "keywords": [
+    "icon",
+    "fontawesome",
+    "fa"
+  ],
   "supports": {
     "html": false
   },

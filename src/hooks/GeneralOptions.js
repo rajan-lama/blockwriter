@@ -10,6 +10,8 @@ import {
   ColumnsSettingsPanel,
 } from '../inspectors/general';
 
+import blockOptions from '../constants/blockOptions';
+
 export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName].general || [];
 

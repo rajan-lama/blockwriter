@@ -8,7 +8,6 @@ import { __ } from '@wordpress/i18n';
 import {
   BackgroundPanel,
   BorderPanel,
-  BorderControlPanel,
   BoxShadowPanel,
   DisplayTypePanel,
   PositionPanel,
@@ -20,12 +19,13 @@ import {
 
 import blockOptions from '../constants/blockOptions';
 
+console.log(blockOptions);
+
 export const LayoutOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName]?.layout || [];
   const panels = {
     BackgroundPanel,
     BorderPanel,
-    BorderControlPanel,
     BoxShadowPanel,
     DisplayTypePanel,
     PositionPanel,
@@ -34,7 +34,6 @@ export const LayoutOptions = ({ attributes, setAttributes, blockName }) => {
     TextColorPanel,
     ZIndexPanel,
   };
-
   return (
     <>
       <div className="blockwriter-styling-section">

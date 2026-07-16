@@ -7,22 +7,22 @@ import { __ } from '@wordpress/i18n';
 
 import {
   AnimationPanel,
-  DateRangeVisibilityPanel,
+  // DateRangeVisibilityPanel,
   DeviceVisibilityPanel,
-  OnHoverAnimationPanel,
-  TypographyPanel,
+  // TypographyPanel,
   UserVisibilityPanel,
 } from '../inspectors/advanced';
+
+import blockOptions from '../constants/blockOptions';
 
 export const AdvanceOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName].advanced || [];
 
   const panels = {
     AnimationPanel,
-    DateRangeVisibilityPanel,
+    // DateRangeVisibilityPanel,
     DeviceVisibilityPanel,
-    OnHoverAnimationPanel,
-    TypographyPanel,
+    // TypographyPanel,
     UserVisibilityPanel,
   };
 

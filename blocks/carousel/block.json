@@ -8,7 +8,11 @@
   "icon": "smiley",
   "description": "Carousel block for blockwriter.",
   "example": {},
-  "keywords": ["carousel", "slider", "gallery"],
+  "keywords": [
+    "carousel",
+    "slider",
+    "gallery"
+  ],
   "supports": {
     "color": {
       "background": false,

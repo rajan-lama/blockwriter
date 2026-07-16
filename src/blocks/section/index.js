@@ -4,6 +4,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 import { registerBlockType } from '@wordpress/blocks';
+import advancedOptionsAttributes from '../../constants/advancedOptionsAttributes';
+import LayoutOptionsAttributes from '../../constants/layoutOptionsAttributes';
 
 /**
  * Internal dependencies
@@ -30,6 +32,13 @@ const calendarIcon = (
  */
 registerBlockType(metadata.name, {
   icon: calendarIcon,
+
+  // merge attributes from block.json and advancedOptionsAttributes
+  attributes: {
+    ...metadata.attributes,
+    ...advancedOptionsAttributes,
+    ...LayoutOptionsAttributes,
+  },
 
   /**
    * @see ./edit.js
