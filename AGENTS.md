@@ -1,5 +1,51 @@
 # AGENTS.md — BlockWriter
 
+**Version**: 1.1  
+**Last Updated**: 2026-08-27  
+**Purpose**: Architecture, standards, and guidelines for all BlockWriter development
+
+---
+
+## 📑 Table of Contents
+
+1. [Quick Reference](#quick-reference)
+2. [Project Overview](#project-overview)
+3. [Core Philosophy](#core-philosophy)
+4. [Technical Architecture](#technical-architecture-sections-3-9)
+5. [Quality & Security Standards](#quality--security-standards-sections-10-25)
+6. [Development Process](#development-process-sections-26-27)
+7. [Agent-Specific Rules](#agent-specific-rules-sections-28-32)
+8. [Block Development](#block-development-sections-33-3310)
+9. [Related Documents](#related-documents)
+
+---
+
+## Quick Reference
+
+### Before Starting Code
+- [ ] Read sections 1-2 (Overview & Philosophy)
+- [ ] Search existing codebase for similar features
+- [ ] Review Architecture (section 4)
+- [ ] Review Security requirements (section 10)
+- [ ] Identify PHP/React boundaries for your feature
+
+### During Development
+- [ ] Use WordPress APIs (not custom replacements)
+- [ ] Implement permission checks and nonces
+- [ ] Add comprehensive error handling
+- [ ] Write tests for important logic
+- [ ] Preserve backward compatibility
+- [ ] Handle accessibility requirements
+
+### Before Submitting PR
+- [ ] Use Definition of Done checklist (section 29)
+- [ ] Use Agent Working Checklist (section 31)
+- [ ] Test in WordPress editor if editor-related
+- [ ] Run lint/build/test suite
+- [ ] Document any API changes
+
+---
+
 ## 1. Project Overview
 
 BlockWriter is a WordPress plugin focused on improving the WordPress block editing and content-building experience.
@@ -21,7 +67,9 @@ BlockWriter should be treated as a production WordPress plugin, not as a standal
 
 ---
 
-## 2. Product Direction
+## Core Philosophy
+
+### 2. Product Direction
 
 BlockWriter should make it easier to create, organize, reuse, and manage WordPress block-based content.
 
@@ -39,7 +87,9 @@ The implementation should not lock the product to one theme, page builder, or th
 
 ---
 
-## 3. Technology Stack
+## Technical Architecture (Sections 3-9)
+
+### 3. Technology Stack
 
 ### Backend
 
@@ -288,7 +338,9 @@ All client input is untrusted.
 
 ---
 
-## 10. Security
+## Quality & Security Standards (Sections 10-25)
+
+### 10. Security
 
 Follow WordPress security practices at every boundary.
 
@@ -393,37 +445,57 @@ Only enqueue assets where required.
 
 Do not load large React bundles on every frontend page unless the feature genuinely requires them.
 
-Avoid:
-
+❌ Avoid:
 ```php
 wp_enqueue_script( 'blockwriter-heavy-bundle' );
 ```
 
-globally.
-
 Prefer conditional loading based on:
 
-- Admin screen.
-- Editor context.
-- Block presence.
-- Feature requirement.
+- Admin screen (use `get_current_screen()`)
+- Editor context (use WordPress editor hooks)
+- Block presence (check post content before enqueuing)
+- Feature requirement (conditional feature flags)
+
+### Frontend performance targets
+
+- **Admin bundle size**: < 150KB gzipped
+- **Editor bundle size**: < 200KB gzipped
+- **Block CSS per page**: < 50KB gzipped
+- **Page load impact**: < 200ms additional time
+- **Memory impact**: < 5MB per loaded block
 
 ### Database
 
 Avoid:
 
-- Unbounded queries.
-- N+1 queries.
-- Repeated metadata queries inside loops.
-- Loading thousands of records when only a page is required.
+- Unbounded queries without `LIMIT`
+- N+1 queries (querying in loops)
+- Repeated metadata queries inside loops
+- Loading thousands of records when pagination applies
 
 Use:
 
-- Pagination.
-- Appropriate indexes.
-- Caching where justified.
-- WordPress query APIs.
-- Bulk operations where safe.
+- Pagination for large result sets
+- Appropriate database indexes
+- WordPress transients for computed data
+- WordPress query APIs (WP_Query, WP_Term_Query)
+- Bulk operations where safe
+
+### Query optimization checklist
+
+```sql
+-- ❌ Bad: N+1 problem
+foreach ($template_ids as $id) {
+    $template = get_post($id);
+}
+
+-- ✅ Good: Single query
+$templates = get_posts([
+    'post__in' => $template_ids,
+    'posts_per_page' => -1,
+]);
+```
 
 ---
 
@@ -514,7 +586,9 @@ Do not use clickable `<div>` elements when a `<button>` is appropriate.
 
 Errors should be explicit and actionable.
 
-Backend:
+### Backend
+
+Always return structured error responses:
 
 ```php
 return new WP_Error(
@@ -524,17 +598,60 @@ return new WP_Error(
 );
 ```
 
-Frontend should handle:
+Common error codes:
+- `400` — Bad Request (validation failure)
+- `403` — Forbidden (permission denied)
+- `404` — Not Found (resource missing)
+- `500` — Internal Server Error (unexpected failure)
 
-- Loading state.
-- Empty state.
-- Success state.
-- Error state.
-- Retry where appropriate.
+### Frontend
 
-Do not silently swallow API errors.
+Every API call should handle:
 
-Do not expose PHP stack traces, SQL queries, API credentials, or internal paths to users.
+- **Loading state** — Show spinner/skeleton
+- **Empty state** — Show message when no data
+- **Success state** — Display result
+- **Error state** — Show actionable error message
+- **Retry option** — Allow user to retry on failure
+
+Example React pattern:
+
+```js
+const { data, isLoading, error } = useQuery('templates');
+
+if (isLoading) return <Spinner />;
+if (error) return <ErrorMessage error={error} onRetry={refetch} />;
+if (!data?.length) return <EmptyState />;
+return <TemplateList items={data} />;
+```
+
+### Error Messages
+
+User-facing errors should:
+- Be specific and actionable
+- Avoid technical jargon
+- Suggest next steps
+- Never expose credentials or internal paths
+
+❌ Bad: `"Database connection failed at /var/www/html/wp-content/plugins/blockwriter/includes/class-blockwriter-plugin.php:147"`
+
+✅ Good: `"Unable to load templates. Please check your connection and try again."`
+
+### Logging Errors
+
+Log all errors with context:
+
+```php
+error_log(
+    sprintf(
+        'BlockWriter: Failed to load template. Template ID: %d, Error: %s',
+        $template_id,
+        $error_message
+    )
+);
+```
+
+Do not silently swallow API errors in frontend code.
 
 ---
 
@@ -698,6 +815,8 @@ in production code.
 
 ---
 
+## Development Process (Sections 26-27)
+
 ## 26. Git and Commit Guidelines
 
 Use small, focused commits.
@@ -735,6 +854,8 @@ Do not merge code that introduces secrets into source control or frontend bundle
 
 ---
 
+## Agent-Specific Rules (Sections 28-32)
+
 ## 28. AI Coding Agent Rules
 
 When an AI coding agent works on BlockWriter:
@@ -762,30 +883,291 @@ When an AI coding agent works on BlockWriter:
 
 ---
 
-## 29. Definition of Done
+## 29. Definition of Done (MOVED)
 
-A feature is complete only when applicable:
-
-- Core implementation is complete.
-- Existing architecture is respected.
-- Capability checks are implemented.
-- Nonces are implemented where required.
-- Input is validated and sanitized.
-- Output is escaped.
-- REST endpoints are protected.
-- Errors are handled.
-- Loading/empty/error states exist in the UI.
-- Important logic has tests.
-- Existing functionality remains intact.
-- Editor behavior has been manually verified when relevant.
-- Internationalization is implemented.
-- Accessibility has been considered.
-- Performance impact is acceptable.
-- Documentation is updated where necessary.
+**See Section 41 below** — Comprehensive checklist.
 
 ---
 
-## 30. Most Important Architectural Rules
+## 30. Most Important Architectural Rules (CONSOLIDATED)
+
+**See Section 39 below** — These rules have been consolidated and expanded.
+
+---
+
+## 31. Agent Working Checklist (MOVED)
+
+**See Section 40 below** — Updated checklist with additional items.
+
+---
+
+## 32. Guiding Philosophy
+
+BlockWriter should remain:
+
+**Native to WordPress.  
+Native to Gutenberg.  
+Modular.  
+Secure.  
+Performant.  
+Backward-compatible.  
+Easy to extend.  
+Easy to maintain.**
+
+When there is a choice between a clever abstraction and a straightforward WordPress-native implementation, prefer the straightforward implementation unless the abstraction provides a clear long-term benefit.
+
+---
+
+## Block Development (Sections 33-33.6)
+
+## 33. Documentation Standards
+
+Every code change should include appropriate documentation.
+
+### README and Overview Files
+
+- Block README should describe purpose, features, and usage
+- Code comments should explain WHY, not WHAT (code is self-documenting)
+- Complex logic requires inline documentation
+- Deprecations must be documented with migration path
+
+### API Documentation
+
+REST endpoints must document:
+
+```php
+/**
+ * Get templates
+ *
+ * @route GET /blockwriter/v1/templates
+ * @param int $page    Page number (default: 1)
+ * @param int $per_page Results per page (default: 20)
+ *
+ * @return array {
+ *     @type object[] $items      Array of template objects
+ *     @type int     $total       Total number of templates
+ *     @type int     $pages       Total number of pages
+ * }
+ */
+```
+
+### Block Documentation Template
+
+```markdown
+# [Block Name]
+
+## Description
+What this block does and why users would use it.
+
+## Features
+- Feature 1
+- Feature 2
+
+## Attributes
+- `attribute1` (string) — Description
+- `attribute2` (boolean) — Description
+
+## Usage
+Example of typical block usage.
+
+## Accessibility
+How this block is accessible.
+
+## Browser Support
+Minimum browser versions.
+```
+
+---
+
+## 34. Versioning & Release Process
+
+### Semantic Versioning
+
+BlockWriter follows semantic versioning: `MAJOR.MINOR.PATCH`
+
+- **MAJOR**: Incompatible API changes (requires migration)
+- **MINOR**: Backward-compatible new features
+- **PATCH**: Backward-compatible bug fixes
+
+### Breaking Changes Policy
+
+When introducing breaking changes:
+
+1. **Announce** in changelog 2 releases before removal
+2. **Deprecate** the old behavior with warnings
+3. **Document** migration path clearly
+4. **Release** as MAJOR version bump
+5. **Provide** migration script if applicable
+
+### Changelog Requirements
+
+Every release must include:
+
+```markdown
+## [Version] - YYYY-MM-DD
+
+### Added
+- New features
+
+### Changed
+- Modified features (with migration notes if applicable)
+
+### Fixed
+- Bug fixes
+
+### Deprecated
+- Soon-to-be-removed features (with removal timeline)
+
+### Removed
+- Removed features (link to migration guide)
+
+### Security
+- Security vulnerabilities addressed
+```
+
+---
+
+## 35. Testing Standards
+
+### PHP Test Requirements
+
+Test these scenarios:
+
+- Valid input → correct output
+- Invalid input → proper error handling
+- Edge cases (empty, null, boundary values)
+- Permission checks (authorized vs. unauthorized)
+- Database operations (create, read, update, delete)
+- Integration with WordPress hooks
+
+### JavaScript Test Requirements
+
+Test these components:
+
+- Component renders without error
+- Props validation and defaults
+- User interactions (clicks, keyboard)
+- API calls and error handling
+- State changes and side effects
+
+### E2E Test Coverage
+
+Critical workflows should have Playwright tests:
+
+- Editor initialization
+- Block insertion and configuration
+- Template loading and application
+- Settings saving/loading
+- Error scenarios and recovery
+
+### Minimum Test Coverage
+
+- Critical business logic: 80%+ coverage
+- Public APIs: 100% coverage
+- UI components: 60%+ coverage
+- Total project goal: 70%+ coverage
+
+---
+
+## 36. Code Review Process
+
+### Review Checklist for Reviewers
+
+- [ ] Does it follow AGENTS.md guidelines?
+- [ ] Is it the smallest coherent change?
+- [ ] Are there unrelated changes mixed in?
+- [ ] Are permission checks present?
+- [ ] Is input validation present?
+- [ ] Is output escaped?
+- [ ] Are there backward compatibility issues?
+- [ ] Does it have tests?
+- [ ] Is documentation updated?
+- [ ] Are there console/error log warnings?
+
+### Approval Requirements
+
+- At least 1 approved review
+- All CI checks passing
+- No unresolved conversations
+- Changelog entry added
+
+---
+
+## 37. Deployment & Environments
+
+### Environment Configuration
+
+| Environment | Purpose | Content | Updates |
+|-------------|---------|---------|---------|
+| Local | Development | Test data | Frequent |
+| Staging | Pre-production | Production mirror | Weekly |
+| Production | Live sites | Real user data | As needed |
+
+### Pre-deployment Checklist
+
+- [ ] Version number updated
+- [ ] Changelog reviewed
+- [ ] Database migrations tested
+- [ ] Backup created
+- [ ] Tests passing
+- [ ] Performance benchmarks met
+- [ ] Security audit passed
+- [ ] Translations updated
+
+---
+
+## 38. Troubleshooting Guide
+
+### Common Issues
+
+#### "Block fails to render"
+
+**Symptoms**: Block shows error in editor
+
+**Diagnosis**:
+1. Check browser console for JavaScript errors
+2. Verify `block.json` is valid JSON
+3. Check block attributes match schema
+4. Look for PHP errors in debug.log
+
+**Solution**:
+- Fix JSON syntax
+- Update attribute definitions
+- Check for conflicts with other plugins
+
+#### "Blocks not appearing in inserter"
+
+**Symptoms**: Block registered but not visible
+
+**Diagnosis**:
+1. Check `"category"` in block.json
+2. Verify `register_block_type()` was called
+3. Check user capabilities
+
+**Solution**:
+- Verify block.json has `category`
+- Ensure block is registered in correct hook (`init` or `enqueue_block_editor_assets`)
+- Check user has `edit_posts` capability
+
+#### "Performance degradation"
+
+**Symptoms**: Editor slow, front-end slow
+
+**Diagnosis**:
+1. Profile JavaScript bundles (DevTools)
+2. Check database queries (Query Monitor plugin)
+3. Check for N+1 queries
+4. Profile PHP execution time
+
+**Solution**:
+- Split large bundles
+- Add database indexes
+- Use `wp_cache_get/set`
+- Optimize query patterns
+
+---
+
+## 39. Most Important Architectural Rules
 
 ### Rule 1 — WordPress first
 
@@ -817,7 +1199,7 @@ BlockWriter should have a clean architecture, but abstractions must solve real p
 
 ---
 
-## 31. Agent Working Checklist
+## 40. Agent Working Checklist
 
 Before changing code:
 
@@ -844,20 +1226,30 @@ Before finishing:
 
 ---
 
-## 32. Guiding Philosophy
+## 41. Definition of Done
 
-BlockWriter should remain:
+A feature is complete only when applicable:
 
-**Native to WordPress.  
-Native to Gutenberg.  
-Modular.  
-Secure.  
-Performant.  
-Backward-compatible.  
-Easy to extend.  
-Easy to maintain.**
+- Core implementation is complete.
+- Existing architecture is respected.
+- Capability checks are implemented.
+- Nonces are implemented where required.
+- Input is validated and sanitized.
+- Output is escaped.
+- REST endpoints are protected.
+- Errors are handled.
+- Loading/empty/error states exist in the UI.
+- Important logic has tests.
+- Existing functionality remains intact.
+- Editor behavior has been manually verified when relevant.
+- Internationalization is implemented.
+- Accessibility has been considered.
+- Performance impact is acceptable.
+- Documentation is updated where necessary.
 
-When there is a choice between a clever abstraction and a straightforward WordPress-native implementation, prefer the straightforward implementation unless the abstraction provides a clear long-term benefit.
+---
+
+## Block Development (Sections 33-33.6)
 
 ## 33. Block Catalog
 
@@ -1022,22 +1414,26 @@ blockwriter/container
 blockwriter/card
 blockwriter/hero
 blockwriter/testimonial
+```
 
 ## 33.3 Block Architecture
 
 Prefer:
 
+```text
 blocks/
 ├── container/
 ├── card/
 ├── hero/
 ├── testimonial/
 └── ...
+```
 
 Each block should keep its implementation isolated.
 
 A typical block may contain:
 
+```text
 block-name/
 ├── block.json
 ├── index.js
@@ -1047,6 +1443,7 @@ block-name/
 ├── editor.scss
 ├── view.js
 └── README.md
+```
 
 ## 33.4 Block Composition
 
@@ -1054,53 +1451,341 @@ Prefer composing existing BlockWriter/Core blocks rather than duplicating functi
 
 For example:
 
+```text
 Hero
  ├── Container
  │    ├── Heading
  │    ├── Text
  │    └── Button
+```
 
 rather than creating a monolithic Hero block containing a completely separate
 implementation of heading, text, button, spacing, and layout.
 
 Blocks should be composable.
 
-33.5 Block Priority
+## 33.5 Block Priority
 
 When deciding what block to build next, prioritize:
 
-Frequently reusable layout primitives.
-Frequently used content components.
-Blocks that enable other blocks.
-Blocks that provide clear product differentiation.
-Dynamic WordPress integrations.
-WooCommerce integrations.
-Advanced/experimental functionality.
+1. Frequently reusable layout primitives.
+2. Frequently used content components.
+3. Blocks that enable other blocks.
+4. Blocks that provide clear product differentiation.
+5. Dynamic WordPress integrations.
+6. WooCommerce integrations.
+7. Advanced/experimental functionality.
 
 Do not build a block merely because it is possible.
 
 Every new block should have a clear user-facing purpose.
 
-33.6 Avoid Block Explosion
+## 33.6 Avoid Block Explosion
 
 Do not create separate blocks when block variations, patterns, styles,
 or composition are sufficient.
 
 For example, prefer:
 
+```text
 Button
  ├── Primary variation
  ├── Secondary variation
  └── Outline variation
+```
 
 instead of:
 
+```text
 Primary Button
 Secondary Button
 Outline Button
+```
 
 Likewise, use block patterns for predefined layouts when a new block would
 only represent a fixed arrangement of existing blocks.
 
 The goal is a powerful but maintainable block system, not hundreds of
 slightly different blocks.
+
+---
+
+## 33.7 Common Block Options for Usability
+
+Every BlockWriter block should support these standard controls for consistency and flexibility:
+
+### Spacing Controls
+
+```php
+// Margin & Padding (responsive: desktop, tablet, mobile)
+'margin' => [
+    'top' => 'string',      // px, em, rem, %
+    'bottom' => 'string',
+    'left' => 'string',
+    'right' => 'string',
+]
+'padding' => [
+    'top' => 'string',
+    'bottom' => 'string',
+    'left' => 'string',
+    'right' => 'string',
+]
+```
+
+**Inspector Panel**: Show margin/padding controls for all four sides with responsive tabs (Desktop/Tablet/Mobile).
+
+### Layout & Display
+
+```php
+'display' => 'flex|grid|block',           // Display type
+'alignment' => 'left|center|right|justify', // Text/content alignment
+'justifyContent' => 'flex-start|center|flex-end|space-between|space-around',
+'alignItems' => 'flex-start|center|flex-end|stretch',
+'gap' => 'string',                        // Spacing between items (flex/grid)
+'direction' => 'row|column',              // Flex direction
+```
+
+### Typography Controls (for text-based blocks)
+
+```php
+'fontSize' => 'string',                   // px, em, rem
+'fontFamily' => 'string',                 // Font family or WordPress preset
+'fontWeight' => '400|500|600|700|800',   // Font weight
+'lineHeight' => 'string',                 // em, unitless, px
+'letterSpacing' => 'string',              // px, em, rem
+'textDecoration' => 'none|underline|line-through|overline',
+'textTransform' => 'none|uppercase|lowercase|capitalize',
+'textAlign' => 'left|center|right|justify',
+```
+
+**Inspector Panel**: Typography controls in separate accordion panel with WordPress font presets integration.
+
+### Color & Background
+
+```php
+'backgroundColor' => 'string',            // Color hex/rgb/preset name
+'textColor' => 'string',                  // Text color
+'borderColor' => 'string',                // Border color
+'backgroundImage' => [
+    'url' => 'string',
+    'position' => 'left top|center|right bottom', // CSS background position
+    'size' => 'cover|contain|auto',               // CSS background-size
+    'repeat' => 'repeat|no-repeat',               // CSS background-repeat
+    'opacity' => 'number',                        // 0-1
+]
+'gradient' => [                           // CSS gradient
+    'type' => 'linear|radial',
+    'angle' => 'number',                  // 0-360
+    'colors' => 'array',                  // Color stops
+]
+```
+
+**Inspector Panel**: Color picker with presets, opacity slider, gradient builder.
+
+### Border & Outline
+
+```php
+'border' => [
+    'width' => 'string',                  // px
+    'style' => 'solid|dashed|dotted|double',
+    'color' => 'string',
+    'radius' => 'string',                 // Border radius (px, %)
+]
+'boxShadow' => [                          // CSS box-shadow
+    'offsetX' => 'string',
+    'offsetY' => 'string',
+    'blur' => 'string',
+    'spread' => 'string',
+    'color' => 'string',
+    'opacity' => 'number',
+]
+```
+
+**Inspector Panel**: Border controls with radius for each corner, shadow preset selector.
+
+### Sizing Controls
+
+```php
+'width' => [
+    'desktop' => 'string',                // px, %, em, vw
+    'tablet' => 'string',
+    'mobile' => 'string',
+]
+'height' => [
+    'desktop' => 'string',
+    'tablet' => 'string',
+    'mobile' => 'string',
+]
+'minHeight' => 'string',
+'maxWidth' => 'string',
+'aspectRatio' => '16/9|4/3|1/1|21/9',
+```
+
+**Inspector Panel**: Responsive dimension inputs with common presets.
+
+### Visibility & Conditional Display
+
+```php
+'showOn' => [
+    'desktop' => 'boolean',              // Show on desktop
+    'tablet' => 'boolean',               // Show on tablet
+    'mobile' => 'boolean',               // Show on mobile
+]
+'hideOn' => [
+    'loggedIn' => 'boolean',             // Hide if user logged in
+    'loggedOut' => 'boolean',            // Hide if user logged out
+]
+'displayCondition' => 'custom',          // Future ACF/dynamic content support
+```
+
+**Inspector Panel**: Device visibility toggles, user role conditional display.
+
+### Effects & Animation
+
+```php
+'opacity' => 'number',                   // 0-1
+'transform' => [
+    'scale' => 'number',                 // Transform scale
+    'rotate' => 'number',                // 0-360 degrees
+    'skewX' => 'number',
+    'skewY' => 'number',
+]
+'transition' => [
+    'property' => 'all|opacity|transform|background-color',
+    'duration' => 'string',              // ms
+    'timingFunction' => 'ease|ease-in|ease-out|ease-in-out|linear',
+]
+'hoverEffect' => 'none|lift|grow|glow|tilt',  // Predefined hover effects
+```
+
+**Inspector Panel**: Opacity slider, transform controls, preset hover effects.
+
+### Position & Layout Advanced
+
+```php
+'position' => 'static|relative|absolute|fixed|sticky',
+'zIndex' => 'number',
+'sticky' => [
+    'enabled' => 'boolean',
+    'offset' => 'string',                // px from top
+]
+```
+
+**Inspector Panel**: Position selector, z-index input, sticky offset controls.
+
+### Responsive Breakpoint References
+
+Use these standard breakpoints for `responsive` controls:
+
+```text
+- Desktop:   1025px and above
+- Tablet:    768px - 1024px
+- Mobile:    0px - 767px
+```
+
+Ensure all responsive controls show three tabs: **Desktop**, **Tablet**, **Mobile**.
+
+### Block-Specific Options Template
+
+Every custom block should implement these sections:
+
+```javascript
+// block.json or block attributes
+"attributes": {
+  // Content attributes
+  "content": { "type": "string" },
+  
+  // Layout attributes
+  "layout": { 
+    "type": "object",
+    "properties": { "display", "direction", "gap", "alignment" }
+  },
+  
+  // Spacing attributes
+  "spacing": { 
+    "type": "object",
+    "properties": { "margin", "padding" }
+  },
+  
+  // Typography attributes (if applicable)
+  "typography": { 
+    "type": "object",
+    "properties": { "fontSize", "fontFamily", "fontWeight", "lineHeight" }
+  },
+  
+  // Color & styling attributes
+  "colors": { 
+    "type": "object",
+    "properties": { "textColor", "backgroundColor", "borderColor" }
+  },
+  
+  // Advanced attributes
+  "advanced": { 
+    "type": "object",
+    "properties": { "cssClass", "customCSS", "dataAttributes" }
+  }
+}
+```
+
+### Usability Best Practices
+
+1. **Organize controls into accordion panels** by category (Spacing, Colors, Typography)
+2. **Provide sensible defaults** for all attributes
+3. **Show/hide advanced controls** behind "Advanced" toggle
+4. **Use presets for common values** (e.g., font sizes, spacing scales)
+5. **Display responsive indicators** showing which breakpoint is being edited
+6. **Provide live preview** in the editor while adjusting controls
+7. **Group related controls** (e.g., all padding/margin together)
+8. **Use WordPress color/font pickers** instead of custom implementations
+9. **Support keyboard navigation** in all controls
+10. **Reset to defaults button** for each section
+11. **Tooltips for complex controls** explaining expected values/units
+12. **Undo/redo support** for all inspector changes
+
+### Example Inspector Panel Structure
+
+```text
+Block Inspector Panel
+├── Content Section
+│   └── Editable fields specific to block
+├── Layout Section (Accordion)
+│   ├── Display Type
+│   ├── Direction & Alignment
+│   └── Gap/Spacing
+├── Spacing Section (Accordion)
+│   ├── Margin Controls (responsive)
+│   └── Padding Controls (responsive)
+├── Typography Section (Accordion) [if applicable]
+│   ├── Font Family & Size
+│   ├── Font Weight & Style
+│   └── Line Height & Letter Spacing
+├── Colors Section (Accordion)
+│   ├── Text Color
+│   ├── Background & Gradient
+│   └── Border & Shadow
+├── Advanced Section (Accordion)
+│   ├── Position & Z-index
+│   ├── Visibility (Responsive + Conditional)
+│   ├── Effects & Hover
+│   └── Custom CSS Class
+└── Reset to Defaults Button
+```
+
+---
+
+## Related Documents
+
+For detailed block roadmap, code review standards, and troubleshooting guides, see:
+
+- **BLOCK_ROADMAP.md** — Detailed phased block development plan with effort estimates
+- **CODE_REVIEW_STANDARDS.md** — Code review checklists and approval workflow
+- **TROUBLESHOOTING.md** — Common issues, debugging guides, and solutions
+
+---
+
+## Document History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 1.1 | 2026-08-27 | Added TOC, Quick Reference, improved organization |
+| 1.0 | Initial | Foundation document |
