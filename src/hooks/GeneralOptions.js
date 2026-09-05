@@ -6,8 +6,24 @@
 import { __ } from '@wordpress/i18n';
 
 import {
-  SectionSettingsPanel,
+  AlertSettingsPanel,
+  CardSettingsPanel,
   ColumnsSettingsPanel,
+  CoverSettingsPanel,
+  CtaSettingsPanel,
+  DividerSettingsPanel,
+  FaqSettingsPanel,
+  GridSettingsPanel,
+  HeadingSettingsPanel,
+  ImageSettingsPanel,
+  QuoteSettingsPanel,
+  RowSettingsPanel,
+  SectionSettingsPanel,
+  SpacerSettingsPanel,
+  TabsSettingsPanel,
+  TestimonialSettingsPanel,
+  TextSettingsPanel,
+  VideoSettingsPanel,
 } from '../inspectors/general';
 
 import blockOptions from '../constants/blockOptions';
@@ -16,8 +32,24 @@ export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName].general || [];
 
   const panels = {
-    SectionSettingsPanel,
+    AlertSettingsPanel,
+    CardSettingsPanel,
     ColumnsSettingsPanel,
+    CoverSettingsPanel,
+    CtaSettingsPanel,
+    DividerSettingsPanel,
+    FaqSettingsPanel,
+    GridSettingsPanel,
+    HeadingSettingsPanel,
+    ImageSettingsPanel,
+    QuoteSettingsPanel,
+    RowSettingsPanel,
+    SectionSettingsPanel,
+    SpacerSettingsPanel,
+    TabsSettingsPanel,
+  TestimonialSettingsPanel,
+    TextSettingsPanel,
+    VideoSettingsPanel,
   };
 
   return (

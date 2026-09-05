@@ -1,0 +1,33 @@
+.wp-block-blockwriter-card {
+	background-color: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	overflow: hidden;
+
+	&.bw-card-padding-none .bw-card-body {
+		padding: 0;
+	}
+
+	&.bw-card-padding-small .bw-card-body {
+		padding: 16px;
+	}
+
+	&.bw-card-padding-medium .bw-card-body {
+		padding: 24px;
+	}
+
+	&.bw-card-padding-large .bw-card-body {
+		padding: 40px;
+	}
+
+	.bw-card-media {
+		margin: 0;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+	}
+}

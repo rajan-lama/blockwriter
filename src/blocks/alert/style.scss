@@ -1,0 +1,44 @@
+.bw-alert {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75em;
+	padding: 1em 1.25em;
+	border-radius: 6px;
+	border-left: 4px solid;
+	margin-bottom: 1.5em;
+
+	.bw-alert-icon {
+		flex-shrink: 0;
+		display: inline-flex;
+		margin-top: 1px;
+	}
+
+	.bw-alert-content {
+		flex: 1;
+		margin: 0;
+	}
+
+	&--info {
+		background: #eff6ff;
+		border-left-color: #3b82f6;
+		color: #1e3a8a;
+	}
+
+	&--success {
+		background: #ecfdf5;
+		border-left-color: #10b981;
+		color: #065f46;
+	}
+
+	&--warning {
+		background: #fffbeb;
+		border-left-color: #f59e0b;
+		color: #92400e;
+	}
+
+	&--error {
+		background: #fef2f2;
+		border-left-color: #ef4444;
+		color: #991b1b;
+	}
+}
