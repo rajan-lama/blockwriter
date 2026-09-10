@@ -1,0 +1,26 @@
+.wp-block-blockwriter-stat {
+	margin: 0;
+	padding: 8px 12px;
+
+	.bw-stat-value {
+		font-size: 52px;
+		line-height: 1.1;
+		font-weight: 800;
+		color: #111827;
+		margin-bottom: 8px;
+	}
+
+	.bw-stat-prefix,
+	.bw-stat-suffix {
+		font-weight: 800;
+	}
+
+	.bw-stat-label {
+		font-size: 15px;
+		line-height: 1.4;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: #6b7280;
+		margin: 0;
+	}
+}

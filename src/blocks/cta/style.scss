@@ -1,0 +1,18 @@
+.wp-block-blockwriter-cta {
+	padding: 48px 32px;
+	border-radius: 8px;
+
+	.bw-cta-content {
+		max-width: 720px;
+		margin-left: auto;
+		margin-right: auto;
+
+		> .block-editor-inner-blocks {
+			width: 100%;
+
+			> .block-editor-block-list__layout {
+				align-items: center;
+			}
+		}
+	}
+}

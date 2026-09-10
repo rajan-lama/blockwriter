@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/row",
+  "version": "0.1.0",
+  "title": "BW Row",
+  "category": "blockwriter",
+  "icon": "screenoptions",
+  "description": "Flexible flexbox layout container for arranging blocks horizontally.",
+  "example": {},
+  "keywords": ["row", "flex", "layout"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "gap": {
+      "type": "number",
+      "default": 20
+    },
+    "minHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

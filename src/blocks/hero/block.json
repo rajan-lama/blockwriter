@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/hero",
+  "version": "0.1.0",
+  "title": "BW Hero",
+  "category": "blockwriter",
+  "icon": "format-image",
+  "description": "A prominent page banner with background image, overlay, and centered content area.",
+  "example": {},
+  "keywords": ["hero", "banner", "header", "jumbotron", "cover"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "backgroundUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "backgroundId": {
+      "type": "number",
+      "default": 0
+    },
+    "overlayColor": {
+      "type": "string",
+      "default": "#000000"
+    },
+    "overlayOpacity": {
+      "type": "number",
+      "default": 50
+    },
+    "heroHeight": {
+      "type": "string",
+      "default": "medium"
+    },
+    "contentWidth": {
+      "type": "string",
+      "default": "wide"
+    },
+    "contentAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

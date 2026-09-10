@@ -1,0 +1,12 @@
+.wp-block-blockwriter-row {
+  display: var(--bw-row-display, flex);
+  flex-direction: var(--bw-row-direction, row);
+  flex-wrap: var(--bw-row-wrap, nowrap);
+  justify-content: var(--bw-row-justify, flex-start);
+  align-items: var(--bw-row-align, stretch);
+  gap: var(--bw-row-gap, 0px);
+
+  > * {
+    min-width: 0;
+  }
+}

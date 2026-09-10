@@ -1,0 +1,8 @@
+.wp-block-blockwriter-accordion {
+	outline: 1px dashed #1e1e1e26;
+	outline-offset: 4px;
+
+	.wp-block-blockwriter-accordion-item + .wp-block-blockwriter-accordion-item {
+		margin-top: 8px;
+	}
+}

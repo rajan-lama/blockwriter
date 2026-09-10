@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/pricing-column",
+  "version": "0.1.0",
+  "title": "BW Pricing Column",
+  "category": "blockwriter",
+  "icon": "money-alt",
+  "description": "A single pricing plan column for use inside the Pricing Table block.",
+  "example": {},
+  "keywords": [
+    "pricing",
+    "price",
+    "plan",
+    "package"
+  ],
+  "parent": [
+    "blockwriter/pricing-table"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "planName": {
+      "type": "string",
+      "default": ""
+    },
+    "planPrice": {
+      "type": "string",
+      "default": ""
+    },
+    "planPeriod": {
+      "type": "string",
+      "default": ""
+    },
+    "features": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "isHighlight": {
+      "type": "boolean",
+      "default": false
+    },
+    "planAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

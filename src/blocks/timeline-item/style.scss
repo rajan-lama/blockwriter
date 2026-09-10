@@ -1,0 +1,37 @@
+.wp-block-blockwriter-timeline-item {
+	position: relative;
+	padding-left: 44px;
+	padding-bottom: 36px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 10px;
+		left: 6px;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background: var( --bw-timeline-accent, #4f46e5 );
+		box-shadow: 0 0 0 3px #fff;
+	}
+
+	&:last-child {
+		padding-bottom: 8px;
+	}
+
+	.bw-timeline-item__date {
+		margin-bottom: 6px;
+		font-size: 13px;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		line-height: 1.4;
+		text-transform: uppercase;
+		color: var( --bw-timeline-accent, #4f46e5 );
+	}
+
+	.bw-timeline-item__content {
+		> * + * {
+			margin-top: 0.8em;
+		}
+	}
+}

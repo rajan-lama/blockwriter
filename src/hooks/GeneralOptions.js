@@ -6,8 +6,34 @@
 import { __ } from '@wordpress/i18n';
 
 import {
-  SectionSettingsPanel,
+  AccordionItemSettingsPanel,
+  AccordionSettingsPanel,
+  AlertSettingsPanel,
+  CardSettingsPanel,
   ColumnsSettingsPanel,
+  ComparisonTableSettingsPanel,
+  CoverSettingsPanel,
+  CtaSettingsPanel,
+  DividerSettingsPanel,
+  FaqSettingsPanel,
+  GridSettingsPanel,
+  HeadingSettingsPanel,
+  HeroSettingsPanel,
+  ImageSettingsPanel,
+  LogoSettingsPanel,
+  PricingColumnSettingsPanel,
+  QuoteSettingsPanel,
+  RowSettingsPanel,
+  SectionSettingsPanel,
+  SpacerSettingsPanel,
+  StatSettingsPanel,
+  StepsSettingsPanel,
+  TabsSettingsPanel,
+  TeamMemberSettingsPanel,
+  TestimonialSettingsPanel,
+  TextSettingsPanel,
+  TimelineSettingsPanel,
+  VideoSettingsPanel,
 } from '../inspectors/general';
 
 import blockOptions from '../constants/blockOptions';
@@ -16,8 +42,34 @@ export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
   const options = blockOptions[blockName].general || [];
 
   const panels = {
-    SectionSettingsPanel,
+    AccordionItemSettingsPanel,
+    AccordionSettingsPanel,
+    AlertSettingsPanel,
+    CardSettingsPanel,
     ColumnsSettingsPanel,
+    ComparisonTableSettingsPanel,
+    CoverSettingsPanel,
+    CtaSettingsPanel,
+    DividerSettingsPanel,
+    FaqSettingsPanel,
+    GridSettingsPanel,
+    HeadingSettingsPanel,
+    HeroSettingsPanel,
+    ImageSettingsPanel,
+    LogoSettingsPanel,
+    PricingColumnSettingsPanel,
+    QuoteSettingsPanel,
+    RowSettingsPanel,
+    SectionSettingsPanel,
+    SpacerSettingsPanel,
+    StatSettingsPanel,
+    StepsSettingsPanel,
+    TabsSettingsPanel,
+    TeamMemberSettingsPanel,
+    TestimonialSettingsPanel,
+    TextSettingsPanel,
+    TimelineSettingsPanel,
+    VideoSettingsPanel,
   };
 
   return (

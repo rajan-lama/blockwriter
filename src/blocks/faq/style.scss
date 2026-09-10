@@ -1,0 +1,41 @@
+.wp-block-blockwriter-faq {
+	.bw-faq-item {
+		border: 1px solid #e5e7eb;
+		border-radius: 8px;
+		background-color: #ffffff;
+
+		+ .bw-faq-item {
+			margin-top: 12px;
+		}
+
+		.bw-faq-item-question {
+			list-style: none;
+			padding: 16px 20px;
+			font-weight: 600;
+			cursor: pointer;
+			position: relative;
+			padding-right: 40px;
+
+			&::-webkit-details-marker {
+				display: none;
+			}
+		}
+
+		&[open] .bw-faq-item-question::after {
+			transform: translateY( -50% ) rotate( 90deg );
+		}
+
+		.bw-faq-item-question::after {
+			content: '▸';
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			transform: translateY( -50% );
+			transition: transform 0.2s ease;
+		}
+
+		.bw-faq-item-answer {
+			padding: 0 20px 16px;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+.wp-block-blockwriter-pricing-table {
+	margin: 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 24px;
+
+	> .wp-block-blockwriter-pricing-column {
+		flex: 1 1 240px;
+		min-width: 0;
+	}
+}

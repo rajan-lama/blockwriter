@@ -1,0 +1,77 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/heading",
+  "version": "0.1.0",
+  "title": "BW Heading",
+  "category": "blockwriter",
+  "icon": "heading",
+  "description": "A heading with full typography controls.",
+  "example": {},
+  "keywords": [
+    "heading",
+    "title",
+    "h1",
+    "h2",
+    "h3"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h1,h2,h3,h4,h5,h6",
+      "default": ""
+    },
+    "tagType": {
+      "type": "string",
+      "default": "h2"
+    },
+    "headingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "fontSize": {
+      "type": "number",
+      "default": ""
+    },
+    "fontWeight": {
+      "type": "string",
+      "default": ""
+    },
+    "textAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "textTransform": {
+      "type": "string",
+      "default": ""
+    },
+    "letterSpacing": {
+      "type": "string",
+      "default": ""
+    },
+    "lineHeight": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

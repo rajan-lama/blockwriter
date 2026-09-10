@@ -12,6 +12,54 @@ const BlockOptions = {
     general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
     blockControlOptions: {},
   },
+  accordion: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['AccordionSettingsPanel'],
+    blockControlOptions: {},
+  },
+  'accordion-item': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'BackgroundPanel',
+      'BorderPanel',
+      'BoxShadowPanel',
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['AccordionItemSettingsPanel'],
+    blockControlOptions: {},
+  },
+  alert: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['AlertSettingsPanel'],
+    blockControlOptions: {},
+  },
   buttons: {
     advanced: [
       'AnimationPanel',
@@ -45,6 +93,21 @@ const BlockOptions = {
     general: ['SectionSettingsPanel'],
     blockControlOptions: {},
   },
+  'comparison-table': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['ComparisonTableSettingsPanel'],
+    blockControlOptions: {},
+  },
   columns: {
     advanced: [
       'AnimationPanel',
@@ -54,6 +117,128 @@ const BlockOptions = {
     ],
     layout: [],
     general: ['ColumnsSettingsPanel'],
+    blockControlOptions: {},
+  },
+  card: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['CardSettingsPanel'],
+    blockControlOptions: {},
+  },
+  cover: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['CoverSettingsPanel'],
+    blockControlOptions: {},
+  },
+  cta: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['CtaSettingsPanel'],
+    blockControlOptions: {},
+  },
+  divider: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['DividerSettingsPanel'],
+    blockControlOptions: {},
+  },
+  faq: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['FaqSettingsPanel'],
+    blockControlOptions: {},
+  },
+  grid: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'BackgroundPanel',
+      'BorderPanel',
+      'BoxShadowPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['GridSettingsPanel'],
+    blockControlOptions: {},
+  },
+  heading: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['HeadingSettingsPanel'],
+    blockControlOptions: {},
+  },
+  hero: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['HeroSettingsPanel'],
     blockControlOptions: {},
   },
   icon: {
@@ -67,6 +252,103 @@ const BlockOptions = {
     general: ['SectionSettingsPanel'],
     blockControlOptions: {},
   },
+  image: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['ImageSettingsPanel'],
+    blockControlOptions: {},
+  },
+  'logo-grid': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['LogoSettingsPanel'],
+    blockControlOptions: {},
+  },
+  'pricing-column': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'BackgroundPanel',
+      'BorderPanel',
+      'BoxShadowPanel',
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['PricingColumnSettingsPanel'],
+    blockControlOptions: {},
+  },
+  'pricing-table': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: [],
+    blockControlOptions: {},
+  },
+  quote: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['QuoteSettingsPanel'],
+    blockControlOptions: {},
+  },
+  row: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'DisplayTypePanel',
+      'SpacingPanel',
+      'BackgroundPanel',
+      'BorderPanel',
+      'BoxShadowPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['RowSettingsPanel'],
+    blockControlOptions: {},
+  },
   section: {
     advanced: [
       'AnimationPanel',
@@ -76,6 +358,159 @@ const BlockOptions = {
     ],
     layout: [],
     general: ['SectionSettingsPanel'],
+    blockControlOptions: {},
+  },
+  spacer: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['SpacerSettingsPanel'],
+    blockControlOptions: {},
+  },
+  stat: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['StatSettingsPanel'],
+    blockControlOptions: {},
+  },
+  steps: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['StepsSettingsPanel'],
+    blockControlOptions: {},
+  },
+  tabs: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TabsSettingsPanel'],
+    blockControlOptions: {},
+  },
+  'team-member': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TeamMemberSettingsPanel'],
+    blockControlOptions: {},
+  },
+  testimonial: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TestimonialSettingsPanel'],
+    blockControlOptions: {},
+  },
+  text: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TextSettingsPanel'],
+    blockControlOptions: {},
+  },
+  timeline: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TimelineSettingsPanel'],
+    blockControlOptions: {},
+  },
+  'timeline-item': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'BackgroundPanel',
+      'BorderPanel',
+      'BoxShadowPanel',
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: [],
+    blockControlOptions: {},
+  },
+  video: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['VideoSettingsPanel'],
     blockControlOptions: {},
   },
 };
