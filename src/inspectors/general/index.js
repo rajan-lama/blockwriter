@@ -15,6 +15,7 @@ export { default as ImageSettingsPanel } from './ImageSettingsPanel';
 export { default as LogoSettingsPanel } from './LogoSettingsPanel';
 export { default as PricingColumnSettingsPanel } from './PricingColumnSettingsPanel';
 export { default as QuoteSettingsPanel } from './QuoteSettingsPanel';
+export { default as RatingSettingsPanel } from './RatingSettingsPanel';
 export { default as RowSettingsPanel } from './RowSettingsPanel';
 export { default as SectionSettingsPanel } from './SectionSettingsPanel';
 export { default as SpacerSettingsPanel } from './SpacerSettingsPanel';

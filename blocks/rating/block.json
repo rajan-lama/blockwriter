@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/rating",
+  "version": "0.1.0",
+  "title": "BW Rating",
+  "category": "blockwriter",
+  "icon": "star-filled",
+  "description": "A star rating display with optional value and review label.",
+  "example": {},
+  "keywords": [
+    "rating",
+    "stars",
+    "review",
+    "score",
+    "feedback"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "ratingValue": {
+      "type": "number",
+      "default": 5
+    },
+    "maxRating": {
+      "type": "number",
+      "default": 5
+    },
+    "starSize": {
+      "type": "string",
+      "default": "medium"
+    },
+    "starColor": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "emptyStarColor": {
+      "type": "string",
+      "default": "#e5e7eb"
+    },
+    "showValue": {
+      "type": "boolean",
+      "default": false
+    },
+    "ratingLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

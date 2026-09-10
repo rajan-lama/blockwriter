@@ -330,6 +330,21 @@ const BlockOptions = {
     general: ['QuoteSettingsPanel'],
     blockControlOptions: {},
   },
+  rating: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['RatingSettingsPanel'],
+    blockControlOptions: {},
+  },
   row: {
     advanced: [
       'AnimationPanel',
