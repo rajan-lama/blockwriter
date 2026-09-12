@@ -60,6 +60,21 @@ const BlockOptions = {
     general: ['AlertSettingsPanel'],
     blockControlOptions: {},
   },
+  'back-to-top': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['BackToTopSettingsPanel'],
+    blockControlOptions: {},
+  },
   buttons: {
     advanced: [
       'AnimationPanel',
