@@ -1,0 +1,65 @@
+.wp-block-blockwriter-list {
+	--bw-list-color: #4f46e5;
+}
+
+.bw-list__items {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.bw-list__item {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+}
+
+.bw-list__marker {
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	margin-top: 2px;
+	color: var( --bw-list-color );
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 1;
+
+	svg {
+		width: 16px;
+		height: 16px;
+		fill: currentColor;
+	}
+
+	&--disc::before {
+		content: '';
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background: currentColor;
+	}
+
+	&--dash::before {
+		content: '';
+		width: 12px;
+		height: 2px;
+		background: currentColor;
+	}
+
+	&--number {
+		border-radius: 50%;
+		background: var( --bw-list-color );
+		color: #fff;
+	}
+}
+
+.bw-list__text {
+	flex: 1 1 auto;
+	min-width: 0;
+	line-height: 1.6;
+}

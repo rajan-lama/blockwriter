@@ -267,6 +267,21 @@ const BlockOptions = {
     general: ['ImageSettingsPanel'],
     blockControlOptions: {},
   },
+  list: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['ListSettingsPanel'],
+    blockControlOptions: {},
+  },
   'logo-grid': {
     advanced: [
       'AnimationPanel',

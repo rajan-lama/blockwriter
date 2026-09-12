@@ -39,6 +39,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Comparison Table
 - Timeline
 - Rating
+- List
 - Columns
 - Column
 - Buttons
