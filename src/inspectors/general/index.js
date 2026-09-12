@@ -25,6 +25,7 @@ export { default as StepsSettingsPanel } from './StepsSettingsPanel';
 export { default as TabsSettingsPanel } from './TabsSettingsPanel';
 export { default as TeamMemberSettingsPanel } from './TeamMemberSettingsPanel';
 export { default as TestimonialSettingsPanel } from './TestimonialSettingsPanel';
+export { default as TestimonialSliderSettingsPanel } from './TestimonialSliderSettingsPanel';
 export { default as TextSettingsPanel } from './TextSettingsPanel';
 export { default as TimelineSettingsPanel } from './TimelineSettingsPanel';
 export { default as VideoSettingsPanel } from './VideoSettingsPanel';

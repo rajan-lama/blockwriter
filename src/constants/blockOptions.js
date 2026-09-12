@@ -480,6 +480,21 @@ const BlockOptions = {
     general: ['TestimonialSettingsPanel'],
     blockControlOptions: {},
   },
+  'testimonial-slider': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TestimonialSliderSettingsPanel'],
+    blockControlOptions: {},
+  },
   text: {
     advanced: [
       'AnimationPanel',
