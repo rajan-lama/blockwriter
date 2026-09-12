@@ -194,6 +194,21 @@ const BlockOptions = {
     general: ['FaqSettingsPanel'],
     blockControlOptions: {},
   },
+  feature: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['FeatureSettingsPanel'],
+    blockControlOptions: {},
+  },
   grid: {
     advanced: [
       'AnimationPanel',
