@@ -327,6 +327,21 @@ const BlockOptions = {
     general: ['LogoSettingsPanel'],
     blockControlOptions: {},
   },
+  modal: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['ModalSettingsPanel'],
+    blockControlOptions: {},
+  },
   'pricing-column': {
     advanced: [
       'AnimationPanel',

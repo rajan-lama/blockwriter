@@ -16,6 +16,7 @@ export { default as HeroSettingsPanel } from './HeroSettingsPanel';
 export { default as ImageSettingsPanel } from './ImageSettingsPanel';
 export { default as ListSettingsPanel } from './ListSettingsPanel';
 export { default as LogoSettingsPanel } from './LogoSettingsPanel';
+export { default as ModalSettingsPanel } from './ModalSettingsPanel';
 export { default as PricingColumnSettingsPanel } from './PricingColumnSettingsPanel';
 export { default as QuoteSettingsPanel } from './QuoteSettingsPanel';
 export { default as RatingSettingsPanel } from './RatingSettingsPanel';
