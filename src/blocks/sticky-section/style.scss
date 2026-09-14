@@ -1,0 +1,13 @@
+.wp-block-blockwriter-sticky-section {
+	--bw-sticky-offset: 0px;
+	--bw-sticky-z: 10;
+
+	position: sticky;
+	top: var( --bw-sticky-offset );
+	z-index: var( --bw-sticky-z );
+	transition: box-shadow 0.2s ease;
+
+	&.is-stuck {
+		box-shadow: 0 6px 18px rgba( 0, 0, 0, 0.12 );
+	}
+}

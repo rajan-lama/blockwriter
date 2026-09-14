@@ -480,6 +480,21 @@ const BlockOptions = {
     general: ['StepsSettingsPanel'],
     blockControlOptions: {},
   },
+  'sticky-section': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['StickySectionSettingsPanel'],
+    blockControlOptions: {},
+  },
   tabs: {
     advanced: [
       'AnimationPanel',

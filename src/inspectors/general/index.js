@@ -25,6 +25,7 @@ export { default as SectionSettingsPanel } from './SectionSettingsPanel';
 export { default as SpacerSettingsPanel } from './SpacerSettingsPanel';
 export { default as StatSettingsPanel } from './StatSettingsPanel';
 export { default as StepsSettingsPanel } from './StepsSettingsPanel';
+export { default as StickySectionSettingsPanel } from './StickySectionSettingsPanel';
 export { default as TabsSettingsPanel } from './TabsSettingsPanel';
 export { default as TeamMemberSettingsPanel } from './TeamMemberSettingsPanel';
 export { default as TestimonialSettingsPanel } from './TestimonialSettingsPanel';
