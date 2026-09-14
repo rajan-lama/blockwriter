@@ -1,0 +1,87 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/post-grid",
+	"version": "0.1.0",
+	"title": "BW Post Grid",
+	"category": "blockwriter",
+	"icon": "grid",
+	"description": "Displays a grid of posts, pages, or custom post types.",
+	"example": {},
+	"keywords": ["posts", "grid", "query", "loop", "blog", "archive"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"postType": {
+			"type": "string",
+			"default": "post"
+		},
+		"perPage": {
+			"type": "number",
+			"default": 6
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"orderBy": {
+			"type": "string",
+			"default": "date"
+		},
+		"order": {
+			"type": "string",
+			"default": "DESC"
+		},
+		"categoryIds": {
+			"type": "array",
+			"default": []
+		},
+		"showFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"imageSize": {
+			"type": "string",
+			"default": "medium_large"
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"excerptLength": {
+			"type": "number",
+			"default": 20
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAuthor": {
+			"type": "boolean",
+			"default": false
+		},
+		"showCategory": {
+			"type": "boolean",
+			"default": true
+		},
+		"readMoreText": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

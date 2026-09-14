@@ -18,6 +18,7 @@ export { default as ListSettingsPanel } from './ListSettingsPanel';
 export { default as LogoSettingsPanel } from './LogoSettingsPanel';
 export { default as ModalSettingsPanel } from './ModalSettingsPanel';
 export { default as OffcanvasSettingsPanel } from './OffcanvasSettingsPanel';
+export { default as PostGridSettingsPanel } from './PostGridSettingsPanel';
 export { default as PricingColumnSettingsPanel } from './PricingColumnSettingsPanel';
 export { default as QuoteSettingsPanel } from './QuoteSettingsPanel';
 export { default as RatingSettingsPanel } from './RatingSettingsPanel';

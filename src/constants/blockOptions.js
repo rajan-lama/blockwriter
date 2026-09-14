@@ -357,6 +357,21 @@ const BlockOptions = {
     general: ['OffcanvasSettingsPanel'],
     blockControlOptions: {},
   },
+  'post-grid': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['PostGridSettingsPanel'],
+    blockControlOptions: {},
+  },
   'pricing-column': {
     advanced: [
       'AnimationPanel',
