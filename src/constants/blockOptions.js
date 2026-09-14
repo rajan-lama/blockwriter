@@ -342,6 +342,21 @@ const BlockOptions = {
     general: ['ModalSettingsPanel'],
     blockControlOptions: {},
   },
+  offcanvas: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['OffcanvasSettingsPanel'],
+    blockControlOptions: {},
+  },
   'pricing-column': {
     advanced: [
       'AnimationPanel',
