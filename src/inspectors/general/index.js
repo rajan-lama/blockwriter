@@ -22,6 +22,7 @@ export { default as PostGridSettingsPanel } from './PostGridSettingsPanel';
 export { default as PricingColumnSettingsPanel } from './PricingColumnSettingsPanel';
 export { default as QuoteSettingsPanel } from './QuoteSettingsPanel';
 export { default as RatingSettingsPanel } from './RatingSettingsPanel';
+export { default as RelatedPostsSettingsPanel } from './RelatedPostsSettingsPanel';
 export { default as RowSettingsPanel } from './RowSettingsPanel';
 export { default as SectionSettingsPanel } from './SectionSettingsPanel';
 export { default as SpacerSettingsPanel } from './SpacerSettingsPanel';
