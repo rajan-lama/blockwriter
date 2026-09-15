@@ -26,6 +26,7 @@ export { default as RatingSettingsPanel } from './RatingSettingsPanel';
 export { default as RelatedPostsSettingsPanel } from './RelatedPostsSettingsPanel';
 export { default as RowSettingsPanel } from './RowSettingsPanel';
 export { default as SectionSettingsPanel } from './SectionSettingsPanel';
+export { default as SearchSettingsPanel } from './SearchSettingsPanel';
 export { default as SpacerSettingsPanel } from './SpacerSettingsPanel';
 export { default as StatSettingsPanel } from './StatSettingsPanel';
 export { default as StepsSettingsPanel } from './StepsSettingsPanel';

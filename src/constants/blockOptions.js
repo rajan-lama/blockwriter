@@ -484,6 +484,21 @@ const BlockOptions = {
     general: ['RowSettingsPanel'],
     blockControlOptions: {},
   },
+  search: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['SearchSettingsPanel'],
+    blockControlOptions: {},
+  },
   section: {
     advanced: [
       'AnimationPanel',

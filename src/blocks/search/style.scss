@@ -1,0 +1,37 @@
+.wp-block-blockwriter-search {
+	.bw-search__form {
+		display: flex;
+		gap: 8px;
+		align-items: stretch;
+	}
+
+	&.bw-search--stacked .bw-search__form {
+		flex-direction: column;
+	}
+
+	.bw-search__input {
+		flex: 1 1 auto;
+		min-width: 0;
+		padding: 10px 14px;
+		border: 1px solid #cbd5e1;
+		border-radius: 8px;
+		font-size: 15px;
+	}
+
+	.bw-search__button {
+		flex: 0 0 auto;
+		padding: 10px 20px;
+		border: 0;
+		border-radius: 8px;
+		background-color: #1e293b;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: #0f172a;
+		}
+	}
+}
