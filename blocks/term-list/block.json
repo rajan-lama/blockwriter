@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/term-list",
+  "version": "0.1.0",
+  "title": "BW Term List",
+  "category": "blockwriter",
+  "icon": "category",
+  "description": "Displays a list of categories, tags, or custom taxonomy terms.",
+  "example": {},
+  "keywords": [
+    "categories",
+    "tags",
+    "terms",
+    "taxonomy"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "taxonomy": {
+      "type": "string",
+      "default": "category"
+    },
+    "layout": {
+      "type": "string",
+      "default": "list"
+    },
+    "hierarchical": {
+      "type": "boolean",
+      "default": false
+    },
+    "hideEmpty": {
+      "type": "boolean",
+      "default": true
+    },
+    "showCount": {
+      "type": "boolean",
+      "default": true
+    },
+    "orderBy": {
+      "type": "string",
+      "default": "name"
+    },
+    "order": {
+      "type": "string",
+      "default": "ASC"
+    },
+    "limit": {
+      "type": "number",
+      "default": 0
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

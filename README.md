@@ -48,6 +48,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Related Posts
 - Author Box
 - Search
+- Term List
 - List
 - Testimonial Slider
 - Columns

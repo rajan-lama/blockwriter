@@ -600,6 +600,21 @@ const BlockOptions = {
     general: ['TeamMemberSettingsPanel'],
     blockControlOptions: {},
   },
+  'term-list': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['TermListSettingsPanel'],
+    blockControlOptions: {},
+  },
   testimonial: {
     advanced: [
       'AnimationPanel',

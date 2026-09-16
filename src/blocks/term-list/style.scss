@@ -1,0 +1,47 @@
+.wp-block-blockwriter-term-list {
+	.bw-term-list__items {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bw-term-list__item {
+		margin-bottom: 6px;
+	}
+
+	.bw-term-list__items--children {
+		margin-top: 6px;
+		margin-left: 18px;
+	}
+
+	.bw-term-list__count {
+		margin-left: 6px;
+		color: #64748b;
+		font-size: 13px;
+	}
+
+	&.bw-term-list--inline {
+		.bw-term-list__items {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 10px;
+		}
+
+		.bw-term-list__item {
+			margin-bottom: 0;
+		}
+
+		.bw-term-list__link {
+			display: inline-block;
+			padding: 4px 12px;
+			background-color: #f1f5f9;
+			border-radius: 999px;
+			text-decoration: none;
+		}
+
+		.bw-term-list__items--children {
+			margin-top: 10px;
+			margin-left: 0;
+		}
+	}
+}
