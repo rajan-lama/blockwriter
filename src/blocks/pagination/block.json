@@ -1,0 +1,59 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/pagination",
+	"version": "0.1.0",
+	"title": "BW Pagination",
+	"category": "blockwriter",
+	"icon": "ellipsis",
+	"description": "Displays pagination links for the current archive or query loop.",
+	"example": {},
+	"keywords": ["pagination", "paging", "next", "previous", "archive"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"showPrevNext": {
+			"type": "boolean",
+			"default": true
+		},
+		"prevText": {
+			"type": "string",
+			"default": ""
+		},
+		"nextText": {
+			"type": "string",
+			"default": ""
+		},
+		"showNumbers": {
+			"type": "boolean",
+			"default": true
+		},
+		"midSize": {
+			"type": "number",
+			"default": 1
+		},
+		"endSize": {
+			"type": "number",
+			"default": 1
+		},
+		"justify": {
+			"type": "string",
+			"default": "left"
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

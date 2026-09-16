@@ -372,6 +372,21 @@ const BlockOptions = {
     general: ['OffcanvasSettingsPanel'],
     blockControlOptions: {},
   },
+  pagination: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['PaginationSettingsPanel'],
+    blockControlOptions: {},
+  },
   'post-grid': {
     advanced: [
       'AnimationPanel',
