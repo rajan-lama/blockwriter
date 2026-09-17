@@ -402,6 +402,21 @@ const BlockOptions = {
     general: ['PaginationSettingsPanel'],
     blockControlOptions: {},
   },
+  'post-carousel': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['PostCarouselSettingsPanel'],
+    blockControlOptions: {},
+  },
   'post-grid': {
     advanced: [
       'AnimationPanel',
