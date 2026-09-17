@@ -60,6 +60,21 @@ const BlockOptions = {
     general: ['AlertSettingsPanel'],
     blockControlOptions: {},
   },
+  'archive-header': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['ArchiveHeaderSettingsPanel'],
+    blockControlOptions: {},
+  },
   'author-box': {
     advanced: [
       'AnimationPanel',

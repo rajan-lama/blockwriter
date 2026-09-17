@@ -3,6 +3,7 @@ export { default as ComparisonTableSettingsPanel } from './ComparisonTableSettin
 export { default as AccordionItemSettingsPanel } from './AccordionItemSettingsPanel';
 export { default as AccordionSettingsPanel } from './AccordionSettingsPanel';
 export { default as AlertSettingsPanel } from './AlertSettingsPanel';
+export { default as ArchiveHeaderSettingsPanel } from './ArchiveHeaderSettingsPanel';
 export { default as AuthorBoxSettingsPanel } from './AuthorBoxSettingsPanel';
 export { default as BackToTopSettingsPanel } from './BackToTopSettingsPanel';
 export { default as CardSettingsPanel } from './CardSettingsPanel';
