@@ -14,6 +14,7 @@ const PostGridSettingsPanel = ( { attributes, setAttributes } ) => {
 		postType,
 		perPage,
 		columns,
+		layout,
 		orderBy,
 		order,
 		categoryIds,
@@ -92,6 +93,16 @@ const PostGridSettingsPanel = ( { attributes, setAttributes } ) => {
 				max={ 4 }
 				step={ 1 }
 				onChange={ ( value ) => setAttributes( { columns: value } ) }
+			/>
+
+			<SelectControl
+				label={ __( 'Layout', 'blockwriter' ) }
+				value={ layout }
+				options={ [
+					{ label: __( 'Grid', 'blockwriter' ), value: 'grid' },
+					{ label: __( 'List', 'blockwriter' ), value: 'list' },
+				] }
+				onChange={ ( value ) => setAttributes( { layout: value } ) }
 			/>
 
 			<SelectControl

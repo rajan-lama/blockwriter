@@ -32,6 +32,8 @@ $per_page  = isset( $attributes['perPage'] ) ? absint( $attributes['perPage'] ) 
 $per_page  = $per_page > 0 ? min( $per_page, 24 ) : 6;
 $columns   = isset( $attributes['columns'] ) ? absint( $attributes['columns'] ) : 3;
 $columns   = min( max( $columns, 1 ), 4 );
+$layout    = isset( $attributes['layout'] ) ? sanitize_key( $attributes['layout'] ) : 'grid';
+$layout    = in_array( $layout, array( 'grid', 'list' ), true ) ? $layout : 'grid';
 $order_by  = isset( $attributes['orderBy'] ) ? sanitize_key( $attributes['orderBy'] ) : 'date';
 $order_by  = in_array( $order_by, $allowed_orderby, true ) ? $order_by : 'date';
 $order     = isset( $attributes['order'] ) ? strtoupper( (string) $attributes['order'] ) : 'DESC';
@@ -76,7 +78,7 @@ $extra_class = isset( $attributes['extraClass'] ) ? (string) $attributes['extraC
 $html_id     = isset( $attributes['htmlId'] ) ? (string) $attributes['htmlId'] : '';
 
 $extra_attributes = array(
-	'class' => trim( 'bw-post-grid ' . $extra_class ),
+	'class' => trim( 'bw-post-grid bw-post-grid--' . $layout . ' ' . $extra_class ),
 	'style' => '--bw-post-grid-columns:' . $columns . ';',
 );
 
