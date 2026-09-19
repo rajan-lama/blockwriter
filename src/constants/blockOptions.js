@@ -753,6 +753,21 @@ const BlockOptions = {
     general: ['VideoSettingsPanel'],
     blockControlOptions: {},
   },
+  'woo-product-carousel': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['WooProductCarouselSettingsPanel'],
+    blockControlOptions: {},
+  },
   'woo-product-grid': {
     advanced: [
       'AnimationPanel',
