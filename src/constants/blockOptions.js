@@ -783,6 +783,21 @@ const BlockOptions = {
     general: ['WooProductGridSettingsPanel'],
     blockControlOptions: {},
   },
+  'woo-product-price': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['WooProductPriceSettingsPanel'],
+    blockControlOptions: {},
+  },
 };
 
 export default BlockOptions;

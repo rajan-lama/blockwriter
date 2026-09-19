@@ -44,3 +44,4 @@ export { default as TimelineSettingsPanel } from './TimelineSettingsPanel';
 export { default as VideoSettingsPanel } from './VideoSettingsPanel';
 export { default as WooProductCarouselSettingsPanel } from './WooProductCarouselSettingsPanel';
 export { default as WooProductGridSettingsPanel } from './WooProductGridSettingsPanel';
+export { default as WooProductPriceSettingsPanel } from './WooProductPriceSettingsPanel';

@@ -52,6 +52,7 @@ import {
   VideoSettingsPanel,
   WooProductCarouselSettingsPanel,
   WooProductGridSettingsPanel,
+  WooProductPriceSettingsPanel,
 } from '../inspectors/general';
 
 import blockOptions from '../constants/blockOptions';
@@ -106,6 +107,7 @@ export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
     VideoSettingsPanel,
     WooProductCarouselSettingsPanel,
     WooProductGridSettingsPanel,
+    WooProductPriceSettingsPanel,
   };
 
   return (
