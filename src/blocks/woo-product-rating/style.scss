@@ -1,0 +1,21 @@
+.wp-block-blockwriter-woo-product-rating {
+
+	.bw-woo-product-rating__stars {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.bw-woo-product-rating__count {
+		display: inline-block;
+		margin-left: 6px;
+		vertical-align: middle;
+		color: inherit;
+		font-size: 0.875em;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+}

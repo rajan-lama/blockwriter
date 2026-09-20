@@ -813,6 +813,21 @@ const BlockOptions = {
     general: ['WooSaleBadgeSettingsPanel'],
     blockControlOptions: {},
   },
+  'woo-product-rating': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['WooProductRatingSettingsPanel'],
+    blockControlOptions: {},
+  },
 };
 
 export default BlockOptions;
