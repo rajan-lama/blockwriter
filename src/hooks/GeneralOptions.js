@@ -53,6 +53,7 @@ import {
   WooProductCarouselSettingsPanel,
   WooProductGridSettingsPanel,
   WooProductPriceSettingsPanel,
+  WooSaleBadgeSettingsPanel,
 } from '../inspectors/general';
 
 import blockOptions from '../constants/blockOptions';
@@ -108,6 +109,7 @@ export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
     WooProductCarouselSettingsPanel,
     WooProductGridSettingsPanel,
     WooProductPriceSettingsPanel,
+    WooSaleBadgeSettingsPanel,
   };
 
   return (
