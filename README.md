@@ -24,6 +24,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Product Price (WooCommerce)
 - Sale Badge (WooCommerce)
 - Product Rating (WooCommerce)
+- Add To Cart (WooCommerce)
 - Grid
 - Divider
 - Spacer

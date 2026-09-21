@@ -1,0 +1,56 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/woo-add-to-cart",
+	"version": "0.1.0",
+	"title": "BW Add To Cart",
+	"category": "blockwriter",
+	"icon": "cart",
+	"description": "Displays an add to cart button for a WooCommerce product. Requires WooCommerce.",
+	"example": {},
+	"keywords": ["woocommerce", "product", "cart", "button", "buy"],
+	"usesContext": ["postId", "postType"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"text": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonColor": {
+			"type": "string",
+			"default": ""
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"fontSize": {
+			"type": "number",
+			"default": 0
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 4
+		},
+		"fullWidth": {
+			"type": "boolean",
+			"default": false
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
