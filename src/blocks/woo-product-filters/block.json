@@ -1,0 +1,63 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/woo-product-filters",
+	"version": "0.1.0",
+	"title": "BW Product Filters",
+	"category": "blockwriter",
+	"icon": "filter",
+	"description": "Displays product category links and a price filter for WooCommerce product archives. Requires WooCommerce.",
+	"example": {},
+	"keywords": ["woocommerce", "product", "filters", "shop", "price", "category"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"default": ""
+		},
+		"showCategories": {
+			"type": "boolean",
+			"default": true
+		},
+		"categoryLimit": {
+			"type": "number",
+			"default": 8
+		},
+		"showCounts": {
+			"type": "boolean",
+			"default": false
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"priceMin": {
+			"type": "number",
+			"default": 0
+		},
+		"priceMax": {
+			"type": "number",
+			"default": 0
+		},
+		"buttonText": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}
