@@ -858,6 +858,21 @@ const BlockOptions = {
     general: ['WooProductCategoriesSettingsPanel'],
     blockControlOptions: {},
   },
+  'woo-product-reviews': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['WooProductReviewsSettingsPanel'],
+    blockControlOptions: {},
+  },
 };
 
 export default BlockOptions;
