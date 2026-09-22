@@ -49,4 +49,5 @@ export { default as WooProductGridSettingsPanel } from './WooProductGridSettings
 export { default as WooProductPriceSettingsPanel } from './WooProductPriceSettingsPanel';
 export { default as WooProductRatingSettingsPanel } from './WooProductRatingSettingsPanel';
 export { default as WooProductReviewsSettingsPanel } from './WooProductReviewsSettingsPanel';
+export { default as WooProductSearchSettingsPanel } from './WooProductSearchSettingsPanel';
 export { default as WooSaleBadgeSettingsPanel } from './WooSaleBadgeSettingsPanel';
