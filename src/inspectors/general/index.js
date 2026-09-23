@@ -44,6 +44,7 @@ export { default as TimelineSettingsPanel } from './TimelineSettingsPanel';
 export { default as VideoSettingsPanel } from './VideoSettingsPanel';
 export { default as WooAddToCartSettingsPanel } from './WooAddToCartSettingsPanel';
 export { default as WooCartSettingsPanel } from './WooCartSettingsPanel';
+export { default as WooCheckoutSettingsPanel } from './WooCheckoutSettingsPanel';
 export { default as WooMiniCartSettingsPanel } from './WooMiniCartSettingsPanel';
 export { default as WooProductCarouselSettingsPanel } from './WooProductCarouselSettingsPanel';
 export { default as WooProductCategoriesSettingsPanel } from './WooProductCategoriesSettingsPanel';
