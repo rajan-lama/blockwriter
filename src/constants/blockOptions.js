@@ -843,6 +843,21 @@ const BlockOptions = {
     general: ['WooAddToCartSettingsPanel'],
     blockControlOptions: {},
   },
+  'woo-cart': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['WooCartSettingsPanel'],
+    blockControlOptions: {},
+  },
   'woo-mini-cart': {
     advanced: [
       'AnimationPanel',
