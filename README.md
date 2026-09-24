@@ -20,6 +20,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Post Grid (grid or list layout)
 - Post Carousel
 - Product Grid (WooCommerce)
+- Product List (WooCommerce, Product Grid variation)
 - Product Carousel (WooCommerce)
 - Product Price (WooCommerce)
 - Sale Badge (WooCommerce)

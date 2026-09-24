@@ -38,6 +38,11 @@ current data.
 - `htmlId` (string) — Custom HTML id attribute
 - `extraClass` (string) — Custom CSS class name
 
+## Variations
+- **BW Product List** — presets the block to `layout: "list"` with a single
+  column. Registered as a block variation rather than a separate block so grid
+  and list stay one maintained implementation.
+
 ## Usage
 Insert the block into any page or template on a WooCommerce store. Add to cart
 uses WooCommerce's standard AJAX classes for simple products, so the cart
