@@ -888,6 +888,21 @@ const BlockOptions = {
     general: ['WooMiniCartSettingsPanel'],
     blockControlOptions: {},
   },
+  'woo-product-card': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['WooProductCardSettingsPanel'],
+    blockControlOptions: {},
+  },
   'woo-product-categories': {
     advanced: [
       'AnimationPanel',

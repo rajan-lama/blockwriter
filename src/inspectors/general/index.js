@@ -46,6 +46,7 @@ export { default as WooAddToCartSettingsPanel } from './WooAddToCartSettingsPane
 export { default as WooCartSettingsPanel } from './WooCartSettingsPanel';
 export { default as WooCheckoutSettingsPanel } from './WooCheckoutSettingsPanel';
 export { default as WooMiniCartSettingsPanel } from './WooMiniCartSettingsPanel';
+export { default as WooProductCardSettingsPanel } from './WooProductCardSettingsPanel';
 export { default as WooProductCarouselSettingsPanel } from './WooProductCarouselSettingsPanel';
 export { default as WooProductCategoriesSettingsPanel } from './WooProductCategoriesSettingsPanel';
 export { default as WooProductFiltersSettingsPanel } from './WooProductFiltersSettingsPanel';
