@@ -8,7 +8,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Responsive layout and styling controls
 - Lightweight and modular architecture
 - Built with the WordPress block editor APIs and React
-- Editor pattern library for searching and inserting registered block patterns
+- Editor library for searching and inserting registered block patterns and theme templates
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -77,17 +77,26 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Advance Header
 - Icon
 
-## Pattern library
+## Pattern and template library
 
-The editor includes a BlockWriter pattern library. Open it from the
-**BlockWriter Patterns** sidebar or the editor options menu to search registered
-block patterns by title, keyword, or category, preview them, and insert the
-selected pattern at the current position.
+The editor includes a BlockWriter library. Open it from the **BlockWriter
+Library** sidebar or the editor options menu to browse and insert reusable
+content at the current position.
+
+- **Patterns** — search registered block patterns by title, keyword, or
+  category, preview them, and insert the selected pattern.
+- **Templates** — browse the active theme's templates and template parts,
+  preview them, and insert their blocks.
 
 Pattern data is read from the core block patterns REST endpoints through the
-`core` data store, and insertion uses the block editor data store. BlockWriter
-does not store or duplicate pattern content. Patterns can be grouped under the
-**BlockWriter** pattern category.
+`core` data store. Template data is read from the `wp_template` and
+`wp_template_part` entities in the same store. Insertion uses the block editor
+data store. BlockWriter does not store or duplicate pattern or template content.
+Patterns can be grouped under the **BlockWriter** pattern category.
+
+Template availability depends on the active theme and the current user's
+capabilities, so the Templates tab may be empty on classic themes or for users
+without template access.
 
 ## Installation
 
