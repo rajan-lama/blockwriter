@@ -163,6 +163,8 @@ class Blockwriter {
     $this->loader->add_action( 'enqueue_block_assets', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'enqueue_block_assets', $plugin_admin, 'enqueue_scripts' );
 
+		$this->loader->add_action( 'enqueue_block_editor_assets', $plugin_admin, 'enqueue_editor_assets' );
+
 	}
 
 	/**

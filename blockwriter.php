@@ -74,6 +74,16 @@ register_deactivation_hook( __FILE__, 'deactivate_blockwriter' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter.php';
 
 /**
+ * Pattern category registration.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-pattern.php';
+
+/**
+ * Register the BlockWriter pattern category before patterns are registered.
+ */
+add_action( 'init', array( '\Blockwriter\Pattern', 'register_category' ), 9 );
+
+/**
  * Determines whether WooCommerce is available.
  *
  * @return bool
