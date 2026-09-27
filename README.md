@@ -9,6 +9,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Lightweight and modular architecture
 - Built with the WordPress block editor APIs and React
 - Editor library for searching and inserting registered block patterns and theme templates
+- Block presets sidebar for applying curated styling presets to the selected block
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -97,6 +98,18 @@ Patterns can be grouped under the **BlockWriter** pattern category.
 Template availability depends on the active theme and the current user's
 capabilities, so the Templates tab may be empty on classic themes or for users
 without template access.
+
+## Block presets
+
+The editor includes a BlockWriter presets sidebar. Select a block and open the
+**BlockWriter Presets** sidebar from the editor options menu to apply a curated
+preset to it, such as a display or eyebrow heading, an alert type, or elevated,
+flat, and compact card styles.
+
+Presets are named sets of styling attributes applied through the block editor
+data store, so undo and redo keep working and nothing about the preset is
+stored on the site. Presets never change content attributes, so applying one
+does not overwrite the text, buttons, or list items in a block.
 
 ## Installation
 
