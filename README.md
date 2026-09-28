@@ -10,6 +10,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Built with the WordPress block editor APIs and React
 - Editor library for searching and inserting registered block patterns and theme templates
 - Block presets sidebar for applying curated styling presets to the selected block
+- Global styles sidebar for browsing the theme's color, gradient, font, and spacing presets
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -110,6 +111,16 @@ Presets are named sets of styling attributes applied through the block editor
 data store, so undo and redo keep working and nothing about the preset is
 stored on the site. Presets never change content attributes, so applying one
 does not overwrite the text, buttons, or list items in a block.
+
+## Global style presets
+
+Open the **BlockWriter Global Styles** sidebar from the editor options menu to
+browse the global presets made available by WordPress and the active theme:
+color palettes, gradients, font sizes, font families, and spacing sizes.
+
+Each preset shows its name, value, and slug, and can be copied to the clipboard
+for use in block settings. The panel reads the editor settings and never writes
+to the site, so it cannot affect saved content or global styles.
 
 ## Installation
 
