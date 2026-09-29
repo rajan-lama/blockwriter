@@ -11,6 +11,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Editor library for searching and inserting registered block patterns and theme templates
 - Block presets sidebar for applying curated styling presets to the selected block
 - Global styles sidebar for browsing the theme's color, gradient, font, and spacing presets
+- Predefined design sections for inserting ready-made hero, feature, stats, call to action, pricing, and testimonial layouts
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -121,6 +122,24 @@ color palettes, gradients, font sizes, font families, and spacing sizes.
 Each preset shows its name, value, and slug, and can be copied to the clipboard
 for use in block settings. The panel reads the editor settings and never writes
 to the site, so it cannot affect saved content or global styles.
+
+## Design sections
+
+BlockWriter registers a set of predefined section layouts as variations of the
+Section block. Open the block inserter, search for "BlockWriter", and choose a
+design section under the **BlockWriter** category to insert:
+
+- **Hero section** — centered heading, supporting text, and buttons.
+- **Feature grid** — a heading followed by three feature columns.
+- **Stats row** — three animated statistics in a row.
+- **Call to action** — centered heading, text, and a button.
+- **Pricing table** — three pricing plans with a highlighted recommended plan.
+- **Testimonial section** — a centered quote with attribution.
+
+Each variation inserts only the Section block with a template of inner blocks.
+The layout is composed from existing BlockWriter blocks, so after insertion every
+part can be edited with normal WordPress block behavior and no serialized block
+markup is stored or duplicated by BlockWriter.
 
 ## Installation
 
