@@ -12,6 +12,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Block presets sidebar for applying curated styling presets to the selected block
 - Global styles sidebar for browsing the theme's color, gradient, font, and spacing presets
 - Predefined design sections for inserting ready-made hero, feature, stats, call to action, pricing, and testimonial layouts
+- Block collection sidebar for browsing and inserting BlockWriter blocks grouped by purpose
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -140,6 +141,17 @@ Each variation inserts only the Section block with a template of inner blocks.
 The layout is composed from existing BlockWriter blocks, so after insertion every
 part can be edited with normal WordPress block behavior and no serialized block
 markup is stored or duplicated by BlockWriter.
+
+## Block collection
+
+Open the **BlockWriter Blocks** sidebar from the editor options menu to browse
+BlockWriter's own blocks grouped into collections: Layout, Content, Components,
+Navigation and utility, Dynamic content, and WooCommerce. Use the search field
+to narrow the list and insert any block at the current position.
+
+Collections reference existing block names only. Titles, descriptions, and
+icons are read from the block registry, WooCommerce collections appear only when
+their blocks are registered, and nothing is stored or duplicated by BlockWriter.
 
 ## Installation
 
