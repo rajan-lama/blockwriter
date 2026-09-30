@@ -52,6 +52,30 @@
       "type": "array",
       "default": []
     },
+    "tagIds": {
+      "type": "array",
+      "default": []
+    },
+    "authorId": {
+      "type": "number",
+      "default": 0
+    },
+    "offset": {
+      "type": "number",
+      "default": 0
+    },
+    "includeIds": {
+      "type": "array",
+      "default": []
+    },
+    "excludeIds": {
+      "type": "array",
+      "default": []
+    },
+    "ignoreSticky": {
+      "type": "boolean",
+      "default": true
+    },
     "showFeaturedImage": {
       "type": "boolean",
       "default": true

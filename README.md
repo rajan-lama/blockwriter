@@ -15,6 +15,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Block collection sidebar for browsing and inserting BlockWriter blocks grouped by purpose
 - Responsive visibility sidebar and front-end styles for showing or hiding blocks per device
 - Conditional content sidebar for showing blocks to selected users or during a date range
+- Query builder sidebar for adding tags, author, offset, include/exclude, and sticky filters to post grid and post carousel queries
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -193,6 +194,25 @@ button resets the block.
 The conditions are evaluated by the `Blockwriter\Conditional_Content` class
 during block rendering. User and role conditions use the standard WordPress
 capability data and date conditions are compared against the site time zone.
+
+## Query builder
+
+Select a Post Grid or Post Carousel block and open the **BlockWriter Query**
+sidebar from the editor options menu to add advanced filters to its query:
+
+- **Author** — limit results to a single author.
+- **Skip first** — offset the query by a number of posts.
+- **Tags** — match any of the selected tags.
+- **Include posts** / **Exclude posts** — comma separated post IDs.
+- **Ignore sticky posts** — keep sticky posts in their natural order.
+
+Post type, number of posts, order, and categories are set in the block's own
+settings. The controls only change the block's own query attributes through the
+block editor data store, so undo and redo keep working and nothing is stored on
+the site. A **Clear advanced filters** button resets the block.
+
+The filters are turned into a safe `WP_Query` argument list by the
+`Blockwriter\Query_Builder` class during block rendering.
 
 ## Installation
 

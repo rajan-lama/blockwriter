@@ -104,6 +104,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-conditional-co
 \Blockwriter\Conditional_Content::register();
 
 /**
+ * Query builder used by the dynamic post blocks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-query-builder.php';
+
+/**
  * Determines whether WooCommerce is available.
  *
  * @return bool

@@ -13,11 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$post_type = isset( $attributes['postType'] ) ? sanitize_key( $attributes['postType'] ) : 'post';
+$query_args = \Blockwriter\Query_Builder::build_args( $attributes );
 
-if ( ! post_type_exists( $post_type ) ) {
-	$post_type = 'post';
-}
+$post_type = $query_args['post_type'];
 
 $post_type_object = get_post_type_object( $post_type );
 
@@ -25,17 +23,8 @@ if ( ! $post_type_object || empty( $post_type_object->public ) ) {
 	return '';
 }
 
-$allowed_orderby = array( 'date', 'title', 'menu_order', 'modified', 'rand' );
-$allowed_order   = array( 'ASC', 'DESC' );
-
-$per_page  = isset( $attributes['perPage'] ) ? absint( $attributes['perPage'] ) : 6;
-$per_page  = $per_page > 0 ? min( $per_page, 24 ) : 6;
-$columns   = isset( $attributes['columns'] ) ? absint( $attributes['columns'] ) : 3;
-$columns   = min( max( $columns, 1 ), 4 );
-$order_by  = isset( $attributes['orderBy'] ) ? sanitize_key( $attributes['orderBy'] ) : 'date';
-$order_by  = in_array( $order_by, $allowed_orderby, true ) ? $order_by : 'date';
-$order     = isset( $attributes['order'] ) ? strtoupper( (string) $attributes['order'] ) : 'DESC';
-$order     = in_array( $order, $allowed_order, true ) ? $order : 'DESC';
+$columns = isset( $attributes['columns'] ) ? absint( $attributes['columns'] ) : 3;
+$columns = min( max( $columns, 1 ), 4 );
 
 $show_image     = ! isset( $attributes['showFeaturedImage'] ) || (bool) $attributes['showFeaturedImage'];
 $show_excerpt   = ! isset( $attributes['showExcerpt'] ) || (bool) $attributes['showExcerpt'];
@@ -52,26 +41,6 @@ $interval   = isset( $attributes['interval'] ) ? absint( $attributes['interval']
 $interval   = min( max( $interval, 2000 ), 15000 );
 $show_arrow = ! isset( $attributes['showArrows'] ) || (bool) $attributes['showArrows'];
 $show_dots  = ! isset( $attributes['showDots'] ) || (bool) $attributes['showDots'];
-
-$category_ids = array();
-
-if ( ! empty( $attributes['categoryIds'] ) && is_array( $attributes['categoryIds'] ) ) {
-	$category_ids = array_filter( array_map( 'absint', $attributes['categoryIds'] ) );
-}
-
-$query_args = array(
-	'post_type'           => $post_type,
-	'post_status'         => 'publish',
-	'posts_per_page'      => $per_page,
-	'orderby'             => $order_by,
-	'order'               => $order,
-	'ignore_sticky_posts' => true,
-	'no_found_rows'       => true,
-);
-
-if ( ! empty( $category_ids ) && 'post' === $post_type ) {
-	$query_args['cat'] = $category_ids;
-}
 
 $carousel_query = new WP_Query( $query_args );
 
