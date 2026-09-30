@@ -94,6 +94,16 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-responsive-vis
 \Blockwriter\Responsive_Visibility::register();
 
 /**
+ * Conditional content (user and date conditions).
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-conditional-content.php';
+
+/**
+ * Apply the user and date conditions to rendered blocks.
+ */
+\Blockwriter\Conditional_Content::register();
+
+/**
  * Determines whether WooCommerce is available.
  *
  * @return bool

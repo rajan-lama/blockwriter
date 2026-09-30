@@ -14,6 +14,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Predefined design sections for inserting ready-made hero, feature, stats, call to action, pricing, and testimonial layouts
 - Block collection sidebar for browsing and inserting BlockWriter blocks grouped by purpose
 - Responsive visibility sidebar and front-end styles for showing or hiding blocks per device
+- Conditional content sidebar for showing blocks to selected users or during a date range
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -172,6 +173,26 @@ devices" reset.
 The visibility classes are applied to the rendered block by the
 `Blockwriter\Responsive_Visibility` class, which also loads the small stylesheet
 that defines the breakpoints.
+
+## Conditional content
+
+Select a BlockWriter block and open the **BlockWriter Conditions** sidebar from
+the editor options menu to control when it is displayed:
+
+- **Visible to** — all users, logged in users, logged out users, or specific
+  user roles.
+- **Visible from** / **Visible until** — an optional date range. Leave a field
+  empty for an open-ended range.
+
+Unmet conditions hide the block on the front end, while the block stays visible
+inside the editor so it can still be edited and previewed. The controls only
+change the block's own attributes through the block editor data store, so undo
+and redo keep working and nothing is stored on the site. A **Clear conditions**
+button resets the block.
+
+The conditions are evaluated by the `Blockwriter\Conditional_Content` class
+during block rendering. User and role conditions use the standard WordPress
+capability data and date conditions are compared against the site time zone.
 
 ## Installation
 
