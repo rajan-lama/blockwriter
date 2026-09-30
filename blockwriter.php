@@ -84,6 +84,16 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-pattern.php';
 add_action( 'init', array( '\Blockwriter\Pattern', 'register_category' ), 9 );
 
 /**
+ * Responsive visibility.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-responsive-visibility.php';
+
+/**
+ * Apply the device visibility settings to rendered blocks and load the styles.
+ */
+\Blockwriter\Responsive_Visibility::register();
+
+/**
  * Determines whether WooCommerce is available.
  *
  * @return bool

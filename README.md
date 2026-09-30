@@ -13,6 +13,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Global styles sidebar for browsing the theme's color, gradient, font, and spacing presets
 - Predefined design sections for inserting ready-made hero, feature, stats, call to action, pricing, and testimonial layouts
 - Block collection sidebar for browsing and inserting BlockWriter blocks grouped by purpose
+- Responsive visibility sidebar and front-end styles for showing or hiding blocks per device
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -152,6 +153,25 @@ to narrow the list and insert any block at the current position.
 Collections reference existing block names only. Titles, descriptions, and
 icons are read from the block registry, WooCommerce collections appear only when
 their blocks are registered, and nothing is stored or duplicated by BlockWriter.
+
+## Responsive visibility
+
+Select a BlockWriter block and open the **BlockWriter Visibility** sidebar from
+the editor options menu to control the devices it is displayed on:
+
+- **Desktop** — screens 1025px and wider.
+- **Tablet** — screens between 768px and 1024px.
+- **Mobile** — screens 767px and narrower.
+
+Unchecking a device hides the block on that breakpoint on the front end. The
+toggles only change the block's own visibility attributes through the block
+editor data store, so undo and redo keep working and nothing is stored on the
+site. The **BlockWriter Visibility** sidebar also offers a one-click "Show on all
+devices" reset.
+
+The visibility classes are applied to the rendered block by the
+`Blockwriter\Responsive_Visibility` class, which also loads the small stylesheet
+that defines the breakpoints.
 
 ## Installation
 
