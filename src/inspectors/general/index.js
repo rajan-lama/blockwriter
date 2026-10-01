@@ -18,6 +18,7 @@ export { default as HeroSettingsPanel } from './HeroSettingsPanel';
 export { default as ImageSettingsPanel } from './ImageSettingsPanel';
 export { default as ListSettingsPanel } from './ListSettingsPanel';
 export { default as LogoSettingsPanel } from './LogoSettingsPanel';
+export { default as LoopBuilderSettingsPanel } from './LoopBuilderSettingsPanel';
 export { default as ModalSettingsPanel } from './ModalSettingsPanel';
 export { default as OffcanvasSettingsPanel } from './OffcanvasSettingsPanel';
 export { default as PaginationSettingsPanel } from './PaginationSettingsPanel';

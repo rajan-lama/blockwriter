@@ -33,6 +33,7 @@ const SIDEBAR_NAME = 'blockwriter-query-builder';
 const SUPPORTED_BLOCKS = [
 	'blockwriter/post-grid',
 	'blockwriter/post-carousel',
+	'blockwriter/loop-builder',
 ];
 
 /**
@@ -119,7 +120,7 @@ function QueryBuilderPanel() {
 			<div className="bw-query-builder">
 				<Notice status="info" isDismissible={ false }>
 					{ __(
-						'Select a post grid or post carousel block to build its query.',
+						'Select a post grid, post carousel, or loop builder block to build its query.',
 						'blockwriter',
 					) }
 				</Notice>
@@ -132,7 +133,7 @@ function QueryBuilderPanel() {
 			<div className="bw-query-builder">
 				<Notice status="info" isDismissible={ false }>
 					{ __(
-						'The query builder is available for the Post Grid and Post Carousel blocks.',
+						'The query builder is available for the Post Grid, Post Carousel, and Loop Builder blocks.',
 						'blockwriter',
 					) }
 				</Notice>

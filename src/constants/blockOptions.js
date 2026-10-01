@@ -357,6 +357,21 @@ const BlockOptions = {
     general: ['LogoSettingsPanel'],
     blockControlOptions: {},
   },
+  'loop-builder': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['LoopBuilderSettingsPanel'],
+    blockControlOptions: {},
+  },
   modal: {
     advanced: [
       'AnimationPanel',

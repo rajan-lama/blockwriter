@@ -27,6 +27,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Off-canvas Drawer
 - Post Grid (grid or list layout)
 - Post Carousel
+- Loop Builder (custom repeatable layout)
 - Product Grid (WooCommerce)
 - Product List (WooCommerce, Product Grid variation)
 - Product Card (WooCommerce)
@@ -197,7 +198,7 @@ capability data and date conditions are compared against the site time zone.
 
 ## Query builder
 
-Select a Post Grid or Post Carousel block and open the **BlockWriter Query**
+Select a Post Grid, Post Carousel, or Loop Builder block and open the **BlockWriter Query**
 sidebar from the editor options menu to add advanced filters to its query:
 
 - **Author** — limit results to a single author.
@@ -213,6 +214,22 @@ the site. A **Clear advanced filters** button resets the block.
 
 The filters are turned into a safe `WP_Query` argument list by the
 `Blockwriter\Query_Builder` class during block rendering.
+
+## Loop builder
+
+The **BW Loop Builder** block repeats a custom layout for every post in a
+query. Unlike the predefined Post Grid and Post Carousel cards, the repeated
+item is built from inner blocks, so you can compose any layout.
+
+Insert the block and edit the inner blocks that make up a single item. The
+default template uses core post blocks (featured image, title, date, and
+excerpt) that read from the current post in the loop. Query controls live in
+the block settings, and the **BlockWriter Query** sidebar adds author, offset,
+tag, include/exclude, and sticky filters.
+
+On the server, `src/blocks/loop-builder/render.php` runs the query and
+re-renders the stored inner blocks once per post with the matching `postId` and
+`postType` block context.
 
 ## Installation
 
