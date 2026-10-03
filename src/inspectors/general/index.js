@@ -10,6 +10,7 @@ export { default as CardSettingsPanel } from './CardSettingsPanel';
 export { default as CoverSettingsPanel } from './CoverSettingsPanel';
 export { default as CtaSettingsPanel } from './CtaSettingsPanel';
 export { default as DividerSettingsPanel } from './DividerSettingsPanel';
+export { default as DynamicContentSettingsPanel } from './DynamicContentSettingsPanel';
 export { default as FaqSettingsPanel } from './FaqSettingsPanel';
 export { default as FeatureSettingsPanel } from './FeatureSettingsPanel';
 export { default as GridSettingsPanel } from './GridSettingsPanel';

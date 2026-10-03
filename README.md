@@ -48,6 +48,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Spacer
 - Heading
 - Text
+- Dynamic Content
 - Image
 - Video
 - Cover
@@ -230,6 +231,25 @@ tag, include/exclude, and sticky filters.
 On the server, `src/blocks/loop-builder/render.php` runs the query and
 re-renders the stored inner blocks once per post with the matching `postId` and
 `postType` block context.
+
+## Dynamic content
+
+The **BW Dynamic Content** block outputs a single dynamic value. Pick a source
+in the block settings:
+
+- Post fields: title, excerpt, date, author, terms, or a custom field (meta)
+  key.
+- Site fields: site title, tagline, and URL.
+- Context fields: current year, archive title, archive description, and the
+  search query.
+
+Each source supports an optional HTML tag, a link to its source where
+applicable, and prefix/suffix text. Post fields read the current post from
+block context, so the block can be placed inside the Loop Builder to display
+each item's data, or used directly on a single post.
+
+The value is resolved and escaped on the server by
+`src/blocks/dynamic-content/render.php`.
 
 ## Installation
 

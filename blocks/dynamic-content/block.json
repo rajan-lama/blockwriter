@@ -1,0 +1,81 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/dynamic-content",
+  "version": "0.1.0",
+  "title": "BW Dynamic Content",
+  "category": "blockwriter",
+  "icon": "database",
+  "description": "Displays a dynamic value such as the post title, excerpt, custom field, or site information.",
+  "example": {},
+  "keywords": [
+    "dynamic",
+    "field",
+    "meta",
+    "custom field",
+    "post",
+    "site"
+  ],
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "source": {
+      "type": "string",
+      "default": "post-title"
+    },
+    "tagName": {
+      "type": "string",
+      "default": "p"
+    },
+    "link": {
+      "type": "boolean",
+      "default": false
+    },
+    "metaKey": {
+      "type": "string",
+      "default": ""
+    },
+    "taxonomy": {
+      "type": "string",
+      "default": "category"
+    },
+    "separator": {
+      "type": "string",
+      "default": ", "
+    },
+    "dateFormat": {
+      "type": "string",
+      "default": "F j, Y"
+    },
+    "excerptLength": {
+      "type": "number",
+      "default": 24
+    },
+    "prefix": {
+      "type": "string",
+      "default": ""
+    },
+    "suffix": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

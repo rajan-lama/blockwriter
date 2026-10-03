@@ -224,6 +224,21 @@ const BlockOptions = {
     general: ['DividerSettingsPanel'],
     blockControlOptions: {},
   },
+  'dynamic-content': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['DynamicContentSettingsPanel'],
+    blockControlOptions: {},
+  },
   faq: {
     advanced: [
       'AnimationPanel',
