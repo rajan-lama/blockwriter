@@ -16,6 +16,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Responsive visibility sidebar and front-end styles for showing or hiding blocks per device
 - Conditional content sidebar for showing blocks to selected users or during a date range
 - Query builder sidebar for adding tags, author, offset, include/exclude, and sticky filters to post grid and post carousel queries
+- AI section and block generators powered by an OpenAI-compatible endpoint
 - Easy to extend for additional block-based experiences
 
 ## Included blocks
@@ -250,6 +251,27 @@ each item's data, or used directly on a single post.
 
 The value is resolved and escaped on the server by
 `src/blocks/dynamic-content/render.php`.
+
+## AI generator
+
+The **BlockWriter AI** editor sidebar turns a prompt into native Gutenberg
+blocks. Choose **Section** to generate a full layout or **Blocks** to generate
+a smaller fragment, describe what you want, and press **Generate**. The
+response is converted with the WordPress raw handler, so the result is made of
+editable blocks rather than raw markup.
+
+AI features require an OpenAI-compatible endpoint:
+
+1. Go to **Settings → BlockWriter AI**.
+2. Enter the API base URL (for example `https://api.openai.com/v1`), your API
+   key, and the model name.
+3. Save the settings.
+
+The key is stored in the site options and is used only on the server. The
+editor calls the `blockwriter/v1/ai` REST proxy, which requires the
+`edit_posts` capability, and the key is never sent to the browser. The
+generators stay hidden until the settings are complete. Review AI-generated
+content before publishing.
 
 ## Installation
 

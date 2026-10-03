@@ -109,6 +109,16 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-conditional-co
 require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-query-builder.php';
 
 /**
+ * AI provider settings and REST proxy.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-ai.php';
+
+/**
+ * Register the AI settings page and REST routes.
+ */
+\Blockwriter\AI::register();
+
+/**
  * Determines whether WooCommerce is available.
  *
  * @return bool
