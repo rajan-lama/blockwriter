@@ -8,6 +8,7 @@ import { __ } from '@wordpress/i18n';
 import {
   AccordionItemSettingsPanel,
   AccordionSettingsPanel,
+  AiContentSettingsPanel,
   AlertSettingsPanel,
   ArchiveHeaderSettingsPanel,
   AuthorBoxSettingsPanel,
@@ -76,6 +77,7 @@ export const GeneralOptions = ({ attributes, setAttributes, blockName }) => {
   const panels = {
     AccordionItemSettingsPanel,
     AccordionSettingsPanel,
+    AiContentSettingsPanel,
     AlertSettingsPanel,
     ArchiveHeaderSettingsPanel,
     AuthorBoxSettingsPanel,

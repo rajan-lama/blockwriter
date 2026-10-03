@@ -50,6 +50,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Heading
 - Text
 - Dynamic Content
+- AI Content
 - Image
 - Video
 - Cover

@@ -45,6 +45,21 @@ const BlockOptions = {
     general: ['AccordionItemSettingsPanel'],
     blockControlOptions: {},
   },
+  'ai-content': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['AiContentSettingsPanel'],
+    blockControlOptions: {},
+  },
   alert: {
     advanced: [
       'AnimationPanel',
