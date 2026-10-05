@@ -120,6 +120,21 @@ const BlockOptions = {
     general: ['BackToTopSettingsPanel'],
     blockControlOptions: {},
   },
+  breadcrumbs: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['BreadcrumbsSettingsPanel'],
+    blockControlOptions: {},
+  },
   buttons: {
     advanced: [
       'AnimationPanel',

@@ -7,6 +7,7 @@ export { default as AlertSettingsPanel } from './AlertSettingsPanel';
 export { default as ArchiveHeaderSettingsPanel } from './ArchiveHeaderSettingsPanel';
 export { default as AuthorBoxSettingsPanel } from './AuthorBoxSettingsPanel';
 export { default as BackToTopSettingsPanel } from './BackToTopSettingsPanel';
+export { default as BreadcrumbsSettingsPanel } from './BreadcrumbsSettingsPanel';
 export { default as CardSettingsPanel } from './CardSettingsPanel';
 export { default as CoverSettingsPanel } from './CoverSettingsPanel';
 export { default as CtaSettingsPanel } from './CtaSettingsPanel';
