@@ -432,6 +432,21 @@ const BlockOptions = {
     general: ['ModalSettingsPanel'],
     blockControlOptions: {},
   },
+  newsletter: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['NewsletterSettingsPanel'],
+    blockControlOptions: {},
+  },
   offcanvas: {
     advanced: [
       'AnimationPanel',

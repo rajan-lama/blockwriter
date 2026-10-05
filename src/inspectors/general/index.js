@@ -23,6 +23,7 @@ export { default as ListSettingsPanel } from './ListSettingsPanel';
 export { default as LogoSettingsPanel } from './LogoSettingsPanel';
 export { default as LoopBuilderSettingsPanel } from './LoopBuilderSettingsPanel';
 export { default as ModalSettingsPanel } from './ModalSettingsPanel';
+export { default as NewsletterSettingsPanel } from './NewsletterSettingsPanel';
 export { default as OffcanvasSettingsPanel } from './OffcanvasSettingsPanel';
 export { default as PaginationSettingsPanel } from './PaginationSettingsPanel';
 export { default as PostCarouselSettingsPanel } from './PostCarouselSettingsPanel';
