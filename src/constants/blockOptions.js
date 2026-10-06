@@ -372,6 +372,21 @@ const BlockOptions = {
     general: ['ImageSettingsPanel'],
     blockControlOptions: {},
   },
+  'lead-capture': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['LeadCaptureSettingsPanel'],
+    blockControlOptions: {},
+  },
   list: {
     advanced: [
       'AnimationPanel',

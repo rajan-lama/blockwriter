@@ -59,6 +59,7 @@ Blockwriter is a Gutenberg-focused WordPress plugin that adds a collection of re
 - Alert
 - Call To Action
 - Newsletter Signup
+- Lead Capture
 - Card
 - Testimonial
 - FAQ

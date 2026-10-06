@@ -1,0 +1,81 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/lead-capture",
+	"version": "0.1.0",
+	"title": "BW Lead Capture",
+	"category": "blockwriter",
+	"icon": "forms",
+	"description": "A configurable multi-field form that submits leads to an external endpoint.",
+	"example": {},
+	"keywords": ["lead", "form", "capture", "contact", "signup"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Get in touch"
+		},
+		"description": {
+			"type": "string",
+			"default": "Fill out the form and our team will reach out shortly."
+		},
+		"fields": {
+			"type": "array",
+			"default": [
+				{
+					"label": "Name",
+					"name": "name",
+					"type": "text",
+					"placeholder": "Your name",
+					"required": true
+				},
+				{
+					"label": "Email",
+					"name": "email",
+					"type": "email",
+					"placeholder": "you@example.com",
+					"required": true
+				},
+				{
+					"label": "Message",
+					"name": "message",
+					"type": "textarea",
+					"placeholder": "How can we help?",
+					"required": false
+				}
+			]
+		},
+		"buttonText": {
+			"type": "string",
+			"default": "Send"
+		},
+		"actionUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"method": {
+			"type": "string",
+			"default": "post"
+		},
+		"consentText": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

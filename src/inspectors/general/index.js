@@ -19,6 +19,7 @@ export { default as GridSettingsPanel } from './GridSettingsPanel';
 export { default as HeadingSettingsPanel } from './HeadingSettingsPanel';
 export { default as HeroSettingsPanel } from './HeroSettingsPanel';
 export { default as ImageSettingsPanel } from './ImageSettingsPanel';
+export { default as LeadCaptureSettingsPanel } from './LeadCaptureSettingsPanel';
 export { default as ListSettingsPanel } from './ListSettingsPanel';
 export { default as LogoSettingsPanel } from './LogoSettingsPanel';
 export { default as LoopBuilderSettingsPanel } from './LoopBuilderSettingsPanel';
