@@ -660,6 +660,21 @@ const BlockOptions = {
     general: ['SectionSettingsPanel'],
     blockControlOptions: {},
   },
+  'social-proof': {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['SocialProofSettingsPanel'],
+    blockControlOptions: {},
+  },
   spacer: {
     advanced: [
       'AnimationPanel',

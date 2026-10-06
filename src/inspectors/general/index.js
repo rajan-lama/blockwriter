@@ -37,6 +37,7 @@ export { default as ReviewSettingsPanel } from './ReviewSettingsPanel';
 export { default as RowSettingsPanel } from './RowSettingsPanel';
 export { default as SectionSettingsPanel } from './SectionSettingsPanel';
 export { default as SearchSettingsPanel } from './SearchSettingsPanel';
+export { default as SocialProofSettingsPanel } from './SocialProofSettingsPanel';
 export { default as SpacerSettingsPanel } from './SpacerSettingsPanel';
 export { default as StatSettingsPanel } from './StatSettingsPanel';
 export { default as StepsSettingsPanel } from './StepsSettingsPanel';
