@@ -585,6 +585,21 @@ const BlockOptions = {
     general: ['RelatedPostsSettingsPanel'],
     blockControlOptions: {},
   },
+  review: {
+    advanced: [
+      'AnimationPanel',
+      'DateRangeVisibilityPanel',
+      'DeviceVisibilityPanel',
+      'UserVisibilityPanel',
+    ],
+    layout: [
+      'SpacingPanel',
+      'PositionPanel',
+      'ZIndexPanel',
+    ],
+    general: ['ReviewSettingsPanel'],
+    blockControlOptions: {},
+  },
   row: {
     advanced: [
       'AnimationPanel',

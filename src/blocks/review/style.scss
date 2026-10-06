@@ -1,0 +1,137 @@
+.wp-block-blockwriter-review {
+	--bw-review-star-size: 20px;
+	--bw-review-star: #f59e0b;
+	--bw-review-star-empty: #e5e7eb;
+
+	position: relative;
+	padding: 28px 26px;
+	background-color: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 10px;
+	box-shadow: 0 1px 4px rgba( 0, 0, 0, 0.06 );
+}
+
+.bw-review__rating {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.bw-review__stars {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.bw-review__star {
+	position: relative;
+	display: inline-block;
+	width: var( --bw-review-star-size );
+	height: var( --bw-review-star-size );
+}
+
+.bw-review__icon {
+	display: block;
+	width: var( --bw-review-star-size );
+	height: var( --bw-review-star-size );
+	max-width: none;
+	fill: currentcolor;
+}
+
+.bw-review__icon--empty {
+	color: var( --bw-review-star-empty );
+}
+
+.bw-review__icon--filled {
+	color: var( --bw-review-star );
+}
+
+.bw-review__fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bw-review__verified {
+	font-size: 13px;
+	font-weight: 600;
+	color: #16a34a;
+}
+
+.bw-review__mark {
+	display: block;
+	font-size: 44px;
+	line-height: 1;
+	color: var( --bw-review-star );
+	opacity: 0.45;
+	margin-bottom: 6px;
+}
+
+.bw-review__quote {
+	font-size: 17px;
+	line-height: 1.7;
+	margin: 0 0 18px;
+}
+
+.bw-review__meta {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.bw-review__avatar {
+	width: 46px;
+	height: 46px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.bw-review__author {
+	font-weight: 600;
+}
+
+.bw-review__role {
+	font-size: 14px;
+	opacity: 0.75;
+}
+
+.bw-review__source {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	margin-top: 14px;
+	font-size: 13px;
+	color: #64748b;
+}
+
+.bw-review__source-name {
+	font-weight: 600;
+}
+
+.bw-review__date::before {
+	content: "·";
+	margin-right: 6px;
+}
+
+.bw-review--center {
+	text-align: center;
+}
+
+.bw-review--center .bw-review__meta,
+.bw-review--center .bw-review__rating {
+	justify-content: center;
+}
+
+.bw-review--right {
+	text-align: right;
+}
+
+.bw-review--right .bw-review__meta,
+.bw-review--right .bw-review__rating {
+	justify-content: flex-end;
+}
