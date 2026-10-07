@@ -1,17 +1,4 @@
-import { header } from '@wordpress/icons';
-
 const BlockOptions = {
-  'advanced-header': {
-    advanced: [
-      'AnimationPanel',
-      'DateRangeVisibilityPanel',
-      'DeviceVisibilityPanel',
-      'UserVisibilityPanel',
-    ],
-    layout: {},
-    general: ['SectionSettingsPanel', 'TextColorPanel', 'BackgroundColorPanel'],
-    blockControlOptions: {},
-  },
   accordion: {
     advanced: [
       'AnimationPanel',
@@ -144,7 +131,6 @@ const BlockOptions = {
     ],
     layout: [
       'BackgroundPanel',
-      'BorderControlPanel',
       'BorderPanel',
       'BoxShadowPanel',
       'DisplayTypePanel',
