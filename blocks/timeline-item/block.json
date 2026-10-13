@@ -1,0 +1,41 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/timeline-item",
+  "version": "0.1.0",
+  "title": "BW Timeline Item",
+  "category": "blockwriter",
+  "icon": "editor-ol",
+  "description": "A single dated entry for use inside the Timeline block.",
+  "example": {},
+  "keywords": [
+    "timeline",
+    "date",
+    "milestone",
+    "entry"
+  ],
+  "parent": [
+    "blockwriter/timeline"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "itemDate": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

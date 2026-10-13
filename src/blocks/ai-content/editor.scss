@@ -1,0 +1,26 @@
+.bw-ai-content__placeholder {
+	margin: 0;
+	padding: 16px;
+	color: #757575;
+	text-align: center;
+	border: 1px dashed #ccc;
+	border-radius: 2px;
+}
+
+.bw-ai-content__generate {
+	justify-content: center;
+	width: 100%;
+	margin-top: 8px;
+}
+
+.bw-ai-content__loading {
+	display: flex;
+	justify-content: center;
+	margin-top: 12px;
+}
+
+.bw-ai-content__disclaimer {
+	margin-bottom: 0;
+	color: #757575;
+	font-size: 12px;
+}

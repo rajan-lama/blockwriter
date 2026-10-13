@@ -1,0 +1,27 @@
+/**
+ * BlockWriter responsive visibility.
+ *
+ * The device breakpoints match the editor controls: desktop is 1025px and
+ * above, tablet is 768px to 1024px, and mobile is 767px and below.
+ */
+
+@media (min-width: 1025px) {
+
+	.bw-hide-desktop {
+		display: none !important;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+	.bw-hide-tablet {
+		display: none !important;
+	}
+}
+
+@media (max-width: 767px) {
+
+	.bw-hide-mobile {
+		display: none !important;
+	}
+}

@@ -1,0 +1,135 @@
+.wp-block-blockwriter-comparison-table {
+	--bw-cmp-accent: #4f46e5;
+	--bw-cmp-accent-soft: rgba( 79, 70, 229, 0.06 );
+	--bw-cmp-accent-border: rgba( 79, 70, 229, 0.35 );
+
+	box-sizing: border-box;
+
+	&.alignfull {
+		margin-left: calc( 50% - 50vw );
+		margin-right: calc( 50% - 50vw );
+		width: auto;
+	}
+}
+
+.bw-comparison-table__scroll {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.bw-comparison-table__table {
+	box-sizing: border-box;
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	font-size: 15px;
+	line-height: 1.5;
+
+	th,
+	td {
+		box-sizing: border-box;
+		border-bottom: 1px solid #e5e7eb;
+		padding: 14px 16px;
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	thead {
+		th {
+			position: relative;
+			border-bottom: 2px solid #e5e7eb;
+			background: #f9fafb;
+			font-weight: 600;
+			color: #111827;
+		}
+
+		th.is-featured {
+			border-top: 3px solid var( --bw-cmp-accent );
+			border-bottom-color: var( --bw-cmp-accent-border );
+			background: var( --bw-cmp-accent-soft );
+			color: var( --bw-cmp-accent );
+		}
+	}
+
+	tbody {
+		tr {
+			&:last-child {
+				th,
+				td {
+					border-bottom: 0;
+				}
+			}
+		}
+
+		th {
+			background: #fff;
+			text-align: left;
+			font-weight: 600;
+			color: #111827;
+		}
+
+		td.is-featured {
+			background: var( --bw-cmp-accent-soft );
+		}
+	}
+
+	.bw-comparison-table__feature-col {
+		text-align: left;
+	}
+
+	.bw-comparison-table__badge {
+		display: inline-block;
+		margin-bottom: 10px;
+		padding: 3px 10px;
+		border-radius: 999px;
+		background: var( --bw-cmp-accent );
+		color: #fff;
+		font-size: 11px;
+		font-weight: 600;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.bw-comparison-table__product-name,
+	.bw-comparison-table__product-price,
+	.bw-comparison-table__feature-label {
+		display: block;
+	}
+
+	.bw-comparison-table__product-price {
+		margin-top: 4px;
+		font-size: 14px;
+		font-weight: 400;
+		color: #6b7280;
+	}
+
+	th.is-featured .bw-comparison-table__product-price {
+		color: var( --bw-cmp-accent );
+	}
+
+	.bw-comparison-table__mark {
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+
+		&--yes {
+			fill: #16a34a;
+		}
+
+		&--no {
+			fill: #d1d5db;
+		}
+	}
+
+	.screen-reader-text {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect( 0, 0, 0, 0 );
+		white-space: nowrap;
+		border: 0;
+	}
+}

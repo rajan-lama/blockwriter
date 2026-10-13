@@ -1,0 +1,60 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/stat",
+  "version": "0.1.0",
+  "title": "BW Stat",
+  "category": "blockwriter",
+  "icon": "chart-bar",
+  "description": "A single statistic with optional count-up animation for marketing sections.",
+  "example": {},
+  "keywords": [
+    "stat",
+    "stats",
+    "counter",
+    "number",
+    "metric"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "statNumber": {
+      "type": "string",
+      "default": ""
+    },
+    "statLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "statPrefix": {
+      "type": "string",
+      "default": ""
+    },
+    "statSuffix": {
+      "type": "string",
+      "default": ""
+    },
+    "statAlign": {
+      "type": "string",
+      "default": "center"
+    },
+    "enableCount": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "viewScript": "file:./view.js",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

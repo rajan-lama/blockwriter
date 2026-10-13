@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/newsletter",
+  "version": "0.1.0",
+  "title": "BW Newsletter Signup",
+  "category": "blockwriter",
+  "icon": "email",
+  "description": "An email signup form that submits to a newsletter provider endpoint.",
+  "example": {},
+  "keywords": [
+    "newsletter",
+    "subscribe",
+    "email",
+    "signup",
+    "form"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Subscribe to our newsletter"
+    },
+    "description": {
+      "type": "string",
+      "default": "Get the latest updates delivered to your inbox."
+    },
+    "placeholder": {
+      "type": "string",
+      "default": "Enter your email"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Subscribe"
+    },
+    "showName": {
+      "type": "boolean",
+      "default": false
+    },
+    "namePlaceholder": {
+      "type": "string",
+      "default": "Your name"
+    },
+    "actionUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "method": {
+      "type": "string",
+      "default": "post"
+    },
+    "emailField": {
+      "type": "string",
+      "default": "email"
+    },
+    "nameField": {
+      "type": "string",
+      "default": "name"
+    },
+    "consentText": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

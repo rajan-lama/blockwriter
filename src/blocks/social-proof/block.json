@@ -1,0 +1,86 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/social-proof",
+	"version": "0.1.0",
+	"title": "BW Social Proof",
+	"category": "blockwriter",
+	"icon": "groups",
+	"description": "A trust band combining an aggregate rating, review count, and client logos.",
+	"example": {},
+	"keywords": ["social proof", "trust", "rating", "logos", "reviews"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Loved by thousands of teams"
+		},
+		"description": {
+			"type": "string",
+			"default": ""
+		},
+		"showRating": {
+			"type": "boolean",
+			"default": true
+		},
+		"ratingValue": {
+			"type": "number",
+			"default": 4.9
+		},
+		"maxRating": {
+			"type": "number",
+			"default": 5
+		},
+		"reviewCount": {
+			"type": "number",
+			"default": 1200
+		},
+		"reviewLabel": {
+			"type": "string",
+			"default": "reviews"
+		},
+		"starColor": {
+			"type": "string",
+			"default": "#f59e0b"
+		},
+		"emptyStarColor": {
+			"type": "string",
+			"default": "#e5e7eb"
+		},
+		"showLogos": {
+			"type": "boolean",
+			"default": true
+		},
+		"logos": {
+			"type": "array",
+			"default": []
+		},
+		"logoColumns": {
+			"type": "number",
+			"default": 4
+		},
+		"grayscale": {
+			"type": "boolean",
+			"default": true
+		},
+		"socialProofAlign": {
+			"type": "string",
+			"default": "center"
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

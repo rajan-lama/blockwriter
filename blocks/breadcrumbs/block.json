@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/breadcrumbs",
+  "version": "0.1.0",
+  "title": "BW Breadcrumbs",
+  "category": "blockwriter",
+  "icon": "arrow-right-alt2",
+  "description": "Displays an accessible breadcrumb trail for the current page, post, archive, or search.",
+  "example": {},
+  "keywords": [
+    "breadcrumbs",
+    "navigation",
+    "trail",
+    "internal links"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "separator": {
+      "type": "string",
+      "default": "›"
+    },
+    "showHome": {
+      "type": "boolean",
+      "default": true
+    },
+    "homeLabel": {
+      "type": "string",
+      "default": "Home"
+    },
+    "showCurrent": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

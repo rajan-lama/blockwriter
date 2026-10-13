@@ -1,0 +1,19 @@
+.wp-block-blockwriter-social-proof {
+	min-height: 60px;
+
+	.bw-social-proof__logo-btn {
+		padding: 0;
+		background: none;
+		border: 0;
+		cursor: pointer;
+	}
+
+	.bw-social-proof__logo-btn img {
+		opacity: 1;
+		filter: none;
+	}
+
+	.bw-social-proof__logo-add {
+		align-self: center;
+	}
+}

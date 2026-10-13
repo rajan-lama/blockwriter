@@ -74,6 +74,74 @@ register_deactivation_hook( __FILE__, 'deactivate_blockwriter' );
 require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter.php';
 
 /**
+ * Pattern category registration.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-pattern.php';
+
+/**
+ * Register the BlockWriter pattern category before patterns are registered.
+ */
+add_action( 'init', array( '\Blockwriter\Pattern', 'register_category' ), 9 );
+
+/**
+ * Responsive visibility.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-responsive-visibility.php';
+
+/**
+ * Apply the device visibility settings to rendered blocks and load the styles.
+ */
+\Blockwriter\Responsive_Visibility::register();
+
+/**
+ * Conditional content (user and date conditions).
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-conditional-content.php';
+
+/**
+ * Apply the user and date conditions to rendered blocks.
+ */
+\Blockwriter\Conditional_Content::register();
+
+/**
+ * Query builder used by the dynamic post blocks.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-query-builder.php';
+
+/**
+ * AI provider settings and REST proxy.
+ */
+require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter-ai.php';
+
+/**
+ * Register the AI settings page and REST routes.
+ */
+\Blockwriter\AI::register();
+
+/**
+ * Determines whether WooCommerce is available.
+ *
+ * @return bool
+ */
+function blockwriter_is_woocommerce_active() {
+	return class_exists( 'WooCommerce' );
+}
+
+/**
+ * Whether a block directory is exclusive to WooCommerce.
+ *
+ * Blocks stored in a `blocks/woo-*` directory are only registered when
+ * WooCommerce is active, so they never appear as broken blocks otherwise.
+ *
+ * @param string $block_path Absolute path to the block directory.
+ *
+ * @return bool
+ */
+function blockwriter_block_requires_woocommerce( $block_path ) {
+	return 0 === strpos( basename( $block_path ), 'woo-' );
+}
+
+/**
  * Registers the block using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
@@ -82,9 +150,15 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-blockwriter.php';
  */
 function blockwriter_block_init() {
 	foreach ( glob( __DIR__ . '/blocks/*' ) as $block_path ) {
-		if ( file_exists( $block_path . '/block.json' ) ) {
-			register_block_type( $block_path );
+		if ( ! file_exists( $block_path . '/block.json' ) ) {
+			continue;
 		}
+
+		if ( blockwriter_block_requires_woocommerce( $block_path ) && ! blockwriter_is_woocommerce_active() ) {
+			continue;
+		}
+
+		register_block_type( $block_path );
 	}
 }
 

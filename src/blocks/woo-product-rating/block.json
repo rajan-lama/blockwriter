@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/woo-product-rating",
+	"version": "0.1.0",
+	"title": "BW Product Rating",
+	"category": "blockwriter",
+	"icon": "star-filled",
+	"description": "Displays the customer rating for a WooCommerce product. Requires WooCommerce.",
+	"example": {},
+	"keywords": ["woocommerce", "product", "rating", "reviews", "stars"],
+	"usesContext": ["postId", "postType"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"showStars": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCount": {
+			"type": "boolean",
+			"default": true
+		},
+		"textAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"fontSize": {
+			"type": "number",
+			"default": 0
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,148 @@
+.wp-block-blockwriter-social-proof {
+	--bw-social-proof-star-size: 20px;
+	--bw-social-proof-star: #f59e0b;
+	--bw-social-proof-star-empty: #e5e7eb;
+
+	padding: 28px 24px;
+	background-color: #fff;
+	border: 1px solid #e2e8f0;
+	border-radius: 12px;
+}
+
+.bw-social-proof__heading {
+	margin: 0 0 10px;
+	font-size: 22px;
+}
+
+.bw-social-proof__rating {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 14px;
+}
+
+.bw-social-proof__stars {
+	display: inline-flex;
+	align-items: center;
+	gap: 2px;
+}
+
+.bw-social-proof__star {
+	position: relative;
+	display: inline-block;
+	width: var( --bw-social-proof-star-size );
+	height: var( --bw-social-proof-star-size );
+}
+
+.bw-social-proof__icon {
+	display: block;
+	width: var( --bw-social-proof-star-size );
+	height: var( --bw-social-proof-star-size );
+	max-width: none;
+	fill: currentcolor;
+}
+
+.bw-social-proof__icon--empty {
+	color: var( --bw-social-proof-star-empty );
+}
+
+.bw-social-proof__icon--filled {
+	color: var( --bw-social-proof-star );
+}
+
+.bw-social-proof__fill {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bw-social-proof__score {
+	font-weight: 700;
+}
+
+.bw-social-proof__count {
+	font-size: 14px;
+	color: #64748b;
+}
+
+.bw-social-proof__description {
+	margin: 0 0 18px;
+	color: #475569;
+}
+
+.bw-social-proof__logos {
+	display: grid;
+	align-items: center;
+	gap: 16px;
+}
+
+.bw-social-proof__logo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6px;
+}
+
+.bw-social-proof__logos img {
+	display: block;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 48px;
+	object-fit: contain;
+	opacity: 0.75;
+	filter: grayscale( 1 );
+	transition:
+		opacity 0.25s ease,
+		filter 0.25s ease;
+}
+
+.bw-social-proof__logos--color img,
+.bw-social-proof__logos img:hover {
+	opacity: 1;
+	filter: none;
+}
+
+.bw-social-proof--center {
+	text-align: center;
+}
+
+.bw-social-proof--center .bw-social-proof__rating {
+	justify-content: center;
+}
+
+.bw-social-proof--right {
+	text-align: right;
+}
+
+.bw-social-proof--right .bw-social-proof__rating {
+	justify-content: flex-end;
+}
+
+@each $cols in (2, 3, 4, 5, 6) {
+	.bw-social-proof__cols-#{ $cols } {
+		grid-template-columns: repeat( $cols, 1fr );
+	}
+}
+
+@media (max-width: 1024px) {
+
+	.bw-social-proof__cols-4,
+	.bw-social-proof__cols-5,
+	.bw-social-proof__cols-6 {
+		grid-template-columns: repeat( 3, 1fr );
+	}
+}
+
+@media (max-width: 767px) {
+
+	.bw-social-proof__cols-3,
+	.bw-social-proof__cols-4,
+	.bw-social-proof__cols-5,
+	.bw-social-proof__cols-6 {
+		grid-template-columns: repeat( 2, 1fr );
+	}
+}

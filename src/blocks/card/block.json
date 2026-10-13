@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/card",
+  "version": "0.1.0",
+  "title": "BW Card",
+  "category": "blockwriter",
+  "icon": "layout",
+  "description": "A card container with optional image and content area.",
+  "example": {},
+  "keywords": ["card", "box", "panel", "tile"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "cardImageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "cardImageId": {
+      "type": "number",
+      "default": 0
+    },
+    "cardAlign": {
+      "type": "string",
+      "default": ""
+    },
+    "cardPadding": {
+      "type": "string",
+      "default": "medium"
+    },
+    "borderRadius": {
+      "type": "number",
+      "default": 8
+    },
+    "hasShadow": {
+      "type": "boolean",
+      "default": false
+    },
+    "tagType": {
+      "type": "string",
+      "default": "div"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

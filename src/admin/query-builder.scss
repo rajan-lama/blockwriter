@@ -1,0 +1,28 @@
+.bw-query-builder {
+	padding: 16px;
+
+	.bw-query-builder__intro {
+		margin-top: 0;
+	}
+
+	.bw-query-builder__tags {
+		margin: 0 0 16px;
+		padding: 0;
+		border: 0;
+	}
+
+	.bw-query-builder__legend {
+		margin-bottom: 8px;
+		font-weight: 600;
+	}
+
+	.bw-query-builder__scroll {
+		max-height: 180px;
+		margin-bottom: 12px;
+		overflow-y: auto;
+	}
+
+	.bw-query-builder__reset {
+		margin-top: 16px;
+	}
+}

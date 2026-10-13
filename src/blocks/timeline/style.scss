@@ -1,0 +1,20 @@
+.wp-block-blockwriter-timeline {
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 8px;
+		bottom: 8px;
+		left: 11px;
+		width: 2px;
+		background: #e5e7eb;
+	}
+
+	> .block-editor-block-list__layout {
+		> .block-editor-block-list__block {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}

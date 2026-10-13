@@ -1,0 +1,52 @@
+.wp-block-blockwriter-accordion-item {
+	margin: 0;
+	background-color: #ffffff;
+	border: 1px solid #e5e7eb;
+
+	.bw-accordion-title {
+		margin: 0;
+	}
+
+	.bw-accordion-trigger {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		gap: 16px;
+		padding: 18px 20px;
+		margin: 0;
+		border: none;
+		border-radius: 0;
+		background: none;
+		color: inherit;
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.bw-accordion-title-text {
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	.bw-accordion-icon {
+		flex-shrink: 0;
+		width: 10px;
+		height: 10px;
+		border-right: 2px solid #6b7280;
+		border-bottom: 2px solid #6b7280;
+		transform: rotate( 45deg );
+		transition: transform 0.2s ease;
+		margin-top: -4px;
+	}
+
+	.bw-accordion-panel {
+		padding: 0 20px 20px;
+	}
+
+	&.is-open .bw-accordion-icon {
+		transform: rotate( -135deg );
+		margin-top: 4px;
+	}
+}

@@ -1,0 +1,63 @@
+.wp-block-blockwriter-lead-capture {
+	max-width: 560px;
+
+	.bw-lead-capture__heading {
+		margin: 0 0 6px;
+		font-size: 22px;
+	}
+
+	.bw-lead-capture__description {
+		margin: 0 0 18px;
+		color: #475569;
+	}
+
+	.bw-lead-capture__form {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	.bw-lead-capture__field {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+	}
+
+	.bw-lead-capture__label {
+		font-size: 14px;
+		font-weight: 600;
+		color: #1e293b;
+	}
+
+	.bw-lead-capture__input {
+		box-sizing: border-box;
+		width: 100%;
+		padding: 10px 14px;
+		border: 1px solid #cbd5e1;
+		border-radius: 8px;
+		font-size: 15px;
+	}
+
+	.bw-lead-capture__button {
+		align-self: flex-start;
+		padding: 10px 22px;
+		border: 0;
+		border-radius: 8px;
+		background-color: #1e293b;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: #0f172a;
+		}
+	}
+
+	.bw-lead-capture__consent {
+		margin: 10px 0 0;
+		color: #64748b;
+		font-size: 12px;
+	}
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/spacer",
+  "version": "0.1.0",
+  "title": "BW Spacer",
+  "category": "blockwriter",
+  "icon": "image-flip-vertical",
+  "description": "Add vertical space between blocks.",
+  "example": {},
+  "keywords": [
+    "spacer",
+    "space",
+    "gap",
+    "whitespace"
+  ],
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "spacerHeight": {
+      "type": "number",
+      "default": 50
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
