@@ -1,0 +1,24 @@
+.bw-ai-generator {
+	padding: 16px;
+
+	.bw-ai-generator__intro {
+		margin-top: 0;
+	}
+
+	.bw-ai-generator__button {
+		justify-content: center;
+		width: 100%;
+	}
+
+	.bw-ai-generator__loading {
+		display: flex;
+		justify-content: center;
+		margin-top: 12px;
+	}
+
+	.bw-ai-generator__disclaimer {
+		margin-bottom: 0;
+		color: #757575;
+		font-size: 12px;
+	}
+}

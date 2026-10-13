@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/woo-checkout",
+  "version": "0.1.0",
+  "title": "BW Checkout",
+  "category": "blockwriter",
+  "icon": "check",
+  "description": "Displays the WooCommerce checkout form, order review, and payment options. Requires WooCommerce.",
+  "example": {},
+  "keywords": [
+    "woocommerce",
+    "checkout",
+    "payment",
+    "shop",
+    "store"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

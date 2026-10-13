@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/woo-product-card",
+	"version": "0.1.0",
+	"title": "BW Product Card",
+	"category": "blockwriter",
+	"icon": "products",
+	"description": "Displays a card for the current WooCommerce product with image, title, rating, price, and add to cart. Requires WooCommerce.",
+	"example": {},
+	"keywords": ["woocommerce", "product", "card", "shop", "store"],
+	"usesContext": ["postId", "postType"],
+	"supports": {
+		"html": false,
+		"align": ["wide", "full"]
+	},
+	"attributes": {
+		"showImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showCategory": {
+			"type": "boolean",
+			"default": false
+		},
+		"showRating": {
+			"type": "boolean",
+			"default": true
+		},
+		"showPrice": {
+			"type": "boolean",
+			"default": true
+		},
+		"showAddToCart": {
+			"type": "boolean",
+			"default": true
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

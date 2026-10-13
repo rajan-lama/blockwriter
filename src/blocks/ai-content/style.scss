@@ -1,0 +1,10 @@
+.wp-block-blockwriter-ai-content {
+
+	> *:first-child {
+		margin-block-start: 0;
+	}
+
+	> *:last-child {
+		margin-block-end: 0;
+	}
+}

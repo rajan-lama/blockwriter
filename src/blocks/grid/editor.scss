@@ -1,0 +1,19 @@
+.wp-block-blockwriter-grid {
+	outline: 1px dashed #1e1e1e26;
+	outline-offset: 4px;
+
+	> .block-editor-inner-blocks {
+		width: 100%;
+
+		> .block-editor-block-list__layout {
+			display: grid;
+			grid-template-columns: repeat(
+				var( --bw-grid-columns, 2 ),
+				minmax( 0, 1fr )
+			);
+			column-gap: var( --bw-grid-column-gap, 20px );
+			row-gap: var( --bw-grid-row-gap, 20px );
+			min-height: 40px;
+		}
+	}
+}

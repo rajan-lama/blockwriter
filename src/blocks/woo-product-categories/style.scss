@@ -1,0 +1,135 @@
+.wp-block-blockwriter-woo-product-categories {
+	--bw-woo-product-categories-columns: 3;
+
+	.bw-woo-product-categories__items {
+		display: grid;
+		grid-template-columns: repeat(
+			var( --bw-woo-product-categories-columns ),
+			minmax( 0, 1fr )
+		);
+		gap: 20px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bw-woo-product-categories__item {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		background-color: #fff;
+		border: 1px solid #e2e8f0;
+		border-radius: 10px;
+	}
+
+	.bw-woo-product-categories__media {
+		display: block;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 1 / 1;
+			object-fit: cover;
+		}
+	}
+
+	.bw-woo-product-categories__placeholder {
+		display: block;
+		aspect-ratio: 1 / 1;
+		background-color: #f1f5f9;
+	}
+
+	.bw-woo-product-categories__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 8px;
+		padding: 12px 14px;
+	}
+
+	.bw-woo-product-categories__link {
+		color: inherit;
+		font-weight: 600;
+		text-decoration: none;
+
+		&:hover,
+		&:focus {
+			text-decoration: underline;
+		}
+	}
+
+	.bw-woo-product-categories__count {
+		color: #64748b;
+		font-size: 13px;
+	}
+
+	.bw-woo-product-categories__items--children {
+		display: block;
+		margin: 8px 0 0;
+		padding-left: 16px;
+		list-style: disc;
+	}
+
+	&.bw-woo-product-categories--list {
+
+		.bw-woo-product-categories__items {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+		}
+
+		.bw-woo-product-categories__item {
+			flex-direction: row;
+			align-items: center;
+		}
+
+		.bw-woo-product-categories__media {
+			flex: 0 0 88px;
+
+			img,
+			.bw-woo-product-categories__placeholder {
+				aspect-ratio: 1 / 1;
+			}
+		}
+
+		.bw-woo-product-categories__body {
+			flex: 1 1 auto;
+		}
+	}
+
+	&.bw-woo-product-categories--inline {
+
+		.bw-woo-product-categories__items {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px 18px;
+		}
+
+		.bw-woo-product-categories__item {
+			flex-direction: row;
+			align-items: center;
+			background: none;
+			border: 0;
+			border-radius: 0;
+		}
+
+		.bw-woo-product-categories__body {
+			padding: 0;
+		}
+	}
+
+	@media ( max-width: 1024px ) {
+
+		.bw-woo-product-categories__items {
+			--bw-woo-product-categories-columns: 2;
+		}
+	}
+
+	@media ( max-width: 600px ) {
+
+		.bw-woo-product-categories__items {
+			--bw-woo-product-categories-columns: 1;
+		}
+	}
+}

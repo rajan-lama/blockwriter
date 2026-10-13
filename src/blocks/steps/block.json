@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/steps",
+  "version": "0.1.0",
+  "title": "BW Steps",
+  "category": "blockwriter",
+  "icon": "editor-ol",
+  "description": "A numbered list of steps for process and how-it-works sections.",
+  "example": {},
+  "keywords": ["steps", "process", "timeline", "how it works", "numbered"],
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"]
+  },
+  "attributes": {
+    "steps": {
+      "type": "array",
+      "default": [
+        {
+          "title": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "description": ""
+        },
+        {
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    "stepsLayout": {
+      "type": "string",
+      "default": "vertical"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

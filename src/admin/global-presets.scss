@@ -1,0 +1,74 @@
+.bw-global-presets {
+	padding: 16px;
+
+	.bw-global-presets__intro {
+		margin-top: 0;
+	}
+
+	.bw-global-presets__section {
+		margin-top: 20px;
+	}
+
+	.bw-global-presets__section-title {
+		margin: 0 0 8px;
+		font-size: 13px;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.bw-global-presets__group-title {
+		margin: 8px 0 4px;
+		color: #50575e;
+		font-weight: 600;
+	}
+
+	.bw-global-presets__items {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.bw-global-presets__item {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 6px 0;
+		border-bottom: 1px solid #f0f0f1;
+	}
+
+	.bw-global-presets__swatch {
+		flex: 0 0 auto;
+		width: 24px;
+		height: 24px;
+		border: 1px solid #dcdcde;
+		border-radius: 4px;
+	}
+
+	.bw-global-presets__item-body {
+		display: flex;
+		flex: 1 1 auto;
+		flex-direction: column;
+		min-width: 0;
+	}
+
+	.bw-global-presets__item-name {
+		font-weight: 500;
+	}
+
+	.bw-global-presets__value {
+		overflow: hidden;
+		color: #50575e;
+		font-size: 12px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.bw-global-presets__slug {
+		color: #757575;
+		font-size: 11px;
+	}
+
+	.bw-global-presets__copy {
+		flex: 0 0 auto;
+	}
+}

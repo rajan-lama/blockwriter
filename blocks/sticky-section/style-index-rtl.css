@@ -1,0 +1,1 @@
+.wp-block-blockwriter-sticky-section{--bw-sticky-offset:0px;--bw-sticky-z:10;position:sticky;top:var(--bw-sticky-offset);transition:box-shadow .2s ease;z-index:var(--bw-sticky-z)}.wp-block-blockwriter-sticky-section.is-stuck{box-shadow:0 6px 18px rgba(0,0,0,.12)}

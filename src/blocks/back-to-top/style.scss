@@ -1,0 +1,47 @@
+.wp-block-blockwriter-back-to-top {
+	--bw-btt-size: 48px;
+	--bw-btt-icon-size: 20px;
+	--bw-btt-bg: #4f46e5;
+	--bw-btt-color: #fff;
+	--bw-btt-radius: 50%;
+
+	display: none;
+
+	&.bw-btt--js {
+		display: block;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.25s ease, visibility 0.25s ease;
+	}
+
+	&.bw-btt--visible {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	.bw-btt__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: var( --bw-btt-size );
+		height: var( --bw-btt-size );
+		padding: 0;
+		background-color: var( --bw-btt-bg );
+		border: none;
+		border-radius: var( --bw-btt-radius );
+		box-shadow: 0 2px 8px rgba( 0, 0, 0, 0.2 );
+		color: var( --bw-btt-color );
+		cursor: pointer;
+
+		svg {
+			width: var( --bw-btt-icon-size );
+			height: var( --bw-btt-icon-size );
+			fill: currentColor;
+		}
+
+		&:focus-visible {
+			outline: 2px solid var( --bw-btt-bg );
+			outline-offset: 2px;
+		}
+	}
+}

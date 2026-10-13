@@ -1,0 +1,39 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/pricing-table",
+  "version": "0.1.0",
+  "title": "BW Pricing Table",
+  "category": "blockwriter",
+  "icon": "money-alt",
+  "description": "A row of pricing plan columns for packages and subscriptions.",
+  "example": {},
+  "keywords": [
+    "pricing",
+    "price",
+    "plans",
+    "packages",
+    "subscription"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

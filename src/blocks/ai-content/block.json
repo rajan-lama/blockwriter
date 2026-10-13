@@ -1,0 +1,46 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "blockwriter/ai-content",
+	"version": "0.1.0",
+	"title": "BW AI Content",
+	"category": "blockwriter",
+	"icon": "edit",
+	"description": "Generates written content from a prompt and stores it in the post.",
+	"example": {},
+	"keywords": ["ai", "content", "copy", "generate", "text"],
+	"supports": {
+		"html": false
+	},
+	"attributes": {
+		"prompt": {
+			"type": "string",
+			"default": ""
+		},
+		"content": {
+			"type": "string",
+			"default": ""
+		},
+		"tone": {
+			"type": "string",
+			"default": "neutral"
+		},
+		"length": {
+			"type": "string",
+			"default": "medium"
+		},
+		"htmlId": {
+			"type": "string",
+			"default": ""
+		},
+		"extraClass": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "blockwriter",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"render": "file:./render.php"
+}

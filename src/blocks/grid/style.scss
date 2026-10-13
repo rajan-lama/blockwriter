@@ -1,0 +1,13 @@
+.wp-block-blockwriter-grid {
+	display: grid;
+	grid-template-columns: repeat(
+		var( --bw-grid-columns, 2 ),
+		minmax( 0, 1fr )
+	);
+	column-gap: var( --bw-grid-column-gap, 20px );
+	row-gap: var( --bw-grid-row-gap, 20px );
+
+	> * {
+		min-width: 0;
+	}
+}

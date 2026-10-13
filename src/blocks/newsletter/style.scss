@@ -1,0 +1,51 @@
+.wp-block-blockwriter-newsletter {
+	max-width: 560px;
+
+	.bw-newsletter__heading {
+		margin: 0 0 6px;
+		font-size: 22px;
+	}
+
+	.bw-newsletter__description {
+		margin: 0 0 16px;
+		color: #475569;
+	}
+
+	.bw-newsletter__form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	.bw-newsletter__input {
+		flex: 1 1 200px;
+		min-width: 0;
+		padding: 10px 14px;
+		border: 1px solid #cbd5e1;
+		border-radius: 8px;
+		font-size: 15px;
+	}
+
+	.bw-newsletter__button {
+		flex: 0 0 auto;
+		padding: 10px 20px;
+		border: 0;
+		border-radius: 8px;
+		background-color: #1e293b;
+		color: #fff;
+		font-size: 15px;
+		font-weight: 600;
+		cursor: pointer;
+
+		&:hover,
+		&:focus {
+			background-color: #0f172a;
+		}
+	}
+
+	.bw-newsletter__consent {
+		margin: 10px 0 0;
+		color: #64748b;
+		font-size: 12px;
+	}
+}

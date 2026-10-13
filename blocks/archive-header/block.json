@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/archive-header",
+  "version": "0.1.0",
+  "title": "BW Archive Header",
+  "category": "blockwriter",
+  "icon": "archive",
+  "description": "Displays the title and description of the current archive.",
+  "example": {},
+  "keywords": [
+    "archive",
+    "title",
+    "category",
+    "tag",
+    "author",
+    "search"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "showTitle": {
+      "type": "boolean",
+      "default": true
+    },
+    "headingLevel": {
+      "type": "number",
+      "default": 1
+    },
+    "showPrefix": {
+      "type": "boolean",
+      "default": true
+    },
+    "showDescription": {
+      "type": "boolean",
+      "default": true
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}

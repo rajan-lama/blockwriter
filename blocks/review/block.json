@@ -1,0 +1,103 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "blockwriter/review",
+  "version": "0.1.0",
+  "title": "BW Review",
+  "category": "blockwriter",
+  "icon": "star-filled",
+  "description": "A customer review with a star rating, reviewer details, and source.",
+  "example": {},
+  "keywords": [
+    "review",
+    "rating",
+    "stars",
+    "testimonial",
+    "feedback"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "ratingValue": {
+      "type": "number",
+      "default": 5
+    },
+    "maxRating": {
+      "type": "number",
+      "default": 5
+    },
+    "starColor": {
+      "type": "string",
+      "default": "#f59e0b"
+    },
+    "emptyStarColor": {
+      "type": "string",
+      "default": "#e5e7eb"
+    },
+    "quote": {
+      "type": "string",
+      "default": ""
+    },
+    "authorName": {
+      "type": "string",
+      "default": ""
+    },
+    "authorRole": {
+      "type": "string",
+      "default": ""
+    },
+    "avatarUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "avatarId": {
+      "type": "number",
+      "default": 0
+    },
+    "avatarAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "verified": {
+      "type": "boolean",
+      "default": false
+    },
+    "source": {
+      "type": "string",
+      "default": ""
+    },
+    "reviewDate": {
+      "type": "string",
+      "default": ""
+    },
+    "showRating": {
+      "type": "boolean",
+      "default": true
+    },
+    "showQuoteMark": {
+      "type": "boolean",
+      "default": true
+    },
+    "reviewAlign": {
+      "type": "string",
+      "default": "left"
+    },
+    "htmlId": {
+      "type": "string",
+      "default": ""
+    },
+    "extraClass": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "blockwriter",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
